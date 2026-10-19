@@ -1,4 +1,4 @@
-import { checkoutUrl, isUuid, PaymentError } from '@/lib/payments/core';
+import { checkoutUrl, isPublicHttpsOrigin, isUuid, PaymentError } from '@/lib/payments/core';
 import {
   currentUser,
   failure,
@@ -22,14 +22,20 @@ export async function POST(request: Request) {
       p_order_id: body.orderId,
       p_buyer_id: user.id,
     });
-    if (claim.url) return Response.json({ url: checkoutUrl(claim.url, config.sandbox) });
+    if (claim.url) {
+      try {
+        return Response.json({ url: checkoutUrl(claim.url) });
+      } catch {
+        // A previously persisted sandbox URL is repaired from the existing provider preference.
+        // Do not redirect to it or create a second preference if recovery is unavailable.
+      }
+    }
     claimedOrder = body.orderId;
     const order = claim.order;
     const account = await sellerToken(order.seller_id);
     type Preference = {
       id: string;
       init_point: string;
-      sandbox_init_point: string;
       external_reference?: string;
     };
     // Recover an already-created preference after a network interruption, before creating another.
@@ -46,6 +52,11 @@ export async function POST(request: Request) {
       if (recovered.external_reference !== order.id)
         throw new PaymentError('A referência do checkout não corresponde ao pedido.', 409);
     }
+    if (claim.url && !recovered)
+      throw new PaymentError(
+        'Não foi possível recuperar o checkout deste pedido. Consulte o pagamento antes de criar outro pedido.',
+        409,
+      );
     const preference =
       recovered ||
       (await provider<Preference>('/checkout/preferences', account.token, {
@@ -62,13 +73,14 @@ export async function POST(request: Request) {
           })),
           marketplace_fee: order.commission_cents / 100,
           external_reference: order.id,
-          payer: { email: user.email },
+          // Test buyers authenticate in Mercado Pago; do not prefill a real Duelink email.
+          ...(!config.sandbox && user.email ? { payer: { email: user.email } } : {}),
           back_urls: {
             success: `${config.origin}/pedidos/${order.id}?retorno=sucesso`,
             pending: `${config.origin}/pedidos/${order.id}?retorno=pendente`,
             failure: `${config.origin}/pedidos/${order.id}?retorno=falha`,
           },
-          auto_return: 'approved',
+          ...(isPublicHttpsOrigin(config.origin) ? { auto_return: 'approved' } : {}),
           notification_url: `${config.origin}/api/marketplace/webhook?source_news=webhooks`,
           expires: true,
           expiration_date_from: new Date().toISOString(),
@@ -81,10 +93,8 @@ export async function POST(request: Request) {
           metadata: { duelink_order_id: order.id },
         }),
       }));
-    const url = checkoutUrl(
-      config.sandbox ? preference.sandbox_init_point : preference.init_point,
-      config.sandbox,
-    );
+    // private.marketplace_checkouts.checkout_url stores init_point in both modes.
+    const url = checkoutUrl(preference.init_point);
     await rpc('payment_save_checkout', {
       p_order_id: order.id,
       p_preference_id: preference.id,

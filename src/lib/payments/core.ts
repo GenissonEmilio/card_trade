@@ -87,12 +87,50 @@ export function isUuid(value: unknown): value is string {
     /^[a-f0-9]{8}-[a-f0-9]{4}-[1-8][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(value)
   );
 }
-export function checkoutUrl(value: string, sandbox: boolean): string {
-  const url = new URL(value);
-  const allowed = sandbox
-    ? ['sandbox.mercadopago.com.br', 'sandbox.mercadopago.com']
-    : ['www.mercadopago.com.br', 'www.mercadopago.com'];
-  if (url.protocol !== 'https:' || !allowed.includes(url.hostname))
+/** Checkout Pro uses init_point for real accounts and test users alike. */
+export function checkoutUrl(value: unknown): string {
+  let url: URL;
+  try {
+    if (typeof value !== 'string') throw new Error();
+    url = new URL(value);
+  } catch {
+    throw new PaymentError('O provedor retornou um checkout inválido.', 502);
+  }
+  const allowed = ['www.mercadopago.com.br', 'www.mercadopago.com'];
+  if (
+    url.protocol !== 'https:' ||
+    !allowed.includes(url.hostname) ||
+    url.username ||
+    url.password ||
+    url.port
+  )
     throw new PaymentError('O provedor retornou um checkout inválido.', 502);
   return url.href;
+}
+
+/** Automatic return requires a public HTTPS address, including during test-user purchases. */
+export function isPublicHttpsOrigin(value: string): boolean {
+  try {
+    const url = new URL(value);
+    const host = url.hostname.toLowerCase();
+    if (
+      url.protocol !== 'https:' ||
+      host === 'localhost' ||
+      host.endsWith('.localhost') ||
+      host.endsWith('.local') ||
+      host === '[::1]' ||
+      host === '[::]'
+    )
+      return false;
+    if (
+      /^(?:0|10|127)\./.test(host) ||
+      /^169\.254\./.test(host) ||
+      /^192\.168\./.test(host) ||
+      /^172\.(?:1[6-9]|2\d|3[01])\./.test(host)
+    )
+      return false;
+    return true;
+  } catch {
+    return false;
+  }
 }

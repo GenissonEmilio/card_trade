@@ -48,11 +48,13 @@ describe('contrato financeiro e integridade', () => {
     ).toBe(false);
     expect(verifyWebhookSignature('123', 'request', 'ts=1704908010,v1=oops', 'secret')).toBe(false);
   });
-  it('só permite redirecionamento ao Mercado Pago no ambiente escolhido', () => {
+  it('usa o host init_point do Mercado Pago também em testes e rejeita URLs antigas de sandbox', () => {
     expect(
-      checkoutUrl('https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=123', false),
+      checkoutUrl('https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=123'),
     ).toContain('mercadopago');
-    expect(() => checkoutUrl('https://www.mercadopago.com.br.evil.test/', false)).toThrow();
-    expect(() => checkoutUrl('https://sandbox.mercadopago.com.br/', false)).toThrow();
+    expect(() => checkoutUrl('https://www.mercadopago.com.br.evil.test/')).toThrow();
+    expect(() => checkoutUrl('https://sandbox.mercadopago.com.br/')).toThrow();
+    expect(() => checkoutUrl(undefined)).toThrow(/checkout inválido/);
+    expect(() => checkoutUrl('invalid')).toThrow(/checkout inválido/);
   });
 });
