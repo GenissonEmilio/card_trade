@@ -2,7 +2,7 @@
 
 Plataforma de troca presencial de cartas de Yu-Gi-Oh! para Lagarto, Sergipe.
 
-**Site:** https://duelink-card-trade.vercel.app
+**Site:** https://duelink.mage.dev.br
 
 ## Funcionalidades
 
@@ -63,6 +63,8 @@ A função `card-image` mantém `verify_jwt` habilitado. Usa as credenciais inte
 
 Em Authentication → URL Configuration, configure Site URL para a origem pública e permita `https://SEU_DOMINIO/**`. Para desenvolvimento com e-mails locais, adicione também `http://localhost:3000/**`.
 
+Na produção, a origem é `https://duelink.mage.dev.br`, também permitida nos redirecionamentos. Os modelos de e-mail usam essa origem para confirmação e recuperação de senha.
+
 ### E-mails
 
 Configure SMTP próprio em Authentication → Emails → SMTP Settings. O SMTP padrão do Supabase só atende e-mails de membros da organização e não libera cadastro público.
@@ -91,6 +93,8 @@ Os testes usam PostgreSQL real em WASM (PGlite), com os mesmos SQLs de produçã
 O script opcional `scripts/smoke-cloud.mjs` valida a integração com um Supabase de testes usando três contas descartáveis previamente criadas. Ele lê `.env.test.local`, cria dados e exige limpeza administrativa após a execução. Não o execute sobre contas reais ou dados de usuários. Nenhuma conta de demonstração é criada automaticamente para visitantes.
 
 ## Vercel
+
+O projeto `duelink-card-trade` pertence ao workspace `esgenisson-gmailcoms-projects` e está conectado ao repositório GitHub para deploys automáticos. O endereço público é `duelink.mage.dev.br`, com DNS gerenciado no Registro.br. Use `NEXT_PUBLIC_SITE_URL=https://duelink.mage.dev.br` em produção.
 
 Importe `GenissonEmilio/card_trade` como projeto Next.js, configure as quatro variáveis acima para produção e faça o deploy. Ou, com a CLI autenticada no projeto correto:
 
