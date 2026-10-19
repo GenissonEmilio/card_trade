@@ -130,7 +130,7 @@ export function TradeDetail({ id }: { id: string }) {
   );
 }
 function TradeDetailContent({ id }: { id: string }) {
-  const { user, toast } = useApp(),
+  const { user, toast, refresh } = useApp(),
     [trade, setTrade] = useState<Trade | null>(null),
     [messages, setMessages] = useState<Message[]>([]),
     [loading, setLoading] = useState(true),
@@ -199,6 +199,9 @@ function TradeDetailContent({ id }: { id: string }) {
   useEffect(() => {
     end.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, [messages]);
+  useEffect(() => {
+    if (trade?.status === 'completed') void refresh();
+  }, [trade?.status, refresh]);
   async function action(name: string) {
     const client = createClient();
     if (!client) return;
