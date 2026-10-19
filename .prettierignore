@@ -1,0 +1,9 @@
+node_modules
+.next
+.vercel
+package-lock.json
+src/lib/featured.json
+public
+.env*
+test-results
+playwright-report

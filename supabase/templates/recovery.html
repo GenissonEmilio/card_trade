@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Recupere sua conta no Duelink</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      background: #0c0f12;
+      font-family: Arial, sans-serif;
+      color: #eef0f2;
+      padding: 40px 16px;
+    "
+  >
+    <table
+      role="presentation"
+      style="
+        max-width: 520px;
+        width: 100%;
+        margin: auto;
+        border: 1px solid #30383e;
+        border-radius: 12px;
+        background: #161c21;
+      "
+      cellpadding="30"
+    >
+      <tr>
+        <td>
+          <p
+            style="
+              color: #e9c275;
+              letter-spacing: 3px;
+              font-size: 22px;
+              font-weight: bold;
+              margin: 0 0 32px;
+            "
+          >
+            DUELINK
+          </p>
+          <h1 style="font-size: 28px; line-height: 1.2">
+            Sua coleção está<br />esperando por você.
+          </h1>
+          <p style="font-size: 14px; line-height: 1.8; color: #a7b5c2">
+            Recebemos uma solicitação para redefinir sua senha. Use o botão abaixo para escolher uma
+            nova senha e voltar à sua conta.
+          </p>
+          <p style="margin: 30px 0">
+            <a
+              style="
+                display: inline-block;
+                background: #e9c275;
+                color: #252016;
+                padding: 15px 24px;
+                text-decoration: none;
+                border-radius: 6px;
+                font-weight: bold;
+                font-size: 14px;
+              "
+              href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&amp;type=recovery&amp;next=%2Frecuperar-senha%3Fetapa%3Dnova"
+              >Criar nova senha →</a
+            >
+          </p>
+          <p style="font-size: 12px; line-height: 1.8; color: #81909f">
+            Se você não solicitou a recuperação, ignore esta mensagem. Sua senha continua a mesma.
+            Este link é pessoal e expira.
+          </p>
+          <p
+            style="
+              font-size: 11px;
+              color: #667783;
+              border-top: 1px solid #30383e;
+              padding-top: 20px;
+              margin-top: 28px;
+            "
+          >
+            Conecte. Troque. Duele.<br />Uma comunidade local. Infinitas possibilidades.
+          </p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
