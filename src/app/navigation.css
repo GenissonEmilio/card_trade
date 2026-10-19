@@ -17,6 +17,18 @@
 }
 .sidebar .game-switch {
   margin: 8px 0 18px;
+  width: 100%;
+}
+.sidebar .game-switch button {
+  flex: 1;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 6px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.sidebar .game-dot {
+  flex-shrink: 0;
 }
 @media (max-height: 900px) {
   .sidebar .community-mini {
