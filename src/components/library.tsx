@@ -51,6 +51,7 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
     [editing, setEditing] = useState<CollectionItem | undefined>(),
     [detail, setDetail] = useState<Card | null>(null),
     [deleting, setDeleting] = useState<CollectionItem | null>(null),
+    [deleteError, setDeleteError] = useState(''),
     [busy, setBusy] = useState(false),
     [filter, setFilter] = useState('all');
   const load = useCallback(async () => {
@@ -94,6 +95,7 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
     }
   }
   async function remove() {
+    setDeleteError('');
     const client = createClient();
     if (!client || !deleting) return;
     setBusy(true);
@@ -104,7 +106,9 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
       .eq('user_id', user!.id);
     setBusy(false);
     if (error)
-      toast(/reservada/.test(error.message) ? error.message : friendlyError(error.message), true);
+      setDeleteError(
+        /reservada/.test(error.message) ? error.message : friendlyError(error.message),
+      );
     else {
       setDeleting(null);
       toast('Carta removida da coleção.');
@@ -229,7 +233,10 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
                     <button
                       className="text-link"
                       aria-label={`Remover ${i.card_name}`}
-                      onClick={() => setDeleting(i)}
+                      onClick={() => {
+                        setDeleteError('');
+                        setDeleting(i);
+                      }}
                     >
                       <Trash2 size={13} />
                     </button>
@@ -271,6 +278,11 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
             A carta {deleting.card_name} será removida da sua pasta. Você pode adicioná-la novamente
             pelo catálogo.
           </p>
+          {deleteError && (
+            <p className="auth-error" role="alert">
+              {deleteError}
+            </p>
+          )}
           <div className="trade-buttons">
             <button className="button" onClick={() => setDeleting(null)}>
               Voltar

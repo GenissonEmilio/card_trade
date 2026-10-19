@@ -199,9 +199,11 @@ export function AddCardModal({
 }) {
   const { user, toast } = useApp(),
     router = useRouter();
-  const [busy, setBusy] = useState(false);
+  const [busy, setBusy] = useState(false),
+    [submitError, setSubmitError] = useState('');
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSubmitError('');
     if (!user) {
       router.push('/login?next=/colecao');
       return;
@@ -232,7 +234,9 @@ export function AddCardModal({
       : await client.from('collection_items').insert(values);
     setBusy(false);
     if (error)
-      toast(/reservada/.test(error.message) ? error.message : friendlyError(error.message), true);
+      setSubmitError(
+        /reservada/.test(error.message) ? error.message : friendlyError(error.message),
+      );
     else {
       toast(item ? 'Carta atualizada.' : 'Carta adicionada à sua coleção!');
       onSaved();
@@ -346,6 +350,11 @@ export function AddCardModal({
           {busy ? <Loader2 className="spin" size={17} /> : <Check size={17} />}{' '}
           {item ? 'Salvar alterações' : 'Adicionar à coleção'}
         </button>
+        {submitError && (
+          <p className="auth-error" role="alert">
+            {submitError}
+          </p>
+        )}
       </form>
     </Modal>
   );
@@ -360,10 +369,11 @@ export function CardSearchModal({
   const [query, setQuery] = useState(''),
     [results, setResults] = useState<Card[]>([]),
     [busy, setBusy] = useState(false),
+    [searchError, setSearchError] = useState(''),
     [searched, setSearched] = useState(false);
-  const { toast } = useApp();
   async function search(e: React.FormEvent) {
     e.preventDefault();
+    setSearchError('');
     setBusy(true);
     setSearched(true);
     try {
@@ -372,7 +382,7 @@ export function CardSearchModal({
       const d = await r.json();
       setResults(d.data);
     } catch {
-      toast('Não foi possível consultar o catálogo.', true);
+      setSearchError('Não foi possível consultar o catálogo. Tente novamente.');
     } finally {
       setBusy(false);
     }
@@ -401,6 +411,11 @@ export function CardSearchModal({
         Busque no catálogo completo de Yu-Gi-Oh! pelo nome da carta. Para mais resultados, use o
         nome em inglês.
       </p>
+      {searchError && (
+        <p className="auth-error" role="alert">
+          {searchError}
+        </p>
+      )}
       <div className="search-results">
         {results.map((c) => (
           <button className="search-result" key={c.id} onClick={() => onSelect(c)}>
@@ -414,7 +429,7 @@ export function CardSearchModal({
             <Plus size={19} />
           </button>
         ))}
-        {searched && !busy && results.length === 0 && (
+        {searched && !busy && !searchError && results.length === 0 && (
           <p className="muted">Nenhuma carta encontrada. Tente outro nome.</p>
         )}
       </div>
@@ -432,6 +447,7 @@ export function ProposeModal({
     router = useRouter();
   const [items, setItems] = useState<CollectionItem[] | null>(null),
     [selected, setSelected] = useState(''),
+    [submitError, setSubmitError] = useState(''),
     [busy, setBusy] = useState(false);
   useEffect(() => {
     if (!user) return;
@@ -444,12 +460,13 @@ export function ProposeModal({
         .eq('for_trade', true)
         .gt('quantity', 0)
         .then(({ data, error }) => {
-          if (error) toast('Não foi possível carregar suas cartas.', true);
+          if (error) setSubmitError('Não foi possível carregar suas cartas. Tente novamente.');
           setItems(data || []);
         });
   }, [user, toast]);
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSubmitError('');
     const client = createClient();
     if (!client || !user) return;
     setBusy(true);
@@ -460,9 +477,8 @@ export function ProposeModal({
     });
     setBusy(false);
     if (error)
-      toast(
+      setSubmitError(
         /reservada|disponív/.test(error.message) ? error.message : friendlyError(error.message),
-        true,
       );
     else {
       toast('Proposta enviada. Boa troca!');
@@ -523,6 +539,11 @@ export function ProposeModal({
             proposta
           </button>
         </form>
+      )}
+      {submitError && (
+        <p className="auth-error" role="alert">
+          {submitError}
+        </p>
       )}
     </Modal>
   );
