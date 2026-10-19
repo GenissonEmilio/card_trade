@@ -476,7 +476,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 1.5px;
   color: #858e98;
   margin: 2px 0 19px;
@@ -488,7 +488,7 @@ main {
 }
 .welcome-line > span:last-child {
   color: #68727d;
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 1px;
 }
 .small-gold-dash {
@@ -540,7 +540,7 @@ main {
   align-items: center;
   gap: 7px;
   color: #c9bc97;
-  font-size: 7px;
+  font-size: 9px;
   letter-spacing: 1.7px;
   font-weight: 500;
   margin-bottom: 16px;
@@ -585,7 +585,7 @@ main {
   gap: 8px;
   align-items: center;
   color: #7c9298;
-  font-size: 8px;
+  font-size: 9px;
 }
 .hero-proof-icon {
   color: #b6b895;
@@ -735,7 +735,7 @@ main {
 }
 .floating-match small {
   display: block;
-  font-size: 7px;
+  font-size: 9px;
   color: #92a7aa;
   margin-top: 4px;
 }
@@ -808,7 +808,7 @@ main {
   letter-spacing: -0.2px;
 }
 .stats-strip small {
-  font-size: 8px;
+  font-size: 9px;
   color: #727e8a;
   display: block;
   margin-top: 5px;
@@ -829,7 +829,7 @@ main {
   gap: 20px;
 }
 .eyebrow {
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 600;
   letter-spacing: 1.5px;
   color: #9a8b68;
@@ -891,7 +891,7 @@ main {
 .tab-count {
   background: #e9c27510;
   color: #c9b485;
-  font-size: 8px;
+  font-size: 9px;
   border: 1px solid #e9c27519;
   border-radius: 4px;
   padding: 1px 5px;
@@ -901,7 +901,7 @@ main {
   align-items: center;
   gap: 6px;
   color: #64717d;
-  font-size: 8px;
+  font-size: 9px;
   margin-bottom: 13px;
 }
 .availability-dot {
@@ -1007,7 +1007,7 @@ main {
 .results-caption {
   display: flex;
   justify-content: space-between;
-  font-size: 8px;
+  font-size: 9px;
   color: #6b7783;
   margin: 21px 0 15px;
 }
@@ -1082,7 +1082,7 @@ main {
   position: absolute;
   top: 8px;
   left: 8px;
-  font-size: 7px;
+  font-size: 9px;
   line-height: 1.4;
   background: #151b20da;
   backdrop-filter: blur(8px);
@@ -1125,7 +1125,7 @@ main {
   padding: 12px 11px 0;
 }
 .card-meta > small {
-  font-size: 6px;
+  font-size: 9px;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #88919a;
@@ -1154,7 +1154,7 @@ main {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 7px;
+  font-size: 9px;
   margin-top: 5px;
 }
 .card-bottom {
@@ -1166,7 +1166,7 @@ main {
   min-height: 37px;
 }
 .catalog-label {
-  font-size: 7px;
+  font-size: 9px;
   color: #87968c;
   display: flex;
   align-items: center;
@@ -1193,7 +1193,7 @@ main {
   align-items: center;
   gap: 4px;
   color: #a1abb5;
-  font-size: 7px;
+  font-size: 9px;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -1206,13 +1206,13 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 6px;
+  font-size: 9px;
 }
 .condition-badge {
   position: absolute;
   bottom: 7px;
   left: 8px;
-  font-size: 8px;
+  font-size: 9px;
   background: #182620dc;
   color: #b3c9b9;
   border: 1px solid #7199824a;
@@ -1293,7 +1293,7 @@ footer > div {
   gap: 20px;
 }
 footer > div a {
-  font-size: 8px;
+  font-size: 9px;
   color: #76828f;
   display: flex;
   align-items: center;
@@ -1301,7 +1301,7 @@ footer > div a {
 }
 footer > small {
   flex-basis: 100%;
-  font-size: 7px;
+  font-size: 9px;
   color: #4f5a65;
 }
 .expanded-filters {
@@ -1531,7 +1531,7 @@ footer > small {
   margin-top: 6px;
 }
 .selected-card .eyebrow {
-  font-size: 7px;
+  font-size: 9px;
   margin-bottom: 5px;
 }
 .field-hint {
@@ -1565,7 +1565,7 @@ footer > small {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 8px;
+  font-size: 9px;
   color: #8fa4a9;
   margin-top: 17px;
   justify-content: center;
@@ -1755,7 +1755,7 @@ footer > small {
   color: #a17e79;
 }
 .inventory-badge {
-  font-size: 8px;
+  font-size: 9px;
   border-radius: 3px;
   padding: 3px 6px;
   background: #1d2b24;
@@ -1980,7 +1980,7 @@ footer > small {
 }
 .match-top .tag {
   margin: 0 0 0 auto;
-  font-size: 8px;
+  font-size: 9px;
 }
 .match-cards {
   display: grid;
@@ -2001,7 +2001,7 @@ footer > small {
 }
 .match-cards small {
   color: #ac9870;
-  font-size: 8px;
+  font-size: 9px;
   display: block;
   letter-spacing: 1px;
   margin-bottom: 12px;
@@ -2175,7 +2175,7 @@ footer > small {
 .message time {
   display: block;
   color: #8c978f;
-  font-size: 8px;
+  font-size: 9px;
   margin-top: 6px;
   text-align: right;
 }
@@ -2362,7 +2362,7 @@ footer > small {
     font-size: 9px;
   }
   .card-meta > small {
-    font-size: 8px;
+    font-size: 9px;
   }
   .card-kind {
     font-size: 9px;
@@ -2462,7 +2462,7 @@ footer > small {
     padding: 10px 11px;
   }
   .hero-proof {
-    font-size: 7px;
+    font-size: 9px;
   }
   .top-local {
     display: none;
@@ -2471,16 +2471,16 @@ footer > small {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .card-meta > small {
-    font-size: 7px;
+    font-size: 9px;
   }
   .card-name {
     font-size: 11px;
   }
   .card-original-name {
-    font-size: 8px;
+    font-size: 9px;
   }
   .card-kind {
-    font-size: 8px;
+    font-size: 9px;
   }
   .card-art-wrap {
     padding: 17px 20px;
@@ -2499,7 +2499,7 @@ footer > small {
     font-size: 10px;
   }
   .stats-strip small {
-    font-size: 7px;
+    font-size: 9px;
   }
   .trade-detail-layout {
     grid-template-columns: 300px 1fr;
@@ -2532,7 +2532,7 @@ footer > small {
     min-height: 335px;
   }
   .hero-tag {
-    font-size: 6px;
+    font-size: 9px;
     letter-spacing: 1px;
   }
   .hero-proof {
@@ -2567,7 +2567,7 @@ footer > small {
     gap: 6px;
   }
   .category-chips button {
-    font-size: 8px;
+    font-size: 9px;
     padding: 7px 9px;
   }
   .cards-grid {
@@ -2686,12 +2686,12 @@ footer > small {
     padding: 23px 18px 0;
   }
   .welcome-line {
-    font-size: 7px;
+    font-size: 9px;
     letter-spacing: 1px;
     margin-bottom: 15px;
   }
   .hero {
-    min-height: 455px;
+    min-height: 550px;
     border-radius: 10px;
   }
   .hero-copy {
@@ -2699,11 +2699,11 @@ footer > small {
     padding: 26px 23px;
   }
   .hero-tag {
-    font-size: 6px;
+    font-size: 9px;
     letter-spacing: 1.2px;
   }
   .hero h1 {
-    font-size: 37px;
+    font-size: clamp(29px, 8vw, 37px);
     letter-spacing: -1.6px;
     max-width: 330px;
   }
@@ -2731,7 +2731,7 @@ footer > small {
   .hero-visual {
     height: 275px;
     width: 335px;
-    top: 239px;
+    top: 325px;
     right: 0;
     transform: scale(0.7);
     transform-origin: top right;
@@ -2770,11 +2770,11 @@ footer > small {
     padding-right: 7px;
   }
   .stats-strip strong {
-    font-size: 8px;
+    font-size: 9px;
     line-height: 1.5;
   }
   .stats-strip small {
-    font-size: 6px;
+    font-size: 9px;
     line-height: 1.6;
     margin-top: 4px;
   }
@@ -2792,7 +2792,7 @@ footer > small {
     max-width: 310px;
   }
   .eyebrow {
-    font-size: 7px;
+    font-size: 9px;
     letter-spacing: 1.1px;
   }
   .catalog-tabs > div {
@@ -2832,7 +2832,7 @@ footer > small {
     padding: 8px 10px;
   }
   .results-caption {
-    font-size: 8px;
+    font-size: 9px;
     margin: 18px 0 13px;
   }
   .cards-grid {
@@ -2846,19 +2846,19 @@ footer > small {
     padding: 12px 11px 0;
   }
   .card-meta > small {
-    font-size: 7px;
+    font-size: 9px;
   }
   .card-name {
     font-size: 10px;
   }
   .card-original-name {
-    font-size: 8px;
+    font-size: 9px;
   }
   .catalog-label {
-    font-size: 8px;
+    font-size: 9px;
   }
   .card-kind {
-    font-size: 8px;
+    font-size: 9px;
   }
   .bottom-cta {
     margin-top: 30px;
@@ -2897,7 +2897,7 @@ footer > small {
     flex-wrap: wrap;
   }
   footer > small {
-    font-size: 7px;
+    font-size: 9px;
     line-height: 1.7;
   }
   .card-detail {
@@ -2977,7 +2977,7 @@ footer > small {
     height: 133px;
   }
   .match-top .tag {
-    font-size: 6px;
+    font-size: 9px;
     white-space: nowrap;
   }
   .match-top h2 {
@@ -3006,7 +3006,7 @@ footer > small {
   }
   .trade-row .status {
     margin-left: 90px;
-    font-size: 8px;
+    font-size: 9px;
   }
   .trade-row > svg {
     margin-left: auto;
