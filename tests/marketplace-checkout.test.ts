@@ -51,7 +51,11 @@ beforeEach(() => {
   vi.resetAllMocks();
   mocks.config.mockReturnValue({ sandbox: true, origin: 'https://duelink.mage.dev.br' });
   mocks.currentUser.mockResolvedValue({ user: { id: 'buyer', email: 'buyer@example.test' } });
-  mocks.sellerToken.mockResolvedValue({ token: 'test-user-token' });
+  mocks.sellerToken.mockResolvedValue({
+    token: 'APP_USR-test-user-token',
+    providerUserId: '12345',
+    sellerId: 'seller',
+  });
   mocks.rpc.mockImplementation((name) =>
     Promise.resolve(name === 'payment_claim_checkout' ? { order } : null),
   );
@@ -59,9 +63,12 @@ beforeEach(() => {
 
 describe('Checkout Pro com usuários de teste', () => {
   it('retorna e persiste init_point mesmo em modo sandbox, sem depender de outro campo', async () => {
-    mocks.provider
-      .mockResolvedValueOnce({ elements: [] })
-      .mockResolvedValueOnce({ id: 'preference', init_point: initPoint });
+    mocks.provider.mockResolvedValueOnce({ elements: [] }).mockResolvedValueOnce({
+      id: 'preference',
+      init_point: initPoint,
+      external_reference: orderId,
+      collector_id: 12345,
+    });
     const response = await POST(request());
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({ url: initPoint });
@@ -71,11 +78,22 @@ describe('Checkout Pro com usuários de teste', () => {
       p_checkout_url: initPoint,
     });
   });
-  it('reutiliza init_point já persistido sem recriar a preferência', async () => {
+  it('reutiliza init_point persistido somente após validar a preferência e a conta do vendedor', async () => {
     mocks.rpc.mockResolvedValueOnce({ order, url: initPoint });
+    mocks.provider
+      .mockResolvedValueOnce({ elements: [{ id: 'preference' }] })
+      .mockResolvedValueOnce({
+        id: 'preference',
+        init_point: initPoint,
+        external_reference: orderId,
+        collector_id: 12345,
+      });
     const response = await POST(request());
     expect(await response.json()).toEqual({ url: initPoint });
-    expect(mocks.provider).not.toHaveBeenCalled();
+    expect(mocks.sellerToken).toHaveBeenCalledWith('seller');
+    expect(mocks.provider.mock.calls.every(([, , options]) => options?.method !== 'POST')).toBe(
+      true,
+    );
   });
   it('corrige uma URL sandbox persistida consultando a preferência existente', async () => {
     mocks.rpc.mockResolvedValueOnce({
@@ -88,6 +106,7 @@ describe('Checkout Pro com usuários de teste', () => {
         id: 'preference',
         init_point: initPoint,
         external_reference: orderId,
+        collector_id: 12345,
       });
     const response = await POST(request());
     expect(response.status).toBe(200);
@@ -114,9 +133,12 @@ describe('Checkout Pro com usuários de teste', () => {
   });
   it('omite o e-mail do Duelink em testes para o comprador autenticar a conta MP de teste', async () => {
     mocks.currentUser.mockResolvedValue({ user: { id: 'buyer', email: 'real-user@gmail.com' } });
-    mocks.provider
-      .mockResolvedValueOnce({ elements: [] })
-      .mockResolvedValueOnce({ id: 'preference', init_point: initPoint });
+    mocks.provider.mockResolvedValueOnce({ elements: [] }).mockResolvedValueOnce({
+      id: 'preference',
+      init_point: initPoint,
+      external_reference: orderId,
+      collector_id: 12345,
+    });
     const response = await POST(request());
     expect(response.status).toBe(200);
     const body = JSON.parse(
@@ -127,9 +149,12 @@ describe('Checkout Pro com usuários de teste', () => {
   });
   it('preserva o e-mail verificado do comprador e o retorno automático no domínio HTTPS em produção', async () => {
     mocks.config.mockReturnValue({ sandbox: false, origin: 'https://duelink.mage.dev.br' });
-    mocks.provider
-      .mockResolvedValueOnce({ elements: [] })
-      .mockResolvedValueOnce({ id: 'preference', init_point: initPoint });
+    mocks.provider.mockResolvedValueOnce({ elements: [] }).mockResolvedValueOnce({
+      id: 'preference',
+      init_point: initPoint,
+      external_reference: orderId,
+      collector_id: 12345,
+    });
     const response = await POST(request());
     expect(response.status).toBe(200);
     const body = JSON.parse(
@@ -149,9 +174,12 @@ describe('Checkout Pro com usuários de teste', () => {
     'https://192.168.0.10:3000',
   ])('omite retorno automático no endereço não público ou sem HTTPS %s', async (origin) => {
     mocks.config.mockReturnValue({ sandbox: true, origin });
-    mocks.provider
-      .mockResolvedValueOnce({ elements: [] })
-      .mockResolvedValueOnce({ id: 'preference', init_point: initPoint });
+    mocks.provider.mockResolvedValueOnce({ elements: [] }).mockResolvedValueOnce({
+      id: 'preference',
+      init_point: initPoint,
+      external_reference: orderId,
+      collector_id: 12345,
+    });
     const response = await POST(request());
     expect(response.status).toBe(200);
     const body = JSON.parse(
@@ -159,5 +187,45 @@ describe('Checkout Pro com usuários de teste', () => {
     );
     expect(body).not.toHaveProperty('auto_return');
     expect(body.back_urls.success).toBe(`${origin}/pedidos/${orderId}?retorno=sucesso`);
+  });
+  it('bloqueia uma URL produtiva em cache se a conta atual é real e o modo é sandbox', async () => {
+    mocks.rpc.mockResolvedValueOnce({ order, url: initPoint });
+    mocks.sellerToken.mockRejectedValueOnce(
+      new PaymentError('A homologação aceita somente contas Mercado Pago de teste.', 409),
+    );
+    const response = await POST(request());
+    expect(response.status).toBe(409);
+    expect(await response.json()).not.toHaveProperty('url');
+    expect(mocks.provider).not.toHaveBeenCalled();
+  });
+  it('não reutiliza preferência em cache cujo coletor pertence a outra conta, inclusive após troca de modo', async () => {
+    mocks.rpc.mockResolvedValueOnce({ order, url: initPoint });
+    mocks.provider
+      .mockResolvedValueOnce({ elements: [{ id: 'production-preference' }] })
+      .mockResolvedValueOnce({
+        id: 'production-preference',
+        init_point: initPoint,
+        external_reference: orderId,
+        collector_id: 99999,
+      });
+    const response = await POST(request());
+    expect(response.status).toBe(409);
+    expect(await response.json()).not.toHaveProperty('url');
+    expect(mocks.rpc.mock.calls.some(([name]) => name === 'payment_save_checkout')).toBe(false);
+  });
+  it('não libera preferência que pertence a outro pedido', async () => {
+    mocks.provider
+      .mockResolvedValueOnce({ elements: [{ id: 'preference' }] })
+      .mockResolvedValueOnce({
+        id: 'preference',
+        init_point: initPoint,
+        external_reference: 'other-order',
+        collector_id: 12345,
+      });
+    const response = await POST(request());
+    expect(response.status).toBe(409);
+    expect(mocks.provider.mock.calls.every(([, , options]) => options?.method !== 'POST')).toBe(
+      true,
+    );
   });
 });

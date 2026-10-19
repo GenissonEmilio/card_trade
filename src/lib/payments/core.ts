@@ -134,3 +134,50 @@ export function isPublicHttpsOrigin(value: string): boolean {
     return false;
   }
 }
+
+export function assertCheckoutToken(token: unknown): asserts token is string {
+  if (typeof token !== 'string' || !token.startsWith('APP_USR-'))
+    throw new PaymentError(
+      'Reconecte o vendedor: Checkout Pro exige um token OAuth APP_USR compatível.',
+      409,
+    );
+}
+
+/** Account mode comes from Mercado Pago, never from a token prefix or user-editable data. */
+export function assertSellerAccount(
+  token: unknown,
+  profile: unknown,
+  expectedId: string,
+  sandbox: boolean,
+): void {
+  assertCheckoutToken(token);
+  if (!profile || typeof profile !== 'object')
+    throw new PaymentError('Não foi possível verificar a conta Mercado Pago do vendedor.', 503);
+  const account = profile as Record<string, unknown>;
+  const id =
+    typeof account.id === 'string' || typeof account.id === 'number' ? String(account.id) : '';
+  const tags = account.tags;
+  if (
+    !/^\d+$/.test(id) ||
+    id !== expectedId ||
+    !Array.isArray(tags) ||
+    !tags.every((tag) => typeof tag === 'string')
+  )
+    throw new PaymentError(
+      'A identidade ou o tipo da conta Mercado Pago não pôde ser verificado.',
+      409,
+    );
+  const brazil =
+    (account.site_id === 'MLB' || account.country_id === 'BR') &&
+    (account.site_id === undefined || account.site_id === 'MLB') &&
+    (account.country_id === undefined || account.country_id === 'BR');
+  if (!brazil) throw new PaymentError('Conecte uma conta Mercado Pago do Brasil.', 409);
+  const testUser = tags.includes('test_user');
+  if (sandbox !== testUser)
+    throw new PaymentError(
+      sandbox
+        ? 'A homologação aceita somente contas Mercado Pago de teste. Conecte um vendedor fictício.'
+        : 'Contas Mercado Pago de teste não podem receber vendas em produção.',
+      409,
+    );
+}

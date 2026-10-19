@@ -1,6 +1,14 @@
 import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import { createClient } from '@/lib/supabase/server';
-import { cents, encryptionKey, PaymentError, seal, unseal } from './core';
+import {
+  assertCheckoutToken,
+  assertSellerAccount,
+  cents,
+  encryptionKey,
+  PaymentError,
+  seal,
+  unseal,
+} from './core';
 import type { MarketplaceOrder } from '@/types/marketplace';
 
 export function paymentConfig() {
@@ -123,6 +131,15 @@ type StoredAccount = {
   encrypted_tokens: string;
   expires_at: string;
 };
+export async function verifySellerAccount(
+  token: string,
+  providerUserId: string,
+  sandbox: boolean,
+): Promise<void> {
+  assertCheckoutToken(token);
+  const profile = await provider<unknown>('/users/me', token);
+  assertSellerAccount(token, profile, providerUserId, sandbox);
+}
 export async function storeTokens(sellerId: string, tokens: Tokens) {
   if (
     !tokens.access_token ||
@@ -133,6 +150,7 @@ export async function storeTokens(sellerId: string, tokens: Tokens) {
   )
     throw new PaymentError('A conexão retornada pelo Mercado Pago está incompleta.', 502);
   const config = paymentConfig();
+  await verifySellerAccount(tokens.access_token, String(tokens.user_id), config.sandbox);
   await rpc('payment_store_seller', {
     p_seller_id: sellerId,
     p_provider_user_id: String(tokens.user_id),
@@ -157,6 +175,7 @@ export async function sellerToken(
     account.encrypted_tokens,
     config.key,
   );
+  let verified = false;
   if (new Date(account.expires_at).getTime() < Date.now() + 60000) {
     const claimed = await rpc<StoredAccount & { refresh: boolean }>(
       'payment_claim_seller_refresh',
@@ -181,11 +200,14 @@ export async function sellerToken(
           throw new PaymentError('A conta de recebimento não corresponde ao vendedor.', 409);
         await storeTokens(account.seller_id, fresh);
         tokens = fresh;
+        verified = true;
       } finally {
         await rpc('payment_release_seller_refresh', { p_seller_id: account.seller_id });
       }
     }
   }
+  if (!verified)
+    await verifySellerAccount(tokens.access_token, account.provider_user_id, config.sandbox);
   return {
     token: tokens.access_token,
     providerUserId: account.provider_user_id,
@@ -203,7 +225,6 @@ export async function exchangeCode(code: string, verifier: string): Promise<Toke
       code,
       redirect_uri: config.redirectUri,
       code_verifier: verifier,
-      test_token: config.sandbox,
     }),
   });
 }

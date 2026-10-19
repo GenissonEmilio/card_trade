@@ -22,21 +22,15 @@ export async function POST(request: Request) {
       p_order_id: body.orderId,
       p_buyer_id: user.id,
     });
-    if (claim.url) {
-      try {
-        return Response.json({ url: checkoutUrl(claim.url) });
-      } catch {
-        // A previously persisted sandbox URL is repaired from the existing provider preference.
-        // Do not redirect to it or create a second preference if recovery is unavailable.
-      }
-    }
+    // Cached URLs never bypass seller mode or provider-side collector/reference validation.
     claimedOrder = body.orderId;
     const order = claim.order;
     const account = await sellerToken(order.seller_id);
     type Preference = {
       id: string;
       init_point: string;
-      external_reference?: string;
+      external_reference: string;
+      collector_id: string | number;
     };
     // Recover an already-created preference after a network interruption, before creating another.
     const found = await provider<{ elements: { id: string }[] }>(
@@ -49,8 +43,6 @@ export async function POST(request: Request) {
         `/checkout/preferences/${encodeURIComponent(found.elements[0].id)}`,
         account.token,
       );
-      if (recovered.external_reference !== order.id)
-        throw new PaymentError('A referência do checkout não corresponde ao pedido.', 409);
     }
     if (claim.url && !recovered)
       throw new PaymentError(
@@ -93,6 +85,14 @@ export async function POST(request: Request) {
           metadata: { duelink_order_id: order.id },
         }),
       }));
+    if (
+      preference.external_reference !== order.id ||
+      String(preference.collector_id) !== account.providerUserId
+    )
+      throw new PaymentError(
+        'A referência ou a conta de recebimento do checkout não corresponde ao pedido.',
+        409,
+      );
     // private.marketplace_checkouts.checkout_url stores init_point in both modes.
     const url = checkoutUrl(preference.init_point);
     await rpc('payment_save_checkout', {
