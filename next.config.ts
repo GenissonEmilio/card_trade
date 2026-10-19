@@ -1,6 +1,12 @@
 import type { NextConfig } from 'next';
 const config: NextConfig = {
   poweredByHeader: false,
+  outputFileTracingIncludes: {
+    '/api/cards': ['./src/data/catalog.json.gz'],
+    '/api/catalog-aliases': ['./src/data/catalog.json.gz'],
+    '/api/marketplace/listings': ['./src/data/catalog.json.gz'],
+    '/api/card-image/*': ['./src/data/catalog.json.gz'],
+  },
   async headers() {
     return [
       {

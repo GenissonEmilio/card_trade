@@ -23,12 +23,20 @@ import {
   Zap,
 } from 'lucide-react';
 import type { Card, CollectionItem } from '@/types';
-import { featuredCards } from '@/lib/catalog';
+import {
+  featuredCards,
+  collectionCard,
+  displayCardName,
+  gameLabels,
+  normalizeSearch,
+} from '@/lib/catalog';
+import { cardImage } from '@/lib/utils';
+import { GameSwitch } from './game-switch';
 import { createClient } from '@/lib/supabase/client';
 import { useApp } from './providers';
 import { CardTile, CardDetail, AddCardModal, ProposeModal } from './cards';
 import { Empty } from './ui';
-const categories = [
+const yugiohCategories = [
   { id: '', label: 'Todas as cartas', icon: Layers3 },
   { id: 'monster', label: 'Monstros', icon: Zap },
   { id: 'spell', label: 'Magias', icon: Sparkles },
@@ -39,18 +47,20 @@ const categories = [
   { id: 'link', label: 'Link', icon: ArrowUpRight },
 ];
 export function Explore() {
-  const { user, toast } = useApp(),
+  const { user, toast, game } = useApp(),
     [cards, setCards] = useState<Card[]>(featuredCards.slice(0, 12)),
     [query, setQuery] = useState(''),
     [type, setType] = useState(''),
     [attribute, setAttribute] = useState(''),
-    [sort, setSort] = useState('featured'),
+    [sort, setSort] = useState('name'),
     [local, setLocal] = useState(false),
     [filters, setFilters] = useState(false),
     [localItems, setLocalItems] = useState<CollectionItem[]>([]),
     [loading, setLoading] = useState(false),
     [more, setMore] = useState(true),
     [offset, setOffset] = useState(0),
+    [total, setTotal] = useState(0),
+    [catalogInfo, setCatalogInfo] = useState(''),
     [detail, setDetail] = useState<Card | null>(null),
     [add, setAdd] = useState<Card | null>(null),
     [proposal, setProposal] = useState<CollectionItem | null>(null),
@@ -65,14 +75,15 @@ export function Explore() {
         .from('collection_items')
         .select('id', { count: 'exact', head: true })
         .eq('for_trade', true)
+        .eq('game', game)
         .gt('quantity', 0),
     ]);
     if (!p.error && !c.error) setStats({ people: p.count || 0, cards: c.count || 0, trades: 0 });
-  }, []);
+  }, [game]);
   useEffect(() => {
     void refreshStats();
   }, [refreshStats]);
-  async function search(nextOffset = 0, append = false) {
+  async function search(nextOffset = 0, append = false, searchQuery = query) {
     controller.current?.abort();
     const control = new AbortController();
     controller.current = control;
@@ -84,27 +95,29 @@ export function Explore() {
           setLocalItems([]);
           return;
         }
-        let q = client
+        const q = client
           .from('collection_items')
           .select('*, profiles(*)')
           .eq('for_trade', true)
+          .eq('game', game)
           .gt('quantity', 0)
+          .abortSignal(control.signal)
           .order('created_at', { ascending: false });
         const { data, error } = await q;
         if (error) throw error;
         const filtered = (data || []).filter(
           (i) =>
-            (!query || i.card_name.toLowerCase().includes(query.toLowerCase())) &&
+            (!searchQuery || normalizeSearch(i.card_name).includes(normalizeSearch(searchQuery))) &&
             (!type ||
               (type === 'monster'
-                ? !/spell|trap/i.test(i.card_type)
-                : i.card_type.toLowerCase().includes(type))),
+                ? /monster/i.test(i.card_type)
+                : i.card_type.toLowerCase().includes(type.toLowerCase()))),
         );
         setLocalItems(filtered);
         setMore(false);
       } else {
         const r = await fetch(
-          `/api/cards?q=${encodeURIComponent(query)}&type=${type}&attribute=${attribute}&offset=${nextOffset}`,
+          `/api/cards?game=${game}&q=${encodeURIComponent(searchQuery)}&type=${type}&attribute=${attribute}&offset=${nextOffset}&sort=${sort}`,
           { signal: control.signal },
         );
         if (!r.ok) throw Error();
@@ -112,6 +125,10 @@ export function Explore() {
         setCards((previous) => (append ? [...previous, ...d.data] : d.data));
         setMore(d.hasMore);
         setOffset(nextOffset);
+        setTotal(d.total);
+        setCatalogInfo(
+          `${d.coverage?.imported?.toLocaleString('pt-BR') || ''} cartas · ${d.coverage?.withPortugueseName?.toLocaleString('pt-BR') || ''} nomes em português · catálogo de ${new Date(d.syncedAt).toLocaleDateString('pt-BR')}`,
+        );
         if (d.fallback) toast('Catálogo temporariamente limitado. Exibindo cartas já salvas.');
       }
     } catch (e) {
@@ -122,15 +139,24 @@ export function Explore() {
     }
   }
   useEffect(() => {
-    if (!type && !local && !attribute && !query) {
-      setCards(featuredCards.slice(0, 12));
-      setMore(true);
-      setOffset(0);
-      return;
-    }
+    setType('');
+    setAttribute('');
+    setCards([]);
+    setOffset(0);
+  }, [game]);
+  useEffect(() => {
     void search();
-    return () => controller.current?.abort(); /* Changes to the query are submitted explicitly. */ // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [type, local, attribute]);
+    return () => controller.current?.abort();
+  }, [game, type, local, attribute, sort]);
+  const categories =
+    game === 'pokemon'
+      ? [
+          { id: '', label: 'Todas as cartas', icon: Layers3 },
+          { id: 'Pokemon', label: 'Pokémon', icon: Zap },
+          { id: 'Trainer', label: 'Treinadores', icon: BookOpen },
+          { id: 'Energy', label: 'Energias', icon: Sparkles },
+        ]
+      : yugiohCategories;
   function addCard(c: Card) {
     if (!user) {
       window.location.href = '/login?next=/colecao';
@@ -139,7 +165,9 @@ export function Explore() {
     setAdd(c);
   }
   const displayed =
-    sort === 'name' ? [...cards].sort((a, b) => a.name.localeCompare(b.name)) : cards;
+    sort === 'name'
+      ? [...cards].sort((a, b) => displayCardName(a).localeCompare(displayCardName(b), 'pt-BR'))
+      : cards;
   return (
     <div className="explore-page">
       <div className="welcome-line">
@@ -165,7 +193,7 @@ export function Explore() {
           <p>
             Cartas que você tem. Cartas que você quer.
             <br />
-            Conecte-se com duelistas de Lagarto e faça a troca acontecer.
+            Yu-Gi-Oh! e Pokémon na comunidade de Lagarto.
           </p>
           <div className="hero-actions">
             <a href="#explorar" className="button button-gold">
@@ -190,13 +218,22 @@ export function Explore() {
           <span className="orbital-star star-two">✦</span>
           <span className="hero-kanji">繋がる</span>
           <div className="floating-card card-behind-left">
-            <img src="/cards/46986414.jpg" alt="" />
+            <img
+              src={game === 'pokemon' ? cardImage('base1-2', 'pokemon') : '/cards/46986414.jpg'}
+              alt=""
+            />
           </div>
           <div className="floating-card card-behind-right">
-            <img src="/cards/74677422.jpg" alt="" />
+            <img
+              src={game === 'pokemon' ? cardImage('base1-15', 'pokemon') : '/cards/74677422.jpg'}
+              alt=""
+            />
           </div>
           <div className="floating-card card-in-front">
-            <img src="/cards/89631139.jpg" alt="" />
+            <img
+              src={game === 'pokemon' ? cardImage('base1-4', 'pokemon') : '/cards/89631139.jpg'}
+              alt=""
+            />
             <div className="hero-foil" />
           </div>
           <div className="floating-match">
@@ -219,7 +256,7 @@ export function Explore() {
           </span>
           <span>
             <strong>Todo o universo TCG</strong>
-            <small>Catálogo completo de Yu-Gi-Oh!</small>
+            <small>Catálogo de {gameLabels[game]}</small>
           </span>
         </div>
         <div>
@@ -260,6 +297,7 @@ export function Explore() {
             <Heart size={16} /> Minha lista de desejos <ArrowUpRight size={15} />
           </Link>
         </div>
+        <GameSwitch />
         <div className="catalog-tabs">
           <div>
             <button onClick={() => setLocal(false)} className={!local ? 'selected' : ''}>
@@ -273,7 +311,9 @@ export function Explore() {
           </div>
           <span className="catalog-note">
             <span className="availability-dot" />
-            {local ? 'Cartas de duelistas de Lagarto' : 'Atualizado com YGOPRODeck'}
+            {local
+              ? 'Cartas de colecionadores de Lagarto'
+              : `Catálogo ${game === 'pokemon' ? 'TCGdex' : 'YGOPRODeck'}`}
           </span>
         </div>
         <div className="catalog-controls">
@@ -287,16 +327,27 @@ export function Explore() {
             <Search size={19} />
             <input
               aria-label="Buscar cartas"
+              type="search"
+              enterKeyHint="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Busque uma carta, um arquétipo, uma nova possibilidade…"
+              placeholder="Nome em português, inglês, edição ou código…"
             />
             {query && (
-              <button type="button" aria-label="Limpar busca" onClick={() => setQuery('')}>
+              <button
+                type="button"
+                aria-label="Limpar busca"
+                onClick={() => {
+                  setQuery('');
+                  void search(0, false, '');
+                }}
+              >
                 <X size={16} />
               </button>
             )}
-            <kbd>↵</kbd>
+            <button type="submit" aria-label="Pesquisar cartas" className="catalog-search-submit">
+              Buscar
+            </button>
           </form>
           <button
             className={`button filter-button ${filters ? 'filter-active' : ''}`}
@@ -308,8 +359,8 @@ export function Explore() {
           <label className="sort-select">
             <span className="sr-only">Ordenar cartas</span>
             <select value={sort} onChange={(e) => setSort(e.target.value)}>
-              <option value="featured">Em destaque</option>
               <option value="name">Nome: A a Z</option>
+              <option value="name_desc">Nome: Z a A</option>
             </select>
             <ChevronDown size={14} />
           </label>
@@ -317,18 +368,34 @@ export function Explore() {
         {filters && (
           <div className="expanded-filters">
             <label>
-              Atributo
+              {game === 'pokemon' ? 'Tipo Pokémon' : 'Atributo'}
               <select value={attribute} onChange={(e) => setAttribute(e.target.value)}>
                 <option value="">Todos os atributos</option>
-                {Object.entries({
-                  DARK: 'Trevas',
-                  LIGHT: 'Luz',
-                  EARTH: 'Terra',
-                  WATER: 'Água',
-                  FIRE: 'Fogo',
-                  WIND: 'Vento',
-                  DIVINE: 'Divino',
-                }).map(([v, t]) => (
+                {Object.entries(
+                  game === 'pokemon'
+                    ? {
+                        Grass: 'Planta',
+                        Fire: 'Fogo',
+                        Water: 'Água',
+                        Lightning: 'Elétrico',
+                        Psychic: 'Psíquico',
+                        Fighting: 'Lutador',
+                        Darkness: 'Escuridão',
+                        Metal: 'Metal',
+                        Dragon: 'Dragão',
+                        Colorless: 'Incolor',
+                        Fairy: 'Fada',
+                      }
+                    : {
+                        DARK: 'Trevas',
+                        LIGHT: 'Luz',
+                        EARTH: 'Terra',
+                        WATER: 'Água',
+                        FIRE: 'Fogo',
+                        WIND: 'Vento',
+                        DIVINE: 'Divino',
+                      },
+                ).map(([v, t]) => (
                   <option key={v} value={v}>
                     {t}
                   </option>
@@ -359,10 +426,15 @@ export function Explore() {
           <span>
             {local
               ? `${localItems.length} cartas na comunidade`
-              : `${displayed.length} cartas para você descobrir`}
+              : `${total.toLocaleString('pt-BR')} cartas encontradas · ${displayed.length} exibidas`}
           </span>
           <span>Uma carta pode ser o começo de algo maior.</span>
         </div>
+        {!local && catalogInfo && (
+          <p className="field-hint catalog-coverage">
+            {catalogInfo}. Cartas sem tradução mantêm o nome original.
+          </p>
+        )}
         {loading && offset === 0 ? (
           <div className="card-skeletons">
             {Array.from({ length: 6 }).map((_, i) => (
@@ -382,22 +454,7 @@ export function Explore() {
             ) : (
               <div className="cards-grid">
                 {localItems.map((item) => {
-                  const c = featuredCards.find((c) => c.id === item.card_id) || {
-                    id: item.card_id,
-                    name: item.card_name,
-                    type: item.card_type,
-                    frameType: 'effect',
-                    race: 'Yu-Gi-Oh! TCG',
-                    desc: '',
-                    card_images: [
-                      {
-                        id: item.card_id,
-                        image_url: '',
-                        image_url_small: '',
-                        image_url_cropped: '',
-                      },
-                    ],
-                  };
+                  const c = collectionCard(item);
                   return (
                     <CardTile
                       key={item.id}
@@ -420,7 +477,7 @@ export function Explore() {
               <Empty
                 icon={Search}
                 title="Esta carta ainda não apareceu."
-                description="Tente outro nome, busque pelo nome em inglês ou altere os filtros."
+                description="Tente parte do nome em português ou inglês, o código da carta ou altere os filtros."
               />
             ) : (
               <div className="cards-grid">
@@ -434,10 +491,7 @@ export function Explore() {
                 className="button load-more"
                 disabled={loading}
                 onClick={() => {
-                  if (!type && !query && !attribute && cards.length === 12) {
-                    setCards(featuredCards);
-                    setMore(true);
-                  } else void search(offset + 24, true);
+                  void search(cards.length, true);
                 }}
               >
                 {loading ? <Loader2 className="spin" size={16} /> : <ArrowDown size={16} />}

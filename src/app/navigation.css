@@ -1,0 +1,62 @@
+.sidebar {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.sidebar nav.main-navigation {
+  flex-shrink: 0;
+}
+.sidebar .sidebar-bottom {
+  padding-top: 18px;
+}
+.footer-catalog-credit {
+  font-size: 11px;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.sidebar .game-switch {
+  margin: 8px 0 18px;
+}
+@media (max-height: 900px) {
+  .sidebar .community-mini {
+    display: none;
+  }
+  .sidebar .sidebar-bottom {
+    margin-top: auto;
+  }
+  .sidebar .nav-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .sidebar .nav-caption {
+    margin-bottom: 8px;
+  }
+}
+@media (max-height: 650px) {
+  .sidebar .brand {
+    margin-bottom: 16px;
+  }
+  .sidebar .sidebar-profile {
+    margin-top: 10px;
+  }
+  .sidebar .location-pill {
+    margin-bottom: 8px;
+  }
+  .sidebar .game-switch {
+    margin-bottom: 10px;
+  }
+}
+
+.catalog-search .catalog-search-submit {
+  width: auto;
+  flex: none;
+  color: var(--gold);
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 12px;
+}
+.catalog-search input[type='search']::-webkit-search-cancel-button {
+  display: none;
+}

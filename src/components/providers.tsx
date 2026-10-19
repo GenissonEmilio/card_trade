@@ -2,9 +2,13 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import type { User } from '@supabase/supabase-js';
 import { createClient, isConfigured } from '@/lib/supabase/client';
-import type { Profile, Wish } from '@/types';
+import type { Game, Profile, Wish } from '@/types';
 import { CheckCircle2, CircleAlert, X } from 'lucide-react';
 type Context = {
+  game: Game;
+  setGame: (game: Game) => void;
+  role: 'admin' | 'user';
+  isAdmin: boolean;
   user: User | null;
   profile: Profile | null;
   wishes: Wish[];
@@ -13,6 +17,10 @@ type Context = {
   toast: (message: string, error?: boolean) => void;
 };
 const AppContext = createContext<Context>({
+  game: 'yugioh',
+  setGame: () => {},
+  role: 'user',
+  isAdmin: false,
   user: null,
   profile: null,
   wishes: [],
@@ -24,6 +32,23 @@ export function useApp() {
   return useContext(AppContext);
 }
 export function Providers({ children }: { children: React.ReactNode }) {
+  const [game, updateGame] = useState<Game>('yugioh'),
+    [role, setRole] = useState<'admin' | 'user'>('user');
+  const setGame = useCallback((next: Game) => {
+    updateGame(next);
+    try {
+      localStorage.setItem('duelink-game', next);
+    } catch {
+      /* Selection still works without storage. */
+    }
+  }, []);
+  useEffect(() => {
+    try {
+      if (localStorage.getItem('duelink-game') === 'pokemon') updateGame('pokemon');
+    } catch {
+      /* Storage can be disabled by the browser. */
+    }
+  }, []);
   const [user, setUser] = useState<User | null>(null),
     [profile, setProfile] = useState<Profile | null>(null),
     [wishes, setWishes] = useState<Wish[]>([]),
@@ -36,15 +61,18 @@ export function Providers({ children }: { children: React.ReactNode }) {
     if (!nextUser || !client) {
       setProfile(null);
       setWishes([]);
+      setRole('user');
       setLoading(false);
       return;
     }
-    const [p, w] = await Promise.all([
+    const [p, w, r] = await Promise.all([
       client.from('profiles').select('*').eq('id', nextUser.id).single(),
       client.from('wishlists').select('*').eq('user_id', nextUser.id),
+      client.rpc('get_my_role'),
     ]);
     setProfile(p.data);
     setWishes(w.data || []);
+    setRole(r.data === 'admin' ? 'admin' : 'user');
     setLoading(false);
   }, []);
   const refresh = useCallback(async () => {
@@ -84,7 +112,20 @@ export function Providers({ children }: { children: React.ReactNode }) {
     }
   }, [notice]);
   return (
-    <AppContext.Provider value={{ user, profile, wishes, loading, refresh, toast }}>
+    <AppContext.Provider
+      value={{
+        game,
+        setGame,
+        role,
+        isAdmin: role === 'admin',
+        user,
+        profile,
+        wishes,
+        loading,
+        refresh,
+        toast,
+      }}
+    >
       {children}
       {notice && (
         <div className={`toast ${notice.error ? 'toast-error' : ''}`} role="status">

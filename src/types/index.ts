@@ -1,6 +1,13 @@
+export type Game = 'yugioh' | 'pokemon';
 export type Card = {
-  id: number;
+  id: string;
+  game: Game;
   name: string;
+  localized_name?: string;
+  name_en?: string;
+  image_url?: string;
+  set_id?: string;
+  local_id?: string;
   type: string;
   frameType: string;
   desc: string;
@@ -11,12 +18,22 @@ export type Card = {
   attribute?: string;
   archetype?: string;
   card_images: {
-    id: number;
+    id: string;
     image_url: string;
     image_url_small: string;
     image_url_cropped: string;
   }[];
   card_sets?: { set_name: string; set_code: string; set_rarity: string; set_price: string }[];
+  pokemon?: {
+    category: string;
+    energyType?: string;
+    stage?: string;
+    hp?: number;
+    types?: string[];
+    regulationMark?: string;
+    legal?: { standard?: boolean; expanded?: boolean };
+    variants?: Record<string, boolean>;
+  };
 };
 export type Profile = {
   id: string;
@@ -31,7 +48,9 @@ export type Profile = {
 export type CollectionItem = {
   id: string;
   user_id: string;
-  card_id: number;
+  card_id: string;
+  game?: Game;
+  image_url?: string | null;
   card_name: string;
   card_type: string;
   quantity: number;
@@ -48,7 +67,8 @@ export type CollectionItem = {
 export type Wish = {
   id: string;
   user_id: string;
-  card_id: number;
+  card_id: string;
+  game?: Game;
   card_name: string;
   card_type: string;
   created_at: string;
@@ -85,4 +105,25 @@ export type Message = {
   sender_id: string;
   content: string;
   created_at: string;
+};
+export type Deck = {
+  id: string;
+  user_id: string;
+  game: Game;
+  name: string;
+  description: string;
+  format: string;
+  visibility: 'private' | 'public';
+  created_at: string;
+  updated_at: string;
+};
+export type DeckCard = {
+  id: string;
+  deck_id: string;
+  game: Game;
+  card_id: string;
+  card_name: string;
+  card_data: Card;
+  quantity: number;
+  section: 'main' | 'extra' | 'side';
 };

@@ -1,0 +1,39 @@
+{
+  "syncedAt": "2026-10-19T22:45:14.663Z",
+  "sources": {
+    "yugioh": "https://ygoprodeck.com/api-guide/",
+    "pokemon": "https://tcgdex.dev/"
+  },
+  "yugioh": {
+    "sourceEnglish": 14618,
+    "sourcePortuguese": 10887,
+    "imported": 14617,
+    "withPortugueseName": 10887,
+    "excluded": "Unrevealed-card placeholder (???)"
+  },
+  "pokemon": {
+    "sourceEnglish": 23736,
+    "sourcePortuguese": 13907,
+    "imported": 21256,
+    "withPortugueseName": 13907,
+    "withImage": 19751,
+    "excludedPocketSets": [
+      "A1",
+      "P-A",
+      "A1a",
+      "A2",
+      "A2a",
+      "A2b",
+      "A3",
+      "A3a",
+      "A3b",
+      "A4",
+      "A4a",
+      "B1",
+      "B1a",
+      "B2",
+      "B2a"
+    ],
+    "unknownCategory": 0
+  }
+}

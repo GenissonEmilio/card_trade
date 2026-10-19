@@ -16,7 +16,7 @@ type Review = {
   reviewer: { display_name: string };
 };
 export function Profile({ username }: { username: string }) {
-  const { user, toast } = useApp();
+  const { user, toast, game } = useApp();
   const [profile, setProfile] = useState<ProfileType | null>(null),
     [items, setItems] = useState<CollectionItem[]>([]),
     [reviews, setReviews] = useState<Review[]>([]),
@@ -49,6 +49,7 @@ export function Profile({ username }: { username: string }) {
             .select('*')
             .eq('user_id', data.id)
             .eq('for_trade', true)
+            .eq('game', game)
             .gt('quantity', 0)
             .order('created_at', { ascending: false }),
           client!
@@ -65,11 +66,13 @@ export function Profile({ username }: { username: string }) {
       }
       if (alive) setLoading(false);
     }
+    setLoading(true);
+    setSelected(null);
     void load();
     return () => {
       alive = false;
     };
-  }, [username, toast]);
+  }, [username, toast, game]);
   if (loading) return <Spinner />;
   if (!profile)
     return (
@@ -108,7 +111,8 @@ export function Profile({ username }: { username: string }) {
             {rating
               ? `★ ${rating} · ${reviews.length} avaliações recentes`
               : 'Novo por aqui · Ainda sem avaliações'}{' '}
-            · {items.length} cartas para troca
+            · {items.reduce((total, item) => total + item.quantity, 0)} cartas para troca de{' '}
+            {game === 'pokemon' ? 'Pokémon' : 'Yu-Gi-Oh!'}
           </p>
         </div>
       </div>

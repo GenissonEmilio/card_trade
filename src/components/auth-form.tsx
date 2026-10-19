@@ -91,7 +91,10 @@ export function AuthForm({ mode }: { mode: 'login' | 'signup' | 'forgot' | 'rese
           setError('Abra o link de recuperação enviado ao seu e-mail antes de alterar a senha.');
           return;
         }
-        const { error } = await client.auth.updateUser({ password });
+        const { error } = await client.auth.updateUser({
+          password,
+          data: { needs_password_setup: false },
+        });
         if (error) throw error;
         setSuccess('Senha atualizada. Sua conta está pronta para novas conexões.');
       }

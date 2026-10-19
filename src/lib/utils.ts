@@ -18,10 +18,14 @@ export function initials(name: string) {
       .toUpperCase() || 'D'
   );
 }
-export function cardImage(id: number) {
-  return `/api/card-image/${id}`;
+export function cardImage(id: string | number, game: 'yugioh' | 'pokemon' = 'yugioh') {
+  return `/api/card-image/${encodeURIComponent(id)}${game === 'pokemon' ? '?game=pokemon' : ''}`;
 }
 export function frameLabel(type: string) {
+  if (/^pokemon$/i.test(type)) return 'Pokémon';
+  if (/^trainer$/i.test(type)) return 'Treinador';
+  if (/^energy$/i.test(type)) return 'Energia';
+  if (/^unknown$/i.test(type)) return 'Pokémon TCG';
   if (/spell/i.test(type)) return 'Magia';
   if (/trap/i.test(type)) return 'Armadilha';
   if (/fusion/i.test(type)) return 'Fusão';

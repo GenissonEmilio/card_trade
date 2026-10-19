@@ -22,7 +22,7 @@ async function propose() {
 }
 beforeAll(async () => {
   db = new PGlite();
-  await db.exec(`create role anon;create role authenticated;create schema auth;create schema storage;
+  await db.exec(`create role anon;create role authenticated;create role service_role;create schema auth;create schema storage;
  create table auth.users(id uuid primary key,raw_user_meta_data jsonb default '{}');
  create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
  grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;
@@ -147,7 +147,7 @@ describe('políticas e ciclo de trocas', () => {
     result = await db.query(`select status from public.trades where id='${id}'`);
     expect(result.rows[0].status).toBe('completed');
     const owned = await db.query<{ card_id: number; for_trade: boolean }>(
-      `select card_id,for_trade from public.collection_items where user_id='${alice}' and card_id=46986414`,
+      `select card_id,for_trade from public.collection_items where user_id='${alice}' and card_id='46986414'`,
     );
     expect(owned.rows).toHaveLength(1);
     expect(owned.rows[0].for_trade).toBe(false);
@@ -182,5 +182,92 @@ describe('políticas e ciclo de trocas', () => {
         `insert into public.reviews(trade_id,reviewer_id,reviewed_id,rating) values('${id}','${alice}','${bob}',5)`,
       ),
     ).rejects.toThrow(/unique constraint/);
+  });
+});
+
+describe('administração e identidades por jogo', () => {
+  it('não concede administração a metadados editáveis pelo usuário', async () => {
+    await db.exec(
+      `update auth.users set raw_user_meta_data='{"role":"admin","is_admin":true}' where id='${alice}'`,
+    );
+    await as(alice);
+    expect(
+      (await db.query<{ role: string }>('select public.get_my_role() as role')).rows[0].role,
+    ).toBe('user');
+    await expect(db.exec('select * from private.user_roles')).rejects.toThrow(/permission denied/);
+  });
+  it('rejeita alterações de taxas por usuários comuns', async () => {
+    await as(alice);
+    await expect(
+      db.exec("select public.admin_update_settings(1000,false,'Retirada combinada em Lagarto')"),
+    ).rejects.toThrow(/restrito/);
+  });
+  it('permite ao admin alterar a taxa e registra auditoria', async () => {
+    await db.exec(`insert into private.user_roles(user_id,role) values('${bob}','admin')`);
+    await as(bob);
+    await db.exec("select public.admin_update_settings(850,false,'Retirada combinada em Lagarto')");
+    const result = await db.query<{ commission_bps: number }>(
+      'select commission_bps from public.marketplace_settings',
+    );
+    expect(result.rows[0].commission_bps).toBe(850);
+    expect(
+      (await db.query<{ audit: unknown[] }>('select public.admin_get_audit() as audit')).rows[0]
+        .audit,
+    ).toHaveLength(1);
+  });
+  it('protege a última conta de administração', async () => {
+    await db.exec(`insert into private.user_roles(user_id,role) values('${bob}','admin')`);
+    await as(bob);
+    await expect(db.exec(`select public.admin_set_user_role('${bob}','user')`)).rejects.toThrow(
+      /ao menos um administrador/,
+    );
+  });
+  it('não confunde IDs iguais de jogos diferentes nos matches', async () => {
+    await as(alice);
+    await db.exec(
+      `insert into public.collection_items(user_id,card_id,card_name,game) values('${alice}','46986414','Outra carta','pokemon')`,
+    );
+    expect((await db.query("select * from public.get_matches('pokemon')")).rows).toHaveLength(0);
+  });
+  it('impede propostas entre jogos diferentes', async () => {
+    await as(alice);
+    const added = await db.query<{ id: string }>(
+      `insert into public.collection_items(user_id,card_id,card_name,game) values('${alice}','swsh3-136','Furret','pokemon') returning id`,
+    );
+    await expect(
+      db.exec(`select public.create_trade('${added.rows[0].id}','${cb}')`),
+    ).rejects.toThrow(/mesmo jogo/);
+  });
+  it('preserva jogo e imagem ao concluir uma troca Pokémon', async () => {
+    const a = await db.query<{ id: string }>(
+      `insert into public.collection_items(user_id,card_id,card_name,game,image_url) values('${alice}','swsh3-136','Furret','pokemon','https://assets.tcgdex.net/pt/swsh/swsh3/136/high.webp') returning id`,
+    );
+    const b = await db.query<{ id: string }>(
+      `insert into public.collection_items(user_id,card_id,card_name,game) values('${bob}','swsh1-1','Celebi V','pokemon') returning id`,
+    );
+    await as(alice);
+    const id = (
+      await db.query<{ id: string }>(
+        `select public.create_trade('${a.rows[0].id}','${b.rows[0].id}') as id`,
+      )
+    ).rows[0].id;
+    await as(bob);
+    await db.exec(
+      `select public.transition_trade('${id}','accept');select public.transition_trade('${id}','confirm')`,
+    );
+    await as(alice);
+    await db.exec(`select public.transition_trade('${id}','confirm')`);
+    const got = await db.query<{ game: string; card_id: string }>(
+      `select game,card_id from public.collection_items where user_id='${alice}' and card_id='swsh1-1'`,
+    );
+    expect(got.rows).toEqual([{ game: 'pokemon', card_id: 'swsh1-1' }]);
+    await as(bob);
+    expect(
+      (
+        await db.query<{ image_url: string }>(
+          `select image_url from public.collection_items where user_id='${bob}' and card_id='swsh3-136'`,
+        )
+      ).rows[0].image_url,
+    ).toContain('tcgdex');
   });
 });

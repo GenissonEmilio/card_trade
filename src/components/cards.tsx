@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   ArrowLeftRight,
@@ -15,9 +15,10 @@ import {
   Sparkles,
   Star,
 } from 'lucide-react';
-import type { Card, CollectionItem } from '@/types';
+import type { Card, CollectionItem, Game } from '@/types';
 import { cardImage, conditions, frameLabel, friendlyError, initials } from '@/lib/utils';
-import { displayCardName } from '@/lib/catalog';
+import { displayCardName, gameLabels, gameOf } from '@/lib/catalog';
+import { GameSwitch } from './game-switch';
 import { createClient } from '@/lib/supabase/client';
 import { useApp } from './providers';
 import { Modal } from './ui';
@@ -36,7 +37,9 @@ export function CardTile({
 }) {
   const { user, wishes, refresh, toast } = useApp(),
     router = useRouter();
-  const saved = wishes.some((w) => w.card_id === card.id),
+  const saved = wishes.some(
+      (w) => String(w.card_id) === String(card.id) && gameOf(w) === card.game,
+    ),
     [busy, setBusy] = useState(false);
   async function wish() {
     if (!user) {
@@ -47,11 +50,17 @@ export function CardTile({
     if (!client) return;
     setBusy(true);
     const { error } = saved
-      ? await client.from('wishlists').delete().eq('user_id', user.id).eq('card_id', card.id)
+      ? await client
+          .from('wishlists')
+          .delete()
+          .eq('user_id', user.id)
+          .eq('card_id', card.id)
+          .eq('game', card.game)
       : await client.from('wishlists').insert({
           user_id: user.id,
           card_id: card.id,
-          card_name: card.name,
+          card_name: displayCardName(card),
+          game: card.game,
           card_type: card.type,
         });
     setBusy(false);
@@ -71,7 +80,7 @@ export function CardTile({
         >
           <img
             className="card-art"
-            src={cardImage(card.card_images?.[0]?.id || card.id)}
+            src={cardImage(card.card_images?.[0]?.id || card.id, card.game)}
             alt={displayCardName(card)}
             loading="lazy"
             onError={(e) => {
@@ -92,7 +101,7 @@ export function CardTile({
         {item && <span className="condition-badge">{item.condition}</span>}
       </div>
       <div className="card-meta">
-        <small>{card.archetype || card.race || 'YU-GI-OH! TCG'}</small>
+        <small>{card.archetype || card.race || gameLabels[card.game]}</small>
         <button className="card-name" onClick={onClick}>
           {displayCardName(card)}
         </button>
@@ -122,19 +131,36 @@ export function CardTile({
   );
 }
 export function CardDetail({
-  card,
+  card: initialCard,
   onClose,
   onAdd,
+  addLabel = 'Adicionar à minha coleção',
+  hideAdd = false,
 }: {
   card: Card;
   onClose: () => void;
   onAdd: () => void;
+  addLabel?: string;
+  hideAdd?: boolean;
 }) {
+  const [card, setCard] = useState(initialCard);
+  useEffect(() => {
+    const control = new AbortController();
+    void fetch(`/api/cards?game=${initialCard.game}&id=${encodeURIComponent(initialCard.id)}`, {
+      signal: control.signal,
+    })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (data?.data?.[0]) setCard(data.data[0]);
+      })
+      .catch(() => {});
+    return () => control.abort();
+  }, [initialCard]);
   return (
     <Modal title="Detalhes da carta" onClose={onClose} wide>
       <div className="card-detail">
         <div className="detail-illustration">
-          <img src={cardImage(card.card_images?.[0]?.id || card.id)} alt={card.name} />
+          <img src={cardImage(card.card_images?.[0]?.id || card.id, card.game)} alt={card.name} />
           <span className="holo-caption">
             <Sparkles size={13} /> Cada carta, uma nova possibilidade.
           </span>
@@ -146,6 +172,25 @@ export function CardDetail({
           <h2>{displayCardName(card)}</h2>
           <p className="muted">{card.name}</p>
           <div className="detail-stats">
+            {card.pokemon?.hp !== undefined && (
+              <span>
+                PS<strong>{card.pokemon.hp}</strong>
+              </span>
+            )}
+            {card.pokemon?.stage && (
+              <span>
+                Estágio
+                <strong>{card.pokemon.stage === 'Basic' ? 'Básico' : card.pokemon.stage}</strong>
+              </span>
+            )}
+            {card.set_id && (
+              <span>
+                Edição
+                <strong>
+                  {card.set_id} · {card.local_id}
+                </strong>
+              </span>
+            )}
             {card.attribute && (
               <span>
                 Atributo<strong>{card.attribute}</strong>
@@ -175,12 +220,14 @@ export function CardDetail({
           <p className="card-description">{card.desc}</p>
           {card.archetype && <span className="tag">{card.archetype}</span>}
           <p className="field-hint">
-            Texto original do catálogo YGOPRODeck. Os nomes em português são exibidos quando
-            disponíveis.
+            Catálogo {card.game === 'pokemon' ? 'TCGdex' : 'YGOPRODeck'}. Nomes e textos em
+            português quando disponíveis; a imagem pode estar em outro idioma.
           </p>
-          <button className="button button-gold full-width" onClick={onAdd}>
-            <Plus size={17} /> Adicionar à minha coleção
-          </button>
+          {!hideAdd && (
+            <button className="button button-gold full-width" onClick={onAdd}>
+              <Plus size={17} /> {addLabel}
+            </button>
+          )}
         </div>
       </div>
     </Modal>
@@ -215,7 +262,8 @@ export function AddCardModal({
     const values = {
       user_id: user.id,
       card_id: card.id,
-      card_name: card.name,
+      card_name: item?.card_name || displayCardName(card),
+      game: card.game,
       card_type: card.type,
       quantity: Number(form.get('quantity')),
       condition: String(form.get('condition')),
@@ -223,6 +271,7 @@ export function AddCardModal({
       rarity: String(form.get('rarity')),
       set_code: String(form.get('set_code')).trim(),
       notes: String(form.get('notes')).trim(),
+      image_url: card.image_url || card.card_images?.[0]?.image_url || null,
       for_trade: form.get('for_trade') === 'on',
     };
     const { error } = item
@@ -246,7 +295,7 @@ export function AddCardModal({
   return (
     <Modal title={item ? 'Editar carta' : 'Uma nova carta na sua coleção'} onClose={onClose}>
       <div className="selected-card">
-        <img src={cardImage(card.id)} alt="" />
+        <img src={cardImage(card.id, card.game)} alt="" />
         <div>
           <span className="eyebrow">{frameLabel(card.type)}</span>
           <h3>{displayCardName(card)}</h3>
@@ -308,15 +357,27 @@ export function AddCardModal({
               required
             />
             <datalist id="rarities">
-              {[
-                'Common',
-                'Rare',
-                'Super Rare',
-                'Ultra Rare',
-                'Secret Rare',
-                'Quarter Century Secret Rare',
-                'Starlight Rare',
-              ].map((t) => (
+              {(card.game === 'pokemon'
+                ? [
+                    'Common',
+                    'Uncommon',
+                    'Rare',
+                    'Double rare',
+                    'Ultra Rare',
+                    'Illustration rare',
+                    'Special illustration rare',
+                    'Hyper rare',
+                  ]
+                : [
+                    'Common',
+                    'Rare',
+                    'Super Rare',
+                    'Ultra Rare',
+                    'Secret Rare',
+                    'Quarter Century Secret Rare',
+                    'Starlight Rare',
+                  ]
+              ).map((t) => (
                 <option key={t} />
               ))}
             </datalist>
@@ -326,9 +387,12 @@ export function AddCardModal({
           Código da edição <span className="optional">opcional</span>
           <input
             name="set_code"
-            placeholder="Ex.: LOB-001"
+            placeholder={card.game === 'pokemon' ? 'Ex.: sv03.5 151' : 'Ex.: LOB-001'}
             maxLength={40}
-            defaultValue={item?.set_code || ''}
+            defaultValue={
+              item?.set_code ||
+              (card.game === 'pokemon' ? `${card.set_id || ''} ${card.local_id || ''}`.trim() : '')
+            }
           />
         </label>
         <label>
@@ -362,42 +426,86 @@ export function AddCardModal({
 export function CardSearchModal({
   onClose,
   onSelect,
+  game: fixedGame,
 }: {
   onClose: () => void;
   onSelect: (card: Card) => void;
+  game?: Game;
 }) {
+  const { game: activeGame } = useApp(),
+    game = fixedGame || activeGame;
+  const requestId = useRef(0);
   const [query, setQuery] = useState(''),
     [results, setResults] = useState<Card[]>([]),
     [busy, setBusy] = useState(false),
     [searchError, setSearchError] = useState(''),
-    [searched, setSearched] = useState(false);
-  async function search(e: React.FormEvent) {
-    e.preventDefault();
+    [searched, setSearched] = useState(false),
+    [hasMore, setHasMore] = useState(false),
+    [total, setTotal] = useState(0);
+  useEffect(() => {
+    requestId.current += 1;
+    setQuery('');
+    setResults([]);
+    setSearched(false);
+    setSearchError('');
+    setHasMore(false);
+    setBusy(false);
+  }, [game]);
+  async function search(append = false) {
+    const currentRequest = ++requestId.current;
     setSearchError('');
     setBusy(true);
     setSearched(true);
     try {
-      const r = await fetch(`/api/cards?q=${encodeURIComponent(query)}`);
+      const r = await fetch(
+        `/api/cards?game=${game}&q=${encodeURIComponent(query)}&offset=${append ? results.length : 0}`,
+      );
       if (!r.ok) throw Error();
       const d = await r.json();
-      setResults(d.data);
+      if (currentRequest !== requestId.current) return;
+      setResults((previous) => (append ? [...previous, ...d.data] : d.data));
+      setHasMore(d.hasMore);
+      setTotal(d.total);
     } catch {
-      setSearchError('Não foi possível consultar o catálogo. Tente novamente.');
+      if (currentRequest === requestId.current)
+        setSearchError('Não foi possível consultar o catálogo. Tente novamente.');
+    } finally {
+      if (currentRequest === requestId.current) setBusy(false);
+    }
+  }
+  async function select(card: Card) {
+    if (card.game !== 'pokemon') {
+      onSelect(card);
+      return;
+    }
+    setBusy(true);
+    try {
+      const r = await fetch(`/api/cards?game=${game}&id=${encodeURIComponent(card.id)}`);
+      const data = r.ok ? await r.json() : null;
+      onSelect(data?.data?.[0] || card);
+    } catch {
+      onSelect(card);
     } finally {
       setBusy(false);
     }
   }
   return (
     <Modal title="Encontre sua carta no catálogo" onClose={onClose}>
-      <form onSubmit={search} className="inline-search">
+      {!fixedGame && <GameSwitch />}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          void search();
+        }}
+        className="inline-search"
+      >
         <Search size={18} />
         <input
+          aria-label="Nome ou código da carta"
           autoFocus
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Nome da carta em português ou inglês"
-          minLength={2}
-          required
+          placeholder="Nome em português, inglês ou código"
         />
         <button
           className="button button-gold button-small"
@@ -408,31 +516,43 @@ export function CardSearchModal({
         </button>
       </form>
       <p className="field-hint">
-        Busque no catálogo completo de Yu-Gi-Oh! pelo nome da carta. Para mais resultados, use o
-        nome em inglês.
+        {gameLabels[game]} · Busca em todo o catálogo sincronizado, em português e inglês. Nomes sem
+        tradução disponível mantêm o original.
       </p>
       {searchError && (
         <p className="auth-error" role="alert">
           {searchError}
         </p>
       )}
+      {searched && <p className="field-hint">{total} cartas encontradas</p>}
       <div className="search-results">
         {results.map((c) => (
-          <button className="search-result" key={c.id} onClick={() => onSelect(c)}>
-            <img src={cardImage(c.id)} alt="" />
+          <button
+            className="search-result"
+            key={c.id}
+            disabled={busy}
+            onClick={() => void select(c)}
+          >
+            <img src={cardImage(c.id, c.game)} alt="" />
             <span>
               <strong>{displayCardName(c)}</strong>
               <small>
                 {c.name} · {frameLabel(c.type)}
+                {c.set_id ? ` · ${c.set_id} ${c.local_id}` : ''}
               </small>
             </span>
             <Plus size={19} />
           </button>
         ))}
         {searched && !busy && !searchError && results.length === 0 && (
-          <p className="muted">Nenhuma carta encontrada. Tente outro nome.</p>
+          <p className="muted">Nenhuma carta encontrada. Tente outro nome ou código.</p>
         )}
       </div>
+      {hasMore && (
+        <button className="button full-width" disabled={busy} onClick={() => void search(true)}>
+          Carregar mais resultados
+        </button>
+      )}
     </Modal>
   );
 }
@@ -458,12 +578,13 @@ export function ProposeModal({
         .select('*')
         .eq('user_id', user.id)
         .eq('for_trade', true)
+        .eq('game', gameOf(requested))
         .gt('quantity', 0)
         .then(({ data, error }) => {
           if (error) setSubmitError('Não foi possível carregar suas cartas. Tente novamente.');
           setItems(data || []);
         });
-  }, [user, toast]);
+  }, [user, toast, requested]);
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitError('');
@@ -489,7 +610,7 @@ export function ProposeModal({
   return (
     <Modal title="Uma nova conexão começa aqui" onClose={onClose}>
       <div className="selected-card">
-        <img src={cardImage(requested.card_id)} alt="" />
+        <img src={cardImage(requested.card_id, gameOf(requested))} alt="" />
         <div>
           <span className="eyebrow">VOCÊ RECEBE</span>
           <h3>{requested.card_name}</h3>

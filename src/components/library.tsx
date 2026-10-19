@@ -5,32 +5,15 @@ import { Heart, Layers3, Pencil, Plus, Search, Sparkles, Trash2 } from 'lucide-r
 import { useApp } from './providers';
 import { Empty, PageTitle, Protected, Spinner, Modal } from './ui';
 import { createClient } from '@/lib/supabase/client';
-import { featuredCards } from '@/lib/catalog';
+import { collectionCard, gameLabels, gameOf, normalizeSearch } from '@/lib/catalog';
+import { GameSwitch } from './game-switch';
 import { friendlyError } from '@/lib/utils';
 import { AddCardModal, CardDetail, CardSearchModal, CardTile } from './cards';
 import type { Card, CollectionItem, Wish } from '@/types';
 function isCollection(item: CollectionItem | Wish): item is CollectionItem {
   return 'quantity' in item;
 }
-export function itemCard(item: { card_id: number; card_name: string; card_type: string }): Card {
-  return (
-    featuredCards.find((c) => c.id === item.card_id) || {
-      id: item.card_id,
-      name: item.card_name,
-      type: item.card_type,
-      frameType: /spell/i.test(item.card_type)
-        ? 'spell'
-        : /trap/i.test(item.card_type)
-          ? 'trap'
-          : 'effect',
-      race: 'Yu-Gi-Oh! TCG',
-      desc: 'Consulte o catálogo para ver o texto completo desta carta.',
-      card_images: [
-        { id: item.card_id, image_url: '', image_url_small: '', image_url_cropped: '' },
-      ],
-    }
-  );
-}
+export const itemCard = collectionCard;
 export function Library({ wishlist = false }: { wishlist?: boolean }) {
   return (
     <div className="page-content">
@@ -41,7 +24,7 @@ export function Library({ wishlist = false }: { wishlist?: boolean }) {
   );
 }
 function LibraryContent({ wishlist }: { wishlist: boolean }) {
-  const { user, wishes, refresh, toast } = useApp(),
+  const { user, wishes, refresh, toast, game } = useApp(),
     params = useSearchParams();
   const [items, setItems] = useState<CollectionItem[]>([]),
     [loading, setLoading] = useState(!wishlist),
@@ -63,12 +46,13 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
       .from('collection_items')
       .select('*')
       .eq('user_id', user.id)
+      .eq('game', game)
       .gt('quantity', 0)
       .order('created_at', { ascending: false });
     setLoading(false);
     if (error) toast('Não foi possível carregar sua coleção.', true);
     else setItems(data || []);
-  }, [user, wishlist, toast]);
+  }, [user, wishlist, toast, game]);
   useEffect(() => {
     void load();
   }, [load]);
@@ -81,9 +65,13 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
     if (wishlist) {
       const client = createClient();
       if (!client || !user) return;
-      const { error } = await client
-        .from('wishlists')
-        .insert({ user_id: user.id, card_id: card.id, card_name: card.name, card_type: card.type });
+      const { error } = await client.from('wishlists').insert({
+        user_id: user.id,
+        card_id: card.id,
+        game: card.game,
+        card_name: card.localized_name || card.name,
+        card_type: card.type,
+      });
       if (error) toast(friendlyError(error.message), true);
       else {
         await refresh();
@@ -117,7 +105,8 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
   }
   const rows = (wishlist ? wishes : items).filter(
     (i) =>
-      i.card_name.toLowerCase().includes(query.toLowerCase()) &&
+      gameOf(i) === game &&
+      normalizeSearch(i.card_name).includes(normalizeSearch(query)) &&
       (wishlist ||
         filter === 'all' ||
         ('for_trade' in i && (filter === 'trade' ? i.for_trade : !i.for_trade))),
@@ -138,6 +127,7 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
           {wishlist ? 'Adicionar desejo' : 'Adicionar carta'}
         </button>
       </PageTitle>
+      <GameSwitch />
       {wishlist && (
         <div className="wishlist-note">
           <Sparkles size={19} />
@@ -157,7 +147,7 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
         </div>
         <span className="inventory-total">
           {wishlist
-            ? `${wishes.length} ${wishes.length === 1 ? 'desejo' : 'desejos'}`
+            ? `${wishes.filter((w) => gameOf(w) === game).length} ${wishes.filter((w) => gameOf(w) === game).length === 1 ? 'desejo' : 'desejos'}`
             : `${items.reduce((s, i) => s + i.quantity, 0)} cartas · ${items.reduce((s, i) => s + (i.for_trade ? i.quantity : 0), 0)} disponíveis para troca`}
         </span>
       </div>
@@ -195,7 +185,7 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
               ? 'Tente buscar por outro nome.'
               : wishlist
                 ? 'Adicione as cartas que você está procurando para descobrir trocas perfeitas.'
-                : 'Adicione sua primeira carta e comece a montar sua pasta virtual de Yu-Gi-Oh!.'
+                : `Adicione sua primeira carta e comece a montar sua pasta virtual de ${gameLabels[game]}.`
           }
           onClick={() => setPicker(true)}
           label={wishlist ? 'Adicionar primeiro desejo' : 'Adicionar minha primeira carta'}
@@ -248,7 +238,11 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
         </div>
       )}
       {picker && (
-        <CardSearchModal onClose={() => setPicker(false)} onSelect={(c) => void select(c)} />
+        <CardSearchModal
+          game={game}
+          onClose={() => setPicker(false)}
+          onSelect={(c) => void select(c)}
+        />
       )}{' '}
       {add && (
         <AddCardModal

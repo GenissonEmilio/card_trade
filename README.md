@@ -1,6 +1,6 @@
 # Duelink
 
-Plataforma de troca presencial de cartas de Yu-Gi-Oh! para Lagarto, Sergipe.
+Comunidade de coleção, decks, trocas e marketplace de cartas físicas de Yu-Gi-Oh! e Pokémon para Lagarto, Sergipe.
 
 **Site:** https://duelink.mage.dev.br
 
@@ -8,7 +8,8 @@ Plataforma de troca presencial de cartas de Yu-Gi-Oh! para Lagarto, Sergipe.
 
 - Cadastro por e-mail, confirmação, login, logout e recuperação de senha.
 - Perfil público, avatar, apresentação e bairro; edição da própria conta.
-- Catálogo YGOPRODeck completo, busca, filtros de tipo/atributo e detalhes das cartas.
+- Catálogos YGOPRODeck e TCGdex sincronizados e versionados, busca por nomes PT/EN, acentos, edição e códigos, com filtros por jogo.
+- Decks privados ou públicos, rascunhos, validação estrutural, duplicação, exportação e indicação de cartas possuídas/faltantes.
 - Coleção com quantidade, conservação, idioma, raridade, edição e observações.
 - Coleção pessoal privada ou cartas disponíveis publicamente para troca.
 - Lista de desejos privada e correspondências recíprocas entre colecionadores.
@@ -18,7 +19,11 @@ Plataforma de troca presencial de cartas de Yu-Gi-Oh! para Lagarto, Sergipe.
 - Avaliação única por participante após conclusão, exibida no perfil público.
 - Interface responsiva, navegação por teclado e respeito a movimento reduzido.
 
-A plataforma não processa pagamentos, custódia, envio ou autenticação física de cartas. Scanner OCR, preços em reais e serviços financeiros não fazem parte desta versão.
+- Marketplace com anúncios de exemplares da coleção, fotos reais, preços em centavos de BRL, moderação, carrinho com um vendedor, pedidos, mensagens e retirada local.
+- Administração com taxas configuráveis, papéis protegidos no banco, gestão de contas, moderação, conciliação e histórico administrativo.
+- Mercado Pago Checkout Pro com OAuth/PKCE por vendedor, Pix/cartão conforme habilitação, split vendedor/plataforma, notificações verificadas e reembolsos.
+
+O lançamento comercial é de retirada local combinada em Lagarto. Não há envio contratado, autenticação profissional das cartas ou custódia financeira própria. Vendas ficam desabilitadas até a configuração comercial e financeira; credenciais ausentes retornam indisponibilidade, sem simular pagamentos aprovados.
 
 ## Stack
 
@@ -43,7 +48,7 @@ Preencha `.env.local`:
 | `SUPABASE_EDGE_ANON_KEY`               | Chave anon JWT para autenticar no gateway da Edge Function de imagens |
 | `NEXT_PUBLIC_SITE_URL`                 | Origem do site; `http://localhost:3000` em desenvolvimento            |
 
-Sem configuração do Supabase, o catálogo de destaque continua disponível; ações autenticadas informam que a conexão precisa ser configurada. Nunca use `service_role` em uma variável `NEXT_PUBLIC_`.
+Sem configuração do Supabase, o catálogo sincronizado continua disponível; ações autenticadas informam que a conexão precisa ser configurada. Nunca use `service_role` em uma variável `NEXT_PUBLIC_`.
 
 ## Supabase
 
@@ -108,3 +113,29 @@ URLs de preview não são adicionadas automaticamente à lista de redirecionamen
 ## Créditos
 
 Catálogo: YGOPRODeck. Yu-Gi-Oh! e suas imagens pertencem aos respectivos titulares. Projeto independente de fãs, sem afiliação com a Konami. Tipografia DM Sans e Barlow Condensed sob SIL Open Font License; licenças incluídas em `public/fonts`.
+
+## Catálogos e decks
+
+O snapshot `src/data/catalog.json.gz` é lido somente no servidor e inclui todo o conjunto físico recebido dos fornecedores. O relatório em `src/data/catalog-report.json` identifica cobertura por idioma e data. Tradução ausente é exibida como nome original. Pokémon TCG Pocket é excluído. Atualize com `node scripts/sync-catalog.mjs`, confira o relatório, rode os testes e publique o snapshot; uma sincronização incompleta não substitui o anterior. Créditos e licenças dos fornecedores estão em `src/data/README.md`.
+
+Cartas usam a identidade `(game, card_id)`; IDs externos são strings, inclusive os IDs Pokémon com ponto. Decks não criam ou reservam estoque. A validação estrutural não certifica rotações, banlists ou todas as exceções competitivas.
+
+## Administração
+
+`/admin` exige sessão verificada e papel persistido em `private.user_roles`. A conta pública não pode editar esse papel; `user_metadata` não é usado para autorização. A primeira atribuição é uma operação de administração do banco, após identificar a conta solicitada pelo responsável. Não há promoção automática por e-mail. Depois, administradores podem atribuir ou remover acessos pelo painel; a última conta administrativa é protegida.
+
+A comissão é armazenada em pontos-base (100 = 1%) e o pedido conserva sua própria regra. Mudança de taxa/termos pausa anúncios até novo aceite e moderação. Comissão da plataforma, tarifas do Mercado Pago e eventual participação entre desenvolvedor e loja são relações distintas; a participação negociada não é distribuída automaticamente pelo checkout.
+
+Funções de negócio privilegiadas são deliberadamente restritas por `GRANT` e validam usuário, propriedade, papel e transição. As tabelas privadas usam RLS sem políticas de cliente, como bloqueio total; são acessadas apenas por funções autorizadas. A função pública de disponibilidade retorna somente quantidades de anúncios visíveis, sem dados dos pedidos. Não remova essas verificações para contornar avisos genéricos de `SECURITY DEFINER`.
+
+## Configuração do Mercado Pago
+
+1. Na conta da operadora, criar aplicação de pagamentos online com **Checkout Pro / Marketplace**. Habilitar PKCE e cadastrar o callback `https://duelink.mage.dev.br/api/marketplace/callback`.
+2. Configurar Webhooks para eventos de **Pagamentos** em `https://duelink.mage.dev.br/api/marketplace/webhook`. Guardar a assinatura secreta somente no servidor.
+3. Configurar na Vercel as variáveis privadas de `.env.example`: `SUPABASE_SERVICE_ROLE_KEY`, `MERCADOPAGO_CLIENT_ID`, `MERCADOPAGO_CLIENT_SECRET`, `MERCADOPAGO_WEBHOOK_SECRET`, `MERCADOPAGO_TOKEN_ENCRYPTION_KEY` (32 bytes aleatórios em base64). Usar `NEXT_PUBLIC_APP_URL=https://duelink.mage.dev.br` e `MERCADOPAGO_MODE=sandbox` durante homologação.
+4. A chave de criptografia deve ser preservada com segurança: trocar sem migração impede ler tokens já armazenados. Tokens dos vendedores são cifrados com AES-256-GCM e só acessados pelo backend; nunca publique credenciais no Git.
+5. Cada vendedor conecta sua própria conta em `/vender`. A aprovação cadastral, os métodos habilitados, a chave Pix e as tarifas dependem do Mercado Pago. O app não garante habilitação comercial.
+6. Homologar com contas/credenciais de teste: compra aprovada/negada/expirada, Pix, retorno sem pagamento, notificação duplicada/fora de ordem, reconexão, cancelamento, reembolso total/parcial e divergências. Só mudar para `production` após revisão e autorização do responsável. Não use dinheiro real para testar sem autorização específica.
+7. No `/admin`, definir operadora, contato, retirada e comissão, revisar as políticas e então abrir as vendas. O frontend também exige configuração financeira; a reserva/baixa e o pagamento são validados no servidor/banco.
+
+O pedido salva itens, fotos, valores, comissão e termos. Eventos financeiros são idempotentes e conferidos no provedor. Pagamento tardio ou adicional vai para análise; uma página de retorno nunca marca o pedido como pago. Fotografias referidas no histórico são protegidas contra apagamento. O atendimento prevê cancelamento, devolução, contestação, conciliação e auditoria; reembolso só termina após confirmação financeira.

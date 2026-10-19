@@ -18,19 +18,21 @@ export function Matches() {
   );
 }
 function MatchesContent() {
-  const { toast, user } = useApp(),
+  const { toast, user, game } = useApp(),
     [matches, setMatches] = useState<Match[]>([]),
     [loading, setLoading] = useState(true),
     [selected, setSelected] = useState<Match | null>(null);
   useEffect(() => {
     const client = createClient();
     if (!client) return;
-    void client.rpc('get_matches').then(({ data, error }) => {
+    setLoading(true);
+    setSelected(null);
+    void client.rpc('get_matches', { selected_game: game }).then(({ data, error }) => {
       setLoading(false);
       if (error) toast('Não foi possível consultar seus matches.', true);
       else setMatches(data || []);
     });
-  }, [user, toast]);
+  }, [user, toast, game]);
   return (
     <>
       <PageTitle
@@ -76,13 +78,25 @@ function MatchesContent() {
               <div className="match-cards">
                 <div>
                   <small>VOCÊ OFERECE</small>
-                  <img src={cardImage(m.offered[0].card_id)} alt={m.offered[0].card_name} />
+                  <img
+                    src={
+                      m.offered[0].image_url ||
+                      cardImage(m.offered[0].card_id, m.offered[0].game || 'yugioh')
+                    }
+                    alt={m.offered[0].card_name}
+                  />
                   <strong>{m.offered[0].card_name}</strong>
                 </div>
                 <ArrowLeftRight size={22} />
                 <div>
                   <small>VOCÊ ENCONTRA</small>
-                  <img src={cardImage(m.wanted[0].card_id)} alt={m.wanted[0].card_name} />
+                  <img
+                    src={
+                      m.wanted[0].image_url ||
+                      cardImage(m.wanted[0].card_id, m.wanted[0].game || 'yugioh')
+                    }
+                    alt={m.wanted[0].card_name}
+                  />
                   <strong>{m.wanted[0].card_name}</strong>
                 </div>
               </div>

@@ -37,7 +37,7 @@ export function Trades() {
   );
 }
 function TradeList() {
-  const { user, toast } = useApp(),
+  const { user, toast, game } = useApp(),
     [trades, setTrades] = useState<Trade[]>([]),
     [loading, setLoading] = useState(true),
     [filter, setFilter] = useState('all');
@@ -57,9 +57,10 @@ function TradeList() {
   }, [user, toast]);
   const visible = trades.filter(
     (t) =>
-      filter === 'all' ||
-      (filter === 'active' && ['pending', 'accepted'].includes(t.status)) ||
-      (filter === 'completed' && t.status === 'completed'),
+      (t.offered.game || 'yugioh') === game &&
+      (filter === 'all' ||
+        (filter === 'active' && ['pending', 'accepted'].includes(t.status)) ||
+        (filter === 'completed' && t.status === 'completed')),
   );
   return (
     <>
@@ -100,9 +101,21 @@ function TradeList() {
             return (
               <Link className="trade-row" href={`/trocas/${t.id}`} key={t.id}>
                 <div className="trade-thumbs">
-                  <img src={cardImage(t.offered.card_id)} alt={t.offered.card_name} />
+                  <img
+                    src={
+                      t.offered.image_url ||
+                      cardImage(t.offered.card_id, t.offered.game || 'yugioh')
+                    }
+                    alt={t.offered.card_name}
+                  />
                   <ArrowLeftRight size={16} />
-                  <img src={cardImage(t.requested.card_id)} alt={t.requested.card_name} />
+                  <img
+                    src={
+                      t.requested.image_url ||
+                      cardImage(t.requested.card_id, t.requested.game || 'yugioh')
+                    }
+                    alt={t.requested.card_name}
+                  />
                 </div>
                 <div className="trade-row-copy">
                   <h3>Uma conexão com {other.display_name}</h3>
@@ -297,7 +310,10 @@ function TradeDetailContent({ id }: { id: string }) {
               </Link>
               <small>{label}</small>
               <div className="selected-card">
-                <img src={cardImage(item.card_id)} alt={item.card_name} />
+                <img
+                  src={item.image_url || cardImage(item.card_id, item.game || 'yugioh')}
+                  alt={item.card_name}
+                />
                 <div>
                   <h3>{item.card_name}</h3>
                   <p>

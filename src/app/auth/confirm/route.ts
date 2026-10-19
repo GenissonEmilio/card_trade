@@ -14,7 +14,14 @@ export async function GET(request: Request) {
     const client = await createClient();
     const result = await client?.auth.verifyOtp({ token_hash, type: type as EmailOtpType });
     if (result && !result.error)
-      return NextResponse.redirect(new URL(safeNext(url.searchParams.get('next')), url.origin));
+      return NextResponse.redirect(
+        new URL(
+          result.data.user?.user_metadata.needs_password_setup
+            ? '/recuperar-senha?etapa=nova'
+            : safeNext(url.searchParams.get('next')),
+          url.origin,
+        ),
+      );
   }
   return NextResponse.redirect(new URL('/login?erro=confirmacao', url.origin));
 }

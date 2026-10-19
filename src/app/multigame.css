@@ -1,0 +1,301 @@
+.game-switch {
+  display: flex;
+  gap: 6px;
+  padding: 5px;
+  width: fit-content;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 12px;
+  margin: 0 0 24px;
+  max-width: 100%;
+}
+.game-switch button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.game-switch button.active {
+  background: rgba(214, 180, 106, 0.13);
+  color: var(--gold);
+  box-shadow: inset 0 0 0 1px rgba(214, 180, 106, 0.2);
+}
+.game-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.game-dot.game-pokemon {
+  background: #70c6f0;
+}
+.frame-pokemon .card-art-wrap {
+  background: radial-gradient(ellipse at center, #233846, #15191d);
+}
+.catalog-coverage {
+  line-height: 1.7;
+  margin: -6px 0 22px;
+}
+.decks-workspace {
+  display: grid;
+  grid-template-columns: 225px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+.decks-workspace.shared-deck {
+  display: block;
+  max-width: 1000px;
+  margin: auto;
+}
+.deck-list {
+  padding: 10px;
+  display: grid;
+  gap: 5px;
+}
+.deck-list button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  text-align: left;
+  padding: 15px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  min-width: 0;
+}
+.deck-list button.selected {
+  background: rgba(214, 180, 106, 0.1);
+  color: var(--gold);
+}
+.deck-list button span {
+  min-width: 0;
+}
+.deck-list strong,
+.deck-list small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.deck-list small {
+  font-size: 11px;
+  margin-top: 5px;
+  color: var(--muted);
+}
+.deck-editor {
+  padding: 26px;
+  min-width: 0;
+}
+.deck-settings {
+  margin: 0;
+}
+.deck-visibility {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  align-items: end;
+}
+.deck-visibility label {
+  flex: 1;
+}
+.deck-visibility button {
+  flex-shrink: 0;
+}
+.deck-read-heading h2 {
+  font-size: 30px;
+  margin: 10px 0;
+}
+.deck-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 24px 0;
+}
+.deck-toolbar .button {
+  font-size: 11px;
+  padding: 10px 13px;
+}
+.deck-toolbar .danger {
+  margin-left: auto;
+  color: #e39292;
+}
+.deck-validation {
+  background: rgba(214, 180, 106, 0.055);
+  border: 1px solid rgba(214, 180, 106, 0.16);
+  border-radius: 12px;
+  padding: 18px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #bcb9ac;
+  margin-bottom: 24px;
+}
+.deck-validation strong {
+  color: var(--gold);
+}
+.deck-validation ul {
+  padding-left: 20px;
+  margin: 9px 0;
+}
+.deck-validation small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+.deck-validation.valid {
+  border-color: rgba(92, 190, 143, 0.25);
+  background: rgba(92, 190, 143, 0.05);
+}
+.deck-section {
+  margin-top: 24px;
+}
+.deck-section h3 {
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.deck-section h3 span {
+  color: var(--gold);
+  margin-left: 7px;
+}
+.deck-line {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
+}
+.deck-card-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+.deck-card-info img {
+  width: 43px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+.deck-card-info span {
+  min-width: 0;
+}
+.deck-card-info strong {
+  display: block;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.deck-card-info small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 5px;
+  line-height: 1.5;
+}
+.deck-card-info .deck-owned {
+  color: #73c49d;
+}
+.deck-line-controls {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+.deck-line-controls strong {
+  min-width: 27px;
+  text-align: center;
+  font-size: 12px;
+}
+.deck-line-controls select {
+  font-size: 11px;
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px;
+  max-width: 75px;
+}
+.deck-line-controls .icon-button {
+  width: 28px;
+  height: 30px;
+  min-width: 28px;
+}
+.deck-line-controls button {
+  font-size: 18px;
+}
+.deck-editor > .auth-error {
+  margin: 15px 0;
+}
+@media (max-width: 1000px) {
+  .decks-workspace {
+    grid-template-columns: 1fr;
+  }
+  .deck-list {
+    display: flex;
+    overflow-x: auto;
+  }
+  .deck-list button {
+    min-width: 180px;
+    max-width: 220px;
+  }
+  .deck-editor {
+    padding: 20px;
+  }
+}
+@media (max-width: 560px) {
+  .deck-editor {
+    padding: 17px 12px;
+  }
+  .deck-line {
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  .deck-card-info {
+    gap: 10px;
+  }
+  .deck-line-controls {
+    margin-left: auto;
+  }
+  .deck-line-controls select {
+    max-width: 67px;
+  }
+  .deck-visibility {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .deck-toolbar .button {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+  .game-switch {
+    width: 100%;
+  }
+  .game-switch button {
+    justify-content: center;
+    flex: 1;
+    padding: 10px 12px;
+  }
+  .deck-validation {
+    padding: 13px;
+    font-size: 12px;
+  }
+}

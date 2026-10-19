@@ -10,6 +10,11 @@ import {
   Heart,
   HelpCircle,
   Layers3,
+  LibraryBig,
+  ShieldCheck,
+  ShoppingBag,
+  Store,
+  ReceiptText,
   LogOut,
   MapPin,
   Menu,
@@ -23,8 +28,13 @@ import {
 import { useApp } from './providers';
 import { createClient } from '@/lib/supabase/client';
 import { initials } from '@/lib/utils';
+import { GameSwitch } from './game-switch';
 const links = [
   { href: '/', label: 'Explorar', icon: Compass },
+  { href: '/mercado', label: 'Marketplace', icon: ShoppingBag },
+  { href: '/vender', label: 'Vender cartas', icon: Store },
+  { href: '/pedidos', label: 'Compras e vendas', icon: ReceiptText },
+  { href: '/decks', label: 'Meus decks', icon: LibraryBig },
   { href: '/colecao', label: 'Minha coleção', icon: Layers3 },
   { href: '/desejos', label: 'Lista de desejos', icon: Heart },
   { href: '/matches', label: 'Meus matches', icon: Sparkles },
@@ -33,7 +43,7 @@ const links = [
 ];
 export function Shell({ children }: { children: React.ReactNode }) {
   const path = usePathname(),
-    { user, profile, wishes } = useApp(),
+    { user, profile, wishes, isAdmin, game } = useApp(),
     [open, setOpen] = useState(false);
   return (
     <div className="app-shell">
@@ -51,9 +61,13 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <span>Lagarto, SE</span>
           <ChevronDown size={13} />
         </div>
+        <GameSwitch />
         <span className="nav-caption">SEU UNIVERSO</span>
-        <nav>
-          {links.map(({ href, label, icon: Icon }) => (
+        <nav className="main-navigation">
+          {[
+            ...links,
+            ...(isAdmin ? [{ href: '/admin', label: 'Administração', icon: ShieldCheck }] : []),
+          ].map(({ href, label, icon: Icon }) => (
             <Link
               onClick={() => setOpen(false)}
               key={href}
@@ -62,7 +76,10 @@ export function Shell({ children }: { children: React.ReactNode }) {
             >
               <Icon size={19} />
               <span>{label}</span>
-              {href === '/desejos' && wishes.length > 0 && <small>{wishes.length}</small>}
+              {href === '/desejos' &&
+                wishes.filter((w) => (w.game || 'yugioh') === game).length > 0 && (
+                  <small>{wishes.filter((w) => (w.game || 'yugioh') === game).length}</small>
+                )}
             </Link>
           ))}
         </nav>
@@ -133,7 +150,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             <span>/</span>
             <strong>
               {links.find((l) => (l.href === '/' ? path === '/' : path.startsWith(l.href)))
-                ?.label || 'Duelink'}
+                ?.label || (path.startsWith('/admin') ? 'Administração' : 'Duelink')}
             </strong>
           </div>
           <div className="topbar-actions">
@@ -165,6 +182,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <div>
             <Link href="/como-funciona">Como funciona</Link>
             <Link href="/privacidade">Privacidade</Link>
+            <Link href="/termos-marketplace">Regras do marketplace</Link>
             <a href="https://genissondev.mage.dev.br" target="_blank" rel="noreferrer">
               Portfólio de Genisson <ArrowUpRight size={12} />
             </a>
@@ -175,7 +193,18 @@ export function Shell({ children }: { children: React.ReactNode }) {
               Catálogo YGOPRODeck <ArrowUpRight size={12} />
             </a>
           </div>
-          <small>Projeto independente de fãs. Yu-Gi-Oh! © Kazuki Takahashi / Konami.</small>
+          <a
+            href="https://tcgdex.dev"
+            target="_blank"
+            rel="noreferrer"
+            className="footer-catalog-credit"
+          >
+            Catálogo Pokémon TCGdex <ArrowUpRight size={12} />
+          </a>
+          <small>
+            Projeto independente. Yu-Gi-Oh! © Kazuki Takahashi / Konami. Pokémon © Pokémon /
+            Nintendo / Creatures / GAME FREAK.
+          </small>
         </footer>
       </div>
     </div>

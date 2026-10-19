@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import { Providers } from '@/components/providers';
 import { Shell } from '@/components/shell';
 import './globals.css';
+import './multigame.css';
+import './navigation.css';
 export const metadata: Metadata = {
   title: { default: 'Duelink — Sua próxima troca está por perto', template: '%s · Duelink' },
   description:
-    'Encontre cartas de Yu-Gi-Oh!, organize sua coleção e conecte-se com duelistas para trocar cartas em Lagarto, Sergipe.',
+    'Explore cartas de Yu-Gi-Oh! e Pokémon, monte decks e encontre colecionadores para trocar e comprar cartas em Lagarto, Sergipe.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   icons: { icon: '/logo.svg' },
   openGraph: {
