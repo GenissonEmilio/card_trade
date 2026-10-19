@@ -48,5 +48,7 @@ export function friendlyError(message: string) {
   return 'Não foi possível concluir a ação. Tente novamente.';
 }
 export function safeNext(value: string | null) {
-  return value?.startsWith('/') && !value.startsWith('//') && !value.includes('\\') ? value : '/';
+  return value?.startsWith('/') && !value.startsWith('//') && !/[\\\u0000-\u0020\u007f]/.test(value)
+    ? value
+    : '/';
 }

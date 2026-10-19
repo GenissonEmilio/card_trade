@@ -3,7 +3,15 @@ import { safeNext } from '../src/lib/utils';
 describe('redirecionamento de autenticação', () => {
   it('aceita apenas caminhos locais seguros', () => {
     expect(safeNext('/colecao')).toBe('/colecao');
-    for (const value of ['https://example.com', '//example.com', '/\\example.com', null])
+    for (const value of [
+      'https://example.com',
+      '//example.com',
+      '/\\example.com',
+      '/\n/example.com',
+      '/\t/example.com',
+      '/\r/example.com',
+      null,
+    ])
       expect(safeNext(value)).toBe('/');
   });
 });
