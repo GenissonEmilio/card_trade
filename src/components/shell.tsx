@@ -168,11 +168,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             <a href="https://genissondev.mage.dev.br" target="_blank" rel="noreferrer">
               Portfólio de Genisson <ArrowUpRight size={12} />
             </a>
-            <a
-              href="https://github.com/GenissonEmilio/card_trade"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://github.com/GenissonEmilio/card_trade" target="_blank" rel="noreferrer">
               Código no GitHub <ArrowUpRight size={12} />
             </a>
             <a href="https://ygoprodeck.com" target="_blank" rel="noreferrer">

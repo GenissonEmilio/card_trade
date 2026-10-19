@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowDown,
@@ -56,18 +56,22 @@ export function Explore() {
     [proposal, setProposal] = useState<CollectionItem | null>(null),
     [stats, setStats] = useState({ people: 0, cards: 0, trades: 0 });
   const controller = useRef<AbortController | null>(null);
-  useEffect(() => {
+  const refreshStats = useCallback(async () => {
     const client = createClient();
     if (!client) return;
-    void Promise.all([
+    const [p, c] = await Promise.all([
       client.from('profiles').select('id', { count: 'exact', head: true }),
       client
         .from('collection_items')
         .select('id', { count: 'exact', head: true })
         .eq('for_trade', true)
         .gt('quantity', 0),
-    ]).then(([p, c]) => setStats({ people: p.count || 0, cards: c.count || 0, trades: 0 }));
+    ]);
+    if (!p.error && !c.error) setStats({ people: p.count || 0, cards: c.count || 0, trades: 0 });
   }, []);
+  useEffect(() => {
+    void refreshStats();
+  }, [refreshStats]);
   async function search(nextOffset = 0, append = false) {
     controller.current?.abort();
     const control = new AbortController();
@@ -465,7 +469,9 @@ export function Explore() {
           }}
         />
       )}
-      {add && <AddCardModal card={add} onClose={() => setAdd(null)} onSaved={() => {}} />}
+      {add && (
+        <AddCardModal card={add} onClose={() => setAdd(null)} onSaved={() => void refreshStats()} />
+      )}
       {proposal && <ProposeModal requested={proposal} onClose={() => setProposal(null)} />}
     </div>
   );

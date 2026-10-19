@@ -26,11 +26,13 @@ export function CardTile({
   onClick,
   onAdd,
   item,
+  catalogLabel = 'No catálogo',
 }: {
   card: Card;
   onClick: () => void;
   onAdd?: (card: Card) => void;
   item?: CollectionItem;
+  catalogLabel?: string;
 }) {
   const { user, wishes, refresh, toast } = useApp(),
     router = useRouter();
@@ -104,7 +106,7 @@ export function CardTile({
           ) : (
             <span className="catalog-label">
               <span className="availability-dot" />
-              No catálogo
+              {catalogLabel}
             </span>
           )}
           <button
@@ -387,7 +389,11 @@ export function CardSearchModal({
           minLength={2}
           required
         />
-        <button className="button button-gold button-small" disabled={busy}>
+        <button
+          className="button button-gold button-small"
+          disabled={busy}
+          aria-label="Buscar cartas no catálogo"
+        >
           {busy ? <Loader2 className="spin" size={16} /> : <Search size={16} />}
         </button>
       </form>

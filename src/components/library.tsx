@@ -153,8 +153,8 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
         </div>
         <span className="inventory-total">
           {wishlist
-            ? `${wishes.length} desejos`
-            : `${items.reduce((s, i) => s + i.quantity, 0)} cartas · ${items.filter((i) => i.for_trade).length} disponíveis para troca`}
+            ? `${wishes.length} ${wishes.length === 1 ? 'desejo' : 'desejos'}`
+            : `${items.reduce((s, i) => s + i.quantity, 0)} cartas · ${items.reduce((s, i) => s + (i.for_trade ? i.quantity : 0), 0)} disponíveis para troca`}
         </span>
       </div>
       {!wishlist && (
@@ -204,6 +204,7 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
               <div className="inventory-card" key={i.id}>
                 <CardTile
                   card={card}
+                  catalogLabel={wishlist ? 'Na sua lista de desejos' : 'Na sua coleção'}
                   onClick={() => setDetail(card)}
                   onAdd={() => {
                     setEditing(undefined);
