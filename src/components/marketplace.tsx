@@ -920,6 +920,17 @@ function SellerContent() {
               ? 'Sua conta foi conectada. A disponibilidade de pagamentos, valores e prazos de recebimento segue as condições do Mercado Pago e a habilitação da operação.'
               : 'Conecte sua própria conta Mercado Pago para vender. A identificação e a habilitação financeira são feitas pelo provedor; não solicitamos senha nem documentos bancários neste formulário.'}
           </p>
+          <p className={styles.hint}>
+            Para oferecer Pix, sua conta Mercado Pago precisa ter uma chave Pix cadastrada.{' '}
+            <a
+              className="text-link"
+              href="https://www.mercadopago.com.br/blog/como-cadastrar-chave-pix"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver orientações do Mercado Pago <ExternalLink size={13} />
+            </a>
+          </p>
           {!account?.connected && (
             <>
               <label className={`${styles.check} ${styles.hint}`}>

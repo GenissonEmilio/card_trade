@@ -12,11 +12,21 @@ import {
 import type { MarketplaceOrder } from '@/types/marketplace';
 
 export function paymentConfig() {
-  const clientId = process.env.MERCADOPAGO_CLIENT_ID;
-  const clientSecret = process.env.MERCADOPAGO_CLIENT_SECRET;
-  const webhookSecret = process.env.MERCADOPAGO_WEBHOOK_SECRET;
-  const key = process.env.MERCADOPAGO_TOKEN_ENCRYPTION_KEY;
   const mode = process.env.MERCADOPAGO_MODE;
+  // A missing sandbox credential must never select credentials from the real operator.
+  const clientId =
+    mode === 'sandbox'
+      ? process.env.MERCADOPAGO_SANDBOX_CLIENT_ID
+      : process.env.MERCADOPAGO_CLIENT_ID;
+  const clientSecret =
+    mode === 'sandbox'
+      ? process.env.MERCADOPAGO_SANDBOX_CLIENT_SECRET
+      : process.env.MERCADOPAGO_CLIENT_SECRET;
+  const webhookSecret =
+    mode === 'sandbox'
+      ? process.env.MERCADOPAGO_SANDBOX_WEBHOOK_SECRET
+      : process.env.MERCADOPAGO_WEBHOOK_SECRET;
+  const key = process.env.MERCADOPAGO_TOKEN_ENCRYPTION_KEY;
   const appUrl = process.env.NEXT_PUBLIC_APP_URL;
   if (
     !clientId ||
@@ -155,11 +165,36 @@ export async function storeTokens(sellerId: string, tokens: Tokens) {
     p_seller_id: sellerId,
     p_provider_user_id: String(tokens.user_id),
     p_encrypted_tokens: seal(
-      { access_token: tokens.access_token, refresh_token: tokens.refresh_token },
+      {
+        access_token: tokens.access_token,
+        refresh_token: tokens.refresh_token,
+        client_id: config.clientId,
+      },
       config.key,
     ),
     p_expires_at: new Date(Date.now() + tokens.expires_in * 1000).toISOString(),
   });
+}
+type BoundSellerTokens = { access_token: string; refresh_token: string; client_id: string };
+function readBoundSellerTokens(
+  encrypted: string,
+  config: ReturnType<typeof paymentConfig>,
+): BoundSellerTokens {
+  const tokens = unseal<Partial<BoundSellerTokens> | null>(encrypted, config.key);
+  if (
+    !tokens ||
+    typeof tokens !== 'object' ||
+    tokens.client_id !== config.clientId ||
+    typeof tokens.access_token !== 'string' ||
+    !tokens.access_token ||
+    typeof tokens.refresh_token !== 'string' ||
+    !tokens.refresh_token
+  )
+    throw new PaymentError(
+      'Reconecte a conta Mercado Pago: a conexão é antiga ou pertence a outro aplicativo.',
+      409,
+    );
+  return tokens as BoundSellerTokens;
 }
 export async function sellerToken(
   sellerId?: string,
@@ -171,22 +206,21 @@ export async function sellerToken(
     p_provider_user_id: providerUserId || null,
   });
   if (!account) throw new PaymentError('O vendedor precisa conectar a conta Mercado Pago.', 409);
-  let tokens = unseal<{ access_token: string; refresh_token: string }>(
-    account.encrypted_tokens,
-    config.key,
-  );
+  let tokens = readBoundSellerTokens(account.encrypted_tokens, config);
   let verified = false;
   if (new Date(account.expires_at).getTime() < Date.now() + 60000) {
     const claimed = await rpc<StoredAccount & { refresh: boolean }>(
       'payment_claim_seller_refresh',
       { p_seller_id: account.seller_id },
     );
-    tokens = unseal<{ access_token: string; refresh_token: string }>(
-      claimed.encrypted_tokens,
-      config.key,
-    );
-    if (claimed.refresh) {
-      try {
+    try {
+      tokens = readBoundSellerTokens(claimed.encrypted_tokens, config);
+      if (
+        claimed.seller_id !== account.seller_id ||
+        claimed.provider_user_id !== account.provider_user_id
+      )
+        throw new PaymentError('A conexão Mercado Pago mudou. Reconecte o vendedor.', 409);
+      if (claimed.refresh) {
         const fresh = await provider<Tokens>('/oauth/token', null, {
           method: 'POST',
           body: JSON.stringify({
@@ -199,11 +233,12 @@ export async function sellerToken(
         if (String(fresh.user_id) !== account.provider_user_id)
           throw new PaymentError('A conta de recebimento não corresponde ao vendedor.', 409);
         await storeTokens(account.seller_id, fresh);
-        tokens = fresh;
+        tokens = { ...fresh, client_id: config.clientId };
         verified = true;
-      } finally {
-        await rpc('payment_release_seller_refresh', { p_seller_id: account.seller_id });
       }
+    } finally {
+      if (claimed.refresh)
+        await rpc('payment_release_seller_refresh', { p_seller_id: account.seller_id });
     }
   }
   if (!verified)

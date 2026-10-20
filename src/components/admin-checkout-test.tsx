@@ -33,6 +33,7 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
   const [summary, setSummary] = useState<Summary | null>(null);
   const [checkoutUrl, setCheckoutUrl] = useState<string | null>(null);
   const [error, setError] = useState('');
+  const [notice, setNotice] = useState('');
   const [busy, setBusy] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
@@ -58,6 +59,7 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
   async function send(action: 'create' | 'refresh', testId?: string) {
     setBusy(testId || 'create');
     setError('');
+    setNotice('');
     try {
       const response = await fetch('/api/admin/marketplace-test', {
         method: 'POST',
@@ -76,6 +78,12 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
           : previous,
       );
       if (action === 'create') setCheckoutUrl(body.url);
+      else
+        setNotice(
+          test.payment_status
+            ? 'Consulta ao Mercado Pago concluída. Confira abaixo a última situação verificada.'
+            : 'Consulta concluída: o Mercado Pago ainda não retornou nenhum pagamento para este teste.',
+        );
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Não foi possível concluir o teste.');
     } finally {
@@ -101,6 +109,11 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
       {error ? (
         <p className="form-error" role="alert">
           {error}
+        </p>
+      ) : null}
+      {notice ? (
+        <p className={styles.success} role="status">
+          {notice}
         </p>
       ) : null}
       {summary ? (

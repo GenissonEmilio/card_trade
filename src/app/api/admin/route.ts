@@ -25,6 +25,18 @@ export async function GET() {
   ]);
   if (settings.error || members.error || audit.error)
     return json({ error: 'Não foi possível carregar a administração.' }, 503);
+  const sandbox = process.env.MERCADOPAGO_MODE === 'sandbox';
+  const credentials = sandbox
+    ? {
+        clientId: process.env.MERCADOPAGO_SANDBOX_CLIENT_ID,
+        clientSecret: process.env.MERCADOPAGO_SANDBOX_CLIENT_SECRET,
+        webhookSecret: process.env.MERCADOPAGO_SANDBOX_WEBHOOK_SECRET,
+      }
+    : {
+        clientId: process.env.MERCADOPAGO_CLIENT_ID,
+        clientSecret: process.env.MERCADOPAGO_CLIENT_SECRET,
+        webhookSecret: process.env.MERCADOPAGO_WEBHOOK_SECRET,
+      };
   return json({
     settings: settings.data,
     members: members.data,
@@ -39,15 +51,15 @@ export async function GET() {
         },
         {
           label: 'Identificação do aplicativo Mercado Pago',
-          configured: Boolean(process.env.MERCADOPAGO_CLIENT_ID),
+          configured: Boolean(credentials.clientId),
         },
         {
           label: 'Credencial privada do aplicativo',
-          configured: Boolean(process.env.MERCADOPAGO_CLIENT_SECRET),
+          configured: Boolean(credentials.clientSecret),
         },
         {
           label: 'Verificação das notificações de pagamento',
-          configured: Boolean(process.env.MERCADOPAGO_WEBHOOK_SECRET),
+          configured: Boolean(credentials.webhookSecret),
         },
         {
           label: 'Proteção das credenciais dos vendedores',
