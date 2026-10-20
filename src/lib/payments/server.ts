@@ -286,7 +286,6 @@ export function validatePaymentSnapshot(
     payment.external_reference !== expected.reference ||
     String(payment.collector_id) !== account.providerUserId ||
     payment.currency_id !== 'BRL' ||
-    payment.live_mode !== !sandbox ||
     cents(payment.transaction_amount) !== expected.amount_cents ||
     typeof payment.date_last_updated !== 'string' ||
     !Number.isFinite(Date.parse(payment.date_last_updated)) ||
@@ -304,6 +303,15 @@ export function validatePaymentSnapshot(
   )
     throw new PaymentError(
       'O pagamento não corresponde à referência, ao vendedor, ao valor ou ao ambiente.',
+      409,
+    );
+  if (payment.live_mode !== !sandbox)
+    throw new PaymentError(
+      typeof payment.live_mode !== 'boolean'
+        ? 'O Mercado Pago não informou o ambiente do pagamento. A conferência foi bloqueada.'
+        : sandbox
+          ? 'O Mercado Pago marcou este pagamento como produção, mas o site está configurado para testes. A conferência foi bloqueada.'
+          : 'O Mercado Pago marcou este pagamento como teste, mas o site está configurado para produção. A conferência foi bloqueada.',
       409,
     );
 }

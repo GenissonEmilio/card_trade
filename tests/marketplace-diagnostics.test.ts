@@ -303,6 +303,16 @@ describe('diagnóstico administrativo com vendas fechadas', () => {
 });
 
 describe('webhook de homologação isolado do processamento comercial', () => {
+  it('explica divergência de ambiente sem registrar pagamento nem revelar identificadores', async () => {
+    mocks.provider.mockResolvedValueOnce({ ...payment, live_mode: true });
+    const response = await webhook(notification());
+    expect(response.status).toBe(409);
+    const body = await response.json();
+    expect(body.error).toMatch(/marcou este pagamento como produção.*configurado para testes/);
+    expect(JSON.stringify(body)).not.toContain('98765');
+    expect(mocks.rpc).not.toHaveBeenCalledWith('payment_test_apply', expect.anything());
+    expect(mocks.commercialApply).not.toHaveBeenCalled();
+  });
   it('registra aprovação fictícia assinada e consultada, sem chamar payment_apply', async () => {
     mocks.provider.mockResolvedValueOnce(payment);
     const response = await webhook(notification());
