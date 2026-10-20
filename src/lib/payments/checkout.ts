@@ -18,12 +18,13 @@ export type CheckoutSpec = {
   email?: string;
 };
 export type CheckoutAccount = { token: string; providerUserId: string; sellerId: string };
-type CheckoutConfig = { origin: string; sandbox: boolean };
+type CheckoutConfig = { origin: string; sandbox: boolean; clientId: string };
 export type CheckoutPreference = {
   id: string;
   init_point: string;
   external_reference: string;
   collector_id: string | number;
+  client_id: string | number;
   marketplace_fee: number;
   items: { currency_id: string; quantity: number; unit_price: number }[];
 };
@@ -67,16 +68,20 @@ export function validatePreference(
   preference: CheckoutPreference,
   spec: CheckoutSpec,
   account: CheckoutAccount,
+  clientId: string,
 ): string {
   if (
     !preference ||
     typeof preference.id !== 'string' ||
     !preference.id ||
     preference.external_reference !== spec.reference ||
-    String(preference.collector_id) !== account.providerUserId
+    String(preference.collector_id) !== account.providerUserId ||
+    !clientId ||
+    !['string', 'number'].includes(typeof preference.client_id) ||
+    String(preference.client_id) !== clientId
   )
     throw new PaymentError(
-      'A referência ou a conta de recebimento do checkout não corresponde.',
+      'A referência, o aplicativo ou a conta de recebimento do checkout não corresponde.',
       409,
     );
   const expected = spec.items.reduce((sum, item) => sum + item.quantity * item.unit_price_cents, 0);
@@ -103,12 +108,13 @@ export async function readPreference(
   preferenceId: string,
   spec: CheckoutSpec,
   account: CheckoutAccount,
+  clientId: string,
 ) {
   const preference = await provider<CheckoutPreference>(
     `/checkout/preferences/${encodeURIComponent(preferenceId)}`,
     account.token,
   );
-  const url = validatePreference(preference, spec, account);
+  const url = validatePreference(preference, spec, account, clientId);
   return { preference, url };
 }
 
@@ -119,7 +125,7 @@ export async function createOrRecoverPreference(
   config: CheckoutConfig,
   saved: { preferenceId?: string | null; url?: string | null } = {},
 ) {
-  if (saved.preferenceId) return readPreference(saved.preferenceId, spec, account);
+  if (saved.preferenceId) return readPreference(saved.preferenceId, spec, account, config.clientId);
   const found = await provider<{ elements: { id: string }[] }>(
     `/checkout/preferences/search?external_reference=${encodeURIComponent(spec.reference)}&limit=2`,
     account.token,
@@ -129,7 +135,8 @@ export async function createOrRecoverPreference(
       'A preferência precisa ser conferida antes de iniciar outro checkout.',
       409,
     );
-  if (found.elements[0]) return readPreference(found.elements[0].id, spec, account);
+  if (found.elements[0])
+    return readPreference(found.elements[0].id, spec, account, config.clientId);
   if (saved.url)
     throw new PaymentError(
       'Não foi possível recuperar o checkout. Consulte o pagamento antes de criar outro.',
@@ -140,5 +147,5 @@ export async function createOrRecoverPreference(
     headers: { 'X-Idempotency-Key': spec.idempotencyKey },
     body: JSON.stringify(preferenceBody(spec, config)),
   });
-  return { preference, url: validatePreference(preference, spec, account) };
+  return { preference, url: validatePreference(preference, spec, account, config.clientId) };
 }

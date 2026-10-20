@@ -49,7 +49,11 @@ function request() {
 }
 beforeEach(() => {
   vi.resetAllMocks();
-  mocks.config.mockReturnValue({ sandbox: true, origin: 'https://duelink.mage.dev.br' });
+  mocks.config.mockReturnValue({
+    clientId: 'unit-client',
+    sandbox: true,
+    origin: 'https://duelink.mage.dev.br',
+  });
   mocks.currentUser.mockResolvedValue({ user: { id: 'buyer', email: 'buyer@example.test' } });
   mocks.sellerToken.mockResolvedValue({
     token: 'APP_USR-test-user-token',
@@ -68,6 +72,7 @@ describe('Checkout Pro com usuários de teste', () => {
       init_point: initPoint,
       external_reference: orderId,
       collector_id: 12345,
+      client_id: 'unit-client',
       marketplace_fee: 1,
       items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
     });
@@ -89,6 +94,7 @@ describe('Checkout Pro com usuários de teste', () => {
         init_point: initPoint,
         external_reference: orderId,
         collector_id: 12345,
+        client_id: 'unit-client',
         marketplace_fee: 1,
         items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
       });
@@ -111,6 +117,7 @@ describe('Checkout Pro com usuários de teste', () => {
         init_point: initPoint,
         external_reference: orderId,
         collector_id: 12345,
+        client_id: 'unit-client',
         marketplace_fee: 1,
         items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
       });
@@ -144,6 +151,7 @@ describe('Checkout Pro com usuários de teste', () => {
       init_point: initPoint,
       external_reference: orderId,
       collector_id: 12345,
+      client_id: 'unit-client',
       marketplace_fee: 1,
       items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
     });
@@ -156,12 +164,17 @@ describe('Checkout Pro com usuários de teste', () => {
     expect(body.auto_return).toBe('approved');
   });
   it('preserva o e-mail verificado do comprador e o retorno automático no domínio HTTPS em produção', async () => {
-    mocks.config.mockReturnValue({ sandbox: false, origin: 'https://duelink.mage.dev.br' });
+    mocks.config.mockReturnValue({
+      clientId: 'unit-client',
+      sandbox: false,
+      origin: 'https://duelink.mage.dev.br',
+    });
     mocks.provider.mockResolvedValueOnce({ elements: [] }).mockResolvedValueOnce({
       id: 'preference',
       init_point: initPoint,
       external_reference: orderId,
       collector_id: 12345,
+      client_id: 'unit-client',
       marketplace_fee: 1,
       items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
     });
@@ -183,12 +196,13 @@ describe('Checkout Pro com usuários de teste', () => {
     'https://[::1]:3000',
     'https://192.168.0.10:3000',
   ])('omite retorno automático no endereço não público ou sem HTTPS %s', async (origin) => {
-    mocks.config.mockReturnValue({ sandbox: true, origin });
+    mocks.config.mockReturnValue({ clientId: 'unit-client', sandbox: true, origin });
     mocks.provider.mockResolvedValueOnce({ elements: [] }).mockResolvedValueOnce({
       id: 'preference',
       init_point: initPoint,
       external_reference: orderId,
       collector_id: 12345,
+      client_id: 'unit-client',
       marketplace_fee: 1,
       items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
     });
@@ -219,6 +233,7 @@ describe('Checkout Pro com usuários de teste', () => {
         init_point: initPoint,
         external_reference: orderId,
         collector_id: 99999,
+        client_id: 'unit-client',
       });
     const response = await POST(request());
     expect(response.status).toBe(409);
@@ -233,6 +248,7 @@ describe('Checkout Pro com usuários de teste', () => {
         init_point: initPoint,
         external_reference: 'other-order',
         collector_id: 12345,
+        client_id: 'unit-client',
         marketplace_fee: 1,
         items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
       });
@@ -242,4 +258,40 @@ describe('Checkout Pro com usuários de teste', () => {
       true,
     );
   });
+  it.each(['new', 'cached', 'recovered'])(
+    'bloqueia preferência de outro aplicativo no caminho %s',
+    async (path) => {
+      if (path === 'cached') mocks.rpc.mockResolvedValueOnce({ order, url: initPoint });
+      const preference = {
+        id: 'other-app-preference',
+        init_point: initPoint,
+        external_reference: orderId,
+        collector_id: 12345,
+        client_id: 'other-app',
+        marketplace_fee: 1,
+        items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
+      };
+      mocks.provider
+        .mockResolvedValueOnce({ elements: path === 'new' ? [] : [{ id: preference.id }] })
+        .mockResolvedValueOnce(preference);
+      expect((await POST(request())).status).toBe(409);
+      expect(mocks.rpc.mock.calls.some(([name]) => name === 'payment_save_checkout')).toBe(false);
+    },
+  );
+  it.each([undefined, null, ''])(
+    'não aceita preferência com client_id ausente/vazio %s',
+    async (client_id) => {
+      mocks.provider.mockResolvedValueOnce({ elements: [] }).mockResolvedValueOnce({
+        id: 'preference',
+        init_point: initPoint,
+        external_reference: orderId,
+        collector_id: 12345,
+        client_id,
+        marketplace_fee: 1,
+        items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
+      });
+      expect((await POST(request())).status).toBe(409);
+      expect(mocks.rpc.mock.calls.some(([name]) => name === 'payment_save_checkout')).toBe(false);
+    },
+  );
 });

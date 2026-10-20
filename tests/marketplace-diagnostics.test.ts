@@ -37,6 +37,7 @@ const test = {
   id,
   actor_id: actor,
   provider_user_id: '12345',
+  client_id: 'unit-sandbox-client',
   amount_cents: 1000,
   commission_bps: 300,
   commission_cents: 30,
@@ -56,6 +57,7 @@ const preference = {
   init_point: url,
   external_reference: reference,
   collector_id: 12345,
+  client_id: 'unit-sandbox-client',
   marketplace_fee: 0.3,
   items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
 };
@@ -95,7 +97,12 @@ function notification() {
 beforeEach(() => {
   vi.resetAllMocks();
   vi.stubEnv('NEXT_PUBLIC_APP_URL', origin);
-  mocks.config.mockReturnValue({ sandbox: true, origin, webhookSecret: 'test-secret' });
+  mocks.config.mockReturnValue({
+    clientId: 'unit-sandbox-client',
+    sandbox: true,
+    origin,
+    webhookSecret: 'test-secret',
+  });
   mocks.role.mockResolvedValue({ data: 'admin', error: null });
   mocks.settings.mockResolvedValue({ data: { commission_bps: 300, enabled: false }, error: null });
   mocks.currentUser.mockResolvedValue({
@@ -178,6 +185,7 @@ describe('diagnóstico administrativo com vendas fechadas', () => {
     });
     expect(body.tests[0]).not.toHaveProperty('actor_id');
     expect(body.tests[0]).not.toHaveProperty('provider_user_id');
+    expect(body.tests[0]).not.toHaveProperty('client_id');
     expect(body.tests[0]).not.toHaveProperty('checkout_url');
     expect(body.tests[0]).not.toHaveProperty('lease_id');
     expect(mocks.rpc).toHaveBeenCalledExactlyOnceWith('payment_test_list', { p_actor_id: actor });
@@ -211,6 +219,7 @@ describe('diagnóstico administrativo com vendas fechadas', () => {
     expect(mocks.rpc).toHaveBeenCalledWith('payment_test_claim', {
       p_actor_id: actor,
       p_provider_user_id: '12345',
+      p_client_id: 'unit-sandbox-client',
     });
     expect(mocks.commercialApply).not.toHaveBeenCalled();
   });
@@ -261,6 +270,36 @@ describe('diagnóstico administrativo com vendas fechadas', () => {
     expect(mocks.commercialApply).not.toHaveBeenCalled();
     expect(mocks.rpc.mock.calls.some(([name]) => name === 'payment_apply')).toBe(false);
   });
+  it.each([null, 'old-app'])(
+    'não usa uma sessão legada ou emitida por outro app retornada pelo claim: %s',
+    async (client_id) => {
+      mocks.rpc.mockResolvedValueOnce({
+        ...test,
+        client_id,
+        preference_id: preference.id,
+        checkout_url: url,
+      });
+      const response = await POST(request({ action: 'create' }));
+      expect(response.status).toBe(409);
+      expect(mocks.provider).not.toHaveBeenCalled();
+      expect(mocks.rpc).not.toHaveBeenCalledWith('payment_test_save', expect.anything());
+    },
+  );
+  it.each([null, 'old-app'])(
+    'não consulta preferência de sessão legada/outro app ao atualizar: %s',
+    async (client_id) => {
+      mocks.rpc.mockResolvedValueOnce({ ...test, client_id, preference_id: preference.id });
+      expect((await POST(request({ action: 'refresh', testId: id }))).status).toBe(409);
+      expect(mocks.provider).not.toHaveBeenCalled();
+      expect(mocks.rpc).not.toHaveBeenCalledWith('payment_test_apply', expect.anything());
+    },
+  );
+  it('rejeita client_id remoto divergente da preferência, mesmo que a sessão tenha o aplicativo atual', async () => {
+    mocks.provider.mockResolvedValueOnce({ ...preference, client_id: 'other-app' });
+    expect((await POST(request({ action: 'refresh', testId: id }))).status).toBe(409);
+    expect(mocks.provider).toHaveBeenCalledTimes(1);
+    expect(mocks.rpc).not.toHaveBeenCalledWith('payment_test_apply', expect.anything());
+  });
 });
 
 describe('webhook de homologação isolado do processamento comercial', () => {
@@ -302,6 +341,16 @@ describe('webhook de homologação isolado do processamento comercial', () => {
     expect(mocks.rpc).not.toHaveBeenCalled();
     expect(mocks.commercialApply).not.toHaveBeenCalled();
   });
+  it.each([null, 'old-app'])(
+    'não atualiza sessão de outro emissor ou legada via webhook: %s',
+    async (client_id) => {
+      mocks.provider.mockResolvedValueOnce(payment);
+      mocks.rpc.mockResolvedValueOnce({ ...test, client_id, preference_id: preference.id });
+      expect((await webhook(notification())).status).toBe(409);
+      expect(mocks.rpc).not.toHaveBeenCalledWith('payment_test_apply', expect.anything());
+      expect(mocks.commercialApply).not.toHaveBeenCalled();
+    },
+  );
   it.each([
     { collector_id: 999 },
     { transaction_amount: 11 },

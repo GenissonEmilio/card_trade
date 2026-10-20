@@ -2,6 +2,7 @@ import { isUuid, PaymentError } from '@/lib/payments/core';
 import { createOrRecoverPreference } from '@/lib/payments/checkout';
 import {
   assertDiagnosticMode,
+  assertDiagnosticIssuer,
   CHECKOUT_TEST_AMOUNT,
   diagnosticFee,
   diagnosticSpec,
@@ -80,9 +81,11 @@ export async function POST(request: Request) {
     claimed = await rpc<StoredCheckoutTest>('payment_test_claim', {
       p_actor_id: user.id,
       p_provider_user_id: account.providerUserId,
+      p_client_id: config.clientId,
     });
     if (claimed.actor_id !== user.id || claimed.provider_user_id !== account.providerUserId)
       throw new PaymentError('A sessão de homologação não corresponde ao administrador.', 409);
+    assertDiagnosticIssuer(claimed, config.clientId);
     const { preference, url } = await createOrRecoverPreference(
       diagnosticSpec(claimed),
       account,
@@ -98,6 +101,7 @@ export async function POST(request: Request) {
       p_lease_id: claimed.lease_id,
       p_preference_id: preference.id,
       p_checkout_url: url,
+      p_client_id: config.clientId,
     });
     return json({ url, test: testSummary(saved) });
   } catch (error) {

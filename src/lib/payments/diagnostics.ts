@@ -14,6 +14,7 @@ const PREFIX = 'duelink-sandbox:';
 export type StoredCheckoutTest = MarketplaceCheckoutTest & {
   actor_id: string;
   provider_user_id: string;
+  client_id: string | null;
   checkout_url: string | null;
   lease_id: string | null;
   lease_until: string | null;
@@ -21,6 +22,13 @@ export type StoredCheckoutTest = MarketplaceCheckoutTest & {
 export function assertDiagnosticMode(sandbox: boolean) {
   if (!sandbox)
     throw new PaymentError('A homologação está disponível somente no modo sandbox.', 409);
+}
+export function assertDiagnosticIssuer(test: StoredCheckoutTest, clientId: string) {
+  if (!clientId || test.client_id !== clientId)
+    throw new PaymentError(
+      'Esta sessão de homologação é antiga ou pertence a outro aplicativo. Crie um novo checkout fictício.',
+      409,
+    );
 }
 export function diagnosticFee(bps: unknown) {
   if (typeof bps !== 'number' || !Number.isInteger(bps) || bps < 0 || bps >= 10000)
@@ -93,10 +101,12 @@ export async function applyCheckoutTestPayment(
   account: CheckoutAccount,
   actorId?: string,
 ) {
-  assertDiagnosticMode(paymentConfig().sandbox);
+  const config = paymentConfig();
+  assertDiagnosticMode(config.sandbox);
   const id = diagnosticId(payment.external_reference);
   if (!id) throw new PaymentError('Referência de homologação inválida.', 409);
   const test = await getCheckoutTest(id, actorId);
+  assertDiagnosticIssuer(test, config.clientId);
   if (test.actor_id !== account.sellerId || test.provider_user_id !== account.providerUserId)
     throw new PaymentError('A conta de recebimento não corresponde à homologação.', 409);
   diagnosticSpec(test);
@@ -124,17 +134,20 @@ export async function applyCheckoutTestPayment(
     p_live_mode: payment.live_mode,
     p_payment_method: payment.payment_method_id,
     p_updated_at: payment.date_last_updated,
+    p_client_id: config.clientId,
   });
   return testSummary(saved);
 }
 
 export async function refreshCheckoutTest(test: StoredCheckoutTest, account: CheckoutAccount) {
-  assertDiagnosticMode(paymentConfig().sandbox);
+  const config = paymentConfig();
+  assertDiagnosticMode(config.sandbox);
+  assertDiagnosticIssuer(test, config.clientId);
   if (test.actor_id !== account.sellerId || test.provider_user_id !== account.providerUserId)
     throw new PaymentError('A conta de recebimento não corresponde à homologação.', 409);
   if (!test.preference_id)
     throw new PaymentError('Inicie ou recupere o checkout antes de consultar este teste.', 409);
-  await readPreference(test.preference_id, diagnosticSpec(test), account);
+  await readPreference(test.preference_id, diagnosticSpec(test), account, config.clientId);
   const found = await provider<{ results: { id: string | number }[] }>(
     `/v1/payments/search?external_reference=${encodeURIComponent(`${PREFIX}${test.id}`)}&sort=date_last_updated&criteria=desc&limit=1`,
     account.token,
