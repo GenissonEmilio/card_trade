@@ -428,18 +428,18 @@ describe('sessões privadas de homologação sem efeitos comerciais', () => {
       insert into private.seller_payment_tokens(seller_id,provider_user_id,encrypted_tokens,expires_at) values('${admin}','67890','encrypted-test',now()+interval '1 day');
       update public.marketplace_settings set enabled=false,commission_bps=300 where id=true;`);
   });
-  const claim = async () => {
+  const claim = async (clientId = 'unit-sandbox-client') => {
     await db.exec('reset role;set role service_role');
     return (
-      await db.query<{ test: { id: string; lease_id: string; commission_cents: number } }>(
-        `select public.payment_test_claim('${admin}','67890') test`,
-      )
+      await db.query<{
+        test: { id: string; lease_id: string; commission_cents: number; client_id: string };
+      }>(`select public.payment_test_claim('${admin}','67890','${clientId}') test`)
     ).rows[0].test;
   };
   const save = async () => {
     const test = await claim();
     await db.exec(
-      `select public.payment_test_save('${test.id}','${admin}','${test.lease_id}','test-preference','https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=test')`,
+      `select public.payment_test_save('${test.id}','${admin}','${test.lease_id}','test-preference','https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=test','unit-sandbox-client')`,
     );
     return test;
   };
@@ -449,7 +449,10 @@ describe('sessões privadas de homologação sem efeitos comerciais', () => {
       await as(id);
       await fails('select * from private.marketplace_checkout_tests', /permission denied/);
       await fails(`select public.payment_test_get('${test.id}','${id}')`, /permission denied/);
-      await fails(`select public.payment_test_claim('${id}','67890')`, /permission denied/);
+      await fails(
+        `select public.payment_test_claim('${id}','67890','unit-sandbox-client')`,
+        /permission denied/,
+      );
     }
     await db.exec('reset role;set role anon');
     await fails(`select public.payment_test_list('${admin}')`, /permission denied/);
@@ -457,14 +460,17 @@ describe('sessões privadas de homologação sem efeitos comerciais', () => {
   it('serializa criação e recupera a mesma sessão sem abrir vendas nem anunciar cartas', async () => {
     const test = await claim();
     expect(test.commission_cents).toBe(30);
-    await fails(`select public.payment_test_claim('${admin}','67890')`, /sendo preparado/);
+    await fails(
+      `select public.payment_test_claim('${admin}','67890','unit-sandbox-client')`,
+      /sendo preparado/,
+    );
     await db.exec(`select public.payment_test_release('${test.id}','${test.lease_id}')`);
     const retried = await claim();
     expect(retried.id).toBe(test.id);
     expect(retried.lease_id).not.toBe(test.lease_id);
     await fails(
-      `select public.payment_test_save('${test.id}','${admin}','${test.lease_id}','wrong','https://www.mercadopago.com.br')`,
-      /mudou ou expirou/,
+      `select public.payment_test_save('${test.id}','${admin}','${test.lease_id}','wrong','https://www.mercadopago.com.br','unit-sandbox-client')`,
+      /mudou.*expirou/,
     );
     await owner();
     expect((await db.query('select enabled from public.marketplace_settings')).rows).toEqual([
@@ -475,14 +481,23 @@ describe('sessões privadas de homologação sem efeitos comerciais', () => {
   });
   it('restringe ator e vínculo financeiro, e rejeita comissão de 100%', async () => {
     await db.exec('set role service_role');
-    await fails(`select public.payment_test_claim('${buyer}','67890')`, /restrito/);
-    await fails(`select public.payment_test_claim('${admin}','12345')`, /não corresponde/);
+    await fails(
+      `select public.payment_test_claim('${buyer}','67890','unit-sandbox-client')`,
+      /restrito/,
+    );
+    await fails(
+      `select public.payment_test_claim('${admin}','12345','unit-sandbox-client')`,
+      /não corresponde/,
+    );
     const test = await save();
     await fails(`select public.payment_test_get('${test.id}','${buyer}')`, /restrito/);
     await owner();
     await db.exec('update public.marketplace_settings set commission_bps=10000 where id=true');
     await db.exec('set role service_role');
-    await fails(`select public.payment_test_claim('${admin}','67890')`, /menor que 100%/);
+    await fails(
+      `select public.payment_test_claim('${admin}','67890','unit-sandbox-client')`,
+      /menor que 100%/,
+    );
   });
   it('registra somente fatos de teste válidos, ignora replay e não altera estoque/pedidos', async () => {
     const test = await save();
@@ -494,10 +509,10 @@ describe('sessões privadas de homologação sem efeitos comerciais', () => {
       "'67890',1000,'BRL',null",
     ])
       await fails(
-        `select public.payment_test_apply('${test.id}',${values.split(',')[0]},'123','approved',${values.split(',').slice(1).join(',')},'visa',now())`,
+        `select public.payment_test_apply('${test.id}',${values.split(',')[0]},'123','approved',${values.split(',').slice(1).join(',')},'visa',now(),'unit-sandbox-client')`,
         /não corresponde/,
       );
-    const sql = `select public.payment_test_apply('${test.id}','67890','123','approved',1000,'BRL',false,'visa',now()) test`;
+    const sql = `select public.payment_test_apply('${test.id}','67890','123','approved',1000,'BRL',false,'visa',now(),'unit-sandbox-client') test`;
     const first = (await db.query<{ test: unknown }>(sql)).rows[0].test;
     expect((await db.query<{ test: unknown }>(sql)).rows[0].test).toEqual(first);
     await owner();
@@ -506,5 +521,60 @@ describe('sessões privadas de homologação sem efeitos comerciais', () => {
     expect(
       (await db.query(`select quantity from public.collection_items where id='${a}'`)).rows,
     ).toEqual([{ quantity: 3 }]);
+  });
+  it('não reutiliza sessão legada sem emissor e preserva seu histórico', async () => {
+    await owner();
+    const legacy = (
+      await db.query<{ id: string }>(
+        `insert into private.marketplace_checkout_tests(actor_id,provider_user_id,commission_bps,commission_cents,preference_id,checkout_url) values('${admin}','67890',300,30,'old-preference','https://www.mercadopago.com.br') returning id`,
+      )
+    ).rows[0].id;
+    const current = await claim();
+    expect(current.id).not.toBe(legacy);
+    expect(current.client_id).toBe('unit-sandbox-client');
+    const history = (
+      await db.query<{ history: { id: string; client_id: string | null }[] }>(
+        `select public.payment_test_list('${admin}') history`,
+      )
+    ).rows[0].history;
+    expect(history).toHaveLength(2);
+    expect(history.find((row) => row.id === legacy)?.client_id).toBeNull();
+    await fails(
+      `select public.payment_test_apply('${legacy}','67890','123','approved',1000,'BRL',false,'visa',now(),'unit-sandbox-client')`,
+      /não corresponde/,
+    );
+  });
+  it('cria outra sessão ao trocar aplicativo e rejeita gravações cruzadas', async () => {
+    const first = await save();
+    const other = await claim('other-sandbox-app');
+    expect(other.id).not.toBe(first.id);
+    expect(other.client_id).toBe('other-sandbox-app');
+    await fails(
+      `select public.payment_test_save('${other.id}','${admin}','${other.lease_id}','wrong','https://www.mercadopago.com.br','unit-sandbox-client')`,
+      /outro aplicativo/,
+    );
+    await fails(
+      `select public.payment_test_apply('${first.id}','67890','123','approved',1000,'BRL',false,'visa',now(),'other-sandbox-app')`,
+      /aplicativo não corresponde/,
+    );
+    await fails(
+      `select public.payment_test_apply('${first.id}','67890','123','approved',1000,'BRL',false,'visa',now(),null)`,
+      /aplicativo não corresponde/,
+    );
+    await fails(
+      `select public.payment_test_claim('${admin}','67890',null)`,
+      /Aplicativo.*inválido/,
+    );
+  });
+  it('remove as assinaturas antigas que permitiam chamadas sem aplicativo', async () => {
+    await db.exec('set role service_role');
+    for (const signature of [
+      'public.payment_test_claim(uuid,text)',
+      'public.payment_test_save(uuid,uuid,uuid,text,text)',
+      'public.payment_test_apply(uuid,text,text,text,integer,text,boolean,text,timestamptz)',
+    ])
+      expect(
+        (await db.query<{ fn: unknown }>(`select to_regprocedure('${signature}') fn`)).rows[0].fn,
+      ).toBeNull();
   });
 });
