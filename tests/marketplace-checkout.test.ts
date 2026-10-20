@@ -68,6 +68,8 @@ describe('Checkout Pro com usuários de teste', () => {
       init_point: initPoint,
       external_reference: orderId,
       collector_id: 12345,
+      marketplace_fee: 1,
+      items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
     });
     const response = await POST(request());
     expect(response.status).toBe(200);
@@ -87,6 +89,8 @@ describe('Checkout Pro com usuários de teste', () => {
         init_point: initPoint,
         external_reference: orderId,
         collector_id: 12345,
+        marketplace_fee: 1,
+        items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
       });
     const response = await POST(request());
     expect(await response.json()).toEqual({ url: initPoint });
@@ -107,6 +111,8 @@ describe('Checkout Pro com usuários de teste', () => {
         init_point: initPoint,
         external_reference: orderId,
         collector_id: 12345,
+        marketplace_fee: 1,
+        items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
       });
     const response = await POST(request());
     expect(response.status).toBe(200);
@@ -138,6 +144,8 @@ describe('Checkout Pro com usuários de teste', () => {
       init_point: initPoint,
       external_reference: orderId,
       collector_id: 12345,
+      marketplace_fee: 1,
+      items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
     });
     const response = await POST(request());
     expect(response.status).toBe(200);
@@ -154,6 +162,8 @@ describe('Checkout Pro com usuários de teste', () => {
       init_point: initPoint,
       external_reference: orderId,
       collector_id: 12345,
+      marketplace_fee: 1,
+      items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
     });
     const response = await POST(request());
     expect(response.status).toBe(200);
@@ -179,6 +189,8 @@ describe('Checkout Pro com usuários de teste', () => {
       init_point: initPoint,
       external_reference: orderId,
       collector_id: 12345,
+      marketplace_fee: 1,
+      items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
     });
     const response = await POST(request());
     expect(response.status).toBe(200);
@@ -221,6 +233,8 @@ describe('Checkout Pro com usuários de teste', () => {
         init_point: initPoint,
         external_reference: 'other-order',
         collector_id: 12345,
+        marketplace_fee: 1,
+        items: [{ currency_id: 'BRL', quantity: 1, unit_price: 10 }],
       });
     const response = await POST(request());
     expect(response.status).toBe(409);

@@ -168,6 +168,40 @@
 .audit details > div {
   padding-top: 10px;
 }
+.testNotice {
+  padding: 14px 16px;
+  border-left: 3px solid var(--gold);
+  background: var(--bg);
+}
+.testActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.testResults {
+  margin-top: 20px;
+}
+.testResults article {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.testResults article > div {
+  display: flex;
+  flex: 1;
+  min-width: 200px;
+  flex-direction: column;
+  gap: 7px;
+}
+.testResults span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
 @media (max-width: 900px) {
   .columns {
     grid-template-columns: 1fr;

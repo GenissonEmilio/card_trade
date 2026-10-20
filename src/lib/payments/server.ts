@@ -238,21 +238,45 @@ export type ProviderPayment = {
   status: string;
   date_last_updated: string;
   live_mode: boolean;
+  payment_method_id?: string;
 };
+export function validatePaymentSnapshot(
+  payment: ProviderPayment,
+  account: { providerUserId: string },
+  expected: { reference: string; amount_cents: number },
+  sandbox: boolean,
+) {
+  if (
+    !/^[0-9]{1,30}$/.test(String(payment.id)) ||
+    payment.external_reference !== expected.reference ||
+    String(payment.collector_id) !== account.providerUserId ||
+    payment.currency_id !== 'BRL' ||
+    payment.live_mode !== !sandbox ||
+    cents(payment.transaction_amount) !== expected.amount_cents ||
+    typeof payment.date_last_updated !== 'string' ||
+    !Number.isFinite(Date.parse(payment.date_last_updated)) ||
+    ![
+      'pending',
+      'approved',
+      'authorized',
+      'in_process',
+      'in_mediation',
+      'rejected',
+      'cancelled',
+      'refunded',
+      'charged_back',
+    ].includes(payment.status)
+  )
+    throw new PaymentError(
+      'O pagamento não corresponde à referência, ao vendedor, ao valor ou ao ambiente.',
+      409,
+    );
+}
 export async function applyVerifiedPayment(
   payment: ProviderPayment,
   account: { providerUserId: string; sellerId: string },
 ) {
   const config = paymentConfig();
-  if (
-    String(payment.collector_id) !== account.providerUserId ||
-    payment.currency_id !== 'BRL' ||
-    payment.live_mode === config.sandbox
-  )
-    throw new PaymentError(
-      'O pagamento não corresponde ao vendedor ou ao ambiente do pedido.',
-      409,
-    );
   const order = await serviceClient()
     .from('marketplace_orders')
     .select('*')
@@ -260,11 +284,15 @@ export async function applyVerifiedPayment(
     .single();
   if (order.error || !order.data || order.data.seller_id !== account.sellerId)
     throw new PaymentError('O pagamento não corresponde a um pedido deste vendedor.', 409);
-  if (
-    cents(payment.transaction_amount) !== order.data.subtotal_cents ||
-    !Number.isFinite(Date.parse(payment.date_last_updated))
-  )
-    throw new PaymentError('O valor ou a data do pagamento não corresponde ao pedido.', 409);
+  validatePaymentSnapshot(
+    payment,
+    account,
+    {
+      reference: order.data.id,
+      amount_cents: order.data.subtotal_cents,
+    },
+    config.sandbox,
+  );
   return rpc<string>('payment_apply', {
     p_order_id: payment.external_reference,
     p_payment_id: String(payment.id),

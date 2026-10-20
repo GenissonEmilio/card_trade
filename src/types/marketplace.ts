@@ -90,3 +90,17 @@ export type MarketplacePayment = {
   refunded_cents: number;
   updated_at: string;
 };
+/** Observação de homologação; não representa pedido nem entrega de carta. */
+export type MarketplaceCheckoutTest = {
+  id: string;
+  created_at: string;
+  expires_at: string;
+  preference_id: string | null;
+  payment_id: string | null;
+  payment_status: string | null;
+  payment_method: string | null;
+  verified_at: string | null;
+  amount_cents: number;
+  commission_cents: number;
+  commission_bps: number;
+};

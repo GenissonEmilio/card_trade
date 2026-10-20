@@ -14,6 +14,7 @@ import {
 import { PageTitle, Spinner } from './ui';
 import { useApp } from './providers';
 import styles from './admin.module.css';
+import { AdminCheckoutTest } from './admin-checkout-test';
 type Settings = {
   commission_bps: number | null;
   enabled: boolean;
@@ -276,6 +277,9 @@ export function AdminDashboard() {
               </Link>
             </section>
           </div>
+          {data.payments.mode === 'sandbox' ? (
+            <AdminCheckoutTest commissionBps={data.settings.commission_bps} />
+          ) : null}
           <section className={`panel ${styles.section}`}>
             <h2>
               <Users size={19} />

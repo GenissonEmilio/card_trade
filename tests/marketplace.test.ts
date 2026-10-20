@@ -420,3 +420,91 @@ describe('marketplace com autorização e estoque compartilhado', () => {
     ).toHaveLength(1);
   });
 });
+
+describe('sessões privadas de homologação sem efeitos comerciais', () => {
+  beforeEach(async () => {
+    await owner();
+    await db.exec(`insert into public.seller_payment_accounts(seller_id,connected) values('${admin}',true);
+      insert into private.seller_payment_tokens(seller_id,provider_user_id,encrypted_tokens,expires_at) values('${admin}','67890','encrypted-test',now()+interval '1 day');
+      update public.marketplace_settings set enabled=false,commission_bps=300 where id=true;`);
+  });
+  const claim = async () => {
+    await db.exec('reset role;set role service_role');
+    return (
+      await db.query<{ test: { id: string; lease_id: string; commission_cents: number } }>(
+        `select public.payment_test_claim('${admin}','67890') test`,
+      )
+    ).rows[0].test;
+  };
+  const save = async () => {
+    const test = await claim();
+    await db.exec(
+      `select public.payment_test_save('${test.id}','${admin}','${test.lease_id}','test-preference','https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=test')`,
+    );
+    return test;
+  };
+  it('nega leitura direta e todas as RPCs ao cliente, inclusive admin autenticado', async () => {
+    const test = await save();
+    for (const id of [buyer, admin]) {
+      await as(id);
+      await fails('select * from private.marketplace_checkout_tests', /permission denied/);
+      await fails(`select public.payment_test_get('${test.id}','${id}')`, /permission denied/);
+      await fails(`select public.payment_test_claim('${id}','67890')`, /permission denied/);
+    }
+    await db.exec('reset role;set role anon');
+    await fails(`select public.payment_test_list('${admin}')`, /permission denied/);
+  });
+  it('serializa criação e recupera a mesma sessão sem abrir vendas nem anunciar cartas', async () => {
+    const test = await claim();
+    expect(test.commission_cents).toBe(30);
+    await fails(`select public.payment_test_claim('${admin}','67890')`, /sendo preparado/);
+    await db.exec(`select public.payment_test_release('${test.id}','${test.lease_id}')`);
+    const retried = await claim();
+    expect(retried.id).toBe(test.id);
+    expect(retried.lease_id).not.toBe(test.lease_id);
+    await fails(
+      `select public.payment_test_save('${test.id}','${admin}','${test.lease_id}','wrong','https://www.mercadopago.com.br')`,
+      /mudou ou expirou/,
+    );
+    await owner();
+    expect((await db.query('select enabled from public.marketplace_settings')).rows).toEqual([
+      { enabled: false },
+    ]);
+    for (const name of ['marketplace_orders', 'marketplace_listings', 'marketplace_payments'])
+      expect((await db.query(`select * from public.${name}`)).rows).toHaveLength(0);
+  });
+  it('restringe ator e vínculo financeiro, e rejeita comissão de 100%', async () => {
+    await db.exec('set role service_role');
+    await fails(`select public.payment_test_claim('${buyer}','67890')`, /restrito/);
+    await fails(`select public.payment_test_claim('${admin}','12345')`, /não corresponde/);
+    const test = await save();
+    await fails(`select public.payment_test_get('${test.id}','${buyer}')`, /restrito/);
+    await owner();
+    await db.exec('update public.marketplace_settings set commission_bps=10000 where id=true');
+    await db.exec('set role service_role');
+    await fails(`select public.payment_test_claim('${admin}','67890')`, /menor que 100%/);
+  });
+  it('registra somente fatos de teste válidos, ignora replay e não altera estoque/pedidos', async () => {
+    const test = await save();
+    for (const values of [
+      "'other',1000,'BRL',false",
+      "'67890',1001,'BRL',false",
+      "'67890',1000,'USD',false",
+      "'67890',1000,'BRL',true",
+      "'67890',1000,'BRL',null",
+    ])
+      await fails(
+        `select public.payment_test_apply('${test.id}',${values.split(',')[0]},'123','approved',${values.split(',').slice(1).join(',')},'visa',now())`,
+        /não corresponde/,
+      );
+    const sql = `select public.payment_test_apply('${test.id}','67890','123','approved',1000,'BRL',false,'visa',now()) test`;
+    const first = (await db.query<{ test: unknown }>(sql)).rows[0].test;
+    expect((await db.query<{ test: unknown }>(sql)).rows[0].test).toEqual(first);
+    await owner();
+    expect((await db.query('select * from public.marketplace_orders')).rows).toHaveLength(0);
+    expect((await db.query('select * from public.marketplace_payments')).rows).toHaveLength(0);
+    expect(
+      (await db.query(`select quantity from public.collection_items where id='${a}'`)).rows,
+    ).toEqual([{ quantity: 3 }]);
+  });
+});

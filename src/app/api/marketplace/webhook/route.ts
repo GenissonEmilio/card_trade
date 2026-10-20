@@ -1,4 +1,5 @@
 import { isUuid, PaymentError, verifyWebhookSignature } from '@/lib/payments/core';
+import { applyCheckoutTestPayment, diagnosticId } from '@/lib/payments/diagnostics';
 import {
   applyVerifiedPayment,
   failure,
@@ -35,7 +36,14 @@ export async function POST(request: Request) {
       `/v1/payments/${encodeURIComponent(id)}`,
       account.token,
     );
-    if (!isUuid(payment.external_reference) || String(payment.id) !== id)
+    if (String(payment.id) !== id || typeof payment.external_reference !== 'string')
+      throw new PaymentError('Pagamento sem referência válida.', 409);
+    // Diagnostic observations never enter the commercial ledger or change stock/orders.
+    if (diagnosticId(payment.external_reference)) {
+      await applyCheckoutTestPayment(payment, account);
+      return Response.json({ received: true, diagnostic: true });
+    }
+    if (!isUuid(payment.external_reference))
       throw new PaymentError('Pagamento sem referência válida.', 409);
     await applyVerifiedPayment(payment, account);
     return Response.json({ received: true });
