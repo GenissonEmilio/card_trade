@@ -27,6 +27,7 @@ vi.mock('@/lib/payments/server', async () => {
 });
 import { GET, POST } from '@/app/api/admin/marketplace-test/route';
 import { POST as webhook } from '@/app/api/marketplace/webhook/route';
+import { validatePaymentSnapshot } from '@/lib/payments/server';
 
 const origin = 'https://duelink.mage.dev.br';
 const actor = '00000000-0000-4000-8000-000000000001';
@@ -51,6 +52,9 @@ const test = {
   payment_status: null,
   payment_method: null,
   verified_at: null,
+  provider_live_mode: null,
+  payer_id: null,
+  identity_verified: false,
 };
 const preference = {
   id: 'test-preference',
@@ -71,6 +75,7 @@ const payment = {
   live_mode: false,
   date_last_updated: new Date().toISOString(),
   payment_method_id: 'visa',
+  payer: { id: '55555' },
 };
 function request(body: unknown, requestOrigin = origin) {
   return new Request(`${origin}/api/admin/marketplace-test`, {
@@ -97,6 +102,7 @@ function notification() {
 beforeEach(() => {
   vi.resetAllMocks();
   vi.stubEnv('NEXT_PUBLIC_APP_URL', origin);
+  vi.stubEnv('MERCADOPAGO_SANDBOX_BUYER_ID', '55555');
   mocks.config.mockReturnValue({
     clientId: 'unit-sandbox-client',
     sandbox: true,
@@ -135,6 +141,8 @@ beforeEach(() => {
         payment_id: args.p_payment_id,
         payment_status: args.p_status,
         payment_method: args.p_payment_method,
+        provider_live_mode: args.p_live_mode,
+        payer_id: args.p_payer_id,
         verified_at: new Date().toISOString(),
       });
     return Promise.resolve(null);
@@ -143,6 +151,17 @@ beforeEach(() => {
 afterEach(() => vi.unstubAllEnvs());
 
 describe('diagnóstico administrativo com vendas fechadas', () => {
+  it.each([undefined, '', 'invalid'])(
+    'exige configuração explícita de comprador fictício %s',
+    async (value) => {
+      vi.stubEnv('MERCADOPAGO_SANDBOX_BUYER_ID', value);
+      expect((await GET()).status).toBe(503);
+      expect((await POST(request({ action: 'create' }))).status).toBe(503);
+      expect(mocks.sellerToken).not.toHaveBeenCalled();
+      expect(mocks.provider).not.toHaveBeenCalled();
+      expect(mocks.rpc).not.toHaveBeenCalled();
+    },
+  );
   it('nega anônimo antes de consultar configuração, vendedor ou preferências', async () => {
     mocks.currentUser.mockRejectedValue(new PaymentError('Entre na sua conta.', 401));
     expect((await POST(request({ action: 'create' }))).status).toBe(401);
@@ -186,6 +205,7 @@ describe('diagnóstico administrativo com vendas fechadas', () => {
     expect(body.tests[0]).not.toHaveProperty('actor_id');
     expect(body.tests[0]).not.toHaveProperty('provider_user_id');
     expect(body.tests[0]).not.toHaveProperty('client_id');
+    expect(body.tests[0]).not.toHaveProperty('payer_id');
     expect(body.tests[0]).not.toHaveProperty('checkout_url');
     expect(body.tests[0]).not.toHaveProperty('lease_id');
     expect(mocks.rpc).toHaveBeenCalledExactlyOnceWith('payment_test_list', { p_actor_id: actor });
@@ -258,9 +278,9 @@ describe('diagnóstico administrativo com vendas fechadas', () => {
   });
   it('consulta Pix pendente confirmado remotamente sem promover pedido comercial', async () => {
     mocks.provider
-      .mockResolvedValueOnce(preference)
       .mockResolvedValueOnce({ results: [{ id: 98765 }] })
-      .mockResolvedValueOnce({ ...payment, status: 'pending', payment_method_id: 'pix' });
+      .mockResolvedValueOnce({ ...payment, status: 'pending', payment_method_id: 'pix' })
+      .mockResolvedValueOnce(preference);
     const response = await POST(request({ action: 'refresh', testId: id, retorno: 'sucesso' }));
     expect(response.status).toBe(200);
     expect(await response.json()).toMatchObject({
@@ -269,6 +289,27 @@ describe('diagnóstico administrativo com vendas fechadas', () => {
     expect(mocks.rpc).toHaveBeenCalledWith('payment_test_get', { p_id: id, p_actor_id: actor });
     expect(mocks.commercialApply).not.toHaveBeenCalled();
     expect(mocks.rpc.mock.calls.some(([name]) => name === 'payment_apply')).toBe(false);
+  });
+  it('preserva o modo observado true no summary sem expor o identificador do comprador', async () => {
+    mocks.provider
+      .mockResolvedValueOnce({ results: [{ id: 98765 }] })
+      .mockResolvedValueOnce({ ...payment, live_mode: true })
+      .mockResolvedValueOnce(preference);
+    const response = await POST(request({ action: 'refresh', testId: id }));
+    expect(response.status).toBe(200);
+    const body = await response.json();
+    expect(body.test).toMatchObject({
+      provider_live_mode: true,
+      identity_verified: true,
+      payment_status: 'approved',
+    });
+    expect(body.test).not.toHaveProperty('payer_id');
+  });
+  it('não prepara checkout quando o comprador fictício configurado é o vendedor', async () => {
+    vi.stubEnv('MERCADOPAGO_SANDBOX_BUYER_ID', '12345');
+    expect((await POST(request({ action: 'create' }))).status).toBe(409);
+    expect(mocks.provider).not.toHaveBeenCalled();
+    expect(mocks.rpc).not.toHaveBeenCalled();
   });
   it.each([null, 'old-app'])(
     'não usa uma sessão legada ou emitida por outro app retornada pelo claim: %s',
@@ -295,26 +336,70 @@ describe('diagnóstico administrativo com vendas fechadas', () => {
     },
   );
   it('rejeita client_id remoto divergente da preferência, mesmo que a sessão tenha o aplicativo atual', async () => {
-    mocks.provider.mockResolvedValueOnce({ ...preference, client_id: 'other-app' });
+    mocks.provider
+      .mockResolvedValueOnce({ results: [{ id: 98765 }] })
+      .mockResolvedValueOnce(payment)
+      .mockResolvedValueOnce({ ...preference, client_id: 'other-app' });
     expect((await POST(request({ action: 'refresh', testId: id }))).status).toBe(409);
-    expect(mocks.provider).toHaveBeenCalledTimes(1);
+    expect(mocks.provider).toHaveBeenCalledTimes(3);
     expect(mocks.rpc).not.toHaveBeenCalledWith('payment_test_apply', expect.anything());
   });
 });
 
 describe('webhook de homologação isolado do processamento comercial', () => {
-  it('explica divergência de ambiente sem registrar pagamento nem revelar identificadores', async () => {
-    mocks.provider.mockResolvedValueOnce({ ...payment, live_mode: true });
-    const response = await webhook(notification());
-    expect(response.status).toBe(409);
-    const body = await response.json();
-    expect(body.error).toMatch(/marcou este pagamento como produção.*configurado para testes/);
-    expect(JSON.stringify(body)).not.toContain('98765');
+  it.each([
+    undefined,
+    null,
+    {},
+    { id: null },
+    { id: '66666' },
+    { id: '12345' },
+    { id: '' },
+    { id: true },
+  ])('rejeita comprador ausente/divergente/igual vendedor %j', async (payer) => {
+    mocks.provider.mockResolvedValueOnce({ ...payment, live_mode: true, payer });
+    expect((await webhook(notification())).status).toBe(409);
     expect(mocks.rpc).not.toHaveBeenCalledWith('payment_test_apply', expect.anything());
     expect(mocks.commercialApply).not.toHaveBeenCalled();
   });
+  it('rejeita vendedor real antes de consultar pagamento ou preferência', async () => {
+    mocks.sellerToken.mockRejectedValue(
+      new PaymentError('Somente vendedores fictícios são aceitos.', 409),
+    );
+    expect((await webhook(notification())).status).toBe(409);
+    expect(mocks.provider).not.toHaveBeenCalled();
+    expect(mocks.rpc).not.toHaveBeenCalled();
+  });
+  it('reconfere o aplicativo na preferência também no webhook e bloqueia divergência', async () => {
+    mocks.provider
+      .mockResolvedValueOnce({ ...payment, live_mode: true })
+      .mockResolvedValueOnce({ ...preference, client_id: 'other-app' });
+    expect((await webhook(notification())).status).toBe(409);
+    expect(mocks.rpc).not.toHaveBeenCalledWith('payment_test_apply', expect.anything());
+    expect(mocks.commercialApply).not.toHaveBeenCalled();
+  });
+  it('registra live_mode true observado após conferir identidades e preferência do app atual', async () => {
+    mocks.provider
+      .mockResolvedValueOnce({ ...payment, live_mode: true })
+      .mockResolvedValueOnce(preference);
+    const response = await webhook(notification());
+    expect(response.status).toBe(200);
+    expect(mocks.rpc).toHaveBeenCalledWith(
+      'payment_test_apply',
+      expect.objectContaining({
+        p_live_mode: true,
+        p_expected_payer_id: '55555',
+        p_payer_id: '55555',
+      }),
+    );
+    expect(mocks.provider).toHaveBeenCalledWith(
+      `/checkout/preferences/${preference.id}`,
+      'APP_USR-test',
+    );
+    expect(mocks.commercialApply).not.toHaveBeenCalled();
+  });
   it('registra aprovação fictícia assinada e consultada, sem chamar payment_apply', async () => {
-    mocks.provider.mockResolvedValueOnce(payment);
+    mocks.provider.mockResolvedValueOnce(payment).mockResolvedValueOnce(preference);
     const response = await webhook(notification());
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({ received: true, diagnostic: true });
@@ -346,7 +431,7 @@ describe('webhook de homologação isolado do processamento comercial', () => {
   });
   it('não aceita diagnóstico em produção nem o encaminha para pedidos comerciais', async () => {
     mocks.config.mockReturnValue({ sandbox: false, origin, webhookSecret: 'test-secret' });
-    mocks.provider.mockResolvedValueOnce(payment);
+    mocks.provider.mockResolvedValueOnce(payment).mockResolvedValueOnce(preference);
     expect((await webhook(notification())).status).toBe(409);
     expect(mocks.rpc).not.toHaveBeenCalled();
     expect(mocks.commercialApply).not.toHaveBeenCalled();
@@ -354,7 +439,7 @@ describe('webhook de homologação isolado do processamento comercial', () => {
   it.each([null, 'old-app'])(
     'não atualiza sessão de outro emissor ou legada via webhook: %s',
     async (client_id) => {
-      mocks.provider.mockResolvedValueOnce(payment);
+      mocks.provider.mockResolvedValueOnce(payment).mockResolvedValueOnce(preference);
       mocks.rpc.mockResolvedValueOnce({ ...test, client_id, preference_id: preference.id });
       expect((await webhook(notification())).status).toBe(409);
       expect(mocks.rpc).not.toHaveBeenCalledWith('payment_test_apply', expect.anything());
@@ -364,7 +449,9 @@ describe('webhook de homologação isolado do processamento comercial', () => {
   it.each([
     { collector_id: 999 },
     { transaction_amount: 11 },
-    { live_mode: true },
+    { live_mode: 'true' },
+    { live_mode: null },
+    { live_mode: 0 },
     { live_mode: undefined },
     { currency_id: 'USD' },
     { date_last_updated: 'invalid' },
@@ -375,5 +462,21 @@ describe('webhook de homologação isolado do processamento comercial', () => {
     expect((await webhook(notification())).status).toBe(409);
     expect(mocks.rpc).not.toHaveBeenCalledWith('payment_test_apply', expect.anything());
     expect(mocks.commercialApply).not.toHaveBeenCalled();
+  });
+});
+
+describe('a exceção de identidade não altera o contrato comercial de ambiente', () => {
+  it('continua bloqueando live_mode true em sandbox e false em produção', () => {
+    const expected = { reference, amount_cents: 1000 };
+    const account = { providerUserId: '12345' };
+    expect(() =>
+      validatePaymentSnapshot({ ...payment, live_mode: true }, account, expected, true),
+    ).toThrow(/marcou este pagamento como produção/);
+    expect(() =>
+      validatePaymentSnapshot({ ...payment, live_mode: false }, account, expected, false),
+    ).toThrow(/marcou este pagamento como teste/);
+    expect(() =>
+      validatePaymentSnapshot({ ...payment, live_mode: true }, account, expected, false),
+    ).not.toThrow();
   });
 });

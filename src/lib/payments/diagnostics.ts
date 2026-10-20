@@ -1,12 +1,6 @@
 import { commissionCents, isUuid, PaymentError } from './core';
 import { type CheckoutAccount, type CheckoutSpec, readPreference } from './checkout';
-import {
-  paymentConfig,
-  provider,
-  rpc,
-  validatePaymentSnapshot,
-  type ProviderPayment,
-} from './server';
+import { paymentConfig, provider, rpc, validatePaymentFacts, type ProviderPayment } from './server';
 import type { MarketplaceCheckoutTest } from '@/types/marketplace';
 
 export const CHECKOUT_TEST_AMOUNT = 1000;
@@ -15,6 +9,7 @@ export type StoredCheckoutTest = MarketplaceCheckoutTest & {
   actor_id: string;
   provider_user_id: string;
   client_id: string | null;
+  payer_id: string | null;
   checkout_url: string | null;
   lease_id: string | null;
   lease_until: string | null;
@@ -22,6 +17,34 @@ export type StoredCheckoutTest = MarketplaceCheckoutTest & {
 export function assertDiagnosticMode(sandbox: boolean) {
   if (!sandbox)
     throw new PaymentError('A homologação está disponível somente no modo sandbox.', 409);
+}
+export function diagnosticBuyerId(): string {
+  const id = process.env.MERCADOPAGO_SANDBOX_BUYER_ID;
+  if (!id || !/^[0-9]{1,30}$/.test(id))
+    throw new PaymentError(
+      'Configure o identificador do comprador Mercado Pago fictício antes da homologação.',
+      503,
+    );
+  return id;
+}
+function verifyDiagnosticBuyer(
+  payment: ProviderPayment,
+  sellerId: string,
+  expectedId: string,
+): string {
+  const id = payment.payer?.id;
+  if (
+    !['string', 'number'].includes(typeof id) ||
+    (typeof id === 'number' && !Number.isSafeInteger(id)) ||
+    !/^[0-9]{1,30}$/.test(String(id)) ||
+    String(id) !== expectedId ||
+    expectedId === sellerId
+  )
+    throw new PaymentError(
+      'O pagamento não pertence ao comprador fictício autorizado ou usa o próprio vendedor.',
+      409,
+    );
+  return String(id);
 }
 export function assertDiagnosticIssuer(test: StoredCheckoutTest, clientId: string) {
   if (!clientId || test.client_id !== clientId)
@@ -60,6 +83,11 @@ export function testSummary(test: StoredCheckoutTest): MarketplaceCheckoutTest {
     amount_cents: test.amount_cents,
     commission_cents: test.commission_cents,
     commission_bps: test.commission_bps,
+    provider_live_mode:
+      typeof test.provider_live_mode === 'boolean' ? test.provider_live_mode : null,
+    identity_verified: Boolean(
+      test.verified_at && test.payer_id && typeof test.provider_live_mode === 'boolean',
+    ),
   };
 }
 export function diagnosticSpec(test: StoredCheckoutTest): CheckoutSpec {
@@ -103,27 +131,28 @@ export async function applyCheckoutTestPayment(
 ) {
   const config = paymentConfig();
   assertDiagnosticMode(config.sandbox);
+  const expectedBuyerId = diagnosticBuyerId();
   const id = diagnosticId(payment.external_reference);
   if (!id) throw new PaymentError('Referência de homologação inválida.', 409);
   const test = await getCheckoutTest(id, actorId);
   assertDiagnosticIssuer(test, config.clientId);
   if (test.actor_id !== account.sellerId || test.provider_user_id !== account.providerUserId)
     throw new PaymentError('A conta de recebimento não corresponde à homologação.', 409);
-  diagnosticSpec(test);
-  validatePaymentSnapshot(
-    payment,
-    account,
-    {
-      reference: `${PREFIX}${test.id}`,
-      amount_cents: test.amount_cents,
-    },
-    true,
-  );
+  const spec = diagnosticSpec(test);
+  validatePaymentFacts(payment, account, {
+    reference: `${PREFIX}${test.id}`,
+    amount_cents: test.amount_cents,
+  });
+  const payerId = verifyDiagnosticBuyer(payment, account.providerUserId, expectedBuyerId);
   if (
     typeof payment.payment_method_id !== 'string' ||
     !/^[a-z0-9_]{1,80}$/i.test(payment.payment_method_id)
   )
     throw new PaymentError('O meio de pagamento de teste não pôde ser verificado.', 409);
+  if (!test.preference_id)
+    throw new PaymentError('A preferência da sessão de homologação não foi registrada.', 409);
+  // A signed payment and a stored session alone do not prove which app created its preference.
+  await readPreference(test.preference_id, spec, account, config.clientId);
   const saved = await rpc<StoredCheckoutTest>('payment_test_apply', {
     p_id: test.id,
     p_provider_user_id: account.providerUserId,
@@ -135,6 +164,8 @@ export async function applyCheckoutTestPayment(
     p_payment_method: payment.payment_method_id,
     p_updated_at: payment.date_last_updated,
     p_client_id: config.clientId,
+    p_expected_payer_id: expectedBuyerId,
+    p_payer_id: payerId,
   });
   return testSummary(saved);
 }
@@ -142,19 +173,22 @@ export async function applyCheckoutTestPayment(
 export async function refreshCheckoutTest(test: StoredCheckoutTest, account: CheckoutAccount) {
   const config = paymentConfig();
   assertDiagnosticMode(config.sandbox);
+  diagnosticBuyerId();
   assertDiagnosticIssuer(test, config.clientId);
   if (test.actor_id !== account.sellerId || test.provider_user_id !== account.providerUserId)
     throw new PaymentError('A conta de recebimento não corresponde à homologação.', 409);
   if (!test.preference_id)
     throw new PaymentError('Inicie ou recupere o checkout antes de consultar este teste.', 409);
-  await readPreference(test.preference_id, diagnosticSpec(test), account, config.clientId);
   const found = await provider<{ results: { id: string | number }[] }>(
     `/v1/payments/search?external_reference=${encodeURIComponent(`${PREFIX}${test.id}`)}&sort=date_last_updated&criteria=desc&limit=1`,
     account.token,
   );
   if (!Array.isArray(found.results))
     throw new PaymentError('Não foi possível conferir os pagamentos de homologação.', 502);
-  if (!found.results.length) return testSummary(test);
+  if (!found.results.length) {
+    await readPreference(test.preference_id, diagnosticSpec(test), account, config.clientId);
+    return testSummary(test);
+  }
   const id = String(found.results[0].id);
   if (!/^[0-9]{1,30}$/.test(id))
     throw new PaymentError('O provedor retornou um pagamento de teste inválido.', 502);

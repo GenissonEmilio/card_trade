@@ -103,4 +103,6 @@ export type MarketplaceCheckoutTest = {
   amount_cents: number;
   commission_cents: number;
   commission_bps: number;
+  provider_live_mode: boolean | null;
+  identity_verified: boolean;
 };

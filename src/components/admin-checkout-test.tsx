@@ -98,8 +98,9 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
         Teste de pagamento
       </h2>
       <p>
-        Use um vendedor fictício conectado e uma conta de comprador de teste diferente. Este recurso
-        é exclusivo da administração no ambiente de testes. Você pode usá-lo com as vendas fechadas.
+        Use o vendedor fictício conectado e o comprador fictício autorizado para esta homologação,
+        em contas diferentes. Este recurso é exclusivo da administração no ambiente de testes. Você
+        pode usá-lo com as vendas fechadas.
       </p>
       <p className={styles.testNotice}>
         Nenhuma carta é anunciada ou entregue neste teste. Não use dinheiro, cartões ou contas
@@ -169,6 +170,16 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
                           : 'Aguardando tentativa de pagamento'}
                       {test.verified_at ? ` · Verificado em ${date(test.verified_at)}` : ''}
                     </span>
+                    {test.identity_verified ? (
+                      <span>
+                        Comprador e vendedor fictícios conferidos.
+                        {test.provider_live_mode === true
+                          ? ' Ambiente informado pelo provedor: produção; identidades de teste verificadas.'
+                          : test.provider_live_mode === false
+                            ? ' Ambiente informado pelo provedor: teste.'
+                            : ''}
+                      </span>
+                    ) : null}
                   </div>
                   <button
                     className="button button-small"

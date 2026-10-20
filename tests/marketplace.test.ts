@@ -505,14 +505,13 @@ describe('sessões privadas de homologação sem efeitos comerciais', () => {
       "'other',1000,'BRL',false",
       "'67890',1001,'BRL',false",
       "'67890',1000,'USD',false",
-      "'67890',1000,'BRL',true",
       "'67890',1000,'BRL',null",
     ])
       await fails(
-        `select public.payment_test_apply('${test.id}',${values.split(',')[0]},'123','approved',${values.split(',').slice(1).join(',')},'visa',now(),'unit-sandbox-client')`,
+        `select public.payment_test_apply('${test.id}',${values.split(',')[0]},'123','approved',${values.split(',').slice(1).join(',')},'visa',now(),'unit-sandbox-client','55555','55555')`,
         /não corresponde/,
       );
-    const sql = `select public.payment_test_apply('${test.id}','67890','123','approved',1000,'BRL',false,'visa',now(),'unit-sandbox-client') test`;
+    const sql = `select public.payment_test_apply('${test.id}','67890','123','approved',1000,'BRL',false,'visa',now(),'unit-sandbox-client','55555','55555') test`;
     const first = (await db.query<{ test: unknown }>(sql)).rows[0].test;
     expect((await db.query<{ test: unknown }>(sql)).rows[0].test).toEqual(first);
     await owner();
@@ -540,7 +539,7 @@ describe('sessões privadas de homologação sem efeitos comerciais', () => {
     expect(history).toHaveLength(2);
     expect(history.find((row) => row.id === legacy)?.client_id).toBeNull();
     await fails(
-      `select public.payment_test_apply('${legacy}','67890','123','approved',1000,'BRL',false,'visa',now(),'unit-sandbox-client')`,
+      `select public.payment_test_apply('${legacy}','67890','123','approved',1000,'BRL',false,'visa',now(),'unit-sandbox-client','55555','55555')`,
       /não corresponde/,
     );
   });
@@ -554,11 +553,11 @@ describe('sessões privadas de homologação sem efeitos comerciais', () => {
       /outro aplicativo/,
     );
     await fails(
-      `select public.payment_test_apply('${first.id}','67890','123','approved',1000,'BRL',false,'visa',now(),'other-sandbox-app')`,
+      `select public.payment_test_apply('${first.id}','67890','123','approved',1000,'BRL',false,'visa',now(),'other-sandbox-app','55555','55555')`,
       /aplicativo não corresponde/,
     );
     await fails(
-      `select public.payment_test_apply('${first.id}','67890','123','approved',1000,'BRL',false,'visa',now(),null)`,
+      `select public.payment_test_apply('${first.id}','67890','123','approved',1000,'BRL',false,'visa',now(),null,'55555','55555')`,
       /aplicativo não corresponde/,
     );
     await fails(
@@ -572,9 +571,34 @@ describe('sessões privadas de homologação sem efeitos comerciais', () => {
       'public.payment_test_claim(uuid,text)',
       'public.payment_test_save(uuid,uuid,uuid,text,text)',
       'public.payment_test_apply(uuid,text,text,text,integer,text,boolean,text,timestamptz)',
+      'public.payment_test_apply(uuid,text,text,text,integer,text,boolean,text,timestamptz,text)',
     ])
       expect(
         (await db.query<{ fn: unknown }>(`select to_regprocedure('${signature}') fn`)).rows[0].fn,
       ).toBeNull();
+  });
+  it('preserva o live_mode observado apenas para comprador fictício esperado e distinto do vendedor', async () => {
+    const test = await save();
+    for (const [expected, actual] of [
+      [null, '55555'],
+      ['55555', null],
+      ['55555', '66666'],
+      ['67890', '67890'],
+    ]) {
+      const quote = (id: string | null) => (id === null ? 'null' : `'${id}'`);
+      await fails(
+        `select public.payment_test_apply('${test.id}','67890','123','approved',1000,'BRL',true,'visa',now(),'unit-sandbox-client',${quote(expected)},${quote(actual)})`,
+        /comprador fictício/,
+      );
+    }
+    const result = (
+      await db.query<{ test: { provider_live_mode: boolean; payer_id: string } }>(
+        `select public.payment_test_apply('${test.id}','67890','123','approved',1000,'BRL',true,'visa',now(),'unit-sandbox-client','55555','55555') test`,
+      )
+    ).rows[0].test;
+    expect(result.provider_live_mode).toBe(true);
+    expect(result.payer_id).toBe('55555');
+    await owner();
+    expect((await db.query('select * from public.marketplace_orders')).rows).toHaveLength(0);
   });
 });

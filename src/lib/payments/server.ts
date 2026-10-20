@@ -274,12 +274,13 @@ export type ProviderPayment = {
   date_last_updated: string;
   live_mode: boolean;
   payment_method_id?: string;
+  payer?: { id?: string | number | null } | null;
 };
-export function validatePaymentSnapshot(
+/** Shared remote facts; diagnostic identity is checked separately from commercial mode. */
+export function validatePaymentFacts(
   payment: ProviderPayment,
   account: { providerUserId: string },
   expected: { reference: string; amount_cents: number },
-  sandbox: boolean,
 ) {
   if (
     !/^[0-9]{1,30}$/.test(String(payment.id)) ||
@@ -305,6 +306,19 @@ export function validatePaymentSnapshot(
       'O pagamento não corresponde à referência, ao vendedor, ao valor ou ao ambiente.',
       409,
     );
+  if (typeof payment.live_mode !== 'boolean')
+    throw new PaymentError(
+      'O Mercado Pago não informou o ambiente do pagamento. A conferência foi bloqueada.',
+      409,
+    );
+}
+export function validatePaymentSnapshot(
+  payment: ProviderPayment,
+  account: { providerUserId: string },
+  expected: { reference: string; amount_cents: number },
+  sandbox: boolean,
+) {
+  validatePaymentFacts(payment, account, expected);
   if (payment.live_mode !== !sandbox)
     throw new PaymentError(
       typeof payment.live_mode !== 'boolean'

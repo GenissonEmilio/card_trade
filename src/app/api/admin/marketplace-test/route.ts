@@ -5,6 +5,7 @@ import {
   assertDiagnosticIssuer,
   CHECKOUT_TEST_AMOUNT,
   diagnosticFee,
+  diagnosticBuyerId,
   diagnosticSpec,
   getCheckoutTest,
   refreshCheckoutTest,
@@ -29,6 +30,7 @@ async function authorize() {
     throw new PaymentError('Acesso restrito à administração.', 403);
   const config = paymentConfig();
   assertDiagnosticMode(config.sandbox);
+  diagnosticBuyerId();
   return { client, user, config };
 }
 
@@ -74,6 +76,11 @@ export async function POST(request: Request) {
       throw new PaymentError('Sessão de homologação inválida.');
     // This remotely verifies identity, Brazil and test_user before any preference/cache access.
     const account = await sellerToken(user.id);
+    if (diagnosticBuyerId() === account.providerUserId)
+      throw new PaymentError(
+        'Configure um comprador fictício diferente do vendedor de homologação.',
+        409,
+      );
     if (body.action === 'refresh') {
       const test = await getCheckoutTest(body.testId as string, user.id);
       return json({ test: await refreshCheckoutTest(test, account) });
