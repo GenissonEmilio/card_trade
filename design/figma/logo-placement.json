@@ -1,0 +1,50 @@
+[
+  {
+    "key": "desktop-header",
+    "width": 1440,
+    "parent": "18:3",
+    "old": "18:29",
+    "bounds": {
+      "x": 96,
+      "y": 10,
+      "width": 176,
+      "height": 88
+    }
+  },
+  {
+    "key": "desktop-footer",
+    "width": 1440,
+    "parent": "18:1739",
+    "old": "18:1890",
+    "bounds": {
+      "x": 96,
+      "y": 410,
+      "width": 180,
+      "height": 90
+    }
+  },
+  {
+    "key": "mobile-header",
+    "width": 390,
+    "parent": "18:1947",
+    "old": "18:1973",
+    "bounds": {
+      "x": 20,
+      "y": 15.75,
+      "width": 125,
+      "height": 62.5
+    }
+  },
+  {
+    "key": "mobile-footer",
+    "width": 390,
+    "parent": "18:3499",
+    "old": "18:3652",
+    "bounds": {
+      "x": 20,
+      "y": 391.28125,
+      "width": 180,
+      "height": 90
+    }
+  }
+]

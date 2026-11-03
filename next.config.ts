@@ -5,7 +5,11 @@ const config: NextConfig = {
     '/api/cards': ['./src/data/catalog.json.gz'],
     '/api/catalog-aliases': ['./src/data/catalog.json.gz'],
     '/api/marketplace/listings': ['./src/data/catalog.json.gz'],
-    '/api/card-image/*': ['./src/data/catalog.json.gz'],
+    '/api/card-image/*': [
+      './src/data/catalog.json.gz',
+      './public/cards/*.jpg',
+      './public/card-back.svg',
+    ],
   },
   async headers() {
     return [

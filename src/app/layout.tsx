@@ -4,6 +4,7 @@ import { Shell } from '@/components/shell';
 import './globals.css';
 import './multigame.css';
 import './navigation.css';
+import './pixel-explore.css';
 export const metadata: Metadata = {
   title: { default: 'Duelink — Sua próxima troca está por perto', template: '%s · Duelink' },
   description:

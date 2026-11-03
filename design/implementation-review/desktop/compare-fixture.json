@@ -1,0 +1,1044 @@
+{
+  "ref": {
+    ".nav": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 108,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Explorar\nMarketplace\nMeus decks\nComunidade\nMinha coleção\nEntrar\nCriar conta"
+      }
+    ],
+    ".hero": [
+      {
+        "x": 0,
+        "y": 158,
+        "width": 1440,
+        "height": 768,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "O PONTO DE ENCONTRO DOS DUELISTAS\nSUA COLEÇÃO TEM NOVAS POSSIBILIDADES\nSua próxima carta.\nSua próxim"
+      }
+    ],
+    ".hero-center>.eyebrow": [
+      {
+        "x": 611.953125,
+        "y": 254,
+        "width": 216.09375,
+        "height": 16.5,
+        "fontSize": "11px",
+        "lineHeight": "16.5px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(206, 255, 59)",
+        "text": "O PONTO DE ENCONTRO DOS DUELISTAS"
+      }
+    ],
+    ".hero-center>.small": [
+      {
+        "x": 618.40625,
+        "y": 287.5,
+        "width": 203.171875,
+        "height": 15,
+        "fontSize": "10px",
+        "lineHeight": "15px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(179, 167, 189)",
+        "text": "SUA COLEÇÃO TEM NOVAS POSSIBILIDADES"
+      }
+    ],
+    ".hero-title": [
+      {
+        "x": 470.421875,
+        "y": 319.5,
+        "width": 499.15625,
+        "height": 63.828125,
+        "fontSize": "57px",
+        "lineHeight": "63.84px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Sua próxima carta."
+      },
+      {
+        "x": 429.921875,
+        "y": 400.328125,
+        "width": 580.15625,
+        "height": 63.828125,
+        "fontSize": "57px",
+        "lineHeight": "63.84px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(192, 71, 255)",
+        "text": "Sua próxima conexão."
+      }
+    ],
+    ".hero-center>p": [
+      {
+        "x": 547.1875,
+        "y": 481.15625,
+        "width": 345.625,
+        "height": 55.5,
+        "fontSize": "15px",
+        "lineHeight": "27.75px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(203, 187, 213)",
+        "text": "Cartas que você tem. Cartas que você quer.\nYu-Gi-Oh! e Pokémon na comunidade de Lagarto."
+      }
+    ],
+    ".hero-actions": [
+      {
+        "x": 512.296875,
+        "y": 561.65625,
+        "width": 415.40625,
+        "height": 50,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "12px",
+        "margin": "8px 0px 0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Explorar cartas\nMontar minha coleção"
+      }
+    ],
+    ".hero-proof": [
+      {
+        "x": 576.203125,
+        "y": 632.65625,
+        "width": 287.578125,
+        "height": 18,
+        "fontSize": "12px",
+        "lineHeight": "18px",
+        "display": "flex",
+        "gap": "10px",
+        "margin": "4px 0px 0px",
+        "padding": "0px",
+        "color": "rgb(194, 180, 206)",
+        "text": "Uma comunidade local. Infinitas possibilidades."
+      }
+    ],
+    ".match": [
+      {
+        "x": 464,
+        "y": 720,
+        "width": 510,
+        "height": 100,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "18px",
+        "margin": "0px",
+        "padding": "20px 28px",
+        "color": "rgb(247, 247, 232)",
+        "text": "O match perfeito existe.\nEncontre a peça que falta no seu deck."
+      }
+    ],
+    ".stats": [
+      {
+        "x": 0,
+        "y": 926,
+        "width": 1440,
+        "height": 108,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(35, 11, 49)",
+        "text": "Todo o universo TCG\nCatálogo de Yu-Gi-Oh!\n0 cartas para trocar\nDisponíveis na comunidade\n0 duelistas"
+      }
+    ],
+    ".catalog": [
+      {
+        "x": 0,
+        "y": 1034,
+        "width": 1440,
+        "height": 1708,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "64px 0px 70px",
+        "color": "rgb(33, 12, 46)",
+        "text": "DESCUBRA. COLECIONE. CONECTE.\nEncontre sua próxima carta.\n\nA peça que falta no seu deck pode estar m"
+      }
+    ],
+    ".catalog-head": [
+      {
+        "x": 96,
+        "y": 1098,
+        "width": 1248,
+        "height": 104,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "40px",
+        "margin": "0px 0px 32px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "DESCUBRA. COLECIONE. CONECTE.\nEncontre sua próxima carta.\n\nA peça que falta no seu deck pode estar m"
+      }
+    ],
+    ".catalog h2": [
+      {
+        "x": 96,
+        "y": 1124.5,
+        "width": 960,
+        "height": 48,
+        "fontSize": "40px",
+        "lineHeight": "48px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Encontre sua próxima carta."
+      }
+    ],
+    ".game-tabs": [
+      {
+        "x": 96,
+        "y": 1234,
+        "width": 1248,
+        "height": 46,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "8px",
+        "margin": "0px 0px 24px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Yu-Gi-Oh!\nPokémon"
+      }
+    ],
+    ".catalog-tabs": [
+      {
+        "x": 96,
+        "y": 1304,
+        "width": 1248,
+        "height": 38.5,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "30px",
+        "margin": "0px",
+        "padding": "0px 0px 18px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Explorar catálogo\nNa comunidade\n0\nCatálogo YGOPRODeck"
+      }
+    ],
+    ".controls": [
+      {
+        "x": 96,
+        "y": 1366.5,
+        "width": 1248,
+        "height": 52,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "12px",
+        "margin": "24px 0px 18px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Nome em português, inglês, edição ou código…\nBuscar\nFiltros\nNome: A a Z"
+      }
+    ],
+    ".categories": [
+      {
+        "x": 96,
+        "y": 1436.5,
+        "width": 1248,
+        "height": 38,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "8px",
+        "margin": "0px 0px 24px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Todas as cartas\nMonstros\nMagias\nArmadilhas\nFusão\nSincro\nXyz\nLink"
+      }
+    ],
+    ".results": [
+      {
+        "x": 96,
+        "y": 1498.5,
+        "width": 1248,
+        "height": 16.5,
+        "fontSize": "11px",
+        "lineHeight": "16.5px",
+        "display": "flex",
+        "gap": "40px",
+        "margin": "0px 0px 12px",
+        "padding": "0px",
+        "color": "rgb(99, 81, 109)",
+        "text": "14.617 cartas encontradas · 8 exibidas\nUma carta pode ser o começo de algo maior."
+      }
+    ],
+    ".coverage": [
+      {
+        "x": 96,
+        "y": 1527,
+        "width": 1248,
+        "height": 15,
+        "fontSize": "10px",
+        "lineHeight": "15px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px 0px 28px",
+        "padding": "0px",
+        "color": "rgb(130, 113, 140)",
+        "text": "14.617 cartas · 10.887 nomes em português · catálogo de 19/10/2026. Cartas sem tradução mantêm o nom"
+      }
+    ],
+    ".cards-row": [
+      {
+        "x": 96,
+        "y": 1570,
+        "width": 1248,
+        "height": 497,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "22px",
+        "margin": "0px 0px 24px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Monstro\nBlue-Eyes\nDragão Branco de Olhos Azuis\nBlue-Eyes White Dragon\nNo catálogo\nSincro\nStardust\nDr"
+      }
+    ],
+    ".card": [
+      {
+        "x": 96,
+        "y": 1570,
+        "width": 294,
+        "height": 497,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "16px 16px 32px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Monstro\nBlue-Eyes\nDragão Branco de Olhos Azuis\nBlue-Eyes White Dragon\nNo catálogo"
+      }
+    ],
+    ".art": [
+      {
+        "x": 113,
+        "y": 1587,
+        "width": 260,
+        "height": 270,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Monstro"
+      }
+    ],
+    ".art img": [
+      {
+        "x": 156,
+        "y": 1595.5,
+        "width": 174,
+        "height": 253,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": ""
+      }
+    ],
+    ".card-meta>small": [
+      {
+        "x": 113,
+        "y": 1876,
+        "width": 46.53125,
+        "height": 13,
+        "fontSize": "10px",
+        "lineHeight": "15px",
+        "display": "inline",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(201, 158, 236)",
+        "text": "Blue-Eyes"
+      }
+    ],
+    ".card-name": [
+      {
+        "x": 113,
+        "y": 1898,
+        "width": 260,
+        "height": 40,
+        "fontSize": "14px",
+        "lineHeight": "18.9px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "6px 0px 0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Dragão Branco de Olhos Azuis"
+      }
+    ],
+    ".original": [
+      {
+        "x": 113,
+        "y": 1941,
+        "width": 260,
+        "height": 29,
+        "fontSize": "10px",
+        "lineHeight": "15px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "3px 0px 0px",
+        "padding": "0px",
+        "color": "rgb(161, 133, 178)",
+        "text": "Blue-Eyes White Dragon"
+      }
+    ],
+    ".card-bottom": [
+      {
+        "x": 113,
+        "y": 1970,
+        "width": 260,
+        "height": 60,
+        "fontSize": "11px",
+        "lineHeight": "15.4px",
+        "display": "grid",
+        "gap": "12px",
+        "margin": "0px",
+        "padding": "12px 0px 0px",
+        "color": "rgb(214, 196, 226)",
+        "text": "No catálogo"
+      }
+    ],
+    ".card-add": [
+      {
+        "x": 329,
+        "y": 1984.5,
+        "width": 44,
+        "height": 44,
+        "fontSize": "13.3333px",
+        "lineHeight": "13.3333px",
+        "display": "flex",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(0, 0, 0)",
+        "text": ""
+      }
+    ],
+    ".closing": [
+      {
+        "x": 0,
+        "y": 2742,
+        "width": 1440,
+        "height": 355,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "176px 0px 80px",
+        "color": "rgb(247, 247, 232)",
+        "text": "CONNECT. TRADE. DUEL.\nO seu repetido pode ser o desejo de alguém.\n\nOrganize sua coleção e deixe as c"
+      }
+    ],
+    ".footer": [
+      {
+        "x": 0,
+        "y": 3097,
+        "width": 1440,
+        "height": 358.5,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "54px 0px 30px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Uma nova conexão para sua coleção.\n\nFeito para duelistas de Lagarto\n\nVender cartas\nCompras e vendas\n"
+      }
+    ],
+    ".footer-top": [
+      {
+        "x": 96,
+        "y": 3152,
+        "width": 1248,
+        "height": 175.5,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "80px",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Uma nova conexão para sua coleção.\n\nFeito para duelistas de Lagarto\n\nVender cartas\nCompras e vendas\n"
+      }
+    ],
+    ".community": [
+      {
+        "x": 1076,
+        "y": 3152,
+        "width": 245,
+        "height": 175.5,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Seu próximo match\nestá por perto.\n\nSua coleção conecta você à comunidade de Lagarto.\n\nFaça parte ↗"
+      }
+    ]
+  },
+  "app": {
+    ".pixel-header-row": [
+      {
+        "x": 96,
+        "y": 0,
+        "width": 1248,
+        "height": 108,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "46px",
+        "margin": "0px 96px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Explorar\nMarketplace\nMeus decks\nComunidade\nMinha coleção\nEntrar\nCriar conta"
+      }
+    ],
+    ".pixel-hero": [
+      {
+        "x": 0,
+        "y": 158,
+        "width": 1440,
+        "height": 768,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "O PONTO DE ENCONTRO DOS DUELISTAS\nSUA COLEÇÃO TEM NOVAS POSSIBILIDADES\nSua próxima carta.\nSua próxim"
+      }
+    ],
+    ".pixel-hero-copy>.eyebrow": [
+      {
+        "x": 611.96875,
+        "y": 254,
+        "width": 216.0625,
+        "height": 16.5,
+        "fontSize": "11px",
+        "lineHeight": "16.5px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(206, 255, 59)",
+        "text": "O PONTO DE ENCONTRO DOS DUELISTAS"
+      }
+    ],
+    ".pixel-hero-tag": [
+      {
+        "x": 618.40625,
+        "y": 287.5,
+        "width": 203.171875,
+        "height": 15,
+        "fontSize": "10px",
+        "lineHeight": "15px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(179, 167, 189)",
+        "text": "SUA COLEÇÃO TEM NOVAS POSSIBILIDADES"
+      }
+    ],
+    ".pixel-hero-copy h1": [
+      {
+        "x": 429.921875,
+        "y": 319.5,
+        "width": 580.15625,
+        "height": 144.65625,
+        "fontSize": "57px",
+        "lineHeight": "63.84px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Sua próxima carta.\nSua próxima conexão."
+      }
+    ],
+    ".pixel-hero-copy>p": [
+      {
+        "x": 547.1875,
+        "y": 481.15625,
+        "width": 345.625,
+        "height": 55.5,
+        "fontSize": "15px",
+        "lineHeight": "27.75px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(203, 187, 213)",
+        "text": "Cartas que você tem. Cartas que você quer.\nYu-Gi-Oh! e Pokémon na comunidade de Lagarto."
+      }
+    ],
+    ".hero-actions": [
+      {
+        "x": 514.296875,
+        "y": 561.65625,
+        "width": 411.390625,
+        "height": 50,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "12px",
+        "margin": "8px 0px 0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Explorar cartas\nMontar minha coleção"
+      }
+    ],
+    ".pixel-hero-proof": [
+      {
+        "x": 576.203125,
+        "y": 632.65625,
+        "width": 287.578125,
+        "height": 18,
+        "fontSize": "12px",
+        "lineHeight": "18px",
+        "display": "flex",
+        "gap": "10px",
+        "margin": "4px 0px 0px",
+        "padding": "0px",
+        "color": "rgb(194, 180, 206)",
+        "text": "Uma comunidade local. Infinitas possibilidades."
+      }
+    ],
+    ".pixel-match": [
+      {
+        "x": 464,
+        "y": 720,
+        "width": 510,
+        "height": 100,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "18px",
+        "margin": "0px",
+        "padding": "20px 28px",
+        "color": "rgb(247, 247, 232)",
+        "text": "O match perfeito existe.\nEncontre a peça que falta no seu deck."
+      }
+    ],
+    ".stats-strip": [
+      {
+        "x": 0,
+        "y": 926,
+        "width": 1440,
+        "height": 108,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "grid",
+        "gap": "36px",
+        "margin": "0px",
+        "padding": "30px 96px",
+        "color": "rgb(35, 11, 49)",
+        "text": "Todo o universo TCG\nCatálogo de Yu-Gi-Oh!\n0 cartas para trocar\nDisponíveis na comunidade\n0 duelistas"
+      }
+    ],
+    ".catalog-section": [
+      {
+        "x": 0,
+        "y": 1034,
+        "width": 1440,
+        "height": 1733,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "64px 96px 70px",
+        "color": "rgb(33, 12, 46)",
+        "text": "DESCUBRA. COLECIONE. CONECTE.\nEncontre sua próxima carta.\n\nA peça que falta no seu deck pode estar m"
+      }
+    ],
+    ".catalog-title": [
+      {
+        "x": 96,
+        "y": 1098,
+        "width": 1248,
+        "height": 104,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "40px",
+        "margin": "0px 0px 32px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "DESCUBRA. COLECIONE. CONECTE.\nEncontre sua próxima carta.\n\nA peça que falta no seu deck pode estar m"
+      }
+    ],
+    ".catalog-title h2": [
+      {
+        "x": 96,
+        "y": 1124.5,
+        "width": 526.734375,
+        "height": 48,
+        "fontSize": "40px",
+        "lineHeight": "48px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Encontre sua próxima carta."
+      }
+    ],
+    ".game-switch": [
+      {
+        "x": 96,
+        "y": 1234,
+        "width": 269.578125,
+        "height": 46,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "8px",
+        "margin": "0px 0px 24px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Yu-Gi-Oh!\nPokémon"
+      }
+    ],
+    ".catalog-tabs": [
+      {
+        "x": 96,
+        "y": 1304,
+        "width": 1248,
+        "height": 38.5,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "30px",
+        "margin": "0px",
+        "padding": "0px 0px 18px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Explorar catálogo\nNa comunidade\n0\nCatálogo YGOPRODeck"
+      }
+    ],
+    ".catalog-controls": [
+      {
+        "x": 96,
+        "y": 1366.5,
+        "width": 1248,
+        "height": 52,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "12px",
+        "margin": "24px 0px 18px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Buscar\nFiltros\nOrdenar cartas\nNome: A a Z\nNome: Z a A"
+      }
+    ],
+    ".category-chips": [
+      {
+        "x": 96,
+        "y": 1436.5,
+        "width": 1248,
+        "height": 38,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "8px",
+        "margin": "0px 0px 25px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Todas as cartas\nMonstros\nMagias\nArmadilhas\nFusão\nSincro\nXyz\nLink"
+      }
+    ],
+    ".results-caption": [
+      {
+        "x": 96,
+        "y": 1499.5,
+        "width": 1248,
+        "height": 16.5,
+        "fontSize": "11px",
+        "lineHeight": "16.5px",
+        "display": "flex",
+        "gap": "16px",
+        "margin": "0px 0px 12px",
+        "padding": "0px",
+        "color": "rgb(99, 81, 109)",
+        "text": "14.617 cartas encontradas · 8 exibidas\nUma carta pode ser o começo de algo maior."
+      }
+    ],
+    ".catalog-coverage": [
+      {
+        "x": 96,
+        "y": 1528,
+        "width": 1248,
+        "height": 15,
+        "fontSize": "10px",
+        "lineHeight": "15px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px 0px 28px",
+        "padding": "0px",
+        "color": "rgb(130, 113, 140)",
+        "text": "14.617 cartas · 10.887 nomes em português · catálogo de 19/10/2026. Cartas sem tradução mantêm o nom"
+      }
+    ],
+    ".cards-grid": [
+      {
+        "x": 96,
+        "y": 1571,
+        "width": 1242,
+        "height": 1018,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "grid",
+        "gap": "24px 22px",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(33, 12, 46)",
+        "text": "Monstro\nBlue-Eyes\nDragão Branco de Olhos Azuis\nBlue-Eyes White Dragon\nNo catálogo\nSincro\nStardust\nDr"
+      }
+    ],
+    ".card-tile": [
+      {
+        "x": 96,
+        "y": 1571,
+        "width": 294,
+        "height": 497,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "16px 16px 32px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Monstro\nBlue-Eyes\nDragão Branco de Olhos Azuis\nBlue-Eyes White Dragon\nNo catálogo"
+      }
+    ],
+    ".card-art-wrap": [
+      {
+        "x": 113,
+        "y": 1588,
+        "width": 260,
+        "height": 270,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "flex",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Monstro"
+      }
+    ],
+    ".card-art": [
+      {
+        "x": 156,
+        "y": 1596.5,
+        "width": 174,
+        "height": 253,
+        "fontSize": "14px",
+        "lineHeight": "0px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": ""
+      }
+    ],
+    ".card-meta>small": [
+      {
+        "x": 113,
+        "y": 1877,
+        "width": 55.53125,
+        "height": 13,
+        "fontSize": "10px",
+        "lineHeight": "15px",
+        "display": "inline",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(201, 158, 236)",
+        "text": "Blue-Eyes"
+      }
+    ],
+    ".card-name": [
+      {
+        "x": 113,
+        "y": 1899,
+        "width": 260,
+        "height": 40,
+        "fontSize": "14px",
+        "lineHeight": "18.9px",
+        "display": "flow-root",
+        "gap": "normal",
+        "margin": "6px 0px 0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Dragão Branco de Olhos Azuis"
+      }
+    ],
+    ".card-original-name": [
+      {
+        "x": 113,
+        "y": 1942,
+        "width": 260,
+        "height": 29,
+        "fontSize": "10px",
+        "lineHeight": "15px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "3px 0px 0px",
+        "padding": "0px",
+        "color": "rgb(161, 133, 178)",
+        "text": "Blue-Eyes White Dragon"
+      }
+    ],
+    ".card-bottom": [
+      {
+        "x": 113,
+        "y": 1971,
+        "width": 260,
+        "height": 60,
+        "fontSize": "11px",
+        "lineHeight": "15.4px",
+        "display": "grid",
+        "gap": "12px",
+        "margin": "0px",
+        "padding": "12px 0px 0px",
+        "color": "rgb(214, 196, 226)",
+        "text": "No catálogo"
+      }
+    ],
+    ".card-add": [
+      {
+        "x": 329,
+        "y": 1985.5,
+        "width": 44,
+        "height": 44,
+        "fontSize": "11px",
+        "lineHeight": "15.4px",
+        "display": "flex",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(39, 13, 53)",
+        "text": ""
+      }
+    ],
+    ".pixel-closing": [
+      {
+        "x": 0,
+        "y": 2767,
+        "width": 1440,
+        "height": 355,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "176px 0px 80px",
+        "color": "rgb(247, 247, 232)",
+        "text": "CONNECT. TRADE. DUEL.\nO seu repetido pode ser o desejo de alguém.\n\nOrganize sua coleção e deixe as c"
+      }
+    ],
+    ".pixel-footer": [
+      {
+        "x": 0,
+        "y": 3122,
+        "width": 1440,
+        "height": 358.5,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "24px",
+        "margin": "0px",
+        "padding": "54px 0px 30px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Uma nova conexão para sua coleção.\n\nFeito para duelistas de Lagarto\n\nVender cartas\nCompras e vendas\n"
+      }
+    ],
+    ".pixel-footer-top": [
+      {
+        "x": 96,
+        "y": 3177,
+        "width": 1248,
+        "height": 175.5,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "grid",
+        "gap": "80px",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Uma nova conexão para sua coleção.\n\nFeito para duelistas de Lagarto\n\nVender cartas\nCompras e vendas\n"
+      }
+    ],
+    ".pixel-community": [
+      {
+        "x": 1076,
+        "y": 3177,
+        "width": 245,
+        "height": 175.5,
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "display": "block",
+        "gap": "normal",
+        "margin": "0px",
+        "padding": "0px",
+        "color": "rgb(247, 247, 232)",
+        "text": "Seu próximo match\nestá por perto.\n\nSua coleção conecta você à comunidade de Lagarto.\n\nFaça parte ↗"
+      }
+    ]
+  }
+}

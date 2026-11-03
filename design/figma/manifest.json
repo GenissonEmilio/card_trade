@@ -1,0 +1,81 @@
+{
+  "fileKey": "5um6rt7EPycsek27y2AEEw",
+  "sections": {
+    "desktop": [
+      {
+        "name": "header",
+        "path": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\desktop-header.html",
+        "width": 1440
+      },
+      {
+        "name": "hero",
+        "path": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\desktop-hero.html",
+        "width": 1440
+      },
+      {
+        "name": "stats",
+        "path": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\desktop-stats.html",
+        "width": 1440
+      },
+      {
+        "name": "catalog",
+        "path": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\desktop-catalog.html",
+        "width": 1440
+      },
+      {
+        "name": "footer",
+        "path": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\desktop-footer.html",
+        "width": 1440
+      }
+    ],
+    "mobile": [
+      {
+        "name": "header",
+        "path": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\mobile-header.html",
+        "width": 390
+      },
+      {
+        "name": "hero",
+        "path": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\mobile-hero.html",
+        "width": 390
+      },
+      {
+        "name": "stats",
+        "path": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\mobile-stats.html",
+        "width": 390
+      },
+      {
+        "name": "catalog",
+        "path": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\mobile-catalog.html",
+        "width": 390
+      },
+      {
+        "name": "footer",
+        "path": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\mobile-footer.html",
+        "width": 390
+      }
+    ]
+  },
+  "states": "C:\\Users\\vinic\\Documents\\ChatGPT\\DUELINK\\card_trade\\design\\figma\\states.html",
+  "fonts": [
+    "Chakra Petch",
+    "DM Sans"
+  ],
+  "scope": "Redesign visual da página Explorar; copy e contratos funcionais preservados.",
+  "limitations": "Bridge oferece camadas nativas via HTML; sem API para criar componentes ou protótipos navegáveis.",
+  "colors": {
+    "background": "#13071c",
+    "surface": "#240a36",
+    "lime": "#ceff3b",
+    "violet": "#c047ff",
+    "ivory": "#f7f7e8",
+    "text": "#f7f7e8",
+    "muted": "#b3a7bd"
+  },
+  "figma": {
+    "desktop": "3:2",
+    "mobile": "4:252",
+    "states": "9:6347"
+  },
+  "pipeline": "DOM medido no navegador → SVG sem foreignObject → texto, vetores, imagens e grupos nativos pela Claude Bridge"
+}

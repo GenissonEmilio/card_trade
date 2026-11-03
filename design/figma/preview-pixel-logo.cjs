@@ -1,0 +1,10 @@
+const fs=require('fs'),path=require('path'),{pathToFileURL}=require('url');
+const {chromium}=require('C:/Users/vinic/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const dir=path.resolve(__dirname,'../../public/brand'),svg=fs.readFileSync(path.join(dir,'duelink-logo-pixel.svg'),'utf8');
+const mark=w=>svg.replace('width="1152" height="576"',`width="${w}" height="${w/2}"`);
+const html=`<!doctype html><html><head><meta charset="utf-8"><style>*{box-sizing:border-box}body{margin:0;width:1152px;background:#13071c;color:#f7f7e8;font-family:Arial,sans-serif}.main{width:1152px;height:576px;display:flex;align-items:center;justify-content:center}.sizes{display:flex;gap:72px;align-items:flex-start;padding:32px 96px 48px;border-top:1px solid #4f255f}.sample{width:250px}.label{font-size:12px;color:#bba2cb;margin-bottom:24px}.sample svg{display:block}.cream{background:#f7f7e8;padding:20px;display:inline-block}</style></head><body><div class="main">${mark(900)}</div><div class="sizes"><div class="sample"><div class="label">Cabeçalho · 176 px</div>${mark(176)}</div><div class="sample"><div class="label">Mobile · 125 px</div>${mark(125)}</div><div class="sample"><div class="label">Fundo claro</div><div class="cream">${mark(176)}</div></div></div></body></html>`;
+fs.writeFileSync(path.join(__dirname,'logo-proof.html'),html);
+(async()=>{const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});try{
+ const page=await browser.newPage({viewport:{width:1152,height:820}});await page.goto(pathToFileURL(path.join(__dirname,'logo-proof.html')).href);await page.screenshot({path:path.join(dir,'duelink-logo-pixel-preview.png'),fullPage:true});
+ await page.setContent(`<html><body style="margin:0;background:transparent">${svg}</body></html>`);await page.setViewportSize({width:1152,height:576});await page.screenshot({path:path.join(dir,'duelink-logo-pixel.png'),omitBackground:true});
+}finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});

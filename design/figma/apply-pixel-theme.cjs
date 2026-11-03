@@ -1,0 +1,10 @@
+const fs=require('fs'),path=require('path');
+const file=path.join(__dirname,'build-design.cjs');let s=fs.readFileSync(file,'utf8');
+if(!s.includes('const pixelCss='))s=s.replace('const revisionCss=',"const pixelCss=fs.readFileSync(path.join(__dirname,'pixel-theme.css'),'utf8');\nconst revisionCss=").replace('${css}${revisionCss}body{','${css}${revisionCss}${pixelCss}body{');
+const edge=`<svg class="pixel-edge" viewBox="0 0 1440 44" preserveAspectRatio="none"><path fill="#f7f7e8" d="M0 0H1440V12H1360V32H1280V12H1200V28H1140V12H360V32H280V16H160V44H100V22H0Z"/></svg>`;
+const bottom=`<svg class="pixel-edge bottom" viewBox="0 0 1440 22" preserveAspectRatio="none"><path fill="#f7f7e8" d="M0 22V12H80V0H100V12H210V22H1240V8H1260V22H1440Z"/></svg>`;
+const aura=`<svg class="aura" viewBox="0 0 640 640"><defs><radialGradient id="auraLeft"><stop stop-color="#a52ceb" stop-opacity=".56"/><stop offset="1" stop-color="#a52ceb" stop-opacity="0"/></radialGradient></defs><circle cx="320" cy="320" r="320" fill="url(#auraLeft)"/></svg><svg class="aura right" viewBox="0 0 640 640"><defs><radialGradient id="auraRight"><stop stop-color="#9d21e7" stop-opacity=".56"/><stop offset="1" stop-color="#9d21e7" stop-opacity="0"/></radialGradient></defs><circle cx="320" cy="320" r="320" fill="url(#auraRight)"/></svg>`;
+s=s.replace('<section class="hero"><div class="hero-glow">',`<section class="hero">${edge}${aura}${bottom}<div class="hero-glow">`);
+s=s.replace('<article class="card"><div class="art">','<article class="card"><div class="corner-cut"></div><div class="art">');
+s=s.replaceAll("'#f5cf60'","'#ceff3b'").replaceAll("'#80d7dc'","'#c384ff'");
+fs.writeFileSync(file,s);

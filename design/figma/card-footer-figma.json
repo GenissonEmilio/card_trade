@@ -1,0 +1,20 @@
+{
+  "_staging": {
+    "id": "27:10415",
+    "name": "Preparação — rodapés dos cards",
+    "type": "FRAME"
+  },
+  "desktop": {
+    "id": "27:10416",
+    "height": 1708,
+    "firstRow": "27:11166",
+    "published": true
+  },
+  "mobile": {
+    "id": "27:12133",
+    "height": 2542.3125,
+    "firstRow": "27:12884",
+    "published": true
+  },
+  "stagingRemoved": true
+}

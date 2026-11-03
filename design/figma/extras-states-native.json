@@ -1,0 +1,387 @@
+{
+  "width": 1248,
+  "height": 1434.890625,
+  "texts": [
+    {
+      "text": "Controles e estados da página",
+      "font": "Chakra Petch",
+      "weight": "700"
+    },
+    {
+      "text": "Copy preservada do projeto. Estados de referência para busca, filtros, coleção e navegação. Dados do catálogo sincronizado; indicadores da comunidade em zero na ausência de conexão.",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Filtros",
+      "font": "Chakra Petch",
+      "weight": "700"
+    },
+    {
+      "text": "Atributo",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Todos os atributos",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Trevas",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Luz",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Terra",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Água",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Fogo",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Vento",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Divino",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Limpar filtros",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Nome: A a Z",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Nome: Z a A",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Pokémon",
+      "font": "Chakra Petch",
+      "weight": "700"
+    },
+    {
+      "text": "Todas as cartas",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Pokémon",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Treinadores",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Energias",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Tipo Pokémon",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Todos os atributos",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Planta",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Fogo",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Água",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Elétrico",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Psíquico",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Lutador",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Escuridão",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Metal",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Dragão",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Incolor",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Fada",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "As primeiras trocas começam com você.",
+      "font": "Chakra Petch",
+      "weight": "700"
+    },
+    {
+      "text": "A comunidade está ganhando vida. Adicione suas cartas e ajude a conectar os primeiros duelistas de Lagarto.",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Adicionar minhas cartas",
+      "font": "DM Sans",
+      "weight": "700"
+    },
+    {
+      "text": "Esta carta ainda não apareceu.",
+      "font": "Chakra Petch",
+      "weight": "700"
+    },
+    {
+      "text": "Tente parte do nome em português ou inglês, o código da carta ou altere os filtros.",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Detalhes da carta",
+      "font": "Chakra Petch",
+      "weight": "700"
+    },
+    {
+      "text": "Monstro · Spellcaster",
+      "font": "DM Sans",
+      "weight": "700"
+    },
+    {
+      "text": "Mago Negro",
+      "font": "Chakra Petch",
+      "weight": "700"
+    },
+    {
+      "text": "Dark Magician",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Atributo",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "DARK",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Nível",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "7",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "ATK",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "2500",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "DEF",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "2100",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Cada carta, uma nova possibilidade.",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Sobre a carta",
+      "font": "Chakra Petch",
+      "weight": "700"
+    },
+    {
+      "text": "''The ultimate wizard in terms of attack and defense.''",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Catálogo YGOPRODeck. Nomes e textos em português quando disponíveis; a imagem pode estar em outro idioma.",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Adicionar à minha coleção",
+      "font": "DM Sans",
+      "weight": "700"
+    },
+    {
+      "text": "Olá, duelista",
+      "font": "Chakra Petch",
+      "weight": "700"
+    },
+    {
+      "text": "Entre na comunidade",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Explorar",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Marketplace",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Meus decks",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Comunidade",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Minha coleção",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Vender cartas",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Compras e vendas",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Lista de desejos",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Meus matches",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Minhas trocas",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Como funciona",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Configurações",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Entrar",
+      "font": "DM Sans",
+      "weight": "700"
+    },
+    {
+      "text": "Criar conta",
+      "font": "DM Sans",
+      "weight": "700"
+    },
+    {
+      "text": "Minha conta",
+      "font": "Chakra Petch",
+      "weight": "700"
+    },
+    {
+      "text": "Adicionar carta",
+      "font": "DM Sans",
+      "weight": "700"
+    },
+    {
+      "text": "Sair da conta",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Adicionar à coleção · Adicionar aos desejos · Propor troca",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Os cliques preservam os destinos e regras de autenticação do projeto.",
+      "font": "DM Sans",
+      "weight": "400"
+    }
+  ],
+  "images": 1
+}

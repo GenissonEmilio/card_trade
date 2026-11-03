@@ -1,0 +1,1642 @@
+[
+  {
+    "width": 1440,
+    "errors": [],
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "bodyHeight": 5531,
+    "geometry": {
+      ".pixel-header-row": [
+        {
+          "text": "Explorar\nMarketplace\nMeus decks\nComunidade\nMinha coleção\nEntrar\nCriar conta",
+          "x": 96,
+          "y": 0,
+          "width": 1248,
+          "height": 108,
+          "right": 1344,
+          "bottom": 108,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".pixel-utility": [
+        {
+          "text": "Vender cartas\nCompras e vendas\nLista de desejos\nMeus matches\nMinhas trocas\nComo funciona\nConfigurações\nLagarto, SE",
+          "x": 0,
+          "y": 108,
+          "width": 1440,
+          "height": 50,
+          "right": 1440,
+          "bottom": 158,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".pixel-hero": [
+        {
+          "text": "O PONTO DE ENCONTRO DOS DUELISTAS\nSUA COLEÇÃO TEM NOVAS POSSIBILIDADES\nSua próxima carta.\nSua próxima conexão.\n\nCartas que você tem. Cartas ",
+          "x": 0,
+          "y": 158,
+          "width": 1440,
+          "height": 768,
+          "right": 1440,
+          "bottom": 926,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".pixel-hero-copy": [
+        {
+          "text": "O PONTO DE ENCONTRO DOS DUELISTAS\nSUA COLEÇÃO TEM NOVAS POSSIBILIDADES\nSua próxima carta.\nSua próxima conexão.\n\nCartas que você tem. Cartas ",
+          "x": 350,
+          "y": 254,
+          "width": 740,
+          "height": 406.65625,
+          "right": 1090,
+          "bottom": 660.65625,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".pixel-hero-copy h1": [
+        {
+          "text": "Sua próxima carta.\nSua próxima conexão.",
+          "x": 429.921875,
+          "y": 329.5,
+          "width": 580.15625,
+          "height": 144.65625,
+          "right": 1010.078125,
+          "bottom": 474.15625,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"Chakra Petch\", \"DM Sans\", sans-serif",
+          "fontSize": "57px"
+        }
+      ],
+      ".pixel-match": [
+        {
+          "text": "O match perfeito existe.\nEncontre a peça que falta no seu deck.",
+          "x": 464,
+          "y": 720,
+          "width": 510,
+          "height": 100,
+          "right": 974,
+          "bottom": 820,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".stats-strip": [
+        {
+          "text": "Todo o universo TCG\nCatálogo de Yu-Gi-Oh!\n0 cartas para trocar\nDisponíveis na comunidade\n0 duelistas conectados\nNovas conexões começam aqui\n",
+          "x": 0,
+          "y": 926,
+          "width": 1440,
+          "height": 108,
+          "right": 1440,
+          "bottom": 1034,
+          "color": "rgb(35, 11, 49)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".catalog-section": [
+        {
+          "text": "DESCUBRA. COLECIONE. CONECTE.\nEncontre sua próxima carta.\n\nA peça que falta no seu deck pode estar mais perto do que você imagina.\n\nMinha li",
+          "x": 0,
+          "y": 1034,
+          "width": 1440,
+          "height": 3776,
+          "right": 1440,
+          "bottom": 4810,
+          "color": "rgb(33, 12, 46)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".catalog-title": [
+        {
+          "text": "DESCUBRA. COLECIONE. CONECTE.\nEncontre sua próxima carta.\n\nA peça que falta no seu deck pode estar mais perto do que você imagina.\n\nMinha li",
+          "x": 96,
+          "y": 1098,
+          "width": 1248,
+          "height": 114,
+          "right": 1344,
+          "bottom": 1212,
+          "color": "rgb(33, 12, 46)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".catalog-controls": [
+        {
+          "text": "Buscar\nFiltros\nOrdenar cartas\nNome: A a Z\nNome: Z a A",
+          "x": 96,
+          "y": 1386.5,
+          "width": 1248,
+          "height": 52,
+          "right": 1344,
+          "bottom": 1438.5,
+          "color": "rgb(33, 12, 46)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".cards-grid": [
+        {
+          "text": "Magia\nK9\n\"A Case for K9\"\n\"A Case for K9\"\nNo catálogo\nMagia\nMelodious\n1º Movimento Solitário\n1st Movement Solo\nNo catálogo\nMagia\nContinuous\n7",
+          "x": 96,
+          "y": 1596,
+          "width": 1248,
+          "height": 3060,
+          "right": 1344,
+          "bottom": 4656,
+          "color": "rgb(33, 12, 46)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".card-tile": [
+        {
+          "text": "Magia\nK9\n\"A Case for K9\"\n\"A Case for K9\"\nNo catálogo",
+          "x": 96,
+          "y": 1596,
+          "width": 294,
+          "height": 490,
+          "right": 390,
+          "bottom": 2086,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia\nMelodious\n1º Movimento Solitário\n1st Movement Solo\nNo catálogo",
+          "x": 414,
+          "y": 1596,
+          "width": 294,
+          "height": 490,
+          "right": 708,
+          "bottom": 2086,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia\nContinuous\n7\n7\nNo catálogo",
+          "x": 732,
+          "y": 1596,
+          "width": 294,
+          "height": 490,
+          "right": 1026,
+          "bottom": 2086,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia\nEquip\n7 Completados\n7 Completed\nNo catálogo",
+          "x": 1050,
+          "y": 1596,
+          "width": 294,
+          "height": 490,
+          "right": 1344,
+          "bottom": 2086,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Fusão\nABC\nA a Z - Dragão Canhão Banimento\nA-to-Z-Dragon Buster Cannon\nNo catálogo",
+          "x": 96,
+          "y": 2110,
+          "width": 294,
+          "height": 490,
+          "right": 390,
+          "bottom": 2600,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Monstro\nWarrior\nA Amazona Hostil\nThe Unfriendly Amazon\nNo catálogo",
+          "x": 414,
+          "y": 2110,
+          "width": 294,
+          "height": 490,
+          "right": 708,
+          "bottom": 2600,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Armadilha\nNinja\nA Arte de Super Transformação Ninjitsu\nNinjitsu Art of Super-Transformation\nNo catálogo",
+          "x": 732,
+          "y": 2110,
+          "width": 294,
+          "height": 490,
+          "right": 1026,
+          "bottom": 2600,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Armadilha\nNinja\nA Arte de Transformação Ninjitsu\nNinjitsu Art of Transformation\nNo catálogo",
+          "x": 1050,
+          "y": 2110,
+          "width": 294,
+          "height": 490,
+          "right": 1344,
+          "bottom": 2600,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".card-art-wrap": [
+        {
+          "text": "Magia",
+          "x": 112,
+          "y": 1612,
+          "width": 262,
+          "height": 270,
+          "right": 374,
+          "bottom": 1882,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia",
+          "x": 430,
+          "y": 1612,
+          "width": 262,
+          "height": 270,
+          "right": 692,
+          "bottom": 1882,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia",
+          "x": 748,
+          "y": 1612,
+          "width": 262,
+          "height": 270,
+          "right": 1010,
+          "bottom": 1882,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia",
+          "x": 1066,
+          "y": 1612,
+          "width": 262,
+          "height": 270,
+          "right": 1328,
+          "bottom": 1882,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Fusão",
+          "x": 112,
+          "y": 2126,
+          "width": 262,
+          "height": 270,
+          "right": 374,
+          "bottom": 2396,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Monstro",
+          "x": 430,
+          "y": 2126,
+          "width": 262,
+          "height": 270,
+          "right": 692,
+          "bottom": 2396,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Armadilha",
+          "x": 748,
+          "y": 2126,
+          "width": 262,
+          "height": 270,
+          "right": 1010,
+          "bottom": 2396,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Armadilha",
+          "x": 1066,
+          "y": 2126,
+          "width": 262,
+          "height": 270,
+          "right": 1328,
+          "bottom": 2396,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".card-art": [
+        {
+          "text": "",
+          "x": 155.921875,
+          "y": 1620,
+          "width": 174.15625,
+          "height": 254,
+          "right": 330.078125,
+          "bottom": 1874,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 473.921875,
+          "y": 1620,
+          "width": 174.15625,
+          "height": 254,
+          "right": 648.078125,
+          "bottom": 1874,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 791.921875,
+          "y": 1620,
+          "width": 174.15625,
+          "height": 254,
+          "right": 966.078125,
+          "bottom": 1874,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 1109.921875,
+          "y": 1620,
+          "width": 174.15625,
+          "height": 254,
+          "right": 1284.078125,
+          "bottom": 1874,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 155.921875,
+          "y": 2134,
+          "width": 174.15625,
+          "height": 254,
+          "right": 330.078125,
+          "bottom": 2388,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 473.921875,
+          "y": 2134,
+          "width": 174.15625,
+          "height": 254,
+          "right": 648.078125,
+          "bottom": 2388,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 791.921875,
+          "y": 2134,
+          "width": 174.15625,
+          "height": 254,
+          "right": 966.078125,
+          "bottom": 2388,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 1109.921875,
+          "y": 2134,
+          "width": 174.15625,
+          "height": 254,
+          "right": 1284.078125,
+          "bottom": 2388,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".card-name": [
+        {
+          "text": "\"A Case for K9\"",
+          "x": 112,
+          "y": 1919,
+          "width": 262,
+          "height": 42,
+          "right": 374,
+          "bottom": 1961,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "1º Movimento Solitário",
+          "x": 430,
+          "y": 1919,
+          "width": 262,
+          "height": 42,
+          "right": 692,
+          "bottom": 1961,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "7",
+          "x": 748,
+          "y": 1919,
+          "width": 262,
+          "height": 42,
+          "right": 1010,
+          "bottom": 1961,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "7 Completados",
+          "x": 1066,
+          "y": 1919,
+          "width": 262,
+          "height": 42,
+          "right": 1328,
+          "bottom": 1961,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "A a Z - Dragão Canhão Banimento",
+          "x": 112,
+          "y": 2433,
+          "width": 262,
+          "height": 42,
+          "right": 374,
+          "bottom": 2475,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "A Amazona Hostil",
+          "x": 430,
+          "y": 2433,
+          "width": 262,
+          "height": 42,
+          "right": 692,
+          "bottom": 2475,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "A Arte de Super Transformação Ninjitsu",
+          "x": 748,
+          "y": 2433,
+          "width": 262,
+          "height": 42,
+          "right": 1010,
+          "bottom": 2475,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "A Arte de Transformação Ninjitsu",
+          "x": 1066,
+          "y": 2433,
+          "width": 262,
+          "height": 42,
+          "right": 1328,
+          "bottom": 2475,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".card-bottom": [
+        {
+          "text": "No catálogo",
+          "x": 112,
+          "y": 1990,
+          "width": 262,
+          "height": 60,
+          "right": 374,
+          "bottom": 2050,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 430,
+          "y": 1990,
+          "width": 262,
+          "height": 60,
+          "right": 692,
+          "bottom": 2050,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 748,
+          "y": 1990,
+          "width": 262,
+          "height": 60,
+          "right": 1010,
+          "bottom": 2050,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 1066,
+          "y": 1990,
+          "width": 262,
+          "height": 60,
+          "right": 1328,
+          "bottom": 2050,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 112,
+          "y": 2504,
+          "width": 262,
+          "height": 60,
+          "right": 374,
+          "bottom": 2564,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 430,
+          "y": 2504,
+          "width": 262,
+          "height": 60,
+          "right": 692,
+          "bottom": 2564,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 748,
+          "y": 2504,
+          "width": 262,
+          "height": 60,
+          "right": 1010,
+          "bottom": 2564,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 1066,
+          "y": 2504,
+          "width": 262,
+          "height": 60,
+          "right": 1328,
+          "bottom": 2564,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        }
+      ],
+      ".card-add": [
+        {
+          "text": "",
+          "x": 330,
+          "y": 2004.5,
+          "width": 44,
+          "height": 44,
+          "right": 374,
+          "bottom": 2048.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 648,
+          "y": 2004.5,
+          "width": 44,
+          "height": 44,
+          "right": 692,
+          "bottom": 2048.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 966,
+          "y": 2004.5,
+          "width": 44,
+          "height": 44,
+          "right": 1010,
+          "bottom": 2048.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 1284,
+          "y": 2004.5,
+          "width": 44,
+          "height": 44,
+          "right": 1328,
+          "bottom": 2048.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 330,
+          "y": 2518.5,
+          "width": 44,
+          "height": 44,
+          "right": 374,
+          "bottom": 2562.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 648,
+          "y": 2518.5,
+          "width": 44,
+          "height": 44,
+          "right": 692,
+          "bottom": 2562.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 966,
+          "y": 2518.5,
+          "width": 44,
+          "height": 44,
+          "right": 1010,
+          "bottom": 2562.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 1284,
+          "y": 2518.5,
+          "width": 44,
+          "height": 44,
+          "right": 1328,
+          "bottom": 2562.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        }
+      ],
+      ".pixel-closing": [
+        {
+          "text": "CONNECT. TRADE. DUEL.\nO seu repetido pode ser o desejo de alguém.\n\nOrganize sua coleção e deixe as conexões acontecerem.\n\nComeçar minha cole",
+          "x": 0,
+          "y": 4810,
+          "width": 1440,
+          "height": 365,
+          "right": 1440,
+          "bottom": 5175,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".pixel-footer": [
+        {
+          "text": "Uma nova conexão para sua coleção.\n\nFeito para duelistas de Lagarto\n\nVender cartas\nCompras e vendas\nLista de desejos\nMeus matches\nMinhas tro",
+          "x": 0,
+          "y": 5175,
+          "width": 1440,
+          "height": 356,
+          "right": 1440,
+          "bottom": 5531,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ]
+    },
+    "missingImages": [
+      "http://localhost:3000/api/card-image/5973663",
+      "http://localhost:3000/api/card-image/14466224",
+      "http://localhost:3000/api/card-image/4731783",
+      "http://localhost:3000/api/card-image/52367652",
+      "http://localhost:3000/api/card-image/11738489",
+      "http://localhost:3000/api/card-image/5697558",
+      "http://localhost:3000/api/card-image/78243409",
+      "http://localhost:3000/api/card-image/18180762",
+      "http://localhost:3000/api/card-image/92408984",
+      "http://localhost:3000/api/card-image/56920308",
+      "http://localhost:3000/api/card-image/40991587",
+      "http://localhost:3000/api/card-image/49158617",
+      "http://localhost:3000/api/card-image/84080939",
+      "http://localhost:3000/api/card-image/51275027",
+      "http://localhost:3000/api/card-image/99188141",
+      "http://localhost:3000/api/card-image/48716527"
+    ],
+    "outside": [],
+    "loadedFonts": [
+      {
+        "family": "DM Sans",
+        "weight": "400"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "500"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "600"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "700"
+      },
+      {
+        "family": "Chakra Petch",
+        "weight": "600"
+      }
+    ]
+  },
+  {
+    "width": 1365,
+    "errors": [],
+    "viewport": 1365,
+    "scrollWidth": 1365,
+    "bodyHeight": 5531,
+    "geometry": {
+      ".pixel-header-row": [
+        {
+          "text": "Explorar\nMarketplace\nMeus decks\nComunidade\nMinha coleção\nEntrar\nCriar conta",
+          "x": 58.5,
+          "y": 0,
+          "width": 1248,
+          "height": 108,
+          "right": 1306.5,
+          "bottom": 108,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".pixel-utility": [
+        {
+          "text": "Vender cartas\nCompras e vendas\nLista de desejos\nMeus matches\nMinhas trocas\nComo funciona\nConfigurações\nLagarto, SE",
+          "x": 0,
+          "y": 108,
+          "width": 1365,
+          "height": 50,
+          "right": 1365,
+          "bottom": 158,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".pixel-hero": [
+        {
+          "text": "O PONTO DE ENCONTRO DOS DUELISTAS\nSUA COLEÇÃO TEM NOVAS POSSIBILIDADES\nSua próxima carta.\nSua próxima conexão.\n\nCartas que você tem. Cartas ",
+          "x": 0,
+          "y": 158,
+          "width": 1365,
+          "height": 768,
+          "right": 1365,
+          "bottom": 926,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".pixel-hero-copy": [
+        {
+          "text": "O PONTO DE ENCONTRO DOS DUELISTAS\nSUA COLEÇÃO TEM NOVAS POSSIBILIDADES\nSua próxima carta.\nSua próxima conexão.\n\nCartas que você tem. Cartas ",
+          "x": 312.5,
+          "y": 254,
+          "width": 740,
+          "height": 406.65625,
+          "right": 1052.5,
+          "bottom": 660.65625,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".pixel-hero-copy h1": [
+        {
+          "text": "Sua próxima carta.\nSua próxima conexão.",
+          "x": 392.421875,
+          "y": 329.5,
+          "width": 580.15625,
+          "height": 144.65625,
+          "right": 972.578125,
+          "bottom": 474.15625,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"Chakra Petch\", \"DM Sans\", sans-serif",
+          "fontSize": "57px"
+        }
+      ],
+      ".pixel-match": [
+        {
+          "text": "O match perfeito existe.\nEncontre a peça que falta no seu deck.",
+          "x": 426.5,
+          "y": 720,
+          "width": 510,
+          "height": 100,
+          "right": 936.5,
+          "bottom": 820,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".stats-strip": [
+        {
+          "text": "Todo o universo TCG\nCatálogo de Yu-Gi-Oh!\n0 cartas para trocar\nDisponíveis na comunidade\n0 duelistas conectados\nNovas conexões começam aqui\n",
+          "x": 0,
+          "y": 926,
+          "width": 1365,
+          "height": 108,
+          "right": 1365,
+          "bottom": 1034,
+          "color": "rgb(35, 11, 49)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".catalog-section": [
+        {
+          "text": "DESCUBRA. COLECIONE. CONECTE.\nEncontre sua próxima carta.\n\nA peça que falta no seu deck pode estar mais perto do que você imagina.\n\nMinha li",
+          "x": 0,
+          "y": 1034,
+          "width": 1365,
+          "height": 3776,
+          "right": 1365,
+          "bottom": 4810,
+          "color": "rgb(33, 12, 46)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".catalog-title": [
+        {
+          "text": "DESCUBRA. COLECIONE. CONECTE.\nEncontre sua próxima carta.\n\nA peça que falta no seu deck pode estar mais perto do que você imagina.\n\nMinha li",
+          "x": 58.5,
+          "y": 1098,
+          "width": 1248,
+          "height": 114,
+          "right": 1306.5,
+          "bottom": 1212,
+          "color": "rgb(33, 12, 46)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".catalog-controls": [
+        {
+          "text": "Buscar\nFiltros\nOrdenar cartas\nNome: A a Z\nNome: Z a A",
+          "x": 58.5,
+          "y": 1386.5,
+          "width": 1248,
+          "height": 52,
+          "right": 1306.5,
+          "bottom": 1438.5,
+          "color": "rgb(33, 12, 46)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".cards-grid": [
+        {
+          "text": "Magia\nK9\n\"A Case for K9\"\n\"A Case for K9\"\nNo catálogo\nMagia\nMelodious\n1º Movimento Solitário\n1st Movement Solo\nNo catálogo\nMagia\nContinuous\n7",
+          "x": 58.5,
+          "y": 1596,
+          "width": 1248,
+          "height": 3060,
+          "right": 1306.5,
+          "bottom": 4656,
+          "color": "rgb(33, 12, 46)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".card-tile": [
+        {
+          "text": "Magia\nK9\n\"A Case for K9\"\n\"A Case for K9\"\nNo catálogo",
+          "x": 58.5,
+          "y": 1596,
+          "width": 294,
+          "height": 490,
+          "right": 352.5,
+          "bottom": 2086,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia\nMelodious\n1º Movimento Solitário\n1st Movement Solo\nNo catálogo",
+          "x": 376.5,
+          "y": 1596,
+          "width": 294,
+          "height": 490,
+          "right": 670.5,
+          "bottom": 2086,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia\nContinuous\n7\n7\nNo catálogo",
+          "x": 694.5,
+          "y": 1596,
+          "width": 294,
+          "height": 490,
+          "right": 988.5,
+          "bottom": 2086,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia\nEquip\n7 Completados\n7 Completed\nNo catálogo",
+          "x": 1012.5,
+          "y": 1596,
+          "width": 294,
+          "height": 490,
+          "right": 1306.5,
+          "bottom": 2086,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Fusão\nABC\nA a Z - Dragão Canhão Banimento\nA-to-Z-Dragon Buster Cannon\nNo catálogo",
+          "x": 58.5,
+          "y": 2110,
+          "width": 294,
+          "height": 490,
+          "right": 352.5,
+          "bottom": 2600,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Monstro\nWarrior\nA Amazona Hostil\nThe Unfriendly Amazon\nNo catálogo",
+          "x": 376.5,
+          "y": 2110,
+          "width": 294,
+          "height": 490,
+          "right": 670.5,
+          "bottom": 2600,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Armadilha\nNinja\nA Arte de Super Transformação Ninjitsu\nNinjitsu Art of Super-Transformation\nNo catálogo",
+          "x": 694.5,
+          "y": 2110,
+          "width": 294,
+          "height": 490,
+          "right": 988.5,
+          "bottom": 2600,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Armadilha\nNinja\nA Arte de Transformação Ninjitsu\nNinjitsu Art of Transformation\nNo catálogo",
+          "x": 1012.5,
+          "y": 2110,
+          "width": 294,
+          "height": 490,
+          "right": 1306.5,
+          "bottom": 2600,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".card-art-wrap": [
+        {
+          "text": "Magia",
+          "x": 74.5,
+          "y": 1612,
+          "width": 262,
+          "height": 270,
+          "right": 336.5,
+          "bottom": 1882,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia",
+          "x": 392.5,
+          "y": 1612,
+          "width": 262,
+          "height": 270,
+          "right": 654.5,
+          "bottom": 1882,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia",
+          "x": 710.5,
+          "y": 1612,
+          "width": 262,
+          "height": 270,
+          "right": 972.5,
+          "bottom": 1882,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Magia",
+          "x": 1028.5,
+          "y": 1612,
+          "width": 262,
+          "height": 270,
+          "right": 1290.5,
+          "bottom": 1882,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Fusão",
+          "x": 74.5,
+          "y": 2126,
+          "width": 262,
+          "height": 270,
+          "right": 336.5,
+          "bottom": 2396,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Monstro",
+          "x": 392.5,
+          "y": 2126,
+          "width": 262,
+          "height": 270,
+          "right": 654.5,
+          "bottom": 2396,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Armadilha",
+          "x": 710.5,
+          "y": 2126,
+          "width": 262,
+          "height": 270,
+          "right": 972.5,
+          "bottom": 2396,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "Armadilha",
+          "x": 1028.5,
+          "y": 2126,
+          "width": 262,
+          "height": 270,
+          "right": 1290.5,
+          "bottom": 2396,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".card-art": [
+        {
+          "text": "",
+          "x": 118.421875,
+          "y": 1620,
+          "width": 174.15625,
+          "height": 254,
+          "right": 292.578125,
+          "bottom": 1874,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 436.421875,
+          "y": 1620,
+          "width": 174.15625,
+          "height": 254,
+          "right": 610.578125,
+          "bottom": 1874,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 754.421875,
+          "y": 1620,
+          "width": 174.15625,
+          "height": 254,
+          "right": 928.578125,
+          "bottom": 1874,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 1072.421875,
+          "y": 1620,
+          "width": 174.15625,
+          "height": 254,
+          "right": 1246.578125,
+          "bottom": 1874,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 118.421875,
+          "y": 2134,
+          "width": 174.15625,
+          "height": 254,
+          "right": 292.578125,
+          "bottom": 2388,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 436.421875,
+          "y": 2134,
+          "width": 174.15625,
+          "height": 254,
+          "right": 610.578125,
+          "bottom": 2388,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 754.421875,
+          "y": 2134,
+          "width": 174.15625,
+          "height": 254,
+          "right": 928.578125,
+          "bottom": 2388,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "",
+          "x": 1072.421875,
+          "y": 2134,
+          "width": 174.15625,
+          "height": 254,
+          "right": 1246.578125,
+          "bottom": 2388,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".card-name": [
+        {
+          "text": "\"A Case for K9\"",
+          "x": 74.5,
+          "y": 1919,
+          "width": 262,
+          "height": 42,
+          "right": 336.5,
+          "bottom": 1961,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "1º Movimento Solitário",
+          "x": 392.5,
+          "y": 1919,
+          "width": 262,
+          "height": 42,
+          "right": 654.5,
+          "bottom": 1961,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "7",
+          "x": 710.5,
+          "y": 1919,
+          "width": 262,
+          "height": 42,
+          "right": 972.5,
+          "bottom": 1961,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "7 Completados",
+          "x": 1028.5,
+          "y": 1919,
+          "width": 262,
+          "height": 42,
+          "right": 1290.5,
+          "bottom": 1961,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "A a Z - Dragão Canhão Banimento",
+          "x": 74.5,
+          "y": 2433,
+          "width": 262,
+          "height": 42,
+          "right": 336.5,
+          "bottom": 2475,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "A Amazona Hostil",
+          "x": 392.5,
+          "y": 2433,
+          "width": 262,
+          "height": 42,
+          "right": 654.5,
+          "bottom": 2475,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "A Arte de Super Transformação Ninjitsu",
+          "x": 710.5,
+          "y": 2433,
+          "width": 262,
+          "height": 42,
+          "right": 972.5,
+          "bottom": 2475,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        },
+        {
+          "text": "A Arte de Transformação Ninjitsu",
+          "x": 1028.5,
+          "y": 2433,
+          "width": 262,
+          "height": 42,
+          "right": 1290.5,
+          "bottom": 2475,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".card-bottom": [
+        {
+          "text": "No catálogo",
+          "x": 74.5,
+          "y": 1990,
+          "width": 262,
+          "height": 60,
+          "right": 336.5,
+          "bottom": 2050,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 392.5,
+          "y": 1990,
+          "width": 262,
+          "height": 60,
+          "right": 654.5,
+          "bottom": 2050,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 710.5,
+          "y": 1990,
+          "width": 262,
+          "height": 60,
+          "right": 972.5,
+          "bottom": 2050,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 1028.5,
+          "y": 1990,
+          "width": 262,
+          "height": 60,
+          "right": 1290.5,
+          "bottom": 2050,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 74.5,
+          "y": 2504,
+          "width": 262,
+          "height": 60,
+          "right": 336.5,
+          "bottom": 2564,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 392.5,
+          "y": 2504,
+          "width": 262,
+          "height": 60,
+          "right": 654.5,
+          "bottom": 2564,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 710.5,
+          "y": 2504,
+          "width": 262,
+          "height": 60,
+          "right": 972.5,
+          "bottom": 2564,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "No catálogo",
+          "x": 1028.5,
+          "y": 2504,
+          "width": 262,
+          "height": 60,
+          "right": 1290.5,
+          "bottom": 2564,
+          "color": "rgb(214, 196, 226)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        }
+      ],
+      ".card-add": [
+        {
+          "text": "",
+          "x": 292.5,
+          "y": 2004.5,
+          "width": 44,
+          "height": 44,
+          "right": 336.5,
+          "bottom": 2048.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 610.5,
+          "y": 2004.5,
+          "width": 44,
+          "height": 44,
+          "right": 654.5,
+          "bottom": 2048.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 928.5,
+          "y": 2004.5,
+          "width": 44,
+          "height": 44,
+          "right": 972.5,
+          "bottom": 2048.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 1246.5,
+          "y": 2004.5,
+          "width": 44,
+          "height": 44,
+          "right": 1290.5,
+          "bottom": 2048.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 292.5,
+          "y": 2518.5,
+          "width": 44,
+          "height": 44,
+          "right": 336.5,
+          "bottom": 2562.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 610.5,
+          "y": 2518.5,
+          "width": 44,
+          "height": 44,
+          "right": 654.5,
+          "bottom": 2562.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 928.5,
+          "y": 2518.5,
+          "width": 44,
+          "height": 44,
+          "right": 972.5,
+          "bottom": 2562.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        },
+        {
+          "text": "",
+          "x": 1246.5,
+          "y": 2518.5,
+          "width": 44,
+          "height": 44,
+          "right": 1290.5,
+          "bottom": 2562.5,
+          "color": "rgb(39, 13, 53)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "11px"
+        }
+      ],
+      ".pixel-closing": [
+        {
+          "text": "CONNECT. TRADE. DUEL.\nO seu repetido pode ser o desejo de alguém.\n\nOrganize sua coleção e deixe as conexões acontecerem.\n\nComeçar minha cole",
+          "x": 0,
+          "y": 4810,
+          "width": 1365,
+          "height": 365,
+          "right": 1365,
+          "bottom": 5175,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ],
+      ".pixel-footer": [
+        {
+          "text": "Uma nova conexão para sua coleção.\n\nFeito para duelistas de Lagarto\n\nVender cartas\nCompras e vendas\nLista de desejos\nMeus matches\nMinhas tro",
+          "x": 0,
+          "y": 5175,
+          "width": 1365,
+          "height": 356,
+          "right": 1365,
+          "bottom": 5531,
+          "color": "rgb(247, 247, 232)",
+          "font": "\"DM Sans\", Arial, sans-serif",
+          "fontSize": "14px"
+        }
+      ]
+    },
+    "missingImages": [
+      "http://localhost:3000/api/card-image/5973663",
+      "http://localhost:3000/api/card-image/14466224",
+      "http://localhost:3000/api/card-image/4731783",
+      "http://localhost:3000/api/card-image/52367652",
+      "http://localhost:3000/api/card-image/11738489",
+      "http://localhost:3000/api/card-image/5697558",
+      "http://localhost:3000/api/card-image/78243409",
+      "http://localhost:3000/api/card-image/18180762",
+      "http://localhost:3000/api/card-image/92408984",
+      "http://localhost:3000/api/card-image/56920308",
+      "http://localhost:3000/api/card-image/40991587",
+      "http://localhost:3000/api/card-image/49158617",
+      "http://localhost:3000/api/card-image/84080939",
+      "http://localhost:3000/api/card-image/51275027",
+      "http://localhost:3000/api/card-image/99188141",
+      "http://localhost:3000/api/card-image/48716527"
+    ],
+    "outside": [],
+    "loadedFonts": [
+      {
+        "family": "DM Sans",
+        "weight": "400"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "500"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "600"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "700"
+      },
+      {
+        "family": "Chakra Petch",
+        "weight": "600"
+      }
+    ]
+  }
+]

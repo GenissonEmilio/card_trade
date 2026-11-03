@@ -1,0 +1,11 @@
+{
+  "desktop-hero": {
+    "id": "7:35",
+    "name": "DUELINK / desktop / hero",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 650,
+    "parent": "3:2",
+    "y": 158
+  }
+}

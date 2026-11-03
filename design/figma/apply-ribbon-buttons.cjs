@@ -1,0 +1,16 @@
+const fs=require('fs'),path=require('path');const file=path.join(__dirname,'build-design.cjs');let s=fs.readFileSync(file,'utf8');
+const start=s.includes('const ribbonIcon=')?s.indexOf('const ribbonIcon='):s.indexOf('const btn='),end=s.indexOf('const categoryIcon=',start);
+s=s.slice(0,start)+`const ribbonIcon=(name,lime=false,size=20)=>\`<div class="ribbon-icon">\${pixelArt.badge(lime)}\${ico(name,size,lime?'#270d35':'#f7f7e8')}</div>\`;
+const btn=(t,primary=false,icon='ArrowUpRight')=>{const semantic={'Explorar cartas':'Compass','Montar minha coleção':'Layers3','Começar minha coleção':'Layers3','Criar conta':'Users','Adicionar minhas cartas':'Plus'};const selected=semantic[t]||icon;return \`<a class="button \${primary?'primary':''}" href="#explorar">\${pixelArt.ribbon(primary?'button':'secondary')}\${ribbonIcon(selected,!primary)}<div class="control-label">\${t}</div></a>\`};
+`+s.slice(end);
+const ps=s.indexOf('const pill='),pe=s.indexOf('const cats=',ps);
+s=s.slice(0,ps)+`const pill=(t,on=false)=>\`<div class="pill \${on?'on':''} \${categoryIcon[t]?'has-icon':''}">\${pixelArt.ribbon(on?'chip':'idle')}\${categoryIcon[t]?ribbonIcon(categoryIcon[t],false,17):''}<div class="control-label">\${t}</div></div>\`;
+`+s.slice(pe);
+s=s.replace('<div class="game active">${ico(\'Compass\',24,\'#ceff3b\')}Yu-Gi-Oh!</div>', '<div class="game active">${pixelArt.ribbon(\'active\')}${ribbonIcon(\'Compass\',true,21)}<div class="control-label">Yu-Gi-Oh!</div></div>');
+s=s.replace('<div class="game">${ico(\'Pokemon\',24,\'#83b7dc\')}Pokémon</div>', '<div class="game">${pixelArt.ribbon(\'idle\')}${ribbonIcon(\'Pokemon\',false,21)}<div class="control-label">Pokémon</div></div>');
+s=s.replace('<div class="search-submit">Buscar</div>', '<div class="search-submit">${pixelArt.ribbon(\'secondary\')}<div class="control-label">Buscar</div></div>');
+s=s.replace('<div class="filter">${ico(\'SlidersHorizontal\',17)}Filtros</div>', '<div class="filter">${pixelArt.ribbon(\'secondary\')}${ribbonIcon(\'SlidersHorizontal\',true,18)}<div class="control-label">Filtros</div></div>');
+s=s.replace('<div class="sort">Nome: A a Z ${ico(\'ChevronDown\',15)}</div>', '<div class="sort">${pixelArt.ribbon(\'idle\')}${ribbonIcon(\'ArrowDown\',false,18)}<div class="control-label">Nome: A a Z</div><div class="sort-chevron">${ico(\'ChevronDown\',15,\'#613073\')}</div></div>');
+s=s.replace('<div class="wish">${ico(', '<div class="wish">${pixelArt.badge(false)}${ico(');
+s=s.replace('<div class="card-add">${ico(', '<div class="card-add">${pixelArt.badge(true)}${ico(');
+fs.writeFileSync(file,s);

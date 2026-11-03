@@ -1,0 +1,102 @@
+{
+  "desktop-header": {
+    "id": "22:4521",
+    "name": "DUELINK / desktop / header",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 158,
+    "parent": "3:2",
+    "y": 0,
+    "normalized": true
+  },
+  "desktop-hero": {
+    "id": "22:4684",
+    "name": "DUELINK / desktop / hero",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 768,
+    "parent": "3:2",
+    "y": 158,
+    "normalized": true
+  },
+  "desktop-stats": {
+    "id": "22:5133",
+    "name": "DUELINK / desktop / stats",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 108,
+    "parent": "3:2",
+    "y": 926,
+    "normalized": true
+  },
+  "desktop-catalog": {
+    "id": "27:10416",
+    "name": "DUELINK / desktop / catalog",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 1708,
+    "parent": "3:2",
+    "y": 1034,
+    "normalized": true
+  },
+  "desktop-footer": {
+    "id": "22:6966",
+    "name": "DUELINK / desktop / footer",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 713.5,
+    "parent": "3:2",
+    "y": 2742,
+    "normalized": true
+  },
+  "mobile-header": {
+    "id": "22:7223",
+    "name": "DUELINK / mobile / header",
+    "type": "FRAME",
+    "width": 390,
+    "height": 94,
+    "parent": "4:252",
+    "y": 0,
+    "normalized": true
+  },
+  "mobile-hero": {
+    "id": "22:7305",
+    "name": "DUELINK / mobile / hero",
+    "type": "FRAME",
+    "width": 390,
+    "height": 936,
+    "parent": "4:252",
+    "y": 94,
+    "normalized": true
+  },
+  "mobile-stats": {
+    "id": "22:7665",
+    "name": "DUELINK / mobile / stats",
+    "type": "FRAME",
+    "width": 390,
+    "height": 276,
+    "parent": "4:252",
+    "y": 1030,
+    "normalized": true
+  },
+  "mobile-catalog": {
+    "id": "27:12133",
+    "name": "DUELINK / mobile / catalog",
+    "type": "FRAME",
+    "width": 390,
+    "height": 2542.3125,
+    "parent": "4:252",
+    "y": 1306,
+    "normalized": true
+  },
+  "mobile-footer": {
+    "id": "23:9467",
+    "name": "DUELINK / mobile / footer",
+    "type": "FRAME",
+    "width": 390,
+    "height": 1021.78125,
+    "parent": "4:252",
+    "y": 3848.3125,
+    "normalized": true
+  }
+}

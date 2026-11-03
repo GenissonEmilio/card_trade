@@ -1,0 +1,106 @@
+[
+  {
+    "key": "desktop",
+    "width": 1440,
+    "height": 3456,
+    "overflow": false,
+    "images": true,
+    "sections": [
+      {
+        "name": "nav",
+        "height": 108
+      },
+      {
+        "name": "utility",
+        "height": 50
+      },
+      {
+        "name": "hero",
+        "height": 768
+      },
+      {
+        "name": "stats",
+        "height": 108
+      },
+      {
+        "name": "catalog",
+        "height": 1708
+      },
+      {
+        "name": "closing",
+        "height": 355
+      },
+      {
+        "name": "footer",
+        "height": 358.5
+      }
+    ],
+    "fonts": [
+      "Chakra Petch",
+      "Chakra Petch",
+      "DM Sans",
+      "DM Sans",
+      "DM Sans"
+    ],
+    "outside": []
+  },
+  {
+    "key": "mobile",
+    "width": 390,
+    "height": 4870,
+    "overflow": false,
+    "images": true,
+    "sections": [
+      {
+        "name": "nav",
+        "height": 94
+      },
+      {
+        "name": "utility",
+        "height": 0
+      },
+      {
+        "name": "hero",
+        "height": 936
+      },
+      {
+        "name": "stats",
+        "height": 276
+      },
+      {
+        "name": "catalog",
+        "height": 2542.3125
+      },
+      {
+        "name": "closing",
+        "height": 354.28125
+      },
+      {
+        "name": "footer",
+        "height": 667.5
+      }
+    ],
+    "fonts": [
+      "Chakra Petch",
+      "Chakra Petch",
+      "DM Sans",
+      "DM Sans",
+      "DM Sans"
+    ],
+    "outside": []
+  },
+  {
+    "key": "states",
+    "width": 1248,
+    "height": 1435,
+    "overflow": false,
+    "images": true,
+    "sections": [],
+    "fonts": [
+      "Chakra Petch",
+      "DM Sans",
+      "DM Sans"
+    ],
+    "outside": []
+  }
+]

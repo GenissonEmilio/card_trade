@@ -1,0 +1,1669 @@
+{
+  "selectedNode": {
+    "id": "22:7223",
+    "name": "DUELINK / mobile / header",
+    "type": "FRAME",
+    "width": 390,
+    "height": 94
+  },
+  "intent": "section",
+  "uiSpec": {
+    "version": "1.1.0",
+    "root": {
+      "id": "22:7223",
+      "name": "DUELINK / mobile / header",
+      "type": "FRAME",
+      "tokenHints": {
+        "styleRefs": 0,
+        "variableRefs": 0,
+        "rawValueHints": 0
+      },
+      "children": [
+        {
+          "id": "22:7304",
+          "name": "Mask group",
+          "type": "GROUP",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [
+            {
+              "id": "22:7302",
+              "name": "Group",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "22:7303",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 390,
+                  "height": 94,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ffffff"
+                    ]
+                  }
+                }
+              ],
+              "width": 390,
+              "height": 94,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "22:7231",
+              "name": "screen1",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "22:7232",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "22:7233",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 390,
+                      "height": 94,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#13071c"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 390,
+                  "height": 94,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "22:7234",
+                  "name": "nav1",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "22:7235",
+                      "name": "Group",
+                      "type": "GROUP",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [
+                        {
+                          "id": "22:7236",
+                          "name": "Vector",
+                          "type": "VECTOR",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [],
+                          "width": 390,
+                          "height": 94,
+                          "layout": {
+                            "layoutPositioning": "AUTO",
+                            "constraints": {
+                              "horizontal": "SCALE",
+                              "vertical": "SCALE"
+                            }
+                          },
+                          "visual": {
+                            "fills": "solid",
+                            "strokes": "none",
+                            "cornerRadius": 0,
+                            "effects": "none",
+                            "fillColors": [
+                              "#100516"
+                            ]
+                          }
+                        },
+                        {
+                          "id": "22:7237",
+                          "name": "Vector",
+                          "type": "VECTOR",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [],
+                          "width": 390,
+                          "height": 0,
+                          "layout": {
+                            "layoutPositioning": "AUTO",
+                            "constraints": {
+                              "horizontal": "SCALE",
+                              "vertical": "SCALE"
+                            }
+                          },
+                          "visual": {
+                            "fills": "solid",
+                            "strokes": "solid",
+                            "cornerRadius": 0,
+                            "effects": "none",
+                            "fillColors": [
+                              "#000000"
+                            ],
+                            "strokeColor": "#442053"
+                          }
+                        }
+                      ],
+                      "width": 390,
+                      "height": 94,
+                      "layout": {
+                        "layoutPositioning": "AUTO"
+                      },
+                      "visual": {
+                        "fills": "unknown",
+                        "strokes": "unknown",
+                        "cornerRadius": "undefined",
+                        "effects": "none"
+                      }
+                    },
+                    {
+                      "id": "22:7238",
+                      "name": "wrap1",
+                      "type": "GROUP",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [
+                        {
+                          "id": "22:7239",
+                          "name": "a1",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "22:7284",
+                              "name": "Mask group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "22:7282",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "22:7283",
+                                      "name": "Vector",
+                                      "type": "VECTOR",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [],
+                                      "width": 125,
+                                      "height": 62.5,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO",
+                                        "constraints": {
+                                          "horizontal": "SCALE",
+                                          "vertical": "SCALE"
+                                        }
+                                      },
+                                      "visual": {
+                                        "fills": "solid",
+                                        "strokes": "none",
+                                        "cornerRadius": 0,
+                                        "effects": "none",
+                                        "fillColors": [
+                                          "#ffffff"
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "width": 125,
+                                  "height": 62.5,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                },
+                                {
+                                  "id": "22:7240",
+                                  "name": "svg1",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "22:7248",
+                                      "name": "Group",
+                                      "type": "GROUP",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "22:7249",
+                                          "name": "svg1-moldura-pixel",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "22:7250",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 55.55558395385742,
+                                              "height": 57.29169464111328,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#7023a3"
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7251",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 5.208335876464844,
+                                              "height": 2.604167938232422,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#bf4bff"
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7252",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 5.208335876464844,
+                                              "height": 2.604167938232422,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#bf4bff"
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7253",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 2.604167938232422,
+                                              "height": 5.208335876464844,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ceff3b"
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7254",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 2.604167938232422,
+                                              "height": 5.208335876464844,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ceff3b"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 55.55558395385742,
+                                          "height": 57.29169464111328,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "22:7255",
+                                          "name": "svg1-cartas-pixel",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "22:7256",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "22:7257",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 18.229175567626953,
+                                                  "height": 23.437511444091797,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#7023a3"
+                                                    ]
+                                                  }
+                                                },
+                                                {
+                                                  "id": "22:7258",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 18.229175567626953,
+                                                  "height": 23.437511444091797,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "solid",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#16071f"
+                                                    ],
+                                                    "strokeColor": "#f7f7e8"
+                                                  }
+                                                },
+                                                {
+                                                  "id": "22:7259",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 13.888895988464355,
+                                                  "height": 19.097232818603516,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "solid",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#3a104f"
+                                                    ],
+                                                    "strokeColor": "#bf4bff"
+                                                  }
+                                                },
+                                                {
+                                                  "id": "22:7260",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 4.340280055999756,
+                                                  "height": 0.8680559992790222,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#f7f7e8"
+                                                    ]
+                                                  }
+                                                },
+                                                {
+                                                  "id": "22:7261",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 9.548616409301758,
+                                                  "height": 0.8680559992790222,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#bf4bff"
+                                                    ]
+                                                  }
+                                                },
+                                                {
+                                                  "id": "22:7262",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 6.07639217376709,
+                                                  "height": 6.07639217376709,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#ceff3b"
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              "width": 19.965290069580078,
+                                              "height": 25.17362403869629,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7263",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "22:7264",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 18.229175567626953,
+                                                  "height": 23.437511444091797,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#7023a3"
+                                                    ]
+                                                  }
+                                                },
+                                                {
+                                                  "id": "22:7265",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 18.229175567626953,
+                                                  "height": 23.437511444091797,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "solid",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#16071f"
+                                                    ],
+                                                    "strokeColor": "#f7f7e8"
+                                                  }
+                                                },
+                                                {
+                                                  "id": "22:7266",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 13.888895988464355,
+                                                  "height": 19.097232818603516,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "solid",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#3a104f"
+                                                    ],
+                                                    "strokeColor": "#bf4bff"
+                                                  }
+                                                },
+                                                {
+                                                  "id": "22:7267",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 4.340280055999756,
+                                                  "height": 0.8680559992790222,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#f7f7e8"
+                                                    ]
+                                                  }
+                                                },
+                                                {
+                                                  "id": "22:7268",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 9.548616409301758,
+                                                  "height": 0.8680559992790222,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#bf4bff"
+                                                    ]
+                                                  }
+                                                },
+                                                {
+                                                  "id": "22:7269",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 6.07639217376709,
+                                                  "height": 6.07639217376709,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#ceff3b"
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              "width": 19.965290069580078,
+                                              "height": 25.173622131347656,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            }
+                                          ],
+                                          "width": 41.666690826416016,
+                                          "height": 29.51390266418457,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "22:7270",
+                                          "name": "svg1-elo-pixel",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "22:7271",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 12.15278434753418,
+                                              "height": 11.284728050231934,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "solid",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ceff3b"
+                                                ],
+                                                "strokeColor": "#16071f"
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7272",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 12.15278434753418,
+                                              "height": 11.284728050231934,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "solid",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#f7f7e8"
+                                                ],
+                                                "strokeColor": "#16071f"
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7273",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 1.7361119985580444,
+                                              "height": 4.340280055999756,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ceff3b"
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7274",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 1.7361119985580444,
+                                              "height": 3.472223997116089,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#16071f"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 19.097227096557617,
+                                          "height": 15.625006675720215,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "22:7275",
+                                          "name": "svg1-letreiro-legivel",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "22:7276",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 121.52783966064453,
+                                              "height": 26.04167938232422,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#7023a3"
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7277",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 121.52783966064453,
+                                              "height": 26.04167938232422,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "solid",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#16071f"
+                                                ],
+                                                "strokeColor": "#f7f7e8"
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7278",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "22:7279",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 107.63882446289062,
+                                                  "height": 18.337108612060547,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#7023a3"
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              "width": 107.63882446289062,
+                                              "height": 18.337108612060547,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7280",
+                                              "name": "svg1-DUELINK",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 107.63882446289062,
+                                              "height": 18.337108612060547,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#f7f7e8"
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "id": "22:7281",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 24.30556869506836,
+                                              "height": 0.8680559992790222,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ceff3b"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 121.52783966064453,
+                                          "height": 27.777790069580078,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        }
+                                      ],
+                                      "width": 121.52783966064453,
+                                      "height": 57.29169464111328,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO"
+                                      },
+                                      "visual": {
+                                        "fills": "unknown",
+                                        "strokes": "unknown",
+                                        "cornerRadius": "undefined",
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 121.52783966064453,
+                                  "height": 57.29169464111328,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                }
+                              ],
+                              "width": 125,
+                              "height": 62.5,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            }
+                          ],
+                          "width": 125,
+                          "height": 62.5,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "22:7285",
+                          "name": "nav-actions1",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "22:7286",
+                              "name": "a2",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "22:7287",
+                                  "name": "Entrar",
+                                  "type": "TEXT",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 1
+                                  },
+                                  "children": [],
+                                  "width": 37,
+                                  "height": 17,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "none",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#f7f7e8"
+                                    ]
+                                  },
+                                  "text": {
+                                    "characters": "Entrar",
+                                    "lineHeight": "AUTO",
+                                    "letterSpacing": "0%",
+                                    "textCase": "ORIGINAL",
+                                    "fontFamily": "DM Sans",
+                                    "fontStyle": "Regular",
+                                    "fontSize": 13
+                                  }
+                                }
+                              ],
+                              "width": 37,
+                              "height": 17,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            },
+                            {
+                              "id": "22:7301",
+                              "name": "Mask group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "22:7299",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "22:7300",
+                                      "name": "Vector",
+                                      "type": "VECTOR",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [],
+                                      "width": 22,
+                                      "height": 22,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO",
+                                        "constraints": {
+                                          "horizontal": "SCALE",
+                                          "vertical": "SCALE"
+                                        }
+                                      },
+                                      "visual": {
+                                        "fills": "solid",
+                                        "strokes": "none",
+                                        "cornerRadius": 0,
+                                        "effects": "none",
+                                        "fillColors": [
+                                          "#ffffff"
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "width": 22,
+                                  "height": 22,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                },
+                                {
+                                  "id": "22:7288",
+                                  "name": "svg2",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "22:7296",
+                                      "name": "Group",
+                                      "type": "GROUP",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "22:7297",
+                                          "name": "Vector",
+                                          "type": "VECTOR",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [],
+                                          "width": 15.125,
+                                          "height": 11,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO",
+                                            "constraints": {
+                                              "horizontal": "SCALE",
+                                              "vertical": "SCALE"
+                                            }
+                                          },
+                                          "visual": {
+                                            "fills": "solid",
+                                            "strokes": "none",
+                                            "cornerRadius": 0,
+                                            "effects": "none",
+                                            "fillColors": [
+                                              "#ceff3b"
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "22:7298",
+                                          "name": "Vector",
+                                          "type": "VECTOR",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [],
+                                          "width": 16.5,
+                                          "height": 12.375,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO",
+                                            "constraints": {
+                                              "horizontal": "SCALE",
+                                              "vertical": "SCALE"
+                                            }
+                                          },
+                                          "visual": {
+                                            "fills": "solid",
+                                            "strokes": "none",
+                                            "cornerRadius": 0,
+                                            "effects": "none",
+                                            "fillColors": [
+                                              "#ceff3b"
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "width": 16.5,
+                                      "height": 12.375,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO"
+                                      },
+                                      "visual": {
+                                        "fills": "unknown",
+                                        "strokes": "unknown",
+                                        "cornerRadius": "undefined",
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 16.5,
+                                  "height": 12.375,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                }
+                              ],
+                              "width": 22,
+                              "height": 22,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            }
+                          ],
+                          "width": 76.609375,
+                          "height": 22,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        }
+                      ],
+                      "width": 323,
+                      "height": 62.5,
+                      "layout": {
+                        "layoutPositioning": "AUTO"
+                      },
+                      "visual": {
+                        "fills": "unknown",
+                        "strokes": "unknown",
+                        "cornerRadius": "undefined",
+                        "effects": "none"
+                      }
+                    }
+                  ],
+                  "width": 390,
+                  "height": 94,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                }
+              ],
+              "width": 390,
+              "height": 94,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            }
+          ],
+          "width": 390,
+          "height": 94,
+          "layout": {
+            "layoutPositioning": "AUTO"
+          },
+          "visual": {
+            "fills": "unknown",
+            "strokes": "unknown",
+            "cornerRadius": "undefined",
+            "effects": "none"
+          }
+        }
+      ],
+      "width": 390,
+      "height": 94,
+      "layout": {
+        "layoutMode": "NONE",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "itemSpacing": 0,
+        "paddingTop": 0,
+        "paddingRight": 0,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "layoutPositioning": "AUTO",
+        "constraints": {
+          "horizontal": "MIN",
+          "vertical": "MIN"
+        }
+      },
+      "visual": {
+        "fills": "none",
+        "strokes": "none",
+        "cornerRadius": 0,
+        "effects": "none"
+      }
+    },
+    "stats": {
+      "totalNodes": 61,
+      "frames": 1,
+      "instances": 0,
+      "textNodes": 1,
+      "autoLayoutFrames": 0,
+      "absoluteNodes": 0
+    },
+    "tokenization": {
+      "styleRefs": 0,
+      "variableRefs": 0,
+      "rawValueCandidates": 1,
+      "coverage": 0
+    }
+  }
+}

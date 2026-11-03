@@ -22,18 +22,21 @@ import { GameSwitch } from './game-switch';
 import { createClient } from '@/lib/supabase/client';
 import { useApp } from './providers';
 import { Modal } from './ui';
+import { DesignIcon } from './pixel-design';
 export function CardTile({
   card,
   onClick,
   onAdd,
   item,
   catalogLabel = 'No catálogo',
+  pixel = false,
 }: {
   card: Card;
   onClick: () => void;
   onAdd?: (card: Card) => void;
   item?: CollectionItem;
   catalogLabel?: string;
+  pixel?: boolean;
 }) {
   const { user, wishes, refresh, toast } = useApp(),
     router = useRouter();
@@ -96,7 +99,11 @@ export function CardTile({
           aria-label={`${saved ? 'Remover' : 'Adicionar'} ${displayCardName(card)} ${saved ? 'dos' : 'aos'} desejos`}
           onClick={wish}
         >
-          <Heart size={16} fill={saved ? 'currentColor' : 'none'} />
+          {pixel ? (
+            <DesignIcon name="heart" size={16} />
+          ) : (
+            <Heart size={16} fill={saved ? 'currentColor' : 'none'} />
+          )}
         </button>
         {item && <span className="condition-badge">{item.condition}</span>}
       </div>
@@ -160,7 +167,14 @@ export function CardDetail({
     <Modal title="Detalhes da carta" onClose={onClose} wide>
       <div className="card-detail">
         <div className="detail-illustration">
-          <img src={cardImage(card.card_images?.[0]?.id || card.id, card.game)} alt={card.name} />
+          <img
+            src={cardImage(card.card_images?.[0]?.id || card.id, card.game)}
+            alt={card.name}
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = '/card-back.svg';
+            }}
+          />
           <span className="holo-caption">
             <Sparkles size={13} /> Cada carta, uma nova possibilidade.
           </span>

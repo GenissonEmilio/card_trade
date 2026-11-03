@@ -29,6 +29,7 @@ import { useApp } from './providers';
 import { createClient } from '@/lib/supabase/client';
 import { initials } from '@/lib/utils';
 import { GameSwitch } from './game-switch';
+import { ExploreShell } from './explore-shell';
 const links = [
   { href: '/', label: 'Explorar', icon: Compass },
   { href: '/mercado', label: 'Marketplace', icon: ShoppingBag },
@@ -45,6 +46,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
   const path = usePathname(),
     { user, profile, wishes, isAdmin, game } = useApp(),
     [open, setOpen] = useState(false);
+  if (path === '/') return <ExploreShell>{children}</ExploreShell>;
   return (
     <div className="app-shell">
       <aside className={`sidebar ${open ? 'is-open' : ''}`}>

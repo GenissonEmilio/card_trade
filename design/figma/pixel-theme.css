@@ -1,0 +1,169 @@
+/* Visual direction selected by the user: violet, ivory and acid lime. */
+body,.screen{background:#13071c;color:#f7f7e8}
+.screen *{letter-spacing:0!important}
+.muted{color:#b3a7bd}.gold{color:#ceff3b}.cyan{color:#c384ff}
+.eyebrow{color:#ceff3b;font-size:11px;font-weight:700}
+.button{border-radius:2px;border-color:#715186;background:#251032;color:#f7f7e8;box-shadow:none}
+.button.primary{background:#ceff3b;border-color:#ceff3b;color:#160a1d;box-shadow:4px 4px 0 #713c92}
+.nav{background:#100516;border-color:#442053}.nav-links{color:#c0aecb}.nav-links a:first-child{color:#ceff3b}
+.utility{background:#1e082d;border-color:#442053}.utility .wrap{color:#b9a3c8}.utility .place{color:#e2d8e8}
+.hero{background:#180522;height:650px}
+.hero-glow{display:none}
+.hero-center{top:62px;gap:17px}
+.hero-title{font-size:57px;line-height:1.12;font-weight:600;color:#f7f7e8}
+.hero-title.gold{color:#c047ff}
+.hero-center p{color:#cbbbd5}
+.hero-proof{color:#c2b4ce}
+.orbit{border-color:#633081;top:38px}
+.hero-card{border-radius:3px;border:2px solid #a96dd4;background:#2a103c;padding:5px;box-shadow:8px 10px 0 #09021180}
+.hero-card img{border-radius:1px}.hero-card.right{border-color:#c7f76a}
+.spark{color:#ceff3b}.spark.b{color:#ceff3b}
+.match{background:#2b103e;border:1px solid #734398;border-radius:2px;top:516px}
+.match strong{color:#f7f7e8}.match small{color:#baa5ca}.match .match-icon{border-radius:0;background:#6f2892}
+.hero-coordinate,.hero-label{color:#ad86c7;bottom:27px}
+.pixel-edge{position:absolute;left:0;top:0;width:1440px;height:44px;pointer-events:none}
+.pixel-edge.bottom{top:auto;bottom:0;height:22px}
+.aura{position:absolute;width:640px;height:640px;left:-320px;top:70px;pointer-events:none}
+.aura.right{left:1110px;top:95px}
+.stats{background:#f7f7e8;border-color:#c9bed2;color:#230b31}
+.stat-icon{background:#e8d8f2;border:1px solid #b99ec9;border-radius:1px}
+.stat-icon svg{fill:#7823a8}.stat strong{color:#230b31}.stat small{color:#6e5c7c}
+.stats-link{color:#7823a8}.stats-link svg{fill:#7823a8}
+.catalog{background:#f7f7e8;color:#210c2e;padding-top:64px}
+.catalog .eyebrow{color:#7720a9}.catalog h2{font-size:40px;color:#210c2e}.catalog-head p{color:#695974}
+.wish-link{color:#674579}.wish-link svg{fill:#7823a8}
+.game{border-radius:1px;border:1px solid #bcabc6;background:#eee8f1;color:#705e7b}
+.game svg{fill:#7823a8}.game.active{background:#5e178e;border-color:#5e178e;color:#f7f7e8;box-shadow:3px 3px 0 #c8b3d7}
+.game.active svg{fill:#ceff3b}
+.catalog-tabs{border-color:#c5b9cf}.catalog-tab{color:#766280}.catalog-tab svg{fill:#796286}
+.catalog-tab.active{color:#691296;font-weight:700}.catalog-tab.active svg{fill:#691296}
+.count{background:#e3d6ea;color:#6c4e7d;border-radius:1px}.catalog-note{color:#735484}
+.tiny-dot{background:#7e26af}.search{background:#fffdf7;border-color:#bca9c6;color:#826e8c;border-radius:1px}
+.search svg,.filter svg,.sort svg{fill:#68258b}
+.search-submit{background:#5e178e;color:#f7f7e8;border-radius:1px}
+.filter,.sort{background:#ede6f1;border-color:#c4b4ce;color:#41244f;border-radius:1px}
+.pill{background:transparent;border-color:#c6b7cf;border-radius:1px;color:#6b5378}
+.pill svg{fill:#77558a}.pill.on{background:#ceff3b;border-color:#556c13;color:#25320b}.pill.on svg{fill:#25320b}
+.results{color:#63516d}.coverage{color:#82718c}
+.card{position:relative;background:#240a36;border-color:#421653;border-radius:1px;color:#f7f7e8;padding:12px}
+.corner-cut{position:absolute;right:-1px;top:-1px;width:16px;height:8px;background:#f7f7e8;z-index:2}
+.art,.card:nth-child(2) .art,.card:nth-child(3) .art,.card:nth-child(4) .art{background:#3d1755;border-radius:1px}
+.card:nth-child(2) .art{background:#46245b}.card:nth-child(3) .art{background:#311843}.card:nth-child(4) .art{background:#543266}
+.art img{border-radius:1px}.kind{color:#d9f3a9;background:#1c0829;border-color:#6d4483;border-radius:1px}
+.wish{background:#22082fe6;border-color:#9d70b8;border-radius:1px}.card-meta small{color:#c99eec}
+.original{color:#a185b2}.card-bottom{border-color:#553264;color:#c1b2cd}.card-add{background:#ceff3b;border-radius:1px}.card-add svg{fill:#21102c}
+.load .button{background:#5e178e;border-color:#5e178e;color:#f7f7e8}
+.closing{background:#3a0c54;border-color:#75279c}.closing h3{color:#f7f7e8}.closing p{color:#c5abd5}
+.footer{background:#13071c;border-color:#4b235f}.footer-brand p,.footer-links .col,.community p{color:#ac95ba}
+.community a{color:#ceff3b}.legal{border-color:#432153;color:#9d83ad}
+.state{background:#13071c}.state .box{background:#270e39;border-color:#69417f;border-radius:2px}.state .field{background:#170821;border-color:#78548e;border-radius:1px}.state .choice{background:#49205f;border-radius:1px;color:#f7f7e8}
+.mobile .hero{height:810px}.mobile .hero-center{top:45px;gap:17px}.mobile .hero-title{font-size:34px}
+.mobile .hero-card{top:458px;padding:3px}.mobile .hero-card img{width:122px;height:183px}
+.mobile .match{top:684px}.mobile .pixel-edge{width:390px;height:22px}.mobile .pixel-edge.bottom{height:12px}
+.mobile .aura{left:-460px;top:315px}.mobile .aura.right{left:210px;top:340px}
+.mobile .hero-coordinate,.mobile .hero-label{font-size:8px;bottom:18px}
+.mobile .catalog h2{font-size:29px}.mobile .card{border-radius:1px;padding:7px}.mobile .corner-cut{width:12px;height:6px}
+.mobile .wish,.mobile .card-add{border-radius:1px}.mobile .eyebrow{font-size:9px}.mobile .card-name{font-size:11px}
+
+/* Reference revision: large pixel fields and stepped silhouettes. */
+.hero{height:768px}
+.hero-center{top:96px}
+.hero-card{top:240px!important;background:transparent;border-color:transparent!important;border-radius:0;overflow:visible;box-shadow:none}
+.hero-card.right{top:236px!important}
+.hero-card img{position:relative;z-index:1}
+.pixel-band{position:absolute;left:0;width:1440px;height:160px;pointer-events:none}
+.pixel-band.top{top:0}.pixel-band.bottom{bottom:0}
+.mobile-art{display:none}
+.pixel-orbit{position:absolute;left:464px;top:88px;width:512px;height:512px;pointer-events:none}
+.pixel-tiles{position:absolute;top:280px;width:224px;height:224px;pointer-events:none}
+.pixel-tiles.left{left:-48px}.pixel-tiles.right{right:-48px;top:346px}
+.pixel-spark{position:absolute;width:48px;height:48px;pointer-events:none}
+.pixel-spark.a{left:334px;top:218px}.pixel-spark.b{left:1060px;top:548px;width:36px;height:36px}
+.hero-coordinate{left:464px;bottom:24px}.hero-label{right:464px;bottom:24px}
+.button,.match,.card,.hero-card{position:relative}
+.hero-card,.match{position:absolute}
+.pixel-panel-shape{position:absolute!important;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.button{background:transparent!important;border-color:transparent!important;border-radius:0;box-shadow:none!important}
+.button>div,.button>svg:not(.pixel-panel-shape){position:relative;z-index:1}
+.match{top:562px;height:100px;background:transparent;border-color:transparent;border-radius:0;padding:20px 28px}
+.match>div{position:relative;z-index:1}
+.match .match-icon{background:#6f2892;width:48px;height:48px}
+.card{background:transparent;border-color:transparent;border-radius:0;padding:16px 16px 32px}
+.card .art,.card .card-meta{position:relative;z-index:1}
+.card .corner-cut{display:none}
+.card .art{height:270px;background:#3d1755}
+.card-meta{padding:14px 0 4px}.card-name{font-size:14px}
+.card-bottom{gap:108px}
+.closing{position:relative;padding:176px 0 80px;background:#3a0c54;border:0}
+.closing .wrap{position:relative}
+.pixel-transition{position:absolute;left:0;top:0;width:1440px;height:144px;pointer-events:none}
+.stat-icon{border:0;background:#e8d8f2;box-shadow:4px 4px 0 #a26cbe}
+.game,.pill,.filter,.sort,.search,.wish,.card-add{border-radius:0}
+.state .pill{color:#c5abd5;border-color:#8c66a0}.state .pill.on{color:#25320b}
+.mobile .desktop-art{display:none}.mobile .mobile-art{display:block}
+.mobile .hero{height:936px}.mobile .hero-center{top:74px}
+.mobile .pixel-band{width:390px}.mobile .pixel-band.top{height:112px}.mobile .pixel-band.bottom{height:96px}
+.mobile .pixel-orbit{width:326px;height:326px;left:32px;top:470px}
+.mobile .pixel-tiles{display:none}
+.mobile .hero-card{top:500px!important}.mobile .hero-card.right{top:500px!important}
+.mobile .hero-card .pixel-panel-shape{width:100%;height:100%}
+.mobile .pixel-spark.a{width:22px;height:22px;left:183px;top:578px}
+.mobile .pixel-spark.b{width:18px;height:18px;left:340px;top:694px}
+.mobile .match{top:744px;height:102px;padding:18px 20px}
+.mobile .hero-coordinate,.mobile .hero-label{display:none}
+.mobile .card{padding:10px 10px 28px}.mobile .card .art{height:204px}
+.mobile .card-meta{padding:10px 0 2px}.mobile .card-name{font-size:11px}
+.mobile .card-bottom{gap:48px}
+.mobile .closing{padding:124px 0 44px}
+.mobile .pixel-transition{width:780px;height:108px;left:-150px}
+
+/* Angled ribbon controls, with a separate raised icon plate. */
+.button,.game,.pill,.filter,.sort,.search-submit{position:relative;background:transparent!important;border-color:transparent!important;box-shadow:none!important;border-radius:0}
+.ribbon-base{position:absolute!important;left:0;top:0;width:100%;height:100%;z-index:0!important;pointer-events:none}
+.control-label{position:relative;z-index:1;white-space:nowrap}
+.ribbon-icon{position:absolute!important;left:-2px;top:-3px;width:46px;height:44px;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none}
+.ribbon-badge-shape{position:absolute!important;left:0;top:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.ribbon-icon>svg:not(.ribbon-badge-shape){position:relative;z-index:1;fill:#f7f7e8}
+.button{padding:0 22px 0 58px;gap:0}
+.button .control-label{padding-bottom:2px}
+.button:not(.primary) .ribbon-icon>svg:not(.ribbon-badge-shape),.game.active .ribbon-icon>svg:not(.ribbon-badge-shape),.filter .ribbon-icon>svg:not(.ribbon-badge-shape){fill:#270d35}
+.nav-actions .button{padding:0 18px 0 46px}.nav-actions .ribbon-icon{width:36px;height:36px;top:-2px}.nav-actions .ribbon-icon>svg:not(.ribbon-badge-shape){width:18px;height:18px}
+.game{height:46px;padding:0 24px 0 48px;gap:0;color:#644374}
+.game.active{color:#f7f7e8}
+.game .ribbon-icon{width:36px;height:38px;left:-1px;top:-2px}
+.pill{height:38px;padding:0 15px;color:#654271;gap:0}
+.pill.has-icon{padding-left:38px}.pill.on{color:#26340a}
+.pill .ribbon-icon{width:28px;height:30px;left:0;top:-2px}
+.pill .ribbon-icon>svg:not(.ribbon-badge-shape){width:16px;height:16px}
+.filter{padding:0 18px 0 48px;gap:0;color:#f7f7e8}
+.filter .ribbon-icon,.sort .ribbon-icon{width:36px;height:40px;top:-2px}
+.sort{padding:0 32px 0 46px;gap:0;color:#634271}
+.sort-chevron{position:absolute;right:14px;top:18px;z-index:1}
+.search-submit{padding:8px 19px;color:#f7f7e8}
+.card-add,.wish{background:transparent!important;border:0;position:relative}
+.wish{position:absolute}
+.card-add>svg:not(.ribbon-badge-shape),.wish>svg:not(.ribbon-badge-shape){position:relative;z-index:1}
+.card-add>svg:not(.ribbon-badge-shape){fill:#270d35}
+.wish>svg:not(.ribbon-badge-shape){fill:#f7f7e8}
+.mobile .hero-actions .button{padding:0 20px 0 56px}
+.mobile .button .ribbon-icon{width:42px;height:40px}
+.mobile .game{padding:0 18px 0 46px;height:44px;gap:0}
+.mobile .game .ribbon-icon{width:34px;height:36px}
+.mobile .pill{height:32px;padding:0 12px;font-size:10px;gap:0}
+.mobile .pill.has-icon{padding-left:30px}
+.mobile .pill .ribbon-icon{width:24px;height:26px;top:-2px}
+.mobile .pill .ribbon-icon>svg:not(.ribbon-badge-shape){width:14px;height:14px}
+.mobile .pill>.ribbon-base,.mobile .pill .ribbon-icon>.ribbon-badge-shape{width:100%;height:100%}
+.mobile .filter{padding:0 14px 0 44px}
+.mobile .sort{padding:0 32px 0 44px;gap:0}
+.mobile .filter .ribbon-icon,.mobile .sort .ribbon-icon{width:32px;height:36px}
+.mobile .sort-chevron{top:14px}
+.mobile .search-submit{padding:8px 10px}
+.state .pill{color:#634271}.state .pill.on{color:#26340a}
+
+/* Card footer: status and action align inside the safe area of the pixel frame. */
+.card .card-bottom,.mobile .card .card-bottom{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:12px;align-items:center;min-height:60px;padding-top:12px;font-size:11px;line-height:1.4;color:#d6c4e2}
+.card .card-bottom>div{white-space:nowrap}
+.card .card-add,.mobile .card .card-add{display:flex;align-items:center;justify-content:center;width:44px;height:44px;min-width:44px;padding:0;border:0;margin:0;line-height:1;cursor:pointer}
+.card .card-add>svg:not(.ribbon-badge-shape),.mobile .card .card-add>svg:not(.ribbon-badge-shape){width:22px;height:22px;fill:none}
+.card .card-add:focus-visible{outline:2px solid #f7f7e8;outline-offset:3px}

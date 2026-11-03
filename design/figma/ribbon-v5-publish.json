@@ -1,0 +1,41 @@
+{
+  "desktop": {
+    "id": "3:2",
+    "top": {
+      "id": "23:9726",
+      "name": "Mosaico pixelado / top",
+      "type": "FRAME",
+      "width": 1440,
+      "height": 160
+    },
+    "bottom": {
+      "id": "23:9754",
+      "name": "Mosaico pixelado / bottom",
+      "type": "FRAME",
+      "width": 1440,
+      "height": 160
+    }
+  },
+  "mobile": {
+    "id": "4:252",
+    "top": {
+      "id": "23:9782",
+      "name": "Mosaico pixelado / top",
+      "type": "FRAME",
+      "width": 390,
+      "height": 112
+    },
+    "bottom": {
+      "id": "23:9798",
+      "name": "Mosaico pixelado / bottom",
+      "type": "FRAME",
+      "width": 390,
+      "height": 96
+    }
+  },
+  "states": {
+    "replacement": "23:9817",
+    "done": true
+  },
+  "stagingRemoved": true
+}

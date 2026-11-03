@@ -1,0 +1,107 @@
+{
+  "_staging": {
+    "id": "18:2",
+    "name": "Preparação — composição pixelada",
+    "type": "FRAME"
+  },
+  "desktop-header": {
+    "id": "18:3",
+    "name": "DUELINK / desktop / header",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 158,
+    "parent": "3:2",
+    "y": 0,
+    "normalized": true
+  },
+  "desktop-hero": {
+    "id": "18:117",
+    "name": "DUELINK / desktop / hero",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 768,
+    "parent": "3:2",
+    "y": 158,
+    "normalized": true
+  },
+  "desktop-stats": {
+    "id": "18:532",
+    "name": "DUELINK / desktop / stats",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 108,
+    "parent": "3:2",
+    "y": 926,
+    "normalized": true
+  },
+  "desktop-catalog": {
+    "id": "18:640",
+    "name": "DUELINK / desktop / catalog",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 1672,
+    "parent": "3:2",
+    "y": 1034,
+    "normalized": true
+  },
+  "desktop-footer": {
+    "id": "18:1739",
+    "name": "DUELINK / desktop / footer",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 713.5,
+    "parent": "3:2",
+    "y": 2706,
+    "normalized": true
+  },
+  "mobile-header": {
+    "id": "18:1947",
+    "name": "DUELINK / mobile / header",
+    "type": "FRAME",
+    "width": 390,
+    "height": 94,
+    "parent": "4:252",
+    "y": 0,
+    "normalized": true
+  },
+  "mobile-hero": {
+    "id": "18:1997",
+    "name": "DUELINK / mobile / hero",
+    "type": "FRAME",
+    "width": 390,
+    "height": 936,
+    "parent": "4:252",
+    "y": 94,
+    "normalized": true
+  },
+  "mobile-stats": {
+    "id": "18:2323",
+    "name": "DUELINK / mobile / stats",
+    "type": "FRAME",
+    "width": 390,
+    "height": 276,
+    "parent": "4:252",
+    "y": 1030,
+    "normalized": true
+  },
+  "mobile-catalog": {
+    "id": "18:2431",
+    "name": "DUELINK / mobile / catalog",
+    "type": "FRAME",
+    "width": 390,
+    "height": 2437.3125,
+    "parent": "4:252",
+    "y": 1306,
+    "normalized": true
+  },
+  "mobile-footer": {
+    "id": "18:3499",
+    "name": "DUELINK / mobile / footer",
+    "type": "FRAME",
+    "width": 390,
+    "height": 1021.78125,
+    "parent": "4:252",
+    "y": 3743.3125,
+    "normalized": true
+  }
+}

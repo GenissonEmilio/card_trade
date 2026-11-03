@@ -1,0 +1,3523 @@
+{
+  "selectedNode": {
+    "id": "27:12884",
+    "name": "cards-row1",
+    "type": "GROUP",
+    "width": 350,
+    "height": 417
+  },
+  "intent": "section",
+  "uiSpec": {
+    "version": "1.1.0",
+    "root": {
+      "id": "27:12884",
+      "name": "cards-row1",
+      "type": "GROUP",
+      "tokenHints": {
+        "styleRefs": 0,
+        "variableRefs": 0,
+        "rawValueHints": 0
+      },
+      "children": [
+        {
+          "id": "27:12995",
+          "name": "Mask group",
+          "type": "GROUP",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [
+            {
+              "id": "27:12993",
+              "name": "Group",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "27:12994",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 170,
+                  "height": 417,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ffffff"
+                    ]
+                  }
+                }
+              ],
+              "width": 170,
+              "height": 417,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "27:12885",
+              "name": "card1",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "27:12886",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "27:12899",
+                      "name": "Mask group",
+                      "type": "GROUP",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [
+                        {
+                          "id": "27:12897",
+                          "name": "Group",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:12898",
+                              "name": "Vector",
+                              "type": "VECTOR",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [],
+                              "width": 168,
+                              "height": 415,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": 0,
+                                "effects": "none",
+                                "fillColors": [
+                                  "#ffffff"
+                                ]
+                              }
+                            }
+                          ],
+                          "width": 168,
+                          "height": 415,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "27:12887",
+                          "name": "pixel-panel-shape1",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:12895",
+                              "name": "Group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:12896",
+                                  "name": "Vector",
+                                  "type": "VECTOR",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [],
+                                  "width": 168.0001220703125,
+                                  "height": 415.0000305175781,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "solid",
+                                    "cornerRadius": 0,
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#240a36"
+                                    ],
+                                    "strokeColor": "#622c7e"
+                                  }
+                                }
+                              ],
+                              "width": 168.0001220703125,
+                              "height": 415.0000305175781,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            }
+                          ],
+                          "width": 168.0001220703125,
+                          "height": 415.0000305175781,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        }
+                      ],
+                      "width": 168,
+                      "height": 415,
+                      "layout": {
+                        "layoutPositioning": "AUTO"
+                      },
+                      "visual": {
+                        "fills": "unknown",
+                        "strokes": "unknown",
+                        "cornerRadius": "undefined",
+                        "effects": "none"
+                      }
+                    }
+                  ],
+                  "width": 168,
+                  "height": 415,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "27:12900",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "27:12949",
+                      "name": "Mask group",
+                      "type": "GROUP",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [
+                        {
+                          "id": "27:12946",
+                          "name": "Group",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:12947",
+                              "name": "Vector",
+                              "type": "VECTOR",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [],
+                              "width": 148,
+                              "height": 204,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": 0,
+                                "effects": "none",
+                                "fillColors": [
+                                  "#ffffff"
+                                ]
+                              }
+                            },
+                            {
+                              "id": "27:12948",
+                              "name": "Vector",
+                              "type": "VECTOR",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [],
+                              "width": 25,
+                              "height": 25,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": 0,
+                                "effects": "none",
+                                "fillColors": [
+                                  "#ffffff"
+                                ]
+                              }
+                            }
+                          ],
+                          "width": 148,
+                          "height": 204,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "27:12901",
+                          "name": "art1",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:12902",
+                              "name": "Group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:12903",
+                                  "name": "Vector",
+                                  "type": "VECTOR",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [],
+                                  "width": 148,
+                                  "height": 204,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "none",
+                                    "cornerRadius": 0,
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#3d1755"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "width": 148,
+                              "height": 204,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            },
+                            {
+                              "id": "27:12915",
+                              "name": "Mask group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:12913",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:12914",
+                                      "name": "Vector",
+                                      "type": "VECTOR",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [],
+                                      "width": 132,
+                                      "height": 192,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO",
+                                        "constraints": {
+                                          "horizontal": "SCALE",
+                                          "vertical": "SCALE"
+                                        }
+                                      },
+                                      "visual": {
+                                        "fills": "solid",
+                                        "strokes": "none",
+                                        "cornerRadius": 0,
+                                        "effects": "none",
+                                        "fillColors": [
+                                          "#ffffff"
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "width": 132,
+                                  "height": 192,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                },
+                                {
+                                  "id": "27:12904",
+                                  "name": "img1",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:12912",
+                                      "name": "img1-image",
+                                      "type": "RECTANGLE",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [],
+                                      "width": 132,
+                                      "height": 192,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO",
+                                        "constraints": {
+                                          "horizontal": "SCALE",
+                                          "vertical": "SCALE"
+                                        }
+                                      },
+                                      "visual": {
+                                        "fills": "image",
+                                        "strokes": "none",
+                                        "cornerRadius": 0,
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 132,
+                                  "height": 192,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                }
+                              ],
+                              "width": 132,
+                              "height": 192,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            },
+                            {
+                              "id": "27:12916",
+                              "name": "wish1",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:12917",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:12930",
+                                      "name": "Mask group",
+                                      "type": "GROUP",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "27:12928",
+                                          "name": "Group",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:12929",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 25,
+                                              "height": 25,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ffffff"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 25,
+                                          "height": 25,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "27:12918",
+                                          "name": "ribbon-badge-shape13",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:12926",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "27:12927",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 24.456510543823242,
+                                                  "height": 23.863643646240234,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#6b1c96"
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              "width": 24.456510543823242,
+                                              "height": 23.863643646240234,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            }
+                                          ],
+                                          "width": 24.456510543823242,
+                                          "height": 23.863643646240234,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        }
+                                      ],
+                                      "width": 25,
+                                      "height": 25,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO"
+                                      },
+                                      "visual": {
+                                        "fills": "unknown",
+                                        "strokes": "unknown",
+                                        "cornerRadius": "undefined",
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 25,
+                                  "height": 25,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                },
+                                {
+                                  "id": "27:12931",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:12945",
+                                      "name": "Mask group",
+                                      "type": "GROUP",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "27:12943",
+                                          "name": "Group",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:12944",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 15,
+                                              "height": 15,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ffffff"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 15,
+                                          "height": 15,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "27:12932",
+                                          "name": "svg19",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:12940",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "27:12941",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 12.18751049041748,
+                                                  "height": 10.312508583068848,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#f7f7e8"
+                                                    ]
+                                                  }
+                                                },
+                                                {
+                                                  "id": "27:12942",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 13.125011444091797,
+                                                  "height": 11.247357368469238,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#f7f7e8"
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              "width": 13.125011444091797,
+                                              "height": 11.247357368469238,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            }
+                                          ],
+                                          "width": 13.125011444091797,
+                                          "height": 11.247357368469238,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        }
+                                      ],
+                                      "width": 15,
+                                      "height": 15,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO"
+                                      },
+                                      "visual": {
+                                        "fills": "unknown",
+                                        "strokes": "unknown",
+                                        "cornerRadius": "undefined",
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 15,
+                                  "height": 15,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                }
+                              ],
+                              "width": 25,
+                              "height": 25,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            }
+                          ],
+                          "width": 148,
+                          "height": 204,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        }
+                      ],
+                      "width": 148,
+                      "height": 204,
+                      "layout": {
+                        "layoutPositioning": "AUTO"
+                      },
+                      "visual": {
+                        "fills": "unknown",
+                        "strokes": "unknown",
+                        "cornerRadius": "undefined",
+                        "effects": "none"
+                      }
+                    },
+                    {
+                      "id": "27:12950",
+                      "name": "card-meta1",
+                      "type": "GROUP",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [
+                        {
+                          "id": "27:12951",
+                          "name": "small1",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:12952",
+                              "name": "Blue-Eyes",
+                              "type": "TEXT",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 1
+                              },
+                              "children": [],
+                              "width": 38,
+                              "height": 10,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": "undefined",
+                                "effects": "none",
+                                "fillColors": [
+                                  "#c99eec"
+                                ]
+                              },
+                              "text": {
+                                "characters": "Blue-Eyes",
+                                "lineHeight": "AUTO",
+                                "letterSpacing": "0%",
+                                "textCase": "ORIGINAL",
+                                "fontFamily": "DM Sans",
+                                "fontStyle": "Regular",
+                                "fontSize": 8
+                              }
+                            }
+                          ],
+                          "width": 38,
+                          "height": 10,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "27:12953",
+                          "name": "card-name1",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:12956",
+                              "name": "Group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:12954",
+                                  "name": "Dragão Branco de Olhos",
+                                  "type": "TEXT",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 1
+                                  },
+                                  "children": [],
+                                  "width": 129,
+                                  "height": 14,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "none",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#f7f7e8"
+                                    ]
+                                  },
+                                  "text": {
+                                    "characters": "Dragão Branco de Olhos ",
+                                    "lineHeight": "AUTO",
+                                    "letterSpacing": "0%",
+                                    "textCase": "ORIGINAL",
+                                    "fontFamily": "DM Sans",
+                                    "fontStyle": "SemiBold",
+                                    "fontSize": 11
+                                  }
+                                },
+                                {
+                                  "id": "27:12955",
+                                  "name": "Azuis",
+                                  "type": "TEXT",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 1
+                                  },
+                                  "children": [],
+                                  "width": 29,
+                                  "height": 14,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "none",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#f7f7e8"
+                                    ]
+                                  },
+                                  "text": {
+                                    "characters": "Azuis",
+                                    "lineHeight": "AUTO",
+                                    "letterSpacing": "0%",
+                                    "textCase": "ORIGINAL",
+                                    "fontFamily": "DM Sans",
+                                    "fontStyle": "SemiBold",
+                                    "fontSize": 11
+                                  }
+                                }
+                              ],
+                              "width": 129,
+                              "height": 28.84375,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            }
+                          ],
+                          "width": 129,
+                          "height": 28.84375,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "27:12957",
+                          "name": "original1",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:12958",
+                              "name": "Blue-Eyes White Dragon",
+                              "type": "TEXT",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 1
+                              },
+                              "children": [],
+                              "width": 91,
+                              "height": 10,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": "undefined",
+                                "effects": "none",
+                                "fillColors": [
+                                  "#a185b2"
+                                ]
+                              },
+                              "text": {
+                                "characters": "Blue-Eyes White Dragon",
+                                "lineHeight": "AUTO",
+                                "letterSpacing": "0%",
+                                "textCase": "ORIGINAL",
+                                "fontFamily": "DM Sans",
+                                "fontStyle": "Regular",
+                                "fontSize": 8
+                              }
+                            }
+                          ],
+                          "width": 91,
+                          "height": 10,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "27:12959",
+                          "name": "card-bottom1",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:12960",
+                              "name": "Group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:12961",
+                                  "name": "Vector",
+                                  "type": "VECTOR",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [],
+                                  "width": 148,
+                                  "height": 0,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "solid",
+                                    "cornerRadius": 0,
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#000000"
+                                    ],
+                                    "strokeColor": "#553264"
+                                  }
+                                }
+                              ],
+                              "width": 148,
+                              "height": 0,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            },
+                            {
+                              "id": "27:12962",
+                              "name": "div2",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:12963",
+                                  "name": "No catálogo",
+                                  "type": "TEXT",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 1
+                                  },
+                                  "children": [],
+                                  "width": 62,
+                                  "height": 14,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "none",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#d6c4e2"
+                                    ]
+                                  },
+                                  "text": {
+                                    "characters": "No catálogo",
+                                    "lineHeight": "AUTO",
+                                    "letterSpacing": "0%",
+                                    "textCase": "ORIGINAL",
+                                    "fontFamily": "DM Sans",
+                                    "fontStyle": "Regular",
+                                    "fontSize": 11
+                                  }
+                                }
+                              ],
+                              "width": 62,
+                              "height": 14,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            },
+                            {
+                              "id": "27:12964",
+                              "name": "card-add1",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:12965",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:12978",
+                                      "name": "Mask group",
+                                      "type": "GROUP",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "27:12976",
+                                          "name": "Group",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:12977",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 44,
+                                              "height": 44,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ffffff"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 44,
+                                          "height": 44,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "27:12966",
+                                          "name": "ribbon-badge-shape14",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:12974",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "27:12975",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 43.04349136352539,
+                                                  "height": 42,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#ceff3b"
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              "width": 43.04349136352539,
+                                              "height": 42,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            }
+                                          ],
+                                          "width": 43.04349136352539,
+                                          "height": 42,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        }
+                                      ],
+                                      "width": 44,
+                                      "height": 44,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO"
+                                      },
+                                      "visual": {
+                                        "fills": "unknown",
+                                        "strokes": "unknown",
+                                        "cornerRadius": "undefined",
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 44,
+                                  "height": 44,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                },
+                                {
+                                  "id": "27:12979",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:12992",
+                                      "name": "Mask group",
+                                      "type": "GROUP",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "27:12990",
+                                          "name": "Group",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:12991",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 22,
+                                              "height": 22,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ffffff"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 22,
+                                          "height": 22,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "27:12980",
+                                          "name": "svg20",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:12988",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "27:12989",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 12.833337783813477,
+                                                  "height": 12.833337783813477,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "none",
+                                                    "strokes": "solid",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "strokeColor": "#270d35"
+                                                  }
+                                                }
+                                              ],
+                                              "width": 12.833337783813477,
+                                              "height": 12.833337783813477,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            }
+                                          ],
+                                          "width": 12.833337783813477,
+                                          "height": 12.833337783813477,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        }
+                                      ],
+                                      "width": 22,
+                                      "height": 22,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO"
+                                      },
+                                      "visual": {
+                                        "fills": "unknown",
+                                        "strokes": "unknown",
+                                        "cornerRadius": "undefined",
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 22,
+                                  "height": 22,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                }
+                              ],
+                              "width": 44,
+                              "height": 44,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            }
+                          ],
+                          "width": 148,
+                          "height": 58.5,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        }
+                      ],
+                      "width": 148,
+                      "height": 152.5,
+                      "layout": {
+                        "layoutPositioning": "AUTO"
+                      },
+                      "visual": {
+                        "fills": "unknown",
+                        "strokes": "unknown",
+                        "cornerRadius": "undefined",
+                        "effects": "none"
+                      }
+                    }
+                  ],
+                  "width": 148,
+                  "height": 373.5,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                }
+              ],
+              "width": 168,
+              "height": 415,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            }
+          ],
+          "width": 170,
+          "height": 417,
+          "layout": {
+            "layoutPositioning": "AUTO"
+          },
+          "visual": {
+            "fills": "unknown",
+            "strokes": "unknown",
+            "cornerRadius": "undefined",
+            "effects": "none"
+          }
+        },
+        {
+          "id": "27:13104",
+          "name": "Mask group",
+          "type": "GROUP",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [
+            {
+              "id": "27:13102",
+              "name": "Group",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "27:13103",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 170,
+                  "height": 417,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ffffff"
+                    ]
+                  }
+                }
+              ],
+              "width": 170,
+              "height": 417,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "27:12996",
+              "name": "card2",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "27:12997",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "27:13010",
+                      "name": "Mask group",
+                      "type": "GROUP",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [
+                        {
+                          "id": "27:13008",
+                          "name": "Group",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:13009",
+                              "name": "Vector",
+                              "type": "VECTOR",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [],
+                              "width": 168,
+                              "height": 415,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": 0,
+                                "effects": "none",
+                                "fillColors": [
+                                  "#ffffff"
+                                ]
+                              }
+                            }
+                          ],
+                          "width": 168,
+                          "height": 415,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "27:12998",
+                          "name": "pixel-panel-shape2",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:13006",
+                              "name": "Group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:13007",
+                                  "name": "Vector",
+                                  "type": "VECTOR",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [],
+                                  "width": 168.0001220703125,
+                                  "height": 415.0000305175781,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "solid",
+                                    "cornerRadius": 0,
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#240a36"
+                                    ],
+                                    "strokeColor": "#622c7e"
+                                  }
+                                }
+                              ],
+                              "width": 168.0001220703125,
+                              "height": 415.0000305175781,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            }
+                          ],
+                          "width": 168.0001220703125,
+                          "height": 415.0000305175781,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        }
+                      ],
+                      "width": 168,
+                      "height": 415,
+                      "layout": {
+                        "layoutPositioning": "AUTO"
+                      },
+                      "visual": {
+                        "fills": "unknown",
+                        "strokes": "unknown",
+                        "cornerRadius": "undefined",
+                        "effects": "none"
+                      }
+                    }
+                  ],
+                  "width": 168,
+                  "height": 415,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "27:13011",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "27:13060",
+                      "name": "Mask group",
+                      "type": "GROUP",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [
+                        {
+                          "id": "27:13057",
+                          "name": "Group",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:13058",
+                              "name": "Vector",
+                              "type": "VECTOR",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [],
+                              "width": 148,
+                              "height": 204,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": 0,
+                                "effects": "none",
+                                "fillColors": [
+                                  "#ffffff"
+                                ]
+                              }
+                            },
+                            {
+                              "id": "27:13059",
+                              "name": "Vector",
+                              "type": "VECTOR",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [],
+                              "width": 25,
+                              "height": 25,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": 0,
+                                "effects": "none",
+                                "fillColors": [
+                                  "#ffffff"
+                                ]
+                              }
+                            }
+                          ],
+                          "width": 148,
+                          "height": 204,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "27:13012",
+                          "name": "art2",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:13013",
+                              "name": "Group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:13014",
+                                  "name": "Vector",
+                                  "type": "VECTOR",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [],
+                                  "width": 148,
+                                  "height": 204,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "none",
+                                    "cornerRadius": 0,
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#46245b"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "width": 148,
+                              "height": 204,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            },
+                            {
+                              "id": "27:13026",
+                              "name": "Mask group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:13024",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:13025",
+                                      "name": "Vector",
+                                      "type": "VECTOR",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [],
+                                      "width": 132,
+                                      "height": 192,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO",
+                                        "constraints": {
+                                          "horizontal": "SCALE",
+                                          "vertical": "SCALE"
+                                        }
+                                      },
+                                      "visual": {
+                                        "fills": "solid",
+                                        "strokes": "none",
+                                        "cornerRadius": 0,
+                                        "effects": "none",
+                                        "fillColors": [
+                                          "#ffffff"
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "width": 132,
+                                  "height": 192,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                },
+                                {
+                                  "id": "27:13015",
+                                  "name": "img2",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:13023",
+                                      "name": "img2-image",
+                                      "type": "RECTANGLE",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [],
+                                      "width": 132,
+                                      "height": 192,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO",
+                                        "constraints": {
+                                          "horizontal": "SCALE",
+                                          "vertical": "SCALE"
+                                        }
+                                      },
+                                      "visual": {
+                                        "fills": "image",
+                                        "strokes": "none",
+                                        "cornerRadius": 0,
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 132,
+                                  "height": 192,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                }
+                              ],
+                              "width": 132,
+                              "height": 192,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            },
+                            {
+                              "id": "27:13027",
+                              "name": "wish2",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:13028",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:13041",
+                                      "name": "Mask group",
+                                      "type": "GROUP",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "27:13039",
+                                          "name": "Group",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:13040",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 25,
+                                              "height": 25,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ffffff"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 25,
+                                          "height": 25,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "27:13029",
+                                          "name": "ribbon-badge-shape15",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:13037",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "27:13038",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 24.456510543823242,
+                                                  "height": 23.863643646240234,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#6b1c96"
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              "width": 24.456510543823242,
+                                              "height": 23.863643646240234,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            }
+                                          ],
+                                          "width": 24.456510543823242,
+                                          "height": 23.863643646240234,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        }
+                                      ],
+                                      "width": 25,
+                                      "height": 25,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO"
+                                      },
+                                      "visual": {
+                                        "fills": "unknown",
+                                        "strokes": "unknown",
+                                        "cornerRadius": "undefined",
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 25,
+                                  "height": 25,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                },
+                                {
+                                  "id": "27:13042",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:13056",
+                                      "name": "Mask group",
+                                      "type": "GROUP",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "27:13054",
+                                          "name": "Group",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:13055",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 15,
+                                              "height": 15,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ffffff"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 15,
+                                          "height": 15,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "27:13043",
+                                          "name": "svg21",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:13051",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "27:13052",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 12.18751049041748,
+                                                  "height": 10.312508583068848,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#f7f7e8"
+                                                    ]
+                                                  }
+                                                },
+                                                {
+                                                  "id": "27:13053",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 13.125011444091797,
+                                                  "height": 11.247357368469238,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#f7f7e8"
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              "width": 13.125011444091797,
+                                              "height": 11.247357368469238,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            }
+                                          ],
+                                          "width": 13.125011444091797,
+                                          "height": 11.247357368469238,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        }
+                                      ],
+                                      "width": 15,
+                                      "height": 15,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO"
+                                      },
+                                      "visual": {
+                                        "fills": "unknown",
+                                        "strokes": "unknown",
+                                        "cornerRadius": "undefined",
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 15,
+                                  "height": 15,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                }
+                              ],
+                              "width": 25,
+                              "height": 25,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            }
+                          ],
+                          "width": 148,
+                          "height": 204,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        }
+                      ],
+                      "width": 148,
+                      "height": 204,
+                      "layout": {
+                        "layoutPositioning": "AUTO"
+                      },
+                      "visual": {
+                        "fills": "unknown",
+                        "strokes": "unknown",
+                        "cornerRadius": "undefined",
+                        "effects": "none"
+                      }
+                    },
+                    {
+                      "id": "27:13061",
+                      "name": "card-meta2",
+                      "type": "GROUP",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [
+                        {
+                          "id": "27:13062",
+                          "name": "small2",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:13063",
+                              "name": "Stardust",
+                              "type": "TEXT",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 1
+                              },
+                              "children": [],
+                              "width": 33,
+                              "height": 10,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": "undefined",
+                                "effects": "none",
+                                "fillColors": [
+                                  "#c99eec"
+                                ]
+                              },
+                              "text": {
+                                "characters": "Stardust",
+                                "lineHeight": "AUTO",
+                                "letterSpacing": "0%",
+                                "textCase": "ORIGINAL",
+                                "fontFamily": "DM Sans",
+                                "fontStyle": "Regular",
+                                "fontSize": 8
+                              }
+                            }
+                          ],
+                          "width": 33,
+                          "height": 10,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "27:13064",
+                          "name": "card-name2",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:13065",
+                              "name": "Dragão da Poeira Estelar",
+                              "type": "TEXT",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 1
+                              },
+                              "children": [],
+                              "width": 130,
+                              "height": 14,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": "undefined",
+                                "effects": "none",
+                                "fillColors": [
+                                  "#f7f7e8"
+                                ]
+                              },
+                              "text": {
+                                "characters": "Dragão da Poeira Estelar",
+                                "lineHeight": "AUTO",
+                                "letterSpacing": "0%",
+                                "textCase": "ORIGINAL",
+                                "fontFamily": "DM Sans",
+                                "fontStyle": "SemiBold",
+                                "fontSize": 11
+                              }
+                            }
+                          ],
+                          "width": 130,
+                          "height": 14,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "27:13066",
+                          "name": "original2",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:13067",
+                              "name": "Stardust Dragon",
+                              "type": "TEXT",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 1
+                              },
+                              "children": [],
+                              "width": 61,
+                              "height": 10,
+                              "layout": {
+                                "layoutPositioning": "AUTO",
+                                "constraints": {
+                                  "horizontal": "SCALE",
+                                  "vertical": "SCALE"
+                                }
+                              },
+                              "visual": {
+                                "fills": "solid",
+                                "strokes": "none",
+                                "cornerRadius": "undefined",
+                                "effects": "none",
+                                "fillColors": [
+                                  "#a185b2"
+                                ]
+                              },
+                              "text": {
+                                "characters": "Stardust Dragon",
+                                "lineHeight": "AUTO",
+                                "letterSpacing": "0%",
+                                "textCase": "ORIGINAL",
+                                "fontFamily": "DM Sans",
+                                "fontStyle": "Regular",
+                                "fontSize": 8
+                              }
+                            }
+                          ],
+                          "width": 61,
+                          "height": 10,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        },
+                        {
+                          "id": "27:13068",
+                          "name": "card-bottom2",
+                          "type": "GROUP",
+                          "tokenHints": {
+                            "styleRefs": 0,
+                            "variableRefs": 0,
+                            "rawValueHints": 0
+                          },
+                          "children": [
+                            {
+                              "id": "27:13069",
+                              "name": "Group",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:13070",
+                                  "name": "Vector",
+                                  "type": "VECTOR",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [],
+                                  "width": 148,
+                                  "height": 0,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "solid",
+                                    "cornerRadius": 0,
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#000000"
+                                    ],
+                                    "strokeColor": "#553264"
+                                  }
+                                }
+                              ],
+                              "width": 148,
+                              "height": 0,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            },
+                            {
+                              "id": "27:13071",
+                              "name": "div3",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:13072",
+                                  "name": "No catálogo",
+                                  "type": "TEXT",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 1
+                                  },
+                                  "children": [],
+                                  "width": 62,
+                                  "height": 14,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO",
+                                    "constraints": {
+                                      "horizontal": "SCALE",
+                                      "vertical": "SCALE"
+                                    }
+                                  },
+                                  "visual": {
+                                    "fills": "solid",
+                                    "strokes": "none",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none",
+                                    "fillColors": [
+                                      "#d6c4e2"
+                                    ]
+                                  },
+                                  "text": {
+                                    "characters": "No catálogo",
+                                    "lineHeight": "AUTO",
+                                    "letterSpacing": "0%",
+                                    "textCase": "ORIGINAL",
+                                    "fontFamily": "DM Sans",
+                                    "fontStyle": "Regular",
+                                    "fontSize": 11
+                                  }
+                                }
+                              ],
+                              "width": 62,
+                              "height": 14,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            },
+                            {
+                              "id": "27:13073",
+                              "name": "card-add2",
+                              "type": "GROUP",
+                              "tokenHints": {
+                                "styleRefs": 0,
+                                "variableRefs": 0,
+                                "rawValueHints": 0
+                              },
+                              "children": [
+                                {
+                                  "id": "27:13074",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:13087",
+                                      "name": "Mask group",
+                                      "type": "GROUP",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "27:13085",
+                                          "name": "Group",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:13086",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 44,
+                                              "height": 44,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ffffff"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 44,
+                                          "height": 44,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "27:13075",
+                                          "name": "ribbon-badge-shape16",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:13083",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "27:13084",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 43.04349136352539,
+                                                  "height": 42,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "solid",
+                                                    "strokes": "none",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "fillColors": [
+                                                      "#ceff3b"
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              "width": 43.04349136352539,
+                                              "height": 42,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            }
+                                          ],
+                                          "width": 43.04349136352539,
+                                          "height": 42,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        }
+                                      ],
+                                      "width": 44,
+                                      "height": 44,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO"
+                                      },
+                                      "visual": {
+                                        "fills": "unknown",
+                                        "strokes": "unknown",
+                                        "cornerRadius": "undefined",
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 44,
+                                  "height": 44,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                },
+                                {
+                                  "id": "27:13088",
+                                  "name": "Group",
+                                  "type": "GROUP",
+                                  "tokenHints": {
+                                    "styleRefs": 0,
+                                    "variableRefs": 0,
+                                    "rawValueHints": 0
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "27:13101",
+                                      "name": "Mask group",
+                                      "type": "GROUP",
+                                      "tokenHints": {
+                                        "styleRefs": 0,
+                                        "variableRefs": 0,
+                                        "rawValueHints": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "27:13099",
+                                          "name": "Group",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:13100",
+                                              "name": "Vector",
+                                              "type": "VECTOR",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [],
+                                              "width": 22,
+                                              "height": 22,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO",
+                                                "constraints": {
+                                                  "horizontal": "SCALE",
+                                                  "vertical": "SCALE"
+                                                }
+                                              },
+                                              "visual": {
+                                                "fills": "solid",
+                                                "strokes": "none",
+                                                "cornerRadius": 0,
+                                                "effects": "none",
+                                                "fillColors": [
+                                                  "#ffffff"
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          "width": 22,
+                                          "height": 22,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        },
+                                        {
+                                          "id": "27:13089",
+                                          "name": "svg22",
+                                          "type": "GROUP",
+                                          "tokenHints": {
+                                            "styleRefs": 0,
+                                            "variableRefs": 0,
+                                            "rawValueHints": 0
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "27:13097",
+                                              "name": "Group",
+                                              "type": "GROUP",
+                                              "tokenHints": {
+                                                "styleRefs": 0,
+                                                "variableRefs": 0,
+                                                "rawValueHints": 0
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "27:13098",
+                                                  "name": "Vector",
+                                                  "type": "VECTOR",
+                                                  "tokenHints": {
+                                                    "styleRefs": 0,
+                                                    "variableRefs": 0,
+                                                    "rawValueHints": 0
+                                                  },
+                                                  "children": [],
+                                                  "width": 12.833337783813477,
+                                                  "height": 12.833337783813477,
+                                                  "layout": {
+                                                    "layoutPositioning": "AUTO",
+                                                    "constraints": {
+                                                      "horizontal": "SCALE",
+                                                      "vertical": "SCALE"
+                                                    }
+                                                  },
+                                                  "visual": {
+                                                    "fills": "none",
+                                                    "strokes": "solid",
+                                                    "cornerRadius": 0,
+                                                    "effects": "none",
+                                                    "strokeColor": "#270d35"
+                                                  }
+                                                }
+                                              ],
+                                              "width": 12.833337783813477,
+                                              "height": 12.833337783813477,
+                                              "layout": {
+                                                "layoutPositioning": "AUTO"
+                                              },
+                                              "visual": {
+                                                "fills": "unknown",
+                                                "strokes": "unknown",
+                                                "cornerRadius": "undefined",
+                                                "effects": "none"
+                                              }
+                                            }
+                                          ],
+                                          "width": 12.833337783813477,
+                                          "height": 12.833337783813477,
+                                          "layout": {
+                                            "layoutPositioning": "AUTO"
+                                          },
+                                          "visual": {
+                                            "fills": "unknown",
+                                            "strokes": "unknown",
+                                            "cornerRadius": "undefined",
+                                            "effects": "none"
+                                          }
+                                        }
+                                      ],
+                                      "width": 22,
+                                      "height": 22,
+                                      "layout": {
+                                        "layoutPositioning": "AUTO"
+                                      },
+                                      "visual": {
+                                        "fills": "unknown",
+                                        "strokes": "unknown",
+                                        "cornerRadius": "undefined",
+                                        "effects": "none"
+                                      }
+                                    }
+                                  ],
+                                  "width": 22,
+                                  "height": 22,
+                                  "layout": {
+                                    "layoutPositioning": "AUTO"
+                                  },
+                                  "visual": {
+                                    "fills": "unknown",
+                                    "strokes": "unknown",
+                                    "cornerRadius": "undefined",
+                                    "effects": "none"
+                                  }
+                                }
+                              ],
+                              "width": 44,
+                              "height": 44,
+                              "layout": {
+                                "layoutPositioning": "AUTO"
+                              },
+                              "visual": {
+                                "fills": "unknown",
+                                "strokes": "unknown",
+                                "cornerRadius": "undefined",
+                                "effects": "none"
+                              }
+                            }
+                          ],
+                          "width": 148,
+                          "height": 58.5,
+                          "layout": {
+                            "layoutPositioning": "AUTO"
+                          },
+                          "visual": {
+                            "fills": "unknown",
+                            "strokes": "unknown",
+                            "cornerRadius": "undefined",
+                            "effects": "none"
+                          }
+                        }
+                      ],
+                      "width": 148,
+                      "height": 152.5,
+                      "layout": {
+                        "layoutPositioning": "AUTO"
+                      },
+                      "visual": {
+                        "fills": "unknown",
+                        "strokes": "unknown",
+                        "cornerRadius": "undefined",
+                        "effects": "none"
+                      }
+                    }
+                  ],
+                  "width": 148,
+                  "height": 373.5,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                }
+              ],
+              "width": 168,
+              "height": 415,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            }
+          ],
+          "width": 170,
+          "height": 417,
+          "layout": {
+            "layoutPositioning": "AUTO"
+          },
+          "visual": {
+            "fills": "unknown",
+            "strokes": "unknown",
+            "cornerRadius": "undefined",
+            "effects": "none"
+          }
+        }
+      ],
+      "width": 350,
+      "height": 417,
+      "layout": {
+        "layoutPositioning": "AUTO"
+      },
+      "visual": {
+        "fills": "unknown",
+        "strokes": "unknown",
+        "cornerRadius": "undefined",
+        "effects": "none"
+      }
+    },
+    "stats": {
+      "totalNodes": 137,
+      "frames": 0,
+      "instances": 0,
+      "textNodes": 9,
+      "autoLayoutFrames": 0,
+      "absoluteNodes": 0
+    },
+    "tokenization": {
+      "styleRefs": 0,
+      "variableRefs": 0,
+      "rawValueCandidates": 9,
+      "coverage": 0
+    }
+  }
+}

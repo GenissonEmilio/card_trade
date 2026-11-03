@@ -1,0 +1,13 @@
+GERAÇÃO DA ARTE MINIMALISTA — ferramenta nativa image_gen
+
+Create a clean minimalist brand logo, "DUELINK", shown on a completely solid white background. This is a flat graphic, no rendering or texture.
+A small icon to the left: two overlapping portrait trading cards drawn as simple cyan #73C5C5 rounded rectangular outlines. One card tilted slightly left behind the upright front card. Keep their outlines distinct, with open white interiors. One small gold four-point sparkle centered in front card. Single outline per card, no other details.
+To its right: DUELINK, exact spelling D U E L I N K, in a heavy bold geometric uppercase sans-serif, with a very subtle forward italic slant. One uniform solid warm gold #E9C275 color for every letter. Smooth edges. Generous negative space between icon and name. Icon height approximately 1.2 times wordmark height, not oversized.
+Only flat solid colors and pure white background. No gradients at all, no outlines on letters, no shadows, no bevels, no circles, no speckles, no texture. Clean large filled vector shapes, deliberate typography, even spacing. Horizontal composition about 3:1. No tagline, no mockup, one logo only.
+
+EXTRAÇÃO DO FUNDO — ferramenta nativa image_gen
+
+Use case: background-extraction.
+The attached image is the FINAL APPROVED SHAPE of the minimalist DUELINK logo. Remove ONLY the solid white background, including the white negative spaces inside and between the cards and inside the letter D. Output real alpha transparency everywhere the original background was white.
+Keep every gold and cyan shape exactly unchanged: same word DUELINK, same seven letters, same font, same icon, same layout and colors. Do not add or reconstruct any decorative pixels. Smooth natural anti-aliased alpha edges with no white matte halos, no colored halos, no noisy fringes or floating speckles. The gold and cyan graphic shapes stay solid and fully opaque.
+This is background removal only, not a redesign. Transparent PNG result.

@@ -1,0 +1,37 @@
+{
+  "errors": [],
+  "failures": [
+    {
+      "url": "http://0.0.0.0:3000/cards/89631139.jpg",
+      "failure": {
+        "errorText": "net::ERR_ADDRESS_INVALID"
+      }
+    },
+    {
+      "url": "http://0.0.0.0:3000/cards/44508094.jpg",
+      "failure": {
+        "errorText": "net::ERR_ADDRESS_INVALID"
+      }
+    },
+    {
+      "url": "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "http://localhost:3000/api/cards?game=yugioh&id=80181649",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    }
+  ],
+  "mobileDetail": {
+    "dialogs": 1,
+    "text": "O PONTO DE ENCONTRO DOS DUELISTAS\nSUA COLEÇÃO TEM NOVAS POSSIBILIDADES\nSua próxima carta.\nSua próxima conexão.\n\nCartas que você tem. Cartas que você quer.\nYu-Gi-Oh! e Pokémon na comunidade de Lagarto.\n\nExplorar cartas\nMontar minha coleção\nUma comunidade local. Infinitas possibilidades.\nO match perfeito existe.\nEncontre a peça que falta no seu deck.\nTodo o universo TCG\nCatálogo de Yu-Gi-Oh!\n0 cartas para trocar\nDisponíveis na comunidade\n0 duelistas conectados\nNovas conexões começam aqui\nComo funciona\nDESCUBRA. COLECIONE. CONECTE.\nEncontre sua próxima carta.\n\nA peça que falta no seu deck pode estar mais perto do que você imagina.\n\nMinha lista de desejos\nYu-Gi-Oh!\nPokémon\nExplorar catálogo\nNa comunidade\n0\nBuscar\nFiltros\nOrdenar cartas\nNome: A a Z\nNome: Z a A\nTodas as cartas\nMonstros\nMagias\nArmadilhas\nFusão\nSincro\nXyz\nLink\n14.617 cartas encontradas · 24 exibidas\n\n14.617 cartas · 10.887 nomes em português · catálogo de 19/10/2026. Cartas sem tradução mantêm o nome original.\n\nK9\n\"A Case for K9\"\n\"A Case for K9\"\nNo catálogo\nMelodious\n1º Movimento Solitário\n1st Movement Solo\nNo catálogo\nContinuous\n7\n7\nNo catálogo\nEquip\n7 Completados\n7 Completed\nNo catálogo\nABC\nA a Z - Dragão Canhão Banimento\nA-to-Z-Dragon Buster Cannon\nNo catálogo\nWarrior\nA Amazona Hostil\nThe Unfriendly Amazon\nNo catálogo\nNinja\nA Arte de Super Transformação Ninjitsu\nNinjitsu Art of Super-Transformation\nNo catálogo\nNinja\nA Arte de Transformação Ninjitsu\nNinjitsu Art of Transformation\nNo catálogo\nContinuous\nA Árvore do Mundo\nThe World Tree\nNo catálogo\nWinged Beast\nA Atmosfera\nThe Atmosphere\nNo catálogo\nFiend\nA Bao A Qu, the Lightless Shadow\nA Bao A Qu, the Lightless Shadow\nNo catálogo\nFiend\nA Bruxa que se Alimenta da Vida\nThat Which Feeds on Life\nNo catálogo\n@Ignister\nA Chegada Ciberso @Ignister\nThe Arrival Cyberse @Ignister\nNo catálogo\nSubterror\nA Cidade Oculta\nThe Hidden City\nNo catálogo\nPyro\nA Coisa na Cratera\nThe Thing in the Crater\nNo catálogo\nRecolored counterpart\nA Coisa que se Esconde na Lama\nThe Thing That Hides in the Mud\nNo catálogo\nContinuous\nA Conta do Dragão\nThe Dragon's Bead\nNo catálogo\nBlue-Eyes\nA Criatura Definitiva da Destruição\nThe Ultimate Creature of Destruction\nNo catálogo\nSkull Servant\nA Dama Inumana\nThe Lady in Wight\nNo catálogo\nDual Avatar\nA Derrota do Mal Pelos Dois Avatares\nDual Avatar Defeating Evil\nNo catálogo\nFairy\nA Donzela do Perdão\nThe Forgiving Maiden\nNo catálogo\nSpellcaster\nA Donzela Infeliz\nThe Unhappy Maiden\nNo catálogo\nCounter\nA Enorme Revolução Terminou\nThe Huge Revolution is Over\nNo catálogo\nMonarch\nA Erupção dos Monarcas\nThe Monarchs Erupt\nNo catálogo\nDescobrir mais cartas\nCONNECT. TRADE. DUEL.\nO seu repetido pode ser o desejo de alguém.\n\nOrganize sua coleção e deixe as conexões acontecerem.\n\nComeçar minha coleção\nDetalhes da carta\nCada carta, uma nova possibilidade.\nMagia · Continuous\n\"A Case for K9\"\n\n\"A Case for K9\"\n\nSobre a carta\n\nWhen this card is activated: You can add 1 \"K9\" monster from your Deck to your hand. \"K9\" monsters you control gain 900 ATK during any turn in which your opponent has activated a monster effect in the hand or GY. If this card in the Spell & Trap Zone is destroyed by card effect: You can Set 1 \"K9\" Quick-Play Spell from your Deck or GY. You can only use this effect of \"\"A Case for K9\"\" once per turn. You can only activate 1 \"\"A Case for K9\"\" per turn.\n\nK9\n\nCatálogo YGOPRODeck. Nomes e textos em português quando disponíveis; a imagem pode estar em outro idioma.\n\nAdicionar à minha coleção"
+  },
+  "community": {
+    "pressed": "true",
+    "text": "O PONTO DE ENCONTRO DOS DUELISTAS\nSUA COLEÇÃO TEM NOVAS POSSIBILIDADES\nSua próxima carta.\nSua próxima conexão.\n\nCartas que você tem. Cartas que você quer.\nYu-Gi-Oh! e Pokémon na comunidade de Lagarto.\n\nExplorar cartas\nMontar minha coleção\nUma comunidade local. Infinitas possibilidades.\nO match perfeito existe.\nEncontre a peça que falta no seu deck.\nTodo o universo TCG\nCatálogo de Yu-Gi-Oh!\n0 cartas para trocar\nDisponíveis na comunidade\n0 duelistas conectados\nNovas conexões começam aqui\nComo funciona\nDESCUBRA. COLECIONE. CONECTE.\nEncontre sua próxima carta.\n\nA peça que falta no seu deck pode estar mais perto do que você imagina.\n\nMinha lista de desejos\nYu-Gi-Oh!\nPokémon\nExplorar catálogo\nNa comunidade\n0\nBuscar\nFiltros\nOrdenar cartas\nNome: A a Z\nNome: Z a A\nTodas as cartas\nMonstros\nMagias\nArmadilhas\nFusão\nSincro\nXyz\nLink\n0 cartas na comunidade\nAs primeiras trocas começam com você.\n\nA comunidade está ganhando vida. Adicione suas cartas e ajude a conectar os primeiros duelistas de Lagarto.\n\nAdicionar minhas cartas\nCONNECT. TRADE. DUEL.\nO seu repetido pode ser o desejo de alguém.\n\nOrganize sua coleção e deixe as conexões acontecerem.\n\nComeçar minha coleção"
+  }
+}

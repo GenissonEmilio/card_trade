@@ -1,0 +1,5 @@
+const fs=require('fs'),path=require('path');let s=fs.readFileSync(path.join(__dirname,'publish-pixel-revision.cjs'),'utf8');
+s=s.replace("const prior=require('./native-pixel-v3-nodes.json'),current=require('./native-pixel-v4-nodes.json')","const prior=require('./native-pixel-v4-nodes.json'),current=require('./native-ribbon-v5-nodes.json')");
+s=s.replace("'pixel-v4-publish.json'","'ribbon-v5-publish.json'");
+s=s.replace("label:'Revisão: pixel art estrutural em módulos de 16–32 px, faixas largas e molduras escalonadas.',suggestion:'Roxo, creme e verde-lima. Círculo e brilhos arredondados substituídos por geometria em degraus. Ícones de ação, textos e contratos funcionais preservados.'","label:'Botões em faixas inclinadas, com ícone destacado e textura deslocada, conforme referência.',suggestion:'Textos horizontais; estados ativos em verde-lima e roxo. Jogos, categorias, filtros e ações principais preservam a copy e os ícones. Logo legível e composição pixelada mantidas.'");
+fs.writeFileSync(path.join(__dirname,'publish-ribbon-revision.cjs'),s);

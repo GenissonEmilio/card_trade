@@ -1,0 +1,6 @@
+const fs=require('fs'),path=require('path');
+const p=path.join(__dirname,'build-design.cjs');let s=fs.readFileSync(p,'utf8');
+s=s.replace('<div class="tiny-dot" style="background:#f5cf60"></div>Yu-Gi-Oh!','${ico(\'Compass\',24,\'#f5cf60\')}Yu-Gi-Oh!').replace('<div class="tiny-dot" style="background:#739bd7"></div>Pokémon','${ico(\'Pokemon\',24,\'#83b7dc\')}Pokémon');
+const revisions=`.pill{display:flex;align-items:center;gap:7px}.hero{height:650px}.hero-center{top:45px}.match{top:505px}.stat-icon{border-radius:10px;border:1px solid #34404d}.stat-icon svg{width:28px;height:28px}.catalog{padding-top:64px}.art{height:270px}.card-name{font-size:15px}.card-bottom{gap:115px}.wish{width:32px;height:32px}.mobile .hero{height:810px}.mobile .hero-card{top:458px}.mobile .orbit{top:410px}.mobile .match{top:684px}.mobile .spark.a{top:538px}.mobile .spark.b{top:668px}.mobile .hero-glow{top:450px}.mobile .hero-center{top:30px}.mobile .game{padding:10px 14px;gap:10px}.mobile .pill{font-size:10px;padding:7px 8px;gap:5px}.mobile .pill svg{width:15px;height:15px}.mobile .art{height:204px}.mobile .card-name{font-size:11px}.mobile .card-bottom{gap:56px}.state .row{flex-wrap:wrap}`;
+s=s.replace('function head(mobile)',`const revisionCss=${JSON.stringify(revisions)};\nfunction head(mobile)`).replace('${css}body{width:','${css}${revisionCss}body{width:');
+fs.writeFileSync(p,s);

@@ -1,0 +1,4193 @@
+{
+  "selectedNode": {
+    "id": "20:4373",
+    "name": "DUELINK — Logo pixelada / legibilidade",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 840
+  },
+  "intent": "screen",
+  "uiSpec": {
+    "version": "1.1.0",
+    "root": {
+      "id": "20:4373",
+      "name": "DUELINK — Logo pixelada / legibilidade",
+      "type": "FRAME",
+      "tokenHints": {
+        "styleRefs": 0,
+        "variableRefs": 0,
+        "rawValueHints": 0
+      },
+      "children": [
+        {
+          "id": "20:4374",
+          "name": "Vector",
+          "type": "VECTOR",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [],
+          "width": 1440,
+          "height": 840,
+          "layout": {
+            "layoutPositioning": "AUTO",
+            "constraints": {
+              "horizontal": "SCALE",
+              "vertical": "SCALE"
+            }
+          },
+          "visual": {
+            "fills": "solid",
+            "strokes": "none",
+            "cornerRadius": 0,
+            "effects": "none",
+            "fillColors": [
+              "#13071c"
+            ]
+          }
+        },
+        {
+          "id": "20:4375",
+          "name": "Duelink · marca pixelada",
+          "type": "TEXT",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 1
+          },
+          "children": [],
+          "width": 245,
+          "height": 29,
+          "layout": {
+            "layoutPositioning": "AUTO",
+            "constraints": {
+              "horizontal": "SCALE",
+              "vertical": "SCALE"
+            }
+          },
+          "visual": {
+            "fills": "solid",
+            "strokes": "none",
+            "cornerRadius": "undefined",
+            "effects": "none",
+            "fillColors": [
+              "#f7f7e8"
+            ]
+          },
+          "text": {
+            "characters": "Duelink · marca pixelada",
+            "lineHeight": "AUTO",
+            "letterSpacing": "0%",
+            "textCase": "ORIGINAL",
+            "fontFamily": "DM Sans",
+            "fontStyle": "Regular",
+            "fontSize": 22
+          }
+        },
+        {
+          "id": "20:4376",
+          "name": "Vector",
+          "type": "VECTOR",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [],
+          "width": 48,
+          "height": 48,
+          "layout": {
+            "layoutPositioning": "AUTO",
+            "constraints": {
+              "horizontal": "SCALE",
+              "vertical": "SCALE"
+            }
+          },
+          "visual": {
+            "fills": "solid",
+            "strokes": "none",
+            "cornerRadius": 0,
+            "effects": "none",
+            "fillColors": [
+              "#ceff3b"
+            ]
+          }
+        },
+        {
+          "id": "20:4377",
+          "name": "Group",
+          "type": "GROUP",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [
+            {
+              "id": "20:4378",
+              "name": "moldura-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4379",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 408.8888854980469,
+                  "height": 421.6666564941406,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#7023a3"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4380",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 38.33333206176758,
+                  "height": 19.16666603088379,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#bf4bff"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4381",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 38.33333206176758,
+                  "height": 19.16666603088379,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#bf4bff"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4382",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 19.16666603088379,
+                  "height": 38.33333206176758,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4383",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 19.16666603088379,
+                  "height": 38.33333206176758,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                }
+              ],
+              "width": 408.8888854980469,
+              "height": 421.6666564941406,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4384",
+              "name": "cartas-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4385",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4386",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 134.1666717529297,
+                      "height": 172.5,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4387",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 134.1666717529297,
+                      "height": 172.5,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#16071f"
+                        ],
+                        "strokeColor": "#f7f7e8"
+                      }
+                    },
+                    {
+                      "id": "20:4388",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 102.22222137451172,
+                      "height": 140.55555725097656,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#3a104f"
+                        ],
+                        "strokeColor": "#bf4bff"
+                      }
+                    },
+                    {
+                      "id": "20:4389",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 31.94444465637207,
+                      "height": 6.388888835906982,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#f7f7e8"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4390",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 70.27777862548828,
+                      "height": 6.388888835906982,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#bf4bff"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4391",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 44.72222137451172,
+                      "height": 44.72222137451172,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#ceff3b"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 146.9445037841797,
+                  "height": 185.27777099609375,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "20:4392",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4393",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 134.1666717529297,
+                      "height": 172.5,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4394",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 134.1666717529297,
+                      "height": 172.5,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#16071f"
+                        ],
+                        "strokeColor": "#f7f7e8"
+                      }
+                    },
+                    {
+                      "id": "20:4395",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 102.22222137451172,
+                      "height": 140.55555725097656,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#3a104f"
+                        ],
+                        "strokeColor": "#bf4bff"
+                      }
+                    },
+                    {
+                      "id": "20:4396",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 31.94444465637207,
+                      "height": 6.388888835906982,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#f7f7e8"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4397",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 70.27777862548828,
+                      "height": 6.388888835906982,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#bf4bff"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4398",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 44.72222137451172,
+                      "height": 44.72222137451172,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#ceff3b"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 146.94444274902344,
+                  "height": 185.2777862548828,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                }
+              ],
+              "width": 306.66668701171875,
+              "height": 217.22222900390625,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4399",
+              "name": "elo-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4400",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 89.44444274902344,
+                  "height": 83.05555725097656,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ],
+                    "strokeColor": "#16071f"
+                  }
+                },
+                {
+                  "id": "20:4401",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 89.44444274902344,
+                  "height": 83.05555725097656,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#f7f7e8"
+                    ],
+                    "strokeColor": "#16071f"
+                  }
+                },
+                {
+                  "id": "20:4402",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 12.777777671813965,
+                  "height": 31.94444465637207,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4403",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 12.777777671813965,
+                  "height": 25.55555534362793,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#16071f"
+                    ]
+                  }
+                }
+              ],
+              "width": 140.5555877685547,
+              "height": 115,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4404",
+              "name": "letreiro-legivel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4405",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 894.4444580078125,
+                  "height": 191.6666717529297,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#7023a3"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4406",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 894.4444580078125,
+                  "height": 191.6666717529297,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#16071f"
+                    ],
+                    "strokeColor": "#f7f7e8"
+                  }
+                },
+                {
+                  "id": "20:4407",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4408",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 792.2213745117188,
+                      "height": 134.96104431152344,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 792.2213745117188,
+                  "height": 134.96104431152344,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "20:4409",
+                  "name": "DUELINK",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 792.2213745117188,
+                  "height": 134.96104431152344,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#f7f7e8"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4410",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 178.88888549804688,
+                  "height": 6.388888835906982,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                }
+              ],
+              "width": 894.4444580078125,
+              "height": 204.44444274902344,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            }
+          ],
+          "width": 894.4444580078125,
+          "height": 421.6666564941406,
+          "layout": {
+            "layoutPositioning": "AUTO"
+          },
+          "visual": {
+            "fills": "unknown",
+            "strokes": "unknown",
+            "cornerRadius": "undefined",
+            "effects": "none"
+          }
+        },
+        {
+          "id": "20:4411",
+          "name": "Vector",
+          "type": "VECTOR",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [],
+          "width": 1296,
+          "height": 0,
+          "layout": {
+            "layoutPositioning": "AUTO",
+            "constraints": {
+              "horizontal": "SCALE",
+              "vertical": "SCALE"
+            }
+          },
+          "visual": {
+            "fills": "solid",
+            "strokes": "solid",
+            "cornerRadius": 0,
+            "effects": "none",
+            "fillColors": [
+              "#000000"
+            ],
+            "strokeColor": "#532568"
+          }
+        },
+        {
+          "id": "20:4412",
+          "name": "Cabeçalho · 176 px",
+          "type": "TEXT",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 1
+          },
+          "children": [],
+          "width": 120,
+          "height": 18,
+          "layout": {
+            "layoutPositioning": "AUTO",
+            "constraints": {
+              "horizontal": "SCALE",
+              "vertical": "SCALE"
+            }
+          },
+          "visual": {
+            "fills": "solid",
+            "strokes": "none",
+            "cornerRadius": "undefined",
+            "effects": "none",
+            "fillColors": [
+              "#bba2cb"
+            ]
+          },
+          "text": {
+            "characters": "Cabeçalho · 176 px",
+            "lineHeight": "AUTO",
+            "letterSpacing": "0%",
+            "textCase": "ORIGINAL",
+            "fontFamily": "DM Sans",
+            "fontStyle": "Regular",
+            "fontSize": 14
+          }
+        },
+        {
+          "id": "20:4413",
+          "name": "Group",
+          "type": "GROUP",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [
+            {
+              "id": "20:4414",
+              "name": "moldura-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4415",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 78.22222137451172,
+                  "height": 80.66666412353516,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#7023a3"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4416",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 7.333333492279053,
+                  "height": 3.6666667461395264,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#bf4bff"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4417",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 7.333333492279053,
+                  "height": 3.6666667461395264,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#bf4bff"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4418",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 3.6666667461395264,
+                  "height": 7.333333492279053,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4419",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 3.6666667461395264,
+                  "height": 7.333333492279053,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                }
+              ],
+              "width": 78.22222137451172,
+              "height": 80.66666412353516,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4420",
+              "name": "cartas-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4421",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4422",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 25.66666603088379,
+                      "height": 33,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4423",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 25.66666603088379,
+                      "height": 33,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#16071f"
+                        ],
+                        "strokeColor": "#f7f7e8"
+                      }
+                    },
+                    {
+                      "id": "20:4424",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 19.55555534362793,
+                      "height": 26.88888931274414,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#3a104f"
+                        ],
+                        "strokeColor": "#bf4bff"
+                      }
+                    },
+                    {
+                      "id": "20:4425",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 6.111111164093018,
+                      "height": 1.2222222089767456,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#f7f7e8"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4426",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 13.44444465637207,
+                      "height": 1.2222222089767456,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#bf4bff"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4427",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 8.55555534362793,
+                      "height": 8.55555534362793,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#ceff3b"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 28.111108779907227,
+                  "height": 35.4444580078125,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "20:4428",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4429",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 25.66666603088379,
+                      "height": 33,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4430",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 25.66666603088379,
+                      "height": 33,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#16071f"
+                        ],
+                        "strokeColor": "#f7f7e8"
+                      }
+                    },
+                    {
+                      "id": "20:4431",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 19.55555534362793,
+                      "height": 26.88888931274414,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#3a104f"
+                        ],
+                        "strokeColor": "#bf4bff"
+                      }
+                    },
+                    {
+                      "id": "20:4432",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 6.111111164093018,
+                      "height": 1.2222222089767456,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#f7f7e8"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4433",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 13.44444465637207,
+                      "height": 1.2222222089767456,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#bf4bff"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4434",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 8.55555534362793,
+                      "height": 8.55555534362793,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#ceff3b"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 28.111108779907227,
+                  "height": 35.44439697265625,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                }
+              ],
+              "width": 58.666664123535156,
+              "height": 41.5555419921875,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4435",
+              "name": "elo-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4436",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 17.11111068725586,
+                  "height": 15.88888931274414,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ],
+                    "strokeColor": "#16071f"
+                  }
+                },
+                {
+                  "id": "20:4437",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 17.11111068725586,
+                  "height": 15.88888931274414,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#f7f7e8"
+                    ],
+                    "strokeColor": "#16071f"
+                  }
+                },
+                {
+                  "id": "20:4438",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 2.444444417953491,
+                  "height": 6.111111164093018,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4439",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 2.444444417953491,
+                  "height": 4.888888835906982,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#16071f"
+                    ]
+                  }
+                }
+              ],
+              "width": 26.888896942138672,
+              "height": 22.00003433227539,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4440",
+              "name": "letreiro-legivel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4441",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 171.11111450195312,
+                  "height": 36.66666793823242,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#7023a3"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4442",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 171.11111450195312,
+                  "height": 36.66666793823242,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#16071f"
+                    ],
+                    "strokeColor": "#f7f7e8"
+                  }
+                },
+                {
+                  "id": "20:4443",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4444",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 151.55538940429688,
+                      "height": 25.818635940551758,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 151.55538940429688,
+                  "height": 25.818635940551758,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "20:4445",
+                  "name": "DUELINK",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 151.55538940429688,
+                  "height": 25.818635940551758,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#f7f7e8"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4446",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 34.22222137451172,
+                  "height": 1.2222222089767456,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                }
+              ],
+              "width": 171.11111450195312,
+              "height": 39.11112594604492,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            }
+          ],
+          "width": 171.11111450195312,
+          "height": 80.66666412353516,
+          "layout": {
+            "layoutPositioning": "AUTO"
+          },
+          "visual": {
+            "fills": "unknown",
+            "strokes": "unknown",
+            "cornerRadius": "undefined",
+            "effects": "none"
+          }
+        },
+        {
+          "id": "20:4447",
+          "name": "Mobile · 125 px",
+          "type": "TEXT",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 1
+          },
+          "children": [],
+          "width": 94,
+          "height": 18,
+          "layout": {
+            "layoutPositioning": "AUTO",
+            "constraints": {
+              "horizontal": "SCALE",
+              "vertical": "SCALE"
+            }
+          },
+          "visual": {
+            "fills": "solid",
+            "strokes": "none",
+            "cornerRadius": "undefined",
+            "effects": "none",
+            "fillColors": [
+              "#bba2cb"
+            ]
+          },
+          "text": {
+            "characters": "Mobile · 125 px",
+            "lineHeight": "AUTO",
+            "letterSpacing": "0%",
+            "textCase": "ORIGINAL",
+            "fontFamily": "DM Sans",
+            "fontStyle": "Regular",
+            "fontSize": 14
+          }
+        },
+        {
+          "id": "20:4448",
+          "name": "Group",
+          "type": "GROUP",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [
+            {
+              "id": "20:4449",
+              "name": "moldura-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4450",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 55.55555725097656,
+                  "height": 57.29166793823242,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#7023a3"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4451",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 5.208333492279053,
+                  "height": 2.6041667461395264,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#bf4bff"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4452",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 5.208333492279053,
+                  "height": 2.6041667461395264,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#bf4bff"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4453",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 2.6041667461395264,
+                  "height": 5.208333492279053,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4454",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 2.6041667461395264,
+                  "height": 5.208333492279053,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                }
+              ],
+              "width": 55.55555725097656,
+              "height": 57.29166793823242,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4455",
+              "name": "cartas-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4456",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4457",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 18.22916603088379,
+                      "height": 23.4375,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4458",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 18.22916603088379,
+                      "height": 23.4375,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#16071f"
+                        ],
+                        "strokeColor": "#f7f7e8"
+                      }
+                    },
+                    {
+                      "id": "20:4459",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 13.88888931274414,
+                      "height": 19.09722137451172,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#3a104f"
+                        ],
+                        "strokeColor": "#bf4bff"
+                      }
+                    },
+                    {
+                      "id": "20:4460",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 4.340277671813965,
+                      "height": 0.8680555820465088,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#f7f7e8"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4461",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 9.54861068725586,
+                      "height": 0.8680555820465088,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#bf4bff"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4462",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 6.076388835906982,
+                      "height": 6.076388835906982,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#ceff3b"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 19.965280532836914,
+                  "height": 25.173583984375,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "20:4463",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4464",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 18.22916603088379,
+                      "height": 23.4375,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4465",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 18.22916603088379,
+                      "height": 23.4375,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#16071f"
+                        ],
+                        "strokeColor": "#f7f7e8"
+                      }
+                    },
+                    {
+                      "id": "20:4466",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 13.88888931274414,
+                      "height": 19.09722137451172,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#3a104f"
+                        ],
+                        "strokeColor": "#bf4bff"
+                      }
+                    },
+                    {
+                      "id": "20:4467",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 4.340277671813965,
+                      "height": 0.8680555820465088,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#f7f7e8"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4468",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 9.54861068725586,
+                      "height": 0.8680555820465088,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#bf4bff"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4469",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 6.076388835906982,
+                      "height": 6.076388835906982,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#ceff3b"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 19.965280532836914,
+                  "height": 25.173583984375,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                }
+              ],
+              "width": 41.666664123535156,
+              "height": 29.51385498046875,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4470",
+              "name": "elo-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4471",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 12.152777671813965,
+                  "height": 11.284722328186035,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ],
+                    "strokeColor": "#16071f"
+                  }
+                },
+                {
+                  "id": "20:4472",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 12.152777671813965,
+                  "height": 11.284722328186035,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#f7f7e8"
+                    ],
+                    "strokeColor": "#16071f"
+                  }
+                },
+                {
+                  "id": "20:4473",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 1.7361111640930176,
+                  "height": 4.340277671813965,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4474",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 1.7361111640930176,
+                  "height": 3.472222328186035,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#16071f"
+                    ]
+                  }
+                }
+              ],
+              "width": 19.09723663330078,
+              "height": 15.624993324279785,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4475",
+              "name": "letreiro-legivel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4476",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 121.52777862548828,
+                  "height": 26.04166603088379,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#7023a3"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4477",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 121.52777862548828,
+                  "height": 26.04166603088379,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#16071f"
+                    ],
+                    "strokeColor": "#f7f7e8"
+                  }
+                },
+                {
+                  "id": "20:4478",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4479",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 107.6387710571289,
+                      "height": 18.337099075317383,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 107.6387710571289,
+                  "height": 18.337099075317383,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "20:4480",
+                  "name": "DUELINK",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 107.6387710571289,
+                  "height": 18.337099075317383,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#f7f7e8"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4481",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 24.30555534362793,
+                  "height": 0.8680555820465088,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                }
+              ],
+              "width": 121.52777862548828,
+              "height": 27.77775001525879,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            }
+          ],
+          "width": 121.52777862548828,
+          "height": 57.29166793823242,
+          "layout": {
+            "layoutPositioning": "AUTO"
+          },
+          "visual": {
+            "fills": "unknown",
+            "strokes": "unknown",
+            "cornerRadius": "undefined",
+            "effects": "none"
+          }
+        },
+        {
+          "id": "20:4482",
+          "name": "Fundo claro",
+          "type": "TEXT",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 1
+          },
+          "children": [],
+          "width": 77,
+          "height": 18,
+          "layout": {
+            "layoutPositioning": "AUTO",
+            "constraints": {
+              "horizontal": "SCALE",
+              "vertical": "SCALE"
+            }
+          },
+          "visual": {
+            "fills": "solid",
+            "strokes": "none",
+            "cornerRadius": "undefined",
+            "effects": "none",
+            "fillColors": [
+              "#bba2cb"
+            ]
+          },
+          "text": {
+            "characters": "Fundo claro",
+            "lineHeight": "AUTO",
+            "letterSpacing": "0%",
+            "textCase": "ORIGINAL",
+            "fontFamily": "DM Sans",
+            "fontStyle": "Regular",
+            "fontSize": 14
+          }
+        },
+        {
+          "id": "20:4483",
+          "name": "Vector",
+          "type": "VECTOR",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [],
+          "width": 260,
+          "height": 130,
+          "layout": {
+            "layoutPositioning": "AUTO",
+            "constraints": {
+              "horizontal": "SCALE",
+              "vertical": "SCALE"
+            }
+          },
+          "visual": {
+            "fills": "solid",
+            "strokes": "none",
+            "cornerRadius": 0,
+            "effects": "none",
+            "fillColors": [
+              "#f7f7e8"
+            ]
+          }
+        },
+        {
+          "id": "20:4484",
+          "name": "Group",
+          "type": "GROUP",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 0
+          },
+          "children": [
+            {
+              "id": "20:4485",
+              "name": "moldura-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4486",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 78.22222137451172,
+                  "height": 80.66666412353516,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#7023a3"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4487",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 7.333333492279053,
+                  "height": 3.6666667461395264,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#bf4bff"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4488",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 7.333333492279053,
+                  "height": 3.6666667461395264,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#bf4bff"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4489",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 3.6666667461395264,
+                  "height": 7.333333492279053,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4490",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 3.6666667461395264,
+                  "height": 7.333333492279053,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                }
+              ],
+              "width": 78.22222137451172,
+              "height": 80.66666412353516,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4491",
+              "name": "cartas-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4492",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4493",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 25.66666603088379,
+                      "height": 33,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4494",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 25.66666603088379,
+                      "height": 33,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#16071f"
+                        ],
+                        "strokeColor": "#f7f7e8"
+                      }
+                    },
+                    {
+                      "id": "20:4495",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 19.55555534362793,
+                      "height": 26.88888931274414,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#3a104f"
+                        ],
+                        "strokeColor": "#bf4bff"
+                      }
+                    },
+                    {
+                      "id": "20:4496",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 6.111111164093018,
+                      "height": 1.2222222089767456,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#f7f7e8"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4497",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 13.44444465637207,
+                      "height": 1.2222222089767456,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#bf4bff"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4498",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 8.55555534362793,
+                      "height": 8.55555534362793,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#ceff3b"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 28.11106300354004,
+                  "height": 35.4444580078125,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "20:4499",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4500",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 25.66666603088379,
+                      "height": 33,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4501",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 25.66666603088379,
+                      "height": 33,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#16071f"
+                        ],
+                        "strokeColor": "#f7f7e8"
+                      }
+                    },
+                    {
+                      "id": "20:4502",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 19.55555534362793,
+                      "height": 26.88888931274414,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "solid",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#3a104f"
+                        ],
+                        "strokeColor": "#bf4bff"
+                      }
+                    },
+                    {
+                      "id": "20:4503",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 6.111111164093018,
+                      "height": 1.2222222089767456,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#f7f7e8"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4504",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 13.44444465637207,
+                      "height": 1.2222222089767456,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#bf4bff"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "20:4505",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 8.55555534362793,
+                      "height": 8.55555534362793,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#ceff3b"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 28.11112403869629,
+                  "height": 35.44439697265625,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                }
+              ],
+              "width": 58.666664123535156,
+              "height": 41.5555419921875,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4506",
+              "name": "elo-pixel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4507",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 17.11111068725586,
+                  "height": 15.88888931274414,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ],
+                    "strokeColor": "#16071f"
+                  }
+                },
+                {
+                  "id": "20:4508",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 17.11111068725586,
+                  "height": 15.88888931274414,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#f7f7e8"
+                    ],
+                    "strokeColor": "#16071f"
+                  }
+                },
+                {
+                  "id": "20:4509",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 2.444444417953491,
+                  "height": 6.111111164093018,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4510",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 2.444444417953491,
+                  "height": 4.888888835906982,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#16071f"
+                    ]
+                  }
+                }
+              ],
+              "width": 26.88888168334961,
+              "height": 22.00003433227539,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            },
+            {
+              "id": "20:4511",
+              "name": "letreiro-legivel",
+              "type": "GROUP",
+              "tokenHints": {
+                "styleRefs": 0,
+                "variableRefs": 0,
+                "rawValueHints": 0
+              },
+              "children": [
+                {
+                  "id": "20:4512",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 171.11111450195312,
+                  "height": 36.66666793823242,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#7023a3"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4513",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 171.11111450195312,
+                  "height": 36.66666793823242,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "solid",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#16071f"
+                    ],
+                    "strokeColor": "#f7f7e8"
+                  }
+                },
+                {
+                  "id": "20:4514",
+                  "name": "Group",
+                  "type": "GROUP",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [
+                    {
+                      "id": "20:4515",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "tokenHints": {
+                        "styleRefs": 0,
+                        "variableRefs": 0,
+                        "rawValueHints": 0
+                      },
+                      "children": [],
+                      "width": 151.55538940429688,
+                      "height": 25.818635940551758,
+                      "layout": {
+                        "layoutPositioning": "AUTO",
+                        "constraints": {
+                          "horizontal": "SCALE",
+                          "vertical": "SCALE"
+                        }
+                      },
+                      "visual": {
+                        "fills": "solid",
+                        "strokes": "none",
+                        "cornerRadius": 0,
+                        "effects": "none",
+                        "fillColors": [
+                          "#7023a3"
+                        ]
+                      }
+                    }
+                  ],
+                  "width": 151.55538940429688,
+                  "height": 25.818635940551758,
+                  "layout": {
+                    "layoutPositioning": "AUTO"
+                  },
+                  "visual": {
+                    "fills": "unknown",
+                    "strokes": "unknown",
+                    "cornerRadius": "undefined",
+                    "effects": "none"
+                  }
+                },
+                {
+                  "id": "20:4516",
+                  "name": "DUELINK",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 151.55538940429688,
+                  "height": 25.818635940551758,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#f7f7e8"
+                    ]
+                  }
+                },
+                {
+                  "id": "20:4517",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "tokenHints": {
+                    "styleRefs": 0,
+                    "variableRefs": 0,
+                    "rawValueHints": 0
+                  },
+                  "children": [],
+                  "width": 34.22222137451172,
+                  "height": 1.2222222089767456,
+                  "layout": {
+                    "layoutPositioning": "AUTO",
+                    "constraints": {
+                      "horizontal": "SCALE",
+                      "vertical": "SCALE"
+                    }
+                  },
+                  "visual": {
+                    "fills": "solid",
+                    "strokes": "none",
+                    "cornerRadius": 0,
+                    "effects": "none",
+                    "fillColors": [
+                      "#ceff3b"
+                    ]
+                  }
+                }
+              ],
+              "width": 171.11111450195312,
+              "height": 39.11112594604492,
+              "layout": {
+                "layoutPositioning": "AUTO"
+              },
+              "visual": {
+                "fills": "unknown",
+                "strokes": "unknown",
+                "cornerRadius": "undefined",
+                "effects": "none"
+              }
+            }
+          ],
+          "width": 171.11111450195312,
+          "height": 80.66666412353516,
+          "layout": {
+            "layoutPositioning": "AUTO"
+          },
+          "visual": {
+            "fills": "unknown",
+            "strokes": "unknown",
+            "cornerRadius": "undefined",
+            "effects": "none"
+          }
+        },
+        {
+          "id": "20:4518",
+          "name": "SVG vetorial",
+          "type": "TEXT",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 1
+          },
+          "children": [],
+          "width": 90,
+          "height": 21,
+          "layout": {
+            "layoutPositioning": "AUTO",
+            "constraints": {
+              "horizontal": "SCALE",
+              "vertical": "SCALE"
+            }
+          },
+          "visual": {
+            "fills": "solid",
+            "strokes": "none",
+            "cornerRadius": "undefined",
+            "effects": "none",
+            "fillColors": [
+              "#f7f7e8"
+            ]
+          },
+          "text": {
+            "characters": "SVG vetorial",
+            "lineHeight": "AUTO",
+            "letterSpacing": "0%",
+            "textCase": "ORIGINAL",
+            "fontFamily": "DM Sans",
+            "fontStyle": "Regular",
+            "fontSize": 16
+          }
+        },
+        {
+          "id": "20:4519",
+          "name": "Fundo transparente",
+          "type": "TEXT",
+          "tokenHints": {
+            "styleRefs": 0,
+            "variableRefs": 0,
+            "rawValueHints": 1
+          },
+          "children": [],
+          "width": 129,
+          "height": 18,
+          "layout": {
+            "layoutPositioning": "AUTO",
+            "constraints": {
+              "horizontal": "SCALE",
+              "vertical": "SCALE"
+            }
+          },
+          "visual": {
+            "fills": "solid",
+            "strokes": "none",
+            "cornerRadius": "undefined",
+            "effects": "none",
+            "fillColors": [
+              "#bba2cb"
+            ]
+          },
+          "text": {
+            "characters": "Fundo transparente",
+            "lineHeight": "AUTO",
+            "letterSpacing": "0%",
+            "textCase": "ORIGINAL",
+            "fontFamily": "DM Sans",
+            "fontStyle": "Regular",
+            "fontSize": 14
+          }
+        }
+      ],
+      "width": 1440,
+      "height": 840,
+      "layout": {
+        "layoutMode": "NONE",
+        "primaryAxisAlignItems": "MIN",
+        "counterAxisAlignItems": "MIN",
+        "itemSpacing": 0,
+        "paddingTop": 0,
+        "paddingRight": 0,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "layoutPositioning": "AUTO",
+        "constraints": {
+          "horizontal": "MIN",
+          "vertical": "MIN"
+        }
+      },
+      "visual": {
+        "fills": "none",
+        "strokes": "none",
+        "cornerRadius": 0,
+        "effects": "none"
+      },
+      "annotations": [
+        {
+          "label": "Issue: Logo adaptada à linguagem pixelada. Nome com letras contínuas para preservar legibilidade.\nAction: Roxo, creme e verde-lima. Cartas conectadas e moldura escalonada. Letreiro convertido em curvas; SVG sem dependência de fontes. Verificado a 176 px e 125 px.",
+          "category": "DesignAgent"
+        }
+      ]
+    },
+    "stats": {
+      "totalNodes": 147,
+      "frames": 1,
+      "instances": 0,
+      "textNodes": 6,
+      "autoLayoutFrames": 0,
+      "absoluteNodes": 0
+    },
+    "tokenization": {
+      "styleRefs": 0,
+      "variableRefs": 0,
+      "rawValueCandidates": 6,
+      "coverage": 0
+    }
+  }
+}

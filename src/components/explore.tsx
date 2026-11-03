@@ -1,27 +1,7 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUpRight,
-  ArrowLeftRight,
-  BookOpen,
-  ChevronDown,
-  Compass,
-  Filter,
-  Heart,
-  Layers3,
-  Loader2,
-  MapPin,
-  Search,
-  ShieldCheck,
-  SlidersHorizontal,
-  Sparkles,
-  Users,
-  X,
-  Zap,
-} from 'lucide-react';
+import { Layers3, Loader2, Search, X } from 'lucide-react';
 import type { Card, CollectionItem } from '@/types';
 import {
   featuredCards,
@@ -36,16 +16,17 @@ import { createClient } from '@/lib/supabase/client';
 import { useApp } from './providers';
 import { CardTile, CardDetail, AddCardModal, ProposeModal } from './cards';
 import { Empty } from './ui';
+import { DesignIcon, PixelArt, RibbonLabel, type DesignIconName } from './pixel-design';
 const yugiohCategories = [
-  { id: '', label: 'Todas as cartas', icon: Layers3 },
-  { id: 'monster', label: 'Monstros', icon: Zap },
-  { id: 'spell', label: 'Magias', icon: Sparkles },
-  { id: 'trap', label: 'Armadilhas', icon: ShieldCheck },
-  { id: 'fusion', label: 'Fusão', icon: ArrowLeftRight },
-  { id: 'synchro', label: 'Sincro', icon: Compass },
-  { id: 'xyz', label: 'Xyz', icon: Layers3 },
-  { id: 'link', label: 'Link', icon: ArrowUpRight },
-];
+  { id: '', label: 'Todas as cartas', icon: 'cards-three' },
+  { id: 'monster', label: 'Monstros', icon: 'sword' },
+  { id: 'spell', label: 'Magias', icon: 'magic-wand' },
+  { id: 'trap', label: 'Armadilhas', icon: 'shield' },
+  { id: 'fusion', label: 'Fusão', icon: 'intersect' },
+  { id: 'synchro', label: 'Sincro', icon: 'circles-three' },
+  { id: 'xyz', label: 'Xyz', icon: 'stack' },
+  { id: 'link', label: 'Link', icon: 'link' },
+] satisfies { id: string; label: string; icon: DesignIconName }[];
 export function Explore() {
   const { user, toast, game } = useApp(),
     [cards, setCards] = useState<Card[]>(featuredCards.slice(0, 12)),
@@ -151,10 +132,10 @@ export function Explore() {
   const categories =
     game === 'pokemon'
       ? [
-          { id: '', label: 'Todas as cartas', icon: Layers3 },
-          { id: 'Pokemon', label: 'Pokémon', icon: Zap },
-          { id: 'Trainer', label: 'Treinadores', icon: BookOpen },
-          { id: 'Energy', label: 'Energias', icon: Sparkles },
+          { id: '', label: 'Todas as cartas', icon: 'cards-three' as const },
+          { id: 'Pokemon', label: 'Pokémon', icon: 'pokemon' as const },
+          { id: 'Trainer', label: 'Treinadores', icon: 'cards' as const },
+          { id: 'Energy', label: 'Energias', icon: 'sparkle' as const },
         ]
       : yugiohCategories;
   function addCard(c: Card) {
@@ -170,25 +151,42 @@ export function Explore() {
       : cards;
   return (
     <div className="explore-page">
-      <div className="welcome-line">
-        <span>
-          <span className="small-gold-dash" /> O PONTO DE ENCONTRO DOS DUELISTAS
-        </span>
-        <span>
-          <MapPin size={13} /> LAGARTO, SERGIPE
-        </span>
-      </div>
-      <section className="hero">
-        <div className="hero-grid" />
-        <div className="hero-glow" />
-        <div className="hero-copy">
-          <div className="hero-tag">
-            <span /> SUA COLEÇÃO TEM NOVAS POSSIBILIDADES
-          </div>
-          <h1>
-            Sua próxima carta.
-            <br />
-            Sua próxima <span>conexão.</span>
+      <section className="pixel-hero" aria-labelledby="hero-heading">
+        <picture>
+          <source media="(max-width: 767px)" srcSet="/brand/pixel/band-top-mobile.svg" />
+          <img
+            className="pixel-band top"
+            src="/brand/pixel/band-top.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </picture>
+        <div className="pixel-aura left" />
+        <div className="pixel-aura right" />
+        <PixelArt name="orbit" className="pixel-orbit" />
+        <PixelArt name="tiles" className="pixel-tiles left" />
+        <PixelArt name="tiles" className="pixel-tiles right" />
+        <div className="pixel-hero-card left" aria-hidden="true">
+          <PixelArt name="panel-hero" />
+          <img
+            src={game === 'pokemon' ? cardImage('base1-2', 'pokemon') : '/cards/46986414.jpg'}
+            alt=""
+          />
+        </div>
+        <div className="pixel-hero-card right" aria-hidden="true">
+          <PixelArt name="panel-hero" />
+          <img
+            src={game === 'pokemon' ? cardImage('base1-4', 'pokemon') : '/cards/89631139.jpg'}
+            alt=""
+          />
+        </div>
+        <PixelArt name="star" className="pixel-spark a" />
+        <PixelArt name="star" className="pixel-spark b" />
+        <div className="pixel-hero-copy">
+          <div className="eyebrow">O PONTO DE ENCONTRO DOS DUELISTAS</div>
+          <div className="pixel-hero-tag">SUA COLEÇÃO TEM NOVAS POSSIBILIDADES</div>
+          <h1 id="hero-heading">
+            Sua próxima carta.<span>Sua próxima conexão.</span>
           </h1>
           <p>
             Cartas que você tem. Cartas que você quer.
@@ -196,63 +194,46 @@ export function Explore() {
             Yu-Gi-Oh! e Pokémon na comunidade de Lagarto.
           </p>
           <div className="hero-actions">
-            <a href="#explorar" className="button button-gold">
-              Explorar cartas <ArrowUpRight size={18} />
+            <a href="#explorar" className="pixel-ribbon primary">
+              <RibbonLabel primary icon="cards">
+                Explorar cartas
+              </RibbonLabel>
             </a>
-            <Link href={user ? '/colecao' : '/cadastro'} className="button button-ghost">
-              <PlusIcon />
-              Montar minha coleção
+            <Link href={user ? '/colecao' : '/cadastro'} className="pixel-ribbon secondary">
+              <RibbonLabel icon="cards-three">Montar minha coleção</RibbonLabel>
             </Link>
           </div>
-          <div className="hero-proof">
-            <span className="hero-proof-icon">
-              <ShieldCheck size={16} />
-            </span>
+          <div className="pixel-hero-proof">
+            <DesignIcon name="seal-check" size={16} />
             <span>Uma comunidade local. Infinitas possibilidades.</span>
           </div>
         </div>
-        <div className="hero-visual" aria-hidden="true">
-          <div className="hero-orbit orbit-one" />
-          <div className="hero-orbit orbit-two" />
-          <span className="orbital-star star-one">✧</span>
-          <span className="orbital-star star-two">✦</span>
-          <span className="hero-kanji">繋がる</span>
-          <div className="floating-card card-behind-left">
-            <img
-              src={game === 'pokemon' ? cardImage('base1-2', 'pokemon') : '/cards/46986414.jpg'}
-              alt=""
-            />
+        <div className="pixel-match">
+          <PixelArt name="panel-match" />
+          <span className="pixel-match-icon">
+            <DesignIcon name="sparkle" size={22} />
+          </span>
+          <div>
+            <strong>O match perfeito existe.</strong>
+            <small>Encontre a peça que falta no seu deck.</small>
           </div>
-          <div className="floating-card card-behind-right">
-            <img
-              src={game === 'pokemon' ? cardImage('base1-15', 'pokemon') : '/cards/74677422.jpg'}
-              alt=""
-            />
-          </div>
-          <div className="floating-card card-in-front">
-            <img
-              src={game === 'pokemon' ? cardImage('base1-4', 'pokemon') : '/cards/89631139.jpg'}
-              alt=""
-            />
-            <div className="hero-foil" />
-          </div>
-          <div className="floating-match">
-            <span className="match-spark">
-              <Sparkles size={17} />
-            </span>
-            <span>
-              <strong>O match perfeito existe.</strong>
-              <small>Encontre a peça que falta no seu deck.</small>
-            </span>
-            <CheckIcon />
-          </div>
-          <span className="visual-coordinate">35° · 10°55′ S · 37°39′ O</span>
         </div>
+        <span className="pixel-coordinate">35° · 10°55′ S · 37°39′ O</span>
+        <span className="pixel-location">LAGARTO, SERGIPE</span>
+        <picture>
+          <source media="(max-width: 767px)" srcSet="/brand/pixel/band-bottom-mobile.svg" />
+          <img
+            className="pixel-band bottom"
+            src="/brand/pixel/band-bottom.svg"
+            alt=""
+            aria-hidden="true"
+          />
+        </picture>
       </section>
       <div className="stats-strip">
         <div>
           <span className="stat-icon gold-soft">
-            <Layers3 size={21} />
+            <DesignIcon name="cards-three" size={21} />
           </span>
           <span>
             <strong>Todo o universo TCG</strong>
@@ -261,7 +242,7 @@ export function Explore() {
         </div>
         <div>
           <span className="stat-icon cyan-soft">
-            <ArrowLeftRight size={21} />
+            <DesignIcon name="arrows-clockwise" size={21} />
           </span>
           <span>
             <strong>{stats.cards} cartas para trocar</strong>
@@ -270,7 +251,7 @@ export function Explore() {
         </div>
         <div>
           <span className="stat-icon purple-soft">
-            <Users size={21} />
+            <DesignIcon name="users-three" size={21} />
           </span>
           <span>
             <strong>
@@ -281,7 +262,7 @@ export function Explore() {
         </div>
         <Link href="/como-funciona">
           Como funciona
-          <ArrowUpRight size={17} />
+          <DesignIcon name="arrow-up-right" size={17} />
         </Link>
       </div>
       <section id="explorar" className="catalog-section">
@@ -289,23 +270,32 @@ export function Explore() {
           <div>
             <span className="eyebrow">DESCUBRA. COLECIONE. CONECTE.</span>
             <h2>
-              Encontre sua próxima carta<span className="gold-text">.</span>
+              Encontre sua próxima carta<span>.</span>
             </h2>
             <p>A peça que falta no seu deck pode estar mais perto do que você imagina.</p>
           </div>
           <Link href="/desejos" className="text-link">
-            <Heart size={16} /> Minha lista de desejos <ArrowUpRight size={15} />
+            <DesignIcon name="heart" size={16} /> Minha lista de desejos{' '}
+            <DesignIcon name="arrow-up-right" size={15} />
           </Link>
         </div>
-        <GameSwitch />
+        <GameSwitch pixel />
         <div className="catalog-tabs">
           <div>
-            <button onClick={() => setLocal(false)} className={!local ? 'selected' : ''}>
-              <Compass size={16} />
+            <button
+              onClick={() => setLocal(false)}
+              aria-pressed={!local}
+              className={!local ? 'selected' : ''}
+            >
+              <DesignIcon name="cards" size={16} />
               Explorar catálogo
             </button>
-            <button onClick={() => setLocal(true)} className={local ? 'selected' : ''}>
-              <MapPin size={16} />
+            <button
+              onClick={() => setLocal(true)}
+              aria-pressed={local}
+              className={local ? 'selected' : ''}
+            >
+              <DesignIcon name="map-pin" size={16} />
               Na comunidade <span className="tab-count">{stats.cards}</span>
             </button>
           </div>
@@ -324,7 +314,7 @@ export function Explore() {
               void search();
             }}
           >
-            <Search size={19} />
+            <DesignIcon name="magnifying-glass" size={19} />
             <input
               aria-label="Buscar cartas"
               type="search"
@@ -346,27 +336,32 @@ export function Explore() {
               </button>
             )}
             <button type="submit" aria-label="Pesquisar cartas" className="catalog-search-submit">
-              Buscar
+              <span className="control-label">Buscar</span>
             </button>
           </form>
           <button
             className={`button filter-button ${filters ? 'filter-active' : ''}`}
             onClick={() => setFilters(!filters)}
+            aria-expanded={filters}
+            aria-controls="catalog-expanded-filters"
           >
-            <SlidersHorizontal size={17} />
-            Filtros{attribute && <i className="tiny-dot" />}
+            <RibbonLabel icon="faders-horizontal">Filtros</RibbonLabel>
+            {attribute && <i className="tiny-dot" />}
           </button>
           <label className="sort-select">
             <span className="sr-only">Ordenar cartas</span>
+            <span className="ribbon-icon purple">
+              <DesignIcon name="arrow-down" size={18} />
+            </span>
             <select value={sort} onChange={(e) => setSort(e.target.value)}>
               <option value="name">Nome: A a Z</option>
               <option value="name_desc">Nome: Z a A</option>
             </select>
-            <ChevronDown size={14} />
+            <DesignIcon name="caret-down" size={14} />
           </label>
         </div>
         {filters && (
-          <div className="expanded-filters">
+          <div className="expanded-filters" id="catalog-expanded-filters">
             <label>
               {game === 'pokemon' ? 'Tipo Pokémon' : 'Atributo'}
               <select value={attribute} onChange={(e) => setAttribute(e.target.value)}>
@@ -415,10 +410,16 @@ export function Explore() {
           </div>
         )}
         <div className="category-chips">
-          {categories.map(({ id, label, icon: Icon }) => (
-            <button key={id} className={type === id ? 'active' : ''} onClick={() => setType(id)}>
-              <Icon size={14} />
-              {label}
+          {categories.map(({ id, label, icon }) => (
+            <button
+              key={id}
+              className={type === id ? 'active' : ''}
+              onClick={() => setType(id)}
+              aria-pressed={type === id}
+            >
+              <RibbonLabel primary icon={icon}>
+                {label}
+              </RibbonLabel>
             </button>
           ))}
         </div>
@@ -431,7 +432,7 @@ export function Explore() {
           <span>Uma carta pode ser o começo de algo maior.</span>
         </div>
         {!local && catalogInfo && (
-          <p className="field-hint catalog-coverage">
+          <p className="catalog-coverage">
             {catalogInfo}. Cartas sem tradução mantêm o nome original.
           </p>
         )}
@@ -457,6 +458,7 @@ export function Explore() {
                   const c = collectionCard(item);
                   return (
                     <CardTile
+                      pixel
                       key={item.id}
                       card={c}
                       item={item}
@@ -482,7 +484,13 @@ export function Explore() {
             ) : (
               <div className="cards-grid">
                 {displayed.map((c) => (
-                  <CardTile key={c.id} card={c} onClick={() => setDetail(c)} onAdd={addCard} />
+                  <CardTile
+                    pixel
+                    key={c.id}
+                    card={c}
+                    onClick={() => setDetail(c)}
+                    onAdd={addCard}
+                  />
                 ))}
               </div>
             )}
@@ -494,24 +502,28 @@ export function Explore() {
                   void search(cards.length, true);
                 }}
               >
-                {loading ? <Loader2 className="spin" size={16} /> : <ArrowDown size={16} />}
-                Descobrir mais cartas
+                <RibbonLabel icon="arrow-down">
+                  {loading && <Loader2 className="spin" size={16} />}Descobrir mais cartas
+                </RibbonLabel>
               </button>
             )}
           </>
         )}
       </section>
-      <section className="bottom-cta">
-        <span className="cta-emblem">
-          <ArrowLeftRight size={28} />
-        </span>
-        <div>
-          <h3>O seu repetido pode ser o desejo de alguém.</h3>
-          <p>Organize sua coleção e deixe as conexões acontecerem.</p>
+      <section className="pixel-closing">
+        <PixelArt name="transition" className="pixel-transition" />
+        <div className="pixel-wrap">
+          <div className="pixel-closing-copy">
+            <span className="eyebrow">CONNECT. TRADE. DUEL.</span>
+            <h3>O seu repetido pode ser o desejo de alguém.</h3>
+            <p>Organize sua coleção e deixe as conexões acontecerem.</p>
+          </div>
+          <Link className="pixel-ribbon primary" href={user ? '/colecao' : '/cadastro'}>
+            <RibbonLabel primary icon="cards-three">
+              Começar minha coleção
+            </RibbonLabel>
+          </Link>
         </div>
-        <Link className="button button-gold" href={user ? '/colecao' : '/cadastro'}>
-          Começar minha coleção <ArrowUpRight size={17} />
-        </Link>
       </section>
       {detail && (
         <CardDetail
@@ -529,10 +541,4 @@ export function Explore() {
       {proposal && <ProposeModal requested={proposal} onClose={() => setProposal(null)} />}
     </div>
   );
-}
-function PlusIcon() {
-  return <span className="plus-icon">+</span>;
-}
-function CheckIcon() {
-  return <span className="match-check">✓</span>;
 }

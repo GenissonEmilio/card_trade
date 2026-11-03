@@ -1,0 +1,668 @@
+[
+  {
+    "width": 1440,
+    "height": 3456,
+    "overflow": false,
+    "sections": {
+      ".pixel-header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 158
+      },
+      ".pixel-hero": {
+        "x": 0,
+        "y": 158,
+        "width": 1440,
+        "height": 768
+      },
+      ".stats-strip": {
+        "x": 0,
+        "y": 926,
+        "width": 1440,
+        "height": 108
+      },
+      ".catalog-section": {
+        "x": 0,
+        "y": 1034,
+        "width": 1440,
+        "height": 1708
+      },
+      ".pixel-closing": {
+        "x": 0,
+        "y": 2742,
+        "width": 1440,
+        "height": 355
+      },
+      ".pixel-footer": {
+        "x": 0,
+        "y": 3097,
+        "width": 1440,
+        "height": 358.5
+      }
+    },
+    "cards": [
+      {
+        "card": {
+          "x": 96,
+          "y": 1570,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 329,
+          "y": 1984.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 113,
+          "y": 1998.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 412,
+          "y": 1570,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 645,
+          "y": 1984.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 429,
+          "y": 1998.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 728,
+          "y": 1570,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 961,
+          "y": 1984.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 745,
+          "y": 1998.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 1044,
+          "y": 1570,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 1277,
+          "y": 1984.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 1061,
+          "y": 1998.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 96,
+          "y": 2091,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 329,
+          "y": 2505.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 113,
+          "y": 2519.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 412,
+          "y": 2091,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 645,
+          "y": 2505.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 429,
+          "y": 2519.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 728,
+          "y": 2091,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 961,
+          "y": 2505.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 745,
+          "y": 2519.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 1044,
+          "y": 2091,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 1277,
+          "y": 2505.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 1061,
+          "y": 2519.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      }
+    ],
+    "resultCopyVisible": true,
+    "transition": {
+      "x": 0,
+      "y": 2742,
+      "width": 1440,
+      "height": 144
+    },
+    "images": true,
+    "errors": []
+  },
+  {
+    "width": 1365,
+    "height": 3456,
+    "overflow": false,
+    "sections": {
+      ".pixel-header": {
+        "x": 0,
+        "y": 0,
+        "width": 1365,
+        "height": 158
+      },
+      ".pixel-hero": {
+        "x": 0,
+        "y": 158,
+        "width": 1365,
+        "height": 768
+      },
+      ".stats-strip": {
+        "x": 0,
+        "y": 926,
+        "width": 1365,
+        "height": 108
+      },
+      ".catalog-section": {
+        "x": 0,
+        "y": 1034,
+        "width": 1365,
+        "height": 1708
+      },
+      ".pixel-closing": {
+        "x": 0,
+        "y": 2742,
+        "width": 1365,
+        "height": 355
+      },
+      ".pixel-footer": {
+        "x": 0,
+        "y": 3097,
+        "width": 1365,
+        "height": 358.5
+      }
+    },
+    "cards": [
+      {
+        "card": {
+          "x": 58.5,
+          "y": 1570,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 291.5,
+          "y": 1984.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 75.5,
+          "y": 1998.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 374.5,
+          "y": 1570,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 607.5,
+          "y": 1984.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 391.5,
+          "y": 1998.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 690.5,
+          "y": 1570,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 923.5,
+          "y": 1984.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 707.5,
+          "y": 1998.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 1006.5,
+          "y": 1570,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 1239.5,
+          "y": 1984.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 1023.5,
+          "y": 1998.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 58.5,
+          "y": 2091,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 291.5,
+          "y": 2505.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 75.5,
+          "y": 2519.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 374.5,
+          "y": 2091,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 607.5,
+          "y": 2505.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 391.5,
+          "y": 2519.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 690.5,
+          "y": 2091,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 923.5,
+          "y": 2505.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 707.5,
+          "y": 2519.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 1006.5,
+          "y": 2091,
+          "width": 294,
+          "height": 497
+        },
+        "add": {
+          "x": 1239.5,
+          "y": 2505.5,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 1023.5,
+          "y": 2519.796875,
+          "width": 204,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      }
+    ],
+    "resultCopyVisible": true,
+    "transition": {
+      "x": 0,
+      "y": 2742,
+      "width": 1365,
+      "height": 144
+    },
+    "images": true,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 4864,
+    "overflow": false,
+    "sections": {
+      ".pixel-header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 94
+      },
+      ".pixel-hero": {
+        "x": 0,
+        "y": 94,
+        "width": 390,
+        "height": 936
+      },
+      ".stats-strip": {
+        "x": 0,
+        "y": 1030,
+        "width": 390,
+        "height": 276
+      },
+      ".catalog-section": {
+        "x": 0,
+        "y": 1306,
+        "width": 390,
+        "height": 2538.8125
+      },
+      ".pixel-closing": {
+        "x": 0,
+        "y": 3844.8125,
+        "width": 390,
+        "height": 354.28125
+      },
+      ".pixel-footer": {
+        "x": 0,
+        "y": 4199.09375,
+        "width": 390,
+        "height": 664.5
+      }
+    },
+    "cards": [
+      {
+        "card": {
+          "x": 20,
+          "y": 2022.8125,
+          "width": 170,
+          "height": 417
+        },
+        "add": {
+          "x": 135,
+          "y": 2363.3125,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 31,
+          "y": 2377.609375,
+          "width": 96,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 200,
+          "y": 2022.8125,
+          "width": 170,
+          "height": 417
+        },
+        "add": {
+          "x": 315,
+          "y": 2363.3125,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 211,
+          "y": 2377.609375,
+          "width": 96,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 2451.8125,
+          "width": 170,
+          "height": 417
+        },
+        "add": {
+          "x": 135,
+          "y": 2792.3125,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 31,
+          "y": 2806.609375,
+          "width": 96,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 200,
+          "y": 2451.8125,
+          "width": 170,
+          "height": 417
+        },
+        "add": {
+          "x": 315,
+          "y": 2792.3125,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 211,
+          "y": 2806.609375,
+          "width": 96,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 2880.8125,
+          "width": 170,
+          "height": 417
+        },
+        "add": {
+          "x": 135,
+          "y": 3221.3125,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 31,
+          "y": 3235.609375,
+          "width": 96,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 200,
+          "y": 2880.8125,
+          "width": 170,
+          "height": 417
+        },
+        "add": {
+          "x": 315,
+          "y": 3221.3125,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 211,
+          "y": 3235.609375,
+          "width": 96,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 20,
+          "y": 3309.8125,
+          "width": 170,
+          "height": 417
+        },
+        "add": {
+          "x": 135,
+          "y": 3650.3125,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 31,
+          "y": 3664.609375,
+          "width": 96,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      },
+      {
+        "card": {
+          "x": 200,
+          "y": 3309.8125,
+          "width": 170,
+          "height": 417
+        },
+        "add": {
+          "x": 315,
+          "y": 3650.3125,
+          "width": 44,
+          "height": 44
+        },
+        "label": {
+          "x": 211,
+          "y": 3664.609375,
+          "width": 96,
+          "height": 15.390625
+        },
+        "imageLoaded": true
+      }
+    ],
+    "resultCopyVisible": true,
+    "transition": {
+      "x": -150,
+      "y": 3844.8125,
+      "width": 780,
+      "height": 108
+    },
+    "images": true,
+    "errors": []
+  }
+]

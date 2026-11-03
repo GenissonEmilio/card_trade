@@ -1,0 +1,42 @@
+{
+  "width": 1440,
+  "height": 108,
+  "texts": [
+    {
+      "text": "Todo o universo TCG",
+      "font": "DM Sans",
+      "weight": "600"
+    },
+    {
+      "text": "Catálogo de Yu-Gi-Oh!",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "0 cartas para trocar",
+      "font": "DM Sans",
+      "weight": "600"
+    },
+    {
+      "text": "Disponíveis na comunidade",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "0 duelistas conectados",
+      "font": "DM Sans",
+      "weight": "600"
+    },
+    {
+      "text": "Novas conexões começam aqui",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Como funciona",
+      "font": "DM Sans",
+      "weight": "400"
+    }
+  ],
+  "images": 0
+}

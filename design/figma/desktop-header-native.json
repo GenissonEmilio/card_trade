@@ -1,0 +1,82 @@
+{
+  "width": 1440,
+  "height": 158,
+  "texts": [
+    {
+      "text": "Explorar",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Marketplace",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Meus decks",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Comunidade",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Minha coleção",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Entrar",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Criar conta",
+      "font": "DM Sans",
+      "weight": "700"
+    },
+    {
+      "text": "Vender cartas",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Compras e vendas",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Lista de desejos",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Meus matches",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Minhas trocas",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Como funciona",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Configurações",
+      "font": "DM Sans",
+      "weight": "400"
+    },
+    {
+      "text": "Lagarto, SE",
+      "font": "DM Sans",
+      "weight": "400"
+    }
+  ],
+  "images": 0
+}

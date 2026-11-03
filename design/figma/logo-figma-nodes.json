@@ -1,0 +1,53 @@
+{
+  "desktop-header": {
+    "id": "20:4237",
+    "parent": "18:3",
+    "bounds": {
+      "x": 96,
+      "y": 10,
+      "width": 176,
+      "height": 88
+    },
+    "done": true
+  },
+  "desktop-footer": {
+    "id": "20:4271",
+    "parent": "18:1739",
+    "bounds": {
+      "x": 96,
+      "y": 410,
+      "width": 180,
+      "height": 90
+    },
+    "done": true
+  },
+  "mobile-header": {
+    "id": "20:4305",
+    "parent": "18:1947",
+    "bounds": {
+      "x": 20,
+      "y": 15.75,
+      "width": 125,
+      "height": 62.5
+    },
+    "done": true
+  },
+  "mobile-footer": {
+    "id": "20:4339",
+    "parent": "18:3499",
+    "bounds": {
+      "x": 20,
+      "y": 391.28125,
+      "width": 180,
+      "height": 90
+    },
+    "done": true
+  },
+  "board": {
+    "id": "20:4373",
+    "name": "DUELINK — Logo pixelada / legibilidade",
+    "type": "FRAME",
+    "width": 1440,
+    "height": 840
+  }
+}

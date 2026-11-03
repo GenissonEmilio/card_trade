@@ -1,0 +1,172 @@
+[
+  {
+    "mode": "desktop",
+    "cards": [
+      {
+        "name": "Dragão Branco de Olhos Azuis",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 17,
+        "clearance": 38.5,
+        "notchDepth": 35.030837004405285,
+        "labelFits": true
+      },
+      {
+        "name": "Dragão da Poeira Estelar",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 17,
+        "clearance": 38.5,
+        "notchDepth": 35.030837004405285,
+        "labelFits": true
+      },
+      {
+        "name": "Dragão Negro de Olhos Vermelhos",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 17,
+        "clearance": 38.5,
+        "notchDepth": 35.030837004405285,
+        "labelFits": true
+      },
+      {
+        "name": "Dragão Supremo de Olhos Azuis",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 17,
+        "clearance": 38.5,
+        "notchDepth": 35.030837004405285,
+        "labelFits": true
+      },
+      {
+        "name": "Impermanência Infinita",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 17,
+        "clearance": 38.5,
+        "notchDepth": 35.030837004405285,
+        "labelFits": true
+      },
+      {
+        "name": "Mago Negro",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 17,
+        "clearance": 38.5,
+        "notchDepth": 35.030837004405285,
+        "labelFits": true
+      },
+      {
+        "name": "Pote da Ganância",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 17,
+        "clearance": 38.5,
+        "notchDepth": 35.030837004405285,
+        "labelFits": true
+      },
+      {
+        "name": "Raigeki",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 17,
+        "clearance": 38.5,
+        "notchDepth": 35.030837004405285,
+        "labelFits": true
+      }
+    ]
+  },
+  {
+    "mode": "mobile",
+    "cards": [
+      {
+        "name": "Dragão Branco de Olhos Azuis",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 11,
+        "clearance": 32.5,
+        "notchDepth": 29.3920704845815,
+        "labelFits": true
+      },
+      {
+        "name": "Dragão da Poeira Estelar",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 11,
+        "clearance": 32.5,
+        "notchDepth": 29.3920704845815,
+        "labelFits": true
+      },
+      {
+        "name": "Dragão Negro de Olhos Vermelhos",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 11,
+        "clearance": 32.5,
+        "notchDepth": 29.3920704845815,
+        "labelFits": true
+      },
+      {
+        "name": "Dragão Supremo de Olhos Azuis",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 11,
+        "clearance": 32.5,
+        "notchDepth": 29.3920704845815,
+        "labelFits": true
+      },
+      {
+        "name": "Impermanência Infinita",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 11,
+        "clearance": 32.5,
+        "notchDepth": 29.3920704845815,
+        "labelFits": true
+      },
+      {
+        "name": "Mago Negro",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 11,
+        "clearance": 32.5,
+        "notchDepth": 29.3920704845815,
+        "labelFits": true
+      },
+      {
+        "name": "Pote da Ganância",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 11,
+        "clearance": 32.5,
+        "notchDepth": 29.3920704845815,
+        "labelFits": true
+      },
+      {
+        "name": "Raigeki",
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "alignment": 0.0078125,
+        "rightInset": 11,
+        "clearance": 32.5,
+        "notchDepth": 29.3920704845815,
+        "labelFits": true
+      }
+    ]
+  }
+]

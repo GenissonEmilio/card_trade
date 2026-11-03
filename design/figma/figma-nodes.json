@@ -1,0 +1,112 @@
+{
+  "desktop": {
+    "id": "3:2",
+    "sections": {
+      "header": {
+        "id": "3:3",
+        "y": 0,
+        "height": 158,
+        "result": {
+          "id": "3:3",
+          "name": "DUELINK / desktop / header",
+          "rendering": true
+        }
+      },
+      "hero": {
+        "id": "4:51",
+        "y": 158,
+        "height": 650,
+        "result": {
+          "id": "4:51",
+          "name": "DUELINK / desktop / hero",
+          "rendering": true
+        }
+      },
+      "stats": {
+        "id": "4:68",
+        "y": 808,
+        "height": 108,
+        "result": {
+          "id": "4:68",
+          "name": "DUELINK / desktop / stats",
+          "rendering": true
+        }
+      },
+      "catalog": {
+        "id": "4:94",
+        "y": 916,
+        "height": 1620.390625,
+        "result": {
+          "id": "4:94",
+          "name": "DUELINK / desktop / catalog",
+          "rendering": true
+        }
+      },
+      "footer": {
+        "id": "4:106",
+        "y": 2536.390625,
+        "height": 586.5,
+        "result": {
+          "id": "4:106",
+          "name": "DUELINK / desktop / footer",
+          "rendering": true
+        }
+      }
+    }
+  },
+  "mobile": {
+    "id": "4:252",
+    "sections": {
+      "header": {
+        "id": "4:253",
+        "y": 0,
+        "height": 94,
+        "result": {
+          "id": "4:253",
+          "name": "DUELINK / mobile / header",
+          "rendering": true
+        }
+      },
+      "hero": {
+        "id": "4:266",
+        "y": 94,
+        "height": 810,
+        "result": {
+          "id": "4:266",
+          "name": "DUELINK / mobile / hero",
+          "rendering": true
+        }
+      },
+      "stats": {
+        "id": "4:289",
+        "y": 904,
+        "height": 276,
+        "result": {
+          "id": "4:289",
+          "name": "DUELINK / mobile / stats",
+          "rendering": true
+        }
+      },
+      "catalog": {
+        "id": "4:315",
+        "y": 1180,
+        "height": 2339.8125,
+        "result": {
+          "id": "4:315",
+          "name": "DUELINK / mobile / catalog",
+          "rendering": true
+        }
+      },
+      "footer": {
+        "id": "4:327",
+        "y": 3519.8125,
+        "height": 925.28125,
+        "result": {
+          "id": "4:327",
+          "name": "DUELINK / mobile / footer",
+          "rendering": true
+        }
+      }
+    }
+  }
+}

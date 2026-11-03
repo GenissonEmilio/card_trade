@@ -1,0 +1,763 @@
+[
+  {
+    "width": 768,
+    "pageWidth": 768,
+    "visiblePrimary": [
+      "Explorar",
+      "Marketplace",
+      "Meus decks"
+    ],
+    "menuVisible": true,
+    "accountRibbonVisible": false,
+    "headerLinks": [
+      {
+        "text": "Duelink — início",
+        "x": 40,
+        "y": 10,
+        "width": 176,
+        "height": 88,
+        "right": 216,
+        "bottom": 98
+      },
+      {
+        "text": "Explorar",
+        "x": 240,
+        "y": 45,
+        "width": 45.453125,
+        "height": 18,
+        "right": 285.453125,
+        "bottom": 63
+      },
+      {
+        "text": "Marketplace",
+        "x": 301.453125,
+        "y": 45,
+        "width": 68.390625,
+        "height": 18,
+        "right": 369.84375,
+        "bottom": 63
+      },
+      {
+        "text": "Meus decks",
+        "x": 385.84375,
+        "y": 45,
+        "width": 65.9375,
+        "height": 18,
+        "right": 451.78125,
+        "bottom": 63
+      },
+      {
+        "text": "Entrar",
+        "x": 631.390625,
+        "y": 44.25,
+        "width": 36.609375,
+        "height": 19.5,
+        "right": 668,
+        "bottom": 63.75
+      },
+      {
+        "text": "Abrir menu",
+        "x": 684,
+        "y": 32,
+        "width": 44,
+        "height": 44,
+        "right": 728,
+        "bottom": 76
+      },
+      {
+        "text": "Vender cartas",
+        "x": 40,
+        "y": 124.75,
+        "width": 71.515625,
+        "height": 16.5,
+        "right": 111.515625,
+        "bottom": 141.25
+      },
+      {
+        "text": "Compras e vendas",
+        "x": 129.515625,
+        "y": 124.75,
+        "width": 95.265625,
+        "height": 16.5,
+        "right": 224.78125,
+        "bottom": 141.25
+      },
+      {
+        "text": "Lista de desejos",
+        "x": 242.78125,
+        "y": 124.75,
+        "width": 82.65625,
+        "height": 16.5,
+        "right": 325.4375,
+        "bottom": 141.25
+      },
+      {
+        "text": "Meus matches",
+        "x": 343.4375,
+        "y": 124.75,
+        "width": 74.4375,
+        "height": 16.5,
+        "right": 417.875,
+        "bottom": 141.25
+      },
+      {
+        "text": "Minhas trocas",
+        "x": 435.875,
+        "y": 124.75,
+        "width": 71.46875,
+        "height": 16.5,
+        "right": 507.34375,
+        "bottom": 141.25
+      },
+      {
+        "text": "Como funciona",
+        "x": 525.34375,
+        "y": 124.75,
+        "width": 77.78125,
+        "height": 16.5,
+        "right": 603.125,
+        "bottom": 141.25
+      },
+      {
+        "text": "Configurações",
+        "x": 621.125,
+        "y": 124.75,
+        "width": 74,
+        "height": 16.5,
+        "right": 695.125,
+        "bottom": 141.25
+      }
+    ],
+    "menuOpen": true,
+    "menuLinks": [
+      "Explorar",
+      "Marketplace",
+      "Meus decks",
+      "Comunidade",
+      "Minha coleção",
+      "Vender cartas",
+      "Compras e vendas",
+      "Lista de desejos",
+      "Meus matches",
+      "Minhas trocas",
+      "Como funciona",
+      "Configurações"
+    ],
+    "menuClosed": true
+  },
+  {
+    "width": 1024,
+    "pageWidth": 1024,
+    "visiblePrimary": [
+      "Explorar",
+      "Marketplace",
+      "Meus decks"
+    ],
+    "menuVisible": true,
+    "accountRibbonVisible": true,
+    "headerLinks": [
+      {
+        "text": "Duelink — início",
+        "x": 40,
+        "y": 10,
+        "width": 176,
+        "height": 88,
+        "right": 216,
+        "bottom": 98
+      },
+      {
+        "text": "Explorar",
+        "x": 240,
+        "y": 45,
+        "width": 45.453125,
+        "height": 18,
+        "right": 285.453125,
+        "bottom": 63
+      },
+      {
+        "text": "Marketplace",
+        "x": 301.453125,
+        "y": 45,
+        "width": 68.390625,
+        "height": 18,
+        "right": 369.84375,
+        "bottom": 63
+      },
+      {
+        "text": "Meus decks",
+        "x": 385.84375,
+        "y": 45,
+        "width": 65.9375,
+        "height": 18,
+        "right": 451.78125,
+        "bottom": 63
+      },
+      {
+        "text": "Entrar",
+        "x": 735.828125,
+        "y": 44.25,
+        "width": 36.609375,
+        "height": 19.5,
+        "right": 772.4375,
+        "bottom": 63.75
+      },
+      {
+        "text": "Criar conta",
+        "x": 788.4375,
+        "y": 33,
+        "width": 135.5625,
+        "height": 42,
+        "right": 924,
+        "bottom": 75
+      },
+      {
+        "text": "Abrir menu",
+        "x": 940,
+        "y": 32,
+        "width": 44,
+        "height": 44,
+        "right": 984,
+        "bottom": 76
+      },
+      {
+        "text": "Vender cartas",
+        "x": 40,
+        "y": 124.75,
+        "width": 71.515625,
+        "height": 16.5,
+        "right": 111.515625,
+        "bottom": 141.25
+      },
+      {
+        "text": "Compras e vendas",
+        "x": 129.515625,
+        "y": 124.75,
+        "width": 95.265625,
+        "height": 16.5,
+        "right": 224.78125,
+        "bottom": 141.25
+      },
+      {
+        "text": "Lista de desejos",
+        "x": 242.78125,
+        "y": 124.75,
+        "width": 82.65625,
+        "height": 16.5,
+        "right": 325.4375,
+        "bottom": 141.25
+      },
+      {
+        "text": "Meus matches",
+        "x": 343.4375,
+        "y": 124.75,
+        "width": 74.4375,
+        "height": 16.5,
+        "right": 417.875,
+        "bottom": 141.25
+      },
+      {
+        "text": "Minhas trocas",
+        "x": 435.875,
+        "y": 124.75,
+        "width": 71.46875,
+        "height": 16.5,
+        "right": 507.34375,
+        "bottom": 141.25
+      },
+      {
+        "text": "Como funciona",
+        "x": 525.34375,
+        "y": 124.75,
+        "width": 77.78125,
+        "height": 16.5,
+        "right": 603.125,
+        "bottom": 141.25
+      },
+      {
+        "text": "Configurações",
+        "x": 621.125,
+        "y": 124.75,
+        "width": 74,
+        "height": 16.5,
+        "right": 695.125,
+        "bottom": 141.25
+      }
+    ],
+    "menuOpen": true,
+    "menuLinks": [
+      "Explorar",
+      "Marketplace",
+      "Meus decks",
+      "Comunidade",
+      "Minha coleção",
+      "Vender cartas",
+      "Compras e vendas",
+      "Lista de desejos",
+      "Meus matches",
+      "Minhas trocas",
+      "Como funciona",
+      "Configurações"
+    ],
+    "menuClosed": true
+  },
+  {
+    "width": 1200,
+    "pageWidth": 1200,
+    "visiblePrimary": [
+      "Explorar",
+      "Marketplace",
+      "Meus decks"
+    ],
+    "menuVisible": true,
+    "accountRibbonVisible": true,
+    "headerLinks": [
+      {
+        "text": "Duelink — início",
+        "x": 40,
+        "y": 10,
+        "width": 176,
+        "height": 88,
+        "right": 216,
+        "bottom": 98
+      },
+      {
+        "text": "Explorar",
+        "x": 240,
+        "y": 45,
+        "width": 45.453125,
+        "height": 18,
+        "right": 285.453125,
+        "bottom": 63
+      },
+      {
+        "text": "Marketplace",
+        "x": 301.453125,
+        "y": 45,
+        "width": 68.390625,
+        "height": 18,
+        "right": 369.84375,
+        "bottom": 63
+      },
+      {
+        "text": "Meus decks",
+        "x": 385.84375,
+        "y": 45,
+        "width": 65.9375,
+        "height": 18,
+        "right": 451.78125,
+        "bottom": 63
+      },
+      {
+        "text": "Entrar",
+        "x": 911.828125,
+        "y": 44.25,
+        "width": 36.609375,
+        "height": 19.5,
+        "right": 948.4375,
+        "bottom": 63.75
+      },
+      {
+        "text": "Criar conta",
+        "x": 964.4375,
+        "y": 33,
+        "width": 135.5625,
+        "height": 42,
+        "right": 1100,
+        "bottom": 75
+      },
+      {
+        "text": "Abrir menu",
+        "x": 1116,
+        "y": 32,
+        "width": 44,
+        "height": 44,
+        "right": 1160,
+        "bottom": 76
+      },
+      {
+        "text": "Vender cartas",
+        "x": 40,
+        "y": 124.75,
+        "width": 71.515625,
+        "height": 16.5,
+        "right": 111.515625,
+        "bottom": 141.25
+      },
+      {
+        "text": "Compras e vendas",
+        "x": 129.515625,
+        "y": 124.75,
+        "width": 95.265625,
+        "height": 16.5,
+        "right": 224.78125,
+        "bottom": 141.25
+      },
+      {
+        "text": "Lista de desejos",
+        "x": 242.78125,
+        "y": 124.75,
+        "width": 82.65625,
+        "height": 16.5,
+        "right": 325.4375,
+        "bottom": 141.25
+      },
+      {
+        "text": "Meus matches",
+        "x": 343.4375,
+        "y": 124.75,
+        "width": 74.4375,
+        "height": 16.5,
+        "right": 417.875,
+        "bottom": 141.25
+      },
+      {
+        "text": "Minhas trocas",
+        "x": 435.875,
+        "y": 124.75,
+        "width": 71.46875,
+        "height": 16.5,
+        "right": 507.34375,
+        "bottom": 141.25
+      },
+      {
+        "text": "Como funciona",
+        "x": 525.34375,
+        "y": 124.75,
+        "width": 77.78125,
+        "height": 16.5,
+        "right": 603.125,
+        "bottom": 141.25
+      },
+      {
+        "text": "Configurações",
+        "x": 621.125,
+        "y": 124.75,
+        "width": 74,
+        "height": 16.5,
+        "right": 695.125,
+        "bottom": 141.25
+      }
+    ],
+    "menuOpen": true,
+    "menuLinks": [
+      "Explorar",
+      "Marketplace",
+      "Meus decks",
+      "Comunidade",
+      "Minha coleção",
+      "Vender cartas",
+      "Compras e vendas",
+      "Lista de desejos",
+      "Meus matches",
+      "Minhas trocas",
+      "Como funciona",
+      "Configurações"
+    ],
+    "menuClosed": true
+  },
+  {
+    "width": 1279,
+    "pageWidth": 1279,
+    "visiblePrimary": [
+      "Explorar",
+      "Marketplace",
+      "Meus decks"
+    ],
+    "menuVisible": true,
+    "accountRibbonVisible": true,
+    "headerLinks": [
+      {
+        "text": "Duelink — início",
+        "x": 40,
+        "y": 10,
+        "width": 176,
+        "height": 88,
+        "right": 216,
+        "bottom": 98
+      },
+      {
+        "text": "Explorar",
+        "x": 240,
+        "y": 45,
+        "width": 45.453125,
+        "height": 18,
+        "right": 285.453125,
+        "bottom": 63
+      },
+      {
+        "text": "Marketplace",
+        "x": 301.453125,
+        "y": 45,
+        "width": 68.390625,
+        "height": 18,
+        "right": 369.84375,
+        "bottom": 63
+      },
+      {
+        "text": "Meus decks",
+        "x": 385.84375,
+        "y": 45,
+        "width": 65.9375,
+        "height": 18,
+        "right": 451.78125,
+        "bottom": 63
+      },
+      {
+        "text": "Entrar",
+        "x": 990.828125,
+        "y": 44.25,
+        "width": 36.609375,
+        "height": 19.5,
+        "right": 1027.4375,
+        "bottom": 63.75
+      },
+      {
+        "text": "Criar conta",
+        "x": 1043.4375,
+        "y": 33,
+        "width": 135.5625,
+        "height": 42,
+        "right": 1179,
+        "bottom": 75
+      },
+      {
+        "text": "Abrir menu",
+        "x": 1195,
+        "y": 32,
+        "width": 44,
+        "height": 44,
+        "right": 1239,
+        "bottom": 76
+      },
+      {
+        "text": "Vender cartas",
+        "x": 40,
+        "y": 124.75,
+        "width": 71.515625,
+        "height": 16.5,
+        "right": 111.515625,
+        "bottom": 141.25
+      },
+      {
+        "text": "Compras e vendas",
+        "x": 129.515625,
+        "y": 124.75,
+        "width": 95.265625,
+        "height": 16.5,
+        "right": 224.78125,
+        "bottom": 141.25
+      },
+      {
+        "text": "Lista de desejos",
+        "x": 242.78125,
+        "y": 124.75,
+        "width": 82.65625,
+        "height": 16.5,
+        "right": 325.4375,
+        "bottom": 141.25
+      },
+      {
+        "text": "Meus matches",
+        "x": 343.4375,
+        "y": 124.75,
+        "width": 74.4375,
+        "height": 16.5,
+        "right": 417.875,
+        "bottom": 141.25
+      },
+      {
+        "text": "Minhas trocas",
+        "x": 435.875,
+        "y": 124.75,
+        "width": 71.46875,
+        "height": 16.5,
+        "right": 507.34375,
+        "bottom": 141.25
+      },
+      {
+        "text": "Como funciona",
+        "x": 525.34375,
+        "y": 124.75,
+        "width": 77.78125,
+        "height": 16.5,
+        "right": 603.125,
+        "bottom": 141.25
+      },
+      {
+        "text": "Configurações",
+        "x": 621.125,
+        "y": 124.75,
+        "width": 74,
+        "height": 16.5,
+        "right": 695.125,
+        "bottom": 141.25
+      }
+    ],
+    "menuOpen": true,
+    "menuLinks": [
+      "Explorar",
+      "Marketplace",
+      "Meus decks",
+      "Comunidade",
+      "Minha coleção",
+      "Vender cartas",
+      "Compras e vendas",
+      "Lista de desejos",
+      "Meus matches",
+      "Minhas trocas",
+      "Como funciona",
+      "Configurações"
+    ],
+    "menuClosed": true
+  },
+  {
+    "width": 1280,
+    "pageWidth": 1280,
+    "visiblePrimary": [
+      "Explorar",
+      "Marketplace",
+      "Meus decks",
+      "Comunidade",
+      "Minha coleção"
+    ],
+    "menuVisible": false,
+    "accountRibbonVisible": true,
+    "headerLinks": [
+      {
+        "text": "Duelink — início",
+        "x": 40,
+        "y": 10,
+        "width": 176,
+        "height": 88,
+        "right": 216,
+        "bottom": 98
+      },
+      {
+        "text": "Explorar",
+        "x": 262,
+        "y": 45,
+        "width": 45.453125,
+        "height": 18,
+        "right": 307.453125,
+        "bottom": 63
+      },
+      {
+        "text": "Marketplace",
+        "x": 335.453125,
+        "y": 45,
+        "width": 68.390625,
+        "height": 18,
+        "right": 403.84375,
+        "bottom": 63
+      },
+      {
+        "text": "Meus decks",
+        "x": 431.84375,
+        "y": 45,
+        "width": 65.9375,
+        "height": 18,
+        "right": 497.78125,
+        "bottom": 63
+      },
+      {
+        "text": "Comunidade",
+        "x": 525.78125,
+        "y": 45,
+        "width": 71.453125,
+        "height": 18,
+        "right": 597.234375,
+        "bottom": 63
+      },
+      {
+        "text": "Minha coleção",
+        "x": 625.234375,
+        "y": 45,
+        "width": 80.46875,
+        "height": 18,
+        "right": 705.703125,
+        "bottom": 63
+      },
+      {
+        "text": "Entrar",
+        "x": 1041.828125,
+        "y": 44.25,
+        "width": 36.609375,
+        "height": 19.5,
+        "right": 1078.4375,
+        "bottom": 63.75
+      },
+      {
+        "text": "Criar conta",
+        "x": 1102.4375,
+        "y": 33,
+        "width": 135.5625,
+        "height": 42,
+        "right": 1238,
+        "bottom": 75
+      },
+      {
+        "text": "Vender cartas",
+        "x": 40,
+        "y": 124.75,
+        "width": 71.515625,
+        "height": 16.5,
+        "right": 111.515625,
+        "bottom": 141.25
+      },
+      {
+        "text": "Compras e vendas",
+        "x": 136.515625,
+        "y": 124.75,
+        "width": 95.265625,
+        "height": 16.5,
+        "right": 231.78125,
+        "bottom": 141.25
+      },
+      {
+        "text": "Lista de desejos",
+        "x": 256.78125,
+        "y": 124.75,
+        "width": 82.65625,
+        "height": 16.5,
+        "right": 339.4375,
+        "bottom": 141.25
+      },
+      {
+        "text": "Meus matches",
+        "x": 364.4375,
+        "y": 124.75,
+        "width": 74.4375,
+        "height": 16.5,
+        "right": 438.875,
+        "bottom": 141.25
+      },
+      {
+        "text": "Minhas trocas",
+        "x": 463.875,
+        "y": 124.75,
+        "width": 71.46875,
+        "height": 16.5,
+        "right": 535.34375,
+        "bottom": 141.25
+      },
+      {
+        "text": "Como funciona",
+        "x": 560.34375,
+        "y": 124.75,
+        "width": 77.78125,
+        "height": 16.5,
+        "right": 638.125,
+        "bottom": 141.25
+      },
+      {
+        "text": "Configurações",
+        "x": 663.125,
+        "y": 124.75,
+        "width": 74,
+        "height": 16.5,
+        "right": 737.125,
+        "bottom": 141.25
+      }
+    ]
+  }
+]

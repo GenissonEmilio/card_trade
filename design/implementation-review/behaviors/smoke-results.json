@@ -1,0 +1,135 @@
+{
+  "results": [
+    {
+      "name": "initial catalog and navigation",
+      "passed": true,
+      "detail": {
+        "cards": 24
+      }
+    },
+    {
+      "name": "search submit and clear",
+      "passed": true,
+      "detail": {
+        "searched": 11,
+        "labels": [
+          "Cortina de Mago Negro",
+          "Destruidor Negro de Kozmo",
+          "Dragão Negro de Olhos Vermelhos",
+          "Grapha, Senhor Dragão do Mundo Negro",
+          "Mago Negro",
+          "Mago Negro do Caos",
+          "Mago Negro Habilidoso",
+          "Mago Negro Toon",
+          "Mago Negro, o Cavaleiro Dragão",
+          "Os Magos Negros",
+          "Véu do Mago Negro"
+        ],
+        "cleared": ""
+      }
+    },
+    {
+      "name": "categories filters and sort",
+      "passed": true,
+      "detail": {
+        "spellTotal": 2898,
+        "sortTotal": 14617,
+        "first": "ZW - Unicorn Spear"
+      }
+    },
+    {
+      "name": "pagination appends",
+      "passed": true,
+      "detail": {
+        "before": 24,
+        "after": 48
+      }
+    },
+    {
+      "name": "detail open and Escape/X/backdrop close",
+      "passed": true,
+      "detail": "3 closing mechanisms passed"
+    },
+    {
+      "name": "add requires login",
+      "passed": true,
+      "detail": "http://localhost:3000/login?next=/colecao"
+    },
+    {
+      "name": "wish requires login",
+      "passed": true,
+      "detail": "http://localhost:3000/login?next=/desejos"
+    },
+    {
+      "name": "community empty and return",
+      "passed": true,
+      "detail": "/cadastro"
+    },
+    {
+      "name": "game switch and persistence",
+      "passed": true,
+      "detail": {
+        "pokemonTotal": 21256
+      }
+    },
+    {
+      "name": "mobile menu keyboard and navigation",
+      "passed": true,
+      "detail": {
+        "url": "http://localhost:3000/desejos"
+      }
+    },
+    {
+      "name": "mobile detail and 44px add control",
+      "passed": true,
+      "detail": {
+        "x": 136,
+        "y": 2344.53125,
+        "width": 44,
+        "height": 44
+      }
+    }
+  ],
+  "errors": [],
+  "requests": [
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=Mago%20Negro&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=spell&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=spell&attribute=DARK&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name_desc",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=24&sort=name_desc",
+    "http://localhost:3000/api/cards?game=yugioh&id=76080032",
+    "http://localhost:3000/api/cards?game=yugioh&id=76080032",
+    "http://localhost:3000/api/cards?game=yugioh&id=76080032",
+    "http://localhost:3000/api/cards?game=yugioh&id=76080032",
+    "http://localhost:3000/api/cards?game=yugioh&id=76080032",
+    "http://localhost:3000/api/cards?game=yugioh&id=76080032",
+    "http://localhost:3000/api/cards?game=yugioh&id=76080032",
+    "http://localhost:3000/api/cards?game=yugioh&id=76080032",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=pokemon&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=pokemon&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=pokemon&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+    "http://localhost:3000/api/cards?game=yugioh&id=80181649",
+    "http://localhost:3000/api/cards?game=yugioh&id=80181649"
+  ]
+}

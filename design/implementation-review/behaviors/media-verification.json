@@ -1,0 +1,27 @@
+{
+  "localImage": {
+    "status": 200,
+    "contentType": "image/jpeg",
+    "url": "http://localhost:3000/api/card-image/89631139"
+  },
+  "detailImage": {
+    "src": "/card-back.svg",
+    "width": 421,
+    "height": 614
+  },
+  "invalidHostFailures": [],
+  "knownUnavailableRemoteImages": [
+    {
+      "url": "http://localhost:3000/api/cards?game=yugioh&q=&type=&attribute=&offset=0&sort=name",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "http://localhost:3000/api/cards?game=yugioh&id=80181649",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    }
+  ]
+}
