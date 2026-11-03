@@ -1,4 +1,5 @@
 'use client';
+import { ActionLink, ActionButton, Panel } from './design-system';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import {
@@ -10,7 +11,7 @@ import {
   ShieldCheck,
   Store,
   Users,
-} from 'lucide-react';
+} from './system-icons';
 import { PageTitle, Spinner } from './ui';
 import { useApp } from './providers';
 import styles from './admin.module.css';
@@ -113,10 +114,10 @@ export function AdminDashboard() {
         title="Sua operação, em um lugar."
         description="Configure a comissão, acompanhe a operação e gerencie o acesso à administração."
       >
-        <Link href="/admin/mercado" className="button button-gold">
+        <ActionLink href="/admin/mercado" className="button button-gold">
           <Store size={17} />
           Gerenciar marketplace
-        </Link>
+        </ActionLink>
       </PageTitle>
       {error && (
         <p className="form-error" role="alert">
@@ -131,24 +132,24 @@ export function AdminDashboard() {
       )}
       {!data ? (
         error ? (
-          <button className="button" onClick={() => void load()}>
+          <ActionButton className="button" onClick={() => void load()}>
             Tentar novamente
-          </button>
+          </ActionButton>
         ) : (
           <Spinner />
         )
       ) : (
         <>
           <div className={styles.summary}>
-            <div className="panel">
+            <Panel className="panel">
               <Store size={21} />
               <small>VENDAS</small>
               <strong>
                 {data.settings.enabled ? 'Abertas na configuração' : 'Ainda fechadas'}
               </strong>
               <span>A disponibilidade também depende do provedor.</span>
-            </div>
-            <div className="panel">
+            </Panel>
+            <Panel className="panel">
               <Settings2 size={21} />
               <small>COMISSÃO POR VENDA</small>
               <strong>
@@ -157,13 +158,13 @@ export function AdminDashboard() {
                   : `${new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 2 }).format(data.settings.commission_bps / 100)}%`}
               </strong>
               <span>Aplicada ao subtotal das cartas no pedido.</span>
-            </div>
-            <div className="panel">
+            </Panel>
+            <Panel className="panel">
               <Users size={21} />
               <small>COMUNIDADE</small>
               <strong>{data.members.length} contas</strong>
               <span>{data.members.filter((m) => m.role === 'admin').length} com administração</span>
-            </div>
+            </Panel>
           </div>
           <div className={styles.columns}>
             <section className={`panel ${styles.section}`}>
@@ -232,10 +233,10 @@ export function AdminDashboard() {
                   <input type="checkbox" name="enabled" defaultChecked={data.settings.enabled} />
                   <span>Abrir vendas após configurar taxa, retirada e pagamentos</span>
                 </label>
-                <button className="button button-gold" disabled={busy}>
+                <ActionButton className="button button-gold" disabled={busy}>
                   {busy ? <Loader2 size={16} className="spin" /> : <Check size={16} />}Salvar
                   configurações
-                </button>
+                </ActionButton>
               </form>
             </section>
             <section className={`panel ${styles.section}`}>
@@ -314,7 +315,7 @@ export function AdminDashboard() {
                       </span>
                     </div>
                     <span className="tag">{m.role === 'admin' ? 'Administrador' : 'Usuário'}</span>
-                    <button
+                    <ActionButton
                       className="button button-small"
                       disabled={busy}
                       onClick={() => {
@@ -335,7 +336,7 @@ export function AdminDashboard() {
                       }}
                     >
                       {m.role === 'admin' ? 'Remover admin' : 'Tornar admin'}
-                    </button>
+                    </ActionButton>
                   </div>
                 ))}
             </div>

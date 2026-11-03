@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { Layers3, MapPin, Star, UserRound } from 'lucide-react';
+import { Layers3, MapPin, Star, UserRound } from './system-icons';
 import { createClient } from '@/lib/supabase/client';
 import { initials } from '@/lib/utils';
 import type { CollectionItem, Profile as ProfileType } from '@/types';

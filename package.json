@@ -9,7 +9,11 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "review:system": "node design/system-review/harness/server.cjs",
+    "review:system:scan": "node design/system-review/harness/scan.cjs",
+    "review:system:verify": "node design/system-review/harness/verify.cjs",
+    "review:system:interactions": "node design/system-review/harness/interactions.cjs"
   },
   "repository": {
     "type": "git",
@@ -35,6 +39,8 @@
     "@types/node": "26.6.5",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
+    "esbuild": "0.28.2",
+    "playwright": "1.62.1",
     "prettier": "3.9.10",
     "typescript": "6.0.3",
     "vitest": "5.0.5"

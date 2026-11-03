@@ -1,6 +1,7 @@
 'use client';
+import { ActionLink, ActionButton } from './design-system';
 import Link from 'next/link';
-import { Loader2, LockKeyhole, X, ArrowUpRight } from 'lucide-react';
+import { Loader2, LockKeyhole, X, ArrowUpRight } from './system-icons';
 import { useEffect, useRef } from 'react';
 import { useApp } from './providers';
 export function Spinner() {
@@ -34,16 +35,16 @@ export function Empty({
       <h2>{title}</h2>
       <p>{description}</p>
       {href && (
-        <Link className="button button-gold" href={href}>
+        <ActionLink className="button button-gold" href={href}>
           {label}
           <ArrowUpRight size={16} />
-        </Link>
+        </ActionLink>
       )}
       {onClick && (
-        <button className="button button-gold" onClick={onClick}>
+        <ActionButton className="button button-gold" onClick={onClick}>
           {label}
           <ArrowUpRight size={16} />
-        </button>
+        </ActionButton>
       )}
     </div>
   );

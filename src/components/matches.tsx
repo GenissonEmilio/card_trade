@@ -1,7 +1,8 @@
 'use client';
+import { ActionButton } from './design-system';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { ArrowLeftRight, MapPin, Sparkles } from 'lucide-react';
+import { ArrowLeftRight, MapPin, Sparkles } from './system-icons';
 import { createClient } from '@/lib/supabase/client';
 import { cardImage, initials } from '@/lib/utils';
 import type { Match } from '@/types';
@@ -108,10 +109,13 @@ function MatchesContent() {
                   ? 'carta sua na lista de desejos'
                   : 'cartas suas na lista de desejos'}
               </p>
-              <button className="button button-gold full-width" onClick={() => setSelected(m)}>
+              <ActionButton
+                className="button button-gold full-width"
+                onClick={() => setSelected(m)}
+              >
                 <ArrowLeftRight size={16} />
                 Propor troca
-              </button>
+              </ActionButton>
             </article>
           ))}
         </div>

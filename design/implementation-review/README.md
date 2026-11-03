@@ -1,6 +1,6 @@
 # Implementação do redesign Duelink
 
-A página Explorar (`/`) implementa a versão pixelada aprovada no Figma: roxo, creme e verde-lima; logo vetorial legível; hero central; navegação horizontal; controles em faixas inclinadas; cards escalonados com ação de 44 × 44 px. As demais rotas mantêm seus layouts existentes.
+A página Explorar (`/`) implementa a versão pixelada aprovada no Figma: roxo, creme e verde-lima; logo vetorial legível; hero central; navegação horizontal; controles em faixas inclinadas; cards escalonados com ação de 44 × 44 px. Esta pasta documenta a etapa inicial. O design system foi posteriormente aplicado às 22 páginas; consulte `../../docs/design-system/README.md` para a implementação atual e a análise por tela.
 
 ## Referência e implementação
 

@@ -1,4 +1,5 @@
 'use client';
+import { ActionLink, ActionButton } from './design-system';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
@@ -16,7 +17,7 @@ import {
   Store,
   Trash2,
   Wallet,
-} from 'lucide-react';
+} from './system-icons';
 import { createClient } from '@/lib/supabase/client';
 import { conditions } from '@/lib/utils';
 import type { CollectionItem } from '@/types';
@@ -197,7 +198,7 @@ export function Marketplace() {
   }
   return (
     <div className="page-content">
-      <section className={styles.hero}>
+      <section className={`${styles.hero} ds-surface-dark`}>
         <div>
           <span className="eyebrow">DA COLEÇÃO PARA O SEU PRÓXIMO DECK</span>
           <h1>
@@ -210,13 +211,13 @@ export function Marketplace() {
             retirada em Lagarto.
           </p>
           <div className={styles.actions}>
-            <Link className="button button-gold" href="/vender">
+            <ActionLink className="button button-gold" href="/vender">
               <Plus size={16} /> Anunciar minhas cartas
-            </Link>
-            <button className="button" onClick={() => setShowCart(true)}>
+            </ActionLink>
+            <ActionButton className="button" onClick={() => setShowCart(true)}>
               <ShoppingBag size={16} />
               Carrinho {cart.length > 0 && `(${cart.reduce((n, i) => n + i.quantity, 0)})`}
-            </button>
+            </ActionButton>
           </div>
         </div>
         <div className={styles.heroMark} aria-hidden="true">
@@ -349,7 +350,7 @@ export function Marketplace() {
                   {listing.condition} · {listing.language} · {listing.rarity}
                 </p>
                 <div className={styles.priceRow}>
-                  <strong className={styles.price}>
+                  <strong data-currency className={styles.price}>
                     {money(listing.price_cents)} <small>/ un.</small>
                   </strong>
                   <span className={styles.meta}>
@@ -361,7 +362,7 @@ export function Marketplace() {
                   <Store size={13} />
                   {listing.seller?.display_name || 'Vendedor da comunidade'}
                 </span>
-                <button
+                <ActionButton
                   className="button button-gold"
                   onClick={() => {
                     setAddingError('');
@@ -369,7 +370,7 @@ export function Marketplace() {
                   }}
                 >
                   Ver exemplar <ArrowRight size={15} />
-                </button>
+                </ActionButton>
               </div>
             </article>
           ))}
@@ -382,10 +383,14 @@ export function Marketplace() {
       )}
       {hasMore && filtered.length > 0 && (
         <div className={styles.actions}>
-          <button className="button" disabled={loading} onClick={() => void load(nextOffset, true)}>
+          <ActionButton
+            className="button"
+            disabled={loading}
+            onClick={() => void load(nextOffset, true)}
+          >
             {loading && <Loader2 className="spin" size={15} />}Carregar mais anúncios{' '}
             <ArrowRight size={14} />
-          </button>
+          </ActionButton>
         </div>
       )}
       {detail && (
@@ -475,7 +480,7 @@ function ListingDetail({
             {listing.description ||
               'Confira as fotos do exemplar. Dúvidas sobre a oferta podem ser esclarecidas com o vendedor.'}
           </p>
-          <strong className={styles.price}>
+          <strong data-currency className={styles.price}>
             {money(listing.price_cents)} <small>/ unidade</small>
           </strong>
           <p className={styles.hint}>
@@ -483,9 +488,9 @@ function ListingDetail({
             antes do pagamento.
           </p>
           {own ? (
-            <Link className="button" href="/vender">
+            <ActionLink className="button" href="/vender">
               Gerenciar meu anúncio
-            </Link>
+            </ActionLink>
           ) : (
             <form
               className="form"
@@ -506,7 +511,7 @@ function ListingDetail({
                 />
               </label>
               <MarketError message={error} />
-              <button
+              <ActionButton
                 className="button button-gold"
                 disabled={
                   busy ||
@@ -516,7 +521,7 @@ function ListingDetail({
                 }
               >
                 <ShoppingBag size={16} /> Adicionar ao carrinho
-              </button>
+              </ActionButton>
               {error && (
                 <button type="button" className="text-link" onClick={onCart}>
                   Abrir carrinho atual <ArrowRight size={14} />
@@ -651,13 +656,17 @@ function CartModal({
             </span>
           </div>
           <div className={styles.actions}>
-            <Link href={`/pedidos/${orderId}`} className="button">
+            <ActionLink href={`/pedidos/${orderId}`} className="button">
               Ver pedido
-            </Link>
-            <button className="button button-gold" disabled={busy} onClick={() => void checkout()}>
+            </ActionLink>
+            <ActionButton
+              className="button button-gold"
+              disabled={busy}
+              onClick={() => void checkout()}
+            >
               {busy && <Loader2 className="spin" size={15} />}Abrir pagamento seguro{' '}
               <ExternalLink size={15} />
-            </button>
+            </ActionButton>
           </div>
         </>
       ) : loading ? (
@@ -729,7 +738,7 @@ function CartModal({
           <div className={styles.summary}>
             <div>
               <span>Cartas</span>
-              <strong>{money(total)}</strong>
+              <strong data-currency>{money(total)}</strong>
             </div>
             <div>
               <span>Entrega</span>
@@ -737,7 +746,7 @@ function CartModal({
             </div>
             <div>
               <span>Total a pagar</span>
-              <strong>{money(total)}</strong>
+              <strong data-currency>{money(total)}</strong>
             </div>
           </div>
           <div className={styles.notice}>
@@ -771,11 +780,11 @@ function CartModal({
             Vendedor: {rows[0]?.listing?.seller?.display_name || 'identificado no anúncio'}.
           </p>
           {!userReady ? (
-            <Link className="button button-gold" href="/login?next=%2Fmercado">
+            <ActionLink className="button button-gold" href="/login?next=%2Fmercado">
               Entrar para comprar <ArrowRight size={15} />
-            </Link>
+            </ActionLink>
           ) : (
-            <button
+            <ActionButton
               className="button button-gold"
               disabled={
                 busy ||
@@ -789,7 +798,7 @@ function CartModal({
             >
               {busy ? <Loader2 className="spin" size={16} /> : <CreditCard size={16} />}{' '}
               {busy ? 'Preparando seu pedido…' : 'Ir para o pagamento seguro'}
-            </button>
+            </ActionButton>
           )}
           {(!config?.enabled || !config.payments_ready) && (
             <p className={styles.hint}>
@@ -899,9 +908,9 @@ function SellerContent() {
         title="Suas cartas. Sua vitrine."
         description="Prepare anúncios reais, acompanhe a revisão e gerencie suas vendas com retirada em Lagarto."
       >
-        <button className="button button-gold" onClick={() => setEditor('new')}>
+        <ActionButton className="button button-gold" onClick={() => setEditor('new')}>
           <Plus size={16} /> Criar anúncio
-        </button>
+        </ActionButton>
       </PageTitle>
       <MarketError message={error || configError} />
       <MarketError message={connectionError} />
@@ -948,13 +957,13 @@ function SellerContent() {
                 </span>
               </label>
               <div className={styles.actions}>
-                <button
+                <ActionButton
                   className="button button-gold"
                   disabled={!consent || !config?.payments_ready}
                   onClick={() => window.location.assign('/api/marketplace/connect')}
                 >
                   Conectar Mercado Pago <ExternalLink size={14} />
-                </button>
+                </ActionButton>
               </div>
               {!config?.payments_ready && (
                 <p className={styles.hint}>
@@ -1043,27 +1052,27 @@ function SellerContent() {
                 )}
                 <div className={styles.actions}>
                   {listing.status !== 'sold' && (
-                    <button className="button" onClick={() => setEditor(listing)}>
+                    <ActionButton className="button" onClick={() => setEditor(listing)}>
                       Editar anúncio
-                    </button>
+                    </ActionButton>
                   )}
                   {listing.status === 'active' && (
-                    <button
+                    <ActionButton
                       className="button"
                       disabled={busyId === listing.id}
                       onClick={() => void status(listing, 'paused')}
                     >
                       Pausar
-                    </button>
+                    </ActionButton>
                   )}
                   {['paused', 'rejected'].includes(listing.status) && (
-                    <button
+                    <ActionButton
                       className="button"
                       disabled={busyId === listing.id}
                       onClick={() => void status(listing, 'pending')}
                     >
                       {busyId === listing.id ? 'Enviando…' : 'Enviar para análise'}
-                    </button>
+                    </ActionButton>
                   )}
                 </div>
               </div>
@@ -1356,7 +1365,7 @@ function ListingEditor({
             <div className={styles.summary}>
               <div>
                 <span>Preço por unidade</span>
-                <strong>{money(cents)}</strong>
+                <strong data-currency>{money(cents)}</strong>
               </div>
               <div>
                 <span>
@@ -1365,11 +1374,11 @@ function ListingEditor({
                     ? ` (${(config.commission_bps / 100).toLocaleString('pt-BR')}%)`
                     : ''}
                 </span>
-                <strong>{fee == null ? 'Ainda não definida' : money(fee)}</strong>
+                <strong data-currency>{fee == null ? 'Ainda não definida' : money(fee)}</strong>
               </div>
               <div>
                 <span>Estimativa antes das taxas do Mercado Pago</span>
-                <strong>{fee == null ? 'A definir' : money(cents - fee)}</strong>
+                <strong data-currency>{fee == null ? 'A definir' : money(cents - fee)}</strong>
               </div>
             </div>
             <p className={styles.hint}>
@@ -1393,15 +1402,15 @@ function ListingEditor({
               </span>
             </label>
             <div className={styles.actions}>
-              <button
+              <ActionButton
                 type="button"
                 className="button"
                 disabled={busy || uploading || !accepted || !config?.terms_version}
                 onClick={() => void save(false)}
               >
                 Salvar rascunho
-              </button>
-              <button
+              </ActionButton>
+              <ActionButton
                 className="button button-gold"
                 disabled={
                   busy ||
@@ -1414,7 +1423,7 @@ function ListingEditor({
               >
                 {busy ? <Loader2 className="spin" size={16} /> : <Check size={16} />}Enviar para
                 análise
-              </button>
+              </ActionButton>
             </div>
           </form>
         </>

@@ -1,7 +1,8 @@
 'use client';
+import { ActionLink, ActionButton } from './design-system';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { ArrowUpRight, Eye, EyeOff, Loader2, Mail, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, Eye, EyeOff, Loader2, Mail, ShieldCheck } from './system-icons';
 import { createClient } from '@/lib/supabase/client';
 import { friendlyError, safeNext } from '@/lib/utils';
 export function AuthForm({ mode }: { mode: 'login' | 'signup' | 'forgot' | 'reset' }) {
@@ -108,7 +109,13 @@ export function AuthForm({ mode }: { mode: 'login' | 'signup' | 'forgot' | 'rese
     <div className="auth-page">
       <div className="auth-card">
         <Link href="/">
-          <img className="auth-logo" src="/logo.svg" alt="Duelink" />
+          <img
+            className="auth-logo"
+            src="/brand/duelink-logo-pixel.svg"
+            width="176"
+            height="88"
+            alt="Duelink"
+          />
         </Link>
         <span className="eyebrow">CONECTE SUA COLEÇÃO</span>
         <h1>{title}</h1>
@@ -118,9 +125,9 @@ export function AuthForm({ mode }: { mode: 'login' | 'signup' | 'forgot' | 'rese
             <Mail size={24} />
             <p>{success}</p>
             {mode === 'reset' && (
-              <Link className="button button-gold full-width" href="/colecao">
+              <ActionLink className="button button-gold full-width" href="/colecao">
                 Ir para minha coleção
-              </Link>
+              </ActionLink>
             )}
           </div>
         ) : (
@@ -216,7 +223,7 @@ export function AuthForm({ mode }: { mode: 'login' | 'signup' | 'forgot' | 'rese
                 {error}
               </div>
             )}
-            <button className="button button-gold full-width" disabled={busy}>
+            <ActionButton className="button button-gold full-width" disabled={busy}>
               {busy ? <Loader2 className="spin" size={17} /> : <ArrowUpRight size={17} />}
               {
                 {
@@ -226,7 +233,7 @@ export function AuthForm({ mode }: { mode: 'login' | 'signup' | 'forgot' | 'rese
                   reset: 'Salvar nova senha',
                 }[mode]
               }
-            </button>
+            </ActionButton>
           </form>
         )}
         <p className="auth-switch">

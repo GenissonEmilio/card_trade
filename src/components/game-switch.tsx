@@ -2,7 +2,7 @@
 import { gameLabels } from '@/lib/catalog';
 import { useApp } from './providers';
 import { RibbonLabel } from './pixel-design';
-export function GameSwitch({ pixel = false }: { pixel?: boolean }) {
+export function GameSwitch({ pixel = true }: { pixel?: boolean }) {
   const { game, setGame } = useApp();
   return (
     <div className="game-switch" role="group" aria-label="Escolher jogo">

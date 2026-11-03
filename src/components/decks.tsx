@@ -1,4 +1,5 @@
 'use client';
+import { ActionButton } from './design-system';
 import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import {
@@ -11,7 +12,7 @@ import {
   Plus,
   Share2,
   Trash2,
-} from 'lucide-react';
+} from './system-icons';
 import type { Card, CollectionItem, Deck, DeckCard } from '@/types';
 import { createClient } from '@/lib/supabase/client';
 import { cardImage, friendlyError } from '@/lib/utils';
@@ -332,7 +333,7 @@ function DecksContent({ viewId }: { viewId?: string }) {
         description="Planeje suas listas de Yu-Gi-Oh! e Pokémon. Veja as cartas que você já tem e o que ainda falta."
       >
         {!viewId && (
-          <button
+          <ActionButton
             className="button button-gold"
             onClick={() => {
               setError('');
@@ -341,7 +342,7 @@ function DecksContent({ viewId }: { viewId?: string }) {
           >
             <Plus size={17} />
             Criar deck
-          </button>
+          </ActionButton>
         )}
       </PageTitle>
       {!viewId && <GameSwitch />}
@@ -433,10 +434,10 @@ function DecksContent({ viewId }: { viewId?: string }) {
                       <option value="public">Público · acessível pelo link</option>
                     </select>
                   </label>
-                  <button className="button button-gold" disabled={busy}>
+                  <ActionButton className="button button-gold" disabled={busy}>
                     <Check size={16} />
                     Salvar deck
-                  </button>
+                  </ActionButton>
                 </div>
               </form>
             ) : (
@@ -452,28 +453,28 @@ function DecksContent({ viewId }: { viewId?: string }) {
             )}
             <div className="deck-toolbar">
               {editable && (
-                <button
+                <ActionButton
                   className="button button-gold"
                   disabled={busy}
                   onClick={() => setPicker(true)}
                 >
                   <Plus size={16} />
                   Adicionar carta
-                </button>
+                </ActionButton>
               )}
-              <button className="button" onClick={download}>
+              <ActionButton className="button" onClick={download}>
                 <Download size={16} />
                 Exportar lista
-              </button>
-              <button className="button" onClick={() => void share()}>
+              </ActionButton>
+              <ActionButton className="button" onClick={() => void share()}>
                 <Share2 size={16} />
                 Compartilhar
-              </button>
+              </ActionButton>
               {user && (
-                <button className="button" disabled={busy} onClick={() => void duplicate()}>
+                <ActionButton className="button" disabled={busy} onClick={() => void duplicate()}>
                   <Copy size={16} />
                   Duplicar
-                </button>
+                </ActionButton>
               )}
               {editable && (
                 <button
@@ -646,9 +647,9 @@ function DecksContent({ viewId }: { viewId?: string }) {
                 {error}
               </p>
             )}
-            <button className="button button-gold full-width" disabled={busy}>
+            <ActionButton className="button button-gold full-width" disabled={busy}>
               {busy ? <Loader2 className="spin" size={16} /> : <Plus size={16} />}Criar deck
-            </button>
+            </ActionButton>
           </form>
         </Modal>
       )}
@@ -681,12 +682,16 @@ function DecksContent({ viewId }: { viewId?: string }) {
             </p>
           )}
           <div className="trade-buttons">
-            <button className="button" onClick={() => setDeleting(false)}>
+            <ActionButton className="button" onClick={() => setDeleting(false)}>
               Voltar
-            </button>
-            <button className="button button-gold" disabled={busy} onClick={() => void remove()}>
+            </ActionButton>
+            <ActionButton
+              className="button button-gold"
+              disabled={busy}
+              onClick={() => void remove()}
+            >
               Excluir deck
-            </button>
+            </ActionButton>
           </div>
         </Modal>
       )}

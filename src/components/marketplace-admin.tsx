@@ -1,7 +1,8 @@
 'use client';
+import { ActionLink, ActionButton } from './design-system';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
-import { ArrowRight, Check, ClipboardCheck, Loader2, ShieldCheck, Store, X } from 'lucide-react';
+import { ArrowRight, Check, ClipboardCheck, Loader2, ShieldCheck, Store, X } from './system-icons';
 import { createClient } from '@/lib/supabase/client';
 import type { MarketplaceListing, MarketplaceOrder } from '@/types/marketplace';
 import { useApp } from './providers';
@@ -94,9 +95,9 @@ function AdminContent() {
         title="Uma vitrine bem cuidada."
         description="Confira os exemplares, acompanhe os pedidos e mantenha as condições da oferta transparentes."
       >
-        <Link className="button" href="/admin">
+        <ActionLink className="button" href="/admin">
           Configuração da operação <ArrowRight size={14} />
-        </Link>
+        </ActionLink>
       </PageTitle>
       <MarketError message={error || configError} />
       {config && (!config.enabled || !config.payments_ready || config.commission_bps == null) && (
@@ -200,9 +201,9 @@ function AdminContent() {
                       <p className={styles.reason}>{listing.rejection_reason}</p>
                     )}
                     <div className={styles.actions}>
-                      <button className="button" onClick={() => setDetail(listing)}>
+                      <ActionButton className="button" onClick={() => setDetail(listing)}>
                         Conferir exemplar <ArrowRight size={13} />
-                      </button>
+                      </ActionButton>
                     </div>
                   </div>
                   <StatusBadge status={listing.status} />
@@ -363,13 +364,13 @@ function ModerationModal({
               </span>
             </label>
             <div className={styles.actions}>
-              <button
+              <ActionButton
                 className="button button-gold"
                 disabled={busy || !canModerate || !checked || listing.photos.length < 2}
               >
                 {busy ? <Loader2 className="spin" size={15} /> : <Check size={15} />}Aprovar anúncio
-              </button>
-              <button
+              </ActionButton>
+              <ActionButton
                 type="button"
                 className="button"
                 disabled={busy || !canModerate || reason.trim().length < 10}
@@ -377,7 +378,7 @@ function ModerationModal({
               >
                 <X size={15} />
                 Solicitar correção
-              </button>
+              </ActionButton>
             </div>
             <p className={styles.hint}>
               {!canModerate &&

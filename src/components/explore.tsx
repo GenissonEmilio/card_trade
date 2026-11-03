@@ -1,7 +1,7 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Layers3, Loader2, Search, X } from 'lucide-react';
+import { Layers3, Loader2, Search, X } from './system-icons';
 import type { Card, CollectionItem } from '@/types';
 import {
   featuredCards,

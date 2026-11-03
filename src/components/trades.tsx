@@ -1,4 +1,5 @@
 'use client';
+import { Panel, ActionButton, StatusBadge } from './design-system';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
@@ -12,7 +13,7 @@ import {
   Send,
   ShieldCheck,
   Star,
-} from 'lucide-react';
+} from './system-icons';
 import { createClient } from '@/lib/supabase/client';
 import { cardImage, friendlyError, initials } from '@/lib/utils';
 import type { Message, Trade } from '@/types';
@@ -123,7 +124,20 @@ function TradeList() {
                     {t.offered.card_name} ↔ {t.requested.card_name}
                   </p>
                 </div>
-                <span className={`status status-${t.status}`}>{statuses[t.status]}</span>
+                <StatusBadge
+                  tone={
+                    t.status === 'completed'
+                      ? 'success'
+                      : t.status === 'pending'
+                        ? 'warning'
+                        : t.status === 'accepted'
+                          ? 'info'
+                          : 'danger'
+                  }
+                  className={`status status-${t.status}`}
+                >
+                  {statuses[t.status]}
+                </StatusBadge>
                 <ArrowUpRight size={18} />
               </Link>
             );
@@ -298,8 +312,21 @@ function TradeDetailContent({ id }: { id: string }) {
         description="Combine os detalhes pelo chat e encontre-se em um local público de Lagarto."
       />
       <div className="trade-detail-layout">
-        <div className="panel trade-details">
-          <span className={`status status-${trade.status}`}>{statuses[trade.status]}</span>
+        <Panel className="panel trade-details">
+          <StatusBadge
+            tone={
+              trade.status === 'completed'
+                ? 'success'
+                : trade.status === 'pending'
+                  ? 'warning'
+                  : trade.status === 'accepted'
+                    ? 'info'
+                    : 'danger'
+            }
+            className={`status status-${trade.status}`}
+          >
+            {statuses[trade.status]}
+          </StatusBadge>
           {[
             { person: trade.proposer, item: trade.offered, label: 'OFERECE' },
             { person: trade.recipient, item: trade.requested, label: 'OFERECE EM TROCA' },
@@ -331,32 +358,32 @@ function TradeDetailContent({ id }: { id: string }) {
           <div className="trade-buttons">
             {trade.status === 'pending' && !proposer && (
               <>
-                <button
+                <ActionButton
                   className="button button-gold"
                   disabled={busy}
                   onClick={() => void action('accept')}
                 >
                   <Check size={15} />
                   Aceitar troca
-                </button>
-                <button
+                </ActionButton>
+                <ActionButton
                   className="button"
                   disabled={busy}
                   onClick={() => setConfirmAction('decline')}
                 >
                   Recusar
-                </button>
+                </ActionButton>
               </>
             )}
             {trade.status === 'accepted' && (
-              <button
+              <ActionButton
                 className="button button-gold full-width"
                 disabled={busy || confirmed}
                 onClick={() => setConfirmAction('confirm')}
               >
                 <CheckCircle2 size={15} />
                 {confirmed ? 'Sua entrega foi confirmada' : 'Confirmar que recebi a carta'}
-              </button>
+              </ActionButton>
             )}
             {(trade.status === 'accepted' || (trade.status === 'pending' && proposer)) && (
               <button
@@ -384,9 +411,9 @@ function TradeDetailContent({ id }: { id: string }) {
             <ShieldCheck size={13} /> Verifique estado, edição e autenticidade pessoalmente antes de
             confirmar. O Duelink não recebe pagamentos nem faz custódia.
           </p>
-        </div>
+        </Panel>
         <div>
-          <div className="panel chat-panel">
+          <Panel className="panel chat-panel">
             <div className="chat-header">
               <div className="avatar">
                 {other.avatar_url ? (
@@ -438,22 +465,22 @@ function TradeDetailContent({ id }: { id: string }) {
                   maxLength={2000}
                   required
                 />
-                <button
+                <ActionButton
                   className="button button-gold"
                   disabled={sending || !message.trim()}
                   aria-label="Enviar mensagem"
                 >
                   {sending ? <Loader2 className="spin" size={17} /> : <Send size={17} />}
-                </button>
+                </ActionButton>
               </form>
             ) : (
               <p className="field-hint" style={{ padding: '0 22px' }}>
                 A conversa foi encerrada com esta proposta.
               </p>
             )}
-          </div>
+          </Panel>
           {trade.status === 'completed' && !reviewed && (
-            <div className="panel review-form">
+            <Panel className="panel review-form">
               <h2>Como foi essa conexão?</h2>
               <form className="form" onSubmit={review}>
                 <label>
@@ -474,12 +501,12 @@ function TradeDetailContent({ id }: { id: string }) {
                     placeholder="Como foi trocar com este duelista?"
                   />
                 </label>
-                <button className="button button-gold" disabled={reviewing}>
+                <ActionButton className="button button-gold" disabled={reviewing}>
                   <Star size={15} />
                   Publicar avaliação
-                </button>
+                </ActionButton>
               </form>
-            </div>
+            </Panel>
           )}
           {reviewed && trade.status === 'completed' && (
             <p className="info-note" style={{ marginTop: 20 }}>
@@ -506,16 +533,16 @@ function TradeDetailContent({ id }: { id: string }) {
               : 'Esta proposta será encerrada. As cartas continuarão nas coleções de seus donos.'}
           </p>
           <div className="trade-buttons">
-            <button className="button" onClick={() => setConfirmAction(null)}>
+            <ActionButton className="button" onClick={() => setConfirmAction(null)}>
               Voltar
-            </button>
-            <button
+            </ActionButton>
+            <ActionButton
               className="button button-gold"
               disabled={busy}
               onClick={() => void action(confirmAction)}
             >
               {busy ? <Loader2 className="spin" size={15} /> : <Check size={15} />}Confirmar
-            </button>
+            </ActionButton>
           </div>
         </Modal>
       )}

@@ -4,6 +4,12 @@ Comunidade de coleção, decks, trocas e marketplace de cartas físicas de Yu-Gi
 
 **Site:** https://duelink.mage.dev.br
 
+## Interface e design system
+
+As 22 páginas compartilham o design system pixelado em roxo, creme e verde-lima, com componentes React/TypeScript, tokens, ícones locais e estados responsivos. A análise por tela e os comandos de revisão estão em [docs/design-system/README.md](docs/design-system/README.md).
+
+`npm run review:system` abre o harness local de revisão dos componentes reais. Ele usa dados sintéticos e não se conecta ao backend. As prévias históricas do Figma em `design/figma/` documentam o processo visual.
+
 ## Funcionalidades
 
 - Cadastro por e-mail, confirmação, login, logout e recuperação de senha.

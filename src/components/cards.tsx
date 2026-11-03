@@ -1,4 +1,5 @@
 'use client';
+import { ActionButton } from './design-system';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
@@ -14,7 +15,7 @@ import {
   ShieldCheck,
   Sparkles,
   Star,
-} from 'lucide-react';
+} from './system-icons';
 import type { Card, CollectionItem, Game } from '@/types';
 import { cardImage, conditions, frameLabel, friendlyError, initials } from '@/lib/utils';
 import { displayCardName, gameLabels, gameOf } from '@/lib/catalog';
@@ -29,7 +30,7 @@ export function CardTile({
   onAdd,
   item,
   catalogLabel = 'No catálogo',
-  pixel = false,
+  pixel = true,
 }: {
   card: Card;
   onClick: () => void;
@@ -115,7 +116,7 @@ export function CardTile({
         <span className="card-original-name">{card.name}</span>
         <div className="card-bottom">
           {item ? (
-            <span className="card-owner">
+            <span className="card-owner" title={item.profiles?.display_name || 'Duelista'}>
               <span className="micro-avatar">{initials(item.profiles?.display_name || 'D')}</span>
               {item.profiles?.display_name || 'Duelista'}
             </span>
@@ -238,9 +239,9 @@ export function CardDetail({
             português quando disponíveis; a imagem pode estar em outro idioma.
           </p>
           {!hideAdd && (
-            <button className="button button-gold full-width" onClick={onAdd}>
+            <ActionButton className="button button-gold full-width" onClick={onAdd}>
               <Plus size={17} /> {addLabel}
-            </button>
+            </ActionButton>
           )}
         </div>
       </div>
@@ -424,10 +425,10 @@ export function AddCardModal({
             Disponível para troca<small>Outros duelistas poderão encontrar esta carta.</small>
           </span>
         </label>
-        <button className="button button-gold full-width" disabled={busy}>
+        <ActionButton className="button button-gold full-width" disabled={busy}>
           {busy ? <Loader2 className="spin" size={17} /> : <Check size={17} />}{' '}
           {item ? 'Salvar alterações' : 'Adicionar à coleção'}
-        </button>
+        </ActionButton>
         {submitError && (
           <p className="auth-error" role="alert">
             {submitError}
@@ -521,13 +522,13 @@ export function CardSearchModal({
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Nome em português, inglês ou código"
         />
-        <button
+        <ActionButton
           className="button button-gold button-small"
           disabled={busy}
           aria-label="Buscar cartas no catálogo"
         >
           {busy ? <Loader2 className="spin" size={16} /> : <Search size={16} />}
-        </button>
+        </ActionButton>
       </form>
       <p className="field-hint">
         {gameLabels[game]} · Busca em todo o catálogo sincronizado, em português e inglês. Nomes sem
@@ -563,9 +564,13 @@ export function CardSearchModal({
         )}
       </div>
       {hasMore && (
-        <button className="button full-width" disabled={busy} onClick={() => void search(true)}>
+        <ActionButton
+          className="button full-width"
+          disabled={busy}
+          onClick={() => void search(true)}
+        >
           Carregar mais resultados
-        </button>
+        </ActionButton>
       )}
     </Modal>
   );
@@ -669,10 +674,10 @@ export function ProposeModal({
             <ShieldCheck size={18} /> Uma carta de cada lado. Combine os detalhes e um ponto de
             encontro pelo chat da proposta.
           </p>
-          <button className="button button-gold full-width" disabled={busy || !selected}>
+          <ActionButton className="button button-gold full-width" disabled={busy || !selected}>
             {busy ? <Loader2 className="spin" size={17} /> : <ArrowLeftRight size={17} />}Enviar
             proposta
-          </button>
+          </ActionButton>
         </form>
       )}
       {submitError && (

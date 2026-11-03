@@ -1,7 +1,8 @@
 'use client';
+import { Panel, ActionButton } from './design-system';
 import Link from 'next/link';
 import { useState } from 'react';
-import { ArrowUpRight, Check, Loader2, Upload } from 'lucide-react';
+import { ArrowUpRight, Check, Loader2, Upload } from './system-icons';
 import { useApp } from './providers';
 import { PageTitle, Protected } from './ui';
 import { createClient } from '@/lib/supabase/client';
@@ -95,7 +96,7 @@ function SettingsContent() {
             Ver perfil público <ArrowUpRight size={15} />
           </Link>
         </aside>
-        <div className="panel">
+        <Panel className="panel">
           <h2>Informações do perfil</h2>
           <div className="avatar-upload">
             <div className="avatar">
@@ -178,15 +179,15 @@ function SettingsContent() {
             <Link className="text-link" href="/recuperar-senha">
               Alterar minha senha <ArrowUpRight size={13} />
             </Link>
-            <button
+            <ActionButton
               className="button button-gold"
               style={{ alignSelf: 'flex-start' }}
               disabled={busy}
             >
               {busy ? <Loader2 className="spin" size={16} /> : <Check size={16} />}Salvar alterações
-            </button>
+            </ActionButton>
           </form>
-        </div>
+        </Panel>
       </div>
     </>
   );

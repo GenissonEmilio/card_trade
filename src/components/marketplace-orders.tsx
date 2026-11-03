@@ -1,4 +1,5 @@
 'use client';
+import { ActionLink, ActionButton } from './design-system';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import {
@@ -15,7 +16,7 @@ import {
   Send,
   ShieldCheck,
   Store,
-} from 'lucide-react';
+} from './system-icons';
 import { createClient } from '@/lib/supabase/client';
 import type { MarketplaceOrder, MarketplaceListing } from '@/types/marketplace';
 import { useApp } from './providers';
@@ -129,9 +130,9 @@ function OrdersContent() {
         title="Seus pedidos e suas vendas."
         description="Acompanhe o pagamento, combine a retirada e encontre todo o histórico da compra em um só lugar."
       >
-        <Link className="button" href="/mercado">
+        <ActionLink className="button" href="/mercado">
           Explorar o marketplace <ArrowRight size={15} />
-        </Link>
+        </ActionLink>
       </PageTitle>
       <div className="filter-tabs">
         <button
@@ -215,7 +216,9 @@ export function OrderRow({ order, selling }: { order: MarketplaceOrder; selling?
       </div>
       <div className={styles.rowAside}>
         <StatusBadge status={order.status} />
-        <strong className="gold-text">{money(order.subtotal_cents)}</strong>
+        <strong data-currency className="gold-text">
+          {money(order.subtotal_cents)}
+        </strong>
         <span className={styles.meta}>
           Ver pedido <ArrowRight size={12} />
         </span>
@@ -436,27 +439,31 @@ function OrderDetailContent({ id }: { id: string }) {
             </p>
             <div className={styles.actions}>
               {buyer && order.status === 'pending_payment' && (
-                <button className="button button-gold" disabled={busy} onClick={() => void pay()}>
+                <ActionButton
+                  className="button button-gold"
+                  disabled={busy}
+                  onClick={() => void pay()}
+                >
                   {busy ? <Loader2 className="spin" size={15} /> : <CreditCard size={15} />}
                   Continuar pagamento <ExternalLink size={14} />
-                </button>
+                </ActionButton>
               )}
               {seller && order.status === 'paid' && (
-                <button className="button button-gold" onClick={() => setAction('ready')}>
+                <ActionButton className="button button-gold" onClick={() => setAction('ready')}>
                   <Package size={15} />
                   Marcar pronto para retirada
-                </button>
+                </ActionButton>
               )}
               {buyer && order.status === 'ready' && (
-                <button className="button button-gold" onClick={() => setAction('complete')}>
+                <ActionButton className="button button-gold" onClick={() => setAction('complete')}>
                   <CheckCircle2 size={15} />
                   Confirmar que retirei as cartas
-                </button>
+                </ActionButton>
               )}
               {(buyer || seller) && order.status === 'pending_payment' && (
-                <button className="button" onClick={() => setAction('cancel')}>
+                <ActionButton className="button" onClick={() => setAction('cancel')}>
                   Cancelar pedido
-                </button>
+                </ActionButton>
               )}
             </div>
             {order.status === 'pending_payment' && (
@@ -521,10 +528,10 @@ function OrderDetailContent({ id }: { id: string }) {
                   disabled={sending}
                 />
               </label>
-              <button className="button" disabled={sending || !content.trim()}>
+              <ActionButton className="button" disabled={sending || !content.trim()}>
                 {sending ? <Loader2 className="spin" size={15} /> : <Send size={15} />}Enviar
                 mensagem
-              </button>
+              </ActionButton>
             </form>
           </section>
         </div>
@@ -539,7 +546,7 @@ function OrderDetailContent({ id }: { id: string }) {
             <div className={styles.summary}>
               <div>
                 <span>Cartas</span>
-                <strong>{money(order.subtotal_cents)}</strong>
+                <strong data-currency>{money(order.subtotal_cents)}</strong>
               </div>
               <div>
                 <span>Entrega</span>
@@ -547,13 +554,15 @@ function OrderDetailContent({ id }: { id: string }) {
               </div>
               <div>
                 <span>Total</span>
-                <strong>{money(order.subtotal_cents)}</strong>
+                <strong data-currency>{money(order.subtotal_cents)}</strong>
               </div>
             </div>
             {order.refunded_cents > 0 && (
               <p>
                 Valor reembolsado:{' '}
-                <strong className="gold-text">{money(order.refunded_cents)}</strong>
+                <strong data-currency className="gold-text">
+                  {money(order.refunded_cents)}
+                </strong>
               </p>
             )}
             {(seller || isAdmin) && (
@@ -598,7 +607,7 @@ function OrderDetailContent({ id }: { id: string }) {
                   </div>
                   <div>
                     <span>Valor / devolvido</span>
-                    <strong>
+                    <strong data-currency>
                       {money(payment.amount_cents)} / {money(payment.refunded_cents)}
                     </strong>
                   </div>
@@ -649,24 +658,24 @@ function OrderDetailContent({ id }: { id: string }) {
             )}
             <div className={styles.actions}>
               {buyer && refundable && !order.refund_requested && (
-                <button className="button" onClick={() => setAction('request_refund')}>
+                <ActionButton className="button" onClick={() => setAction('request_refund')}>
                   Solicitar devolução ou reembolso
-                </button>
+                </ActionButton>
               )}
               {(buyer || seller) && ['paid', 'ready', 'completed'].includes(order.status) && (
-                <button className="button" onClick={() => setAction('dispute')}>
+                <ActionButton className="button" onClick={() => setAction('dispute')}>
                   Relatar um problema
-                </button>
+                </ActionButton>
               )}
               {isAdmin && order.status === 'disputed' && order.payment_status === 'approved' && (
-                <button className="button" onClick={() => setAction('resolve_dispute')}>
+                <ActionButton className="button" onClick={() => setAction('resolve_dispute')}>
                   Registrar resolução do atendimento
-                </button>
+                </ActionButton>
               )}
               {(seller || isAdmin) && (refundable || refundablePayment) && (
-                <button className="button" onClick={() => setRefund(true)}>
+                <ActionButton className="button" onClick={() => setRefund(true)}>
                   Processar reembolso
-                </button>
+                </ActionButton>
               )}
               <Link className="text-link" href="/termos-marketplace">
                 Consultar termos <ArrowRight size={13} />
@@ -830,16 +839,16 @@ function OrderActionModal({
           </label>
         )}
         <div className={styles.actions}>
-          <button type="button" className="button" disabled={busy} onClick={onClose}>
+          <ActionButton type="button" className="button" disabled={busy} onClick={onClose}>
             Voltar
-          </button>
-          <button
+          </ActionButton>
+          <ActionButton
             className="button button-gold"
             disabled={busy || (needsReason && reason.trim().length < 10)}
           >
             {busy && <Loader2 className="spin" size={15} />}
             {needsReason ? 'Registrar solicitação' : 'Confirmar'}
-          </button>
+          </ActionButton>
         </div>
       </form>
     </Modal>
@@ -969,10 +978,10 @@ export function RefundModal({
           </span>
         </label>
         <div className={styles.actions}>
-          <button type="button" className="button" disabled={busy} onClick={onClose}>
+          <ActionButton type="button" className="button" disabled={busy} onClick={onClose}>
             Voltar
-          </button>
-          <button
+          </ActionButton>
+          <ActionButton
             className="button button-gold"
             disabled={
               busy ||
@@ -984,7 +993,7 @@ export function RefundModal({
             }
           >
             {busy && <Loader2 className="spin" size={16} />}Solicitar reembolso financeiro
-          </button>
+          </ActionButton>
         </div>
       </form>
     </Modal>

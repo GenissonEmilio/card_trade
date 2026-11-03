@@ -1,7 +1,8 @@
 'use client';
+import { ActionButton } from './design-system';
 import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { Heart, Layers3, Pencil, Plus, Search, Sparkles, Trash2 } from 'lucide-react';
+import { Heart, Layers3, Pencil, Plus, Search, Sparkles, Trash2 } from './system-icons';
 import { useApp } from './providers';
 import { Empty, PageTitle, Protected, Spinner, Modal } from './ui';
 import { createClient } from '@/lib/supabase/client';
@@ -122,10 +123,10 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
             : 'Organize suas cartas e escolha quais estão prontas para uma nova conexão.'
         }
       >
-        <button className="button button-gold" onClick={() => setPicker(true)}>
+        <ActionButton className="button button-gold" onClick={() => setPicker(true)}>
           <Plus size={17} />
           {wishlist ? 'Adicionar desejo' : 'Adicionar carta'}
-        </button>
+        </ActionButton>
       </PageTitle>
       <GameSwitch />
       {wishlist && (
@@ -278,12 +279,16 @@ function LibraryContent({ wishlist }: { wishlist: boolean }) {
             </p>
           )}
           <div className="trade-buttons">
-            <button className="button" onClick={() => setDeleting(null)}>
+            <ActionButton className="button" onClick={() => setDeleting(null)}>
               Voltar
-            </button>
-            <button className="button button-gold" disabled={busy} onClick={() => void remove()}>
+            </ActionButton>
+            <ActionButton
+              className="button button-gold"
+              disabled={busy}
+              onClick={() => void remove()}
+            >
               Remover carta
-            </button>
+            </ActionButton>
           </div>
         </Modal>
       )}

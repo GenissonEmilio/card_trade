@@ -5,7 +5,7 @@
   width: fit-content;
   border: 1px solid var(--line);
   background: var(--panel);
-  border-radius: 12px;
+  border-radius: var(--ds-radius);
   margin: 0 0 24px;
   max-width: 100%;
 }
@@ -15,7 +15,7 @@
   gap: 9px;
   padding: 10px 18px;
   border: 0;
-  border-radius: 8px;
+  border-radius: var(--ds-radius);
   background: transparent;
   color: var(--muted);
   font: inherit;
@@ -23,9 +23,9 @@
   cursor: pointer;
 }
 .game-switch button.active {
-  background: rgba(214, 180, 106, 0.13);
+  background: color-mix(in srgb, var(--ds-soft) 13%, transparent);
   color: var(--gold);
-  box-shadow: inset 0 0 0 1px rgba(214, 180, 106, 0.2);
+  box-shadow: inset 0 0 0 1px var(--ds-shadow-color);
 }
 .game-dot {
   width: 8px;
@@ -34,10 +34,10 @@
   background: var(--gold);
 }
 .game-dot.game-pokemon {
-  background: #70c6f0;
+  background: var(--ds-soft);
 }
 .frame-pokemon .card-art-wrap {
-  background: radial-gradient(ellipse at center, #233846, #15191d);
+  background: radial-gradient(ellipse at center, var(--ds-art-surface), var(--ds-art-surface));
 }
 .catalog-coverage {
   line-height: 1.7;
@@ -68,13 +68,13 @@
   color: var(--muted);
   text-align: left;
   padding: 15px 12px;
-  border-radius: 8px;
+  border-radius: var(--ds-radius);
   cursor: pointer;
   width: 100%;
   min-width: 0;
 }
 .deck-list button.selected {
-  background: rgba(214, 180, 106, 0.1);
+  background: color-mix(in srgb, var(--ds-soft) 10%, transparent);
   color: var(--gold);
 }
 .deck-list button span {
@@ -125,16 +125,16 @@
 }
 .deck-toolbar .danger {
   margin-left: auto;
-  color: #e39292;
+  color: var(--ds-danger);
 }
 .deck-validation {
-  background: rgba(214, 180, 106, 0.055);
-  border: 1px solid rgba(214, 180, 106, 0.16);
-  border-radius: 12px;
+  background: color-mix(in srgb, var(--ds-success-bg) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ds-success-border) 16%, transparent);
+  border-radius: var(--ds-radius);
   padding: 18px;
   font-size: 13px;
   line-height: 1.7;
-  color: #bcb9ac;
+  color: var(--ds-success);
   margin-bottom: 24px;
 }
 .deck-validation strong {
@@ -152,8 +152,8 @@
   margin-top: 8px;
 }
 .deck-validation.valid {
-  border-color: rgba(92, 190, 143, 0.25);
-  background: rgba(92, 190, 143, 0.05);
+  border-color: color-mix(in srgb, var(--ds-success-border) 25%, transparent);
+  background: color-mix(in srgb, var(--ds-success-bg) 5%, transparent);
 }
 .deck-section {
   margin-top: 24px;
@@ -193,7 +193,7 @@
   width: 43px;
   height: 60px;
   object-fit: contain;
-  border-radius: 3px;
+  border-radius: var(--ds-radius);
 }
 .deck-card-info span {
   min-width: 0;
@@ -211,7 +211,7 @@
   line-height: 1.5;
 }
 .deck-card-info .deck-owned {
-  color: #73c49d;
+  color: var(--ds-success);
 }
 .deck-line-controls {
   display: flex;
@@ -229,7 +229,7 @@
   background: var(--bg);
   color: var(--muted);
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: var(--ds-radius);
   padding: 6px;
   max-width: 75px;
 }

@@ -1,8 +1,9 @@
 'use client';
+import { ActionButton } from './design-system';
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { ExternalLink, FlaskConical, Loader2, RefreshCw } from 'lucide-react';
+import { ExternalLink, FlaskConical, Loader2, RefreshCw } from './system-icons';
 import type { MarketplaceCheckoutTest as CheckoutTest } from '@/types/marketplace';
 import styles from './admin.module.css';
 type Summary = {
@@ -125,7 +126,7 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
             taxas do Mercado Pago são separadas.
           </p>
           <div className={styles.testActions}>
-            <button
+            <ActionButton
               className="button button-gold"
               type="button"
               disabled={busy !== null}
@@ -137,7 +138,7 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
                 <FlaskConical size={16} />
               )}
               Criar checkout fictício
-            </button>
+            </ActionButton>
             <Link className="text-link" href="/vender">
               Ver conexão do vendedor
             </Link>
@@ -181,7 +182,7 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
                       </span>
                     ) : null}
                   </div>
-                  <button
+                  <ActionButton
                     className="button button-small"
                     type="button"
                     disabled={busy !== null}
@@ -194,7 +195,7 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
                       <RefreshCw size={14} />
                     )}
                     Consultar pagamento
-                  </button>
+                  </ActionButton>
                 </article>
               ))
             )}
@@ -210,9 +211,13 @@ export function AdminCheckoutTest({ commissionBps }: { commissionBps: number | n
       ) : (
         <>
           <p>Confira as configurações dos pagamentos e a conexão do vendedor fictício.</p>
-          <button className="button" type="button" onClick={() => setAttempt((value) => value + 1)}>
+          <ActionButton
+            className="button"
+            type="button"
+            onClick={() => setAttempt((value) => value + 1)}
+          >
             Tentar novamente
-          </button>
+          </ActionButton>
         </>
       )}
     </section>

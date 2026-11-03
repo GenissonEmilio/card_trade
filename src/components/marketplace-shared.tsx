@@ -1,9 +1,10 @@
 'use client';
 import { useCallback, useEffect, useState } from 'react';
-import { CircleAlert, ImageIcon } from 'lucide-react';
+import { CircleAlert, ImageIcon } from './system-icons';
 import { createClient } from '@/lib/supabase/client';
 import type { MarketplaceConfig, MarketplaceListing } from '@/types/marketplace';
 import styles from './marketplace.module.css';
+import { StatusBadge as SystemStatusBadge } from './design-system';
 
 export const money = (cents: number) =>
   new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(cents / 100);
@@ -113,7 +114,16 @@ export function ListingPhoto({
 }) {
   const src = listingImage(listing);
   return src ? (
-    <img className={className} src={src} alt={listing.card_name} loading="lazy" />
+    <img
+      className={className}
+      src={src}
+      alt={listing.card_name}
+      loading="lazy"
+      onError={(e) => {
+        if (e.currentTarget.getAttribute('src') !== '/card-back.svg')
+          e.currentTarget.src = '/card-back.svg';
+      }}
+    />
   ) : (
     <ImageIcon size={30} aria-label="Foto indisponível" />
   );
@@ -141,7 +151,16 @@ export function StatusBadge({ status }: { status: string }) {
     : ['rejected', 'cancelled', 'refunded', 'expired'].includes(status)
       ? styles.negative
       : styles.gold;
-  return <span className={`${styles.badge} ${kind}`}>{statuses[status] || status}</span>;
+  const tone = ['active', 'paid', 'completed'].includes(status)
+    ? 'success'
+    : ['rejected', 'cancelled', 'refunded', 'expired'].includes(status)
+      ? 'danger'
+      : 'warning';
+  return (
+    <SystemStatusBadge tone={tone} className={`${styles.badge} ${kind}`}>
+      {statuses[status] || status}
+    </SystemStatusBadge>
+  );
 }
 export function Gallery({ listing }: { listing: MarketplaceListing }) {
   const [selected, setSelected] = useState(0);
@@ -155,6 +174,10 @@ export function Gallery({ listing }: { listing: MarketplaceListing }) {
           className={styles.galleryMain}
           src={photos[selected] || photos[0]}
           alt={`Foto ${selected + 1} de ${listing.card_name}`}
+          onError={(e) => {
+            if (e.currentTarget.getAttribute('src') !== '/card-back.svg')
+              e.currentTarget.src = '/card-back.svg';
+          }}
         />
       ) : (
         <div className={styles.galleryMain}>
@@ -171,7 +194,14 @@ export function Gallery({ listing }: { listing: MarketplaceListing }) {
               aria-label={`Ver foto ${i + 1}`}
               aria-pressed={selected === i}
             >
-              <img src={src} alt="" />
+              <img
+                src={src}
+                alt=""
+                onError={(e) => {
+                  if (e.currentTarget.getAttribute('src') !== '/card-back.svg')
+                    e.currentTarget.src = '/card-back.svg';
+                }}
+              />
             </button>
           ))}
         </div>

@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useState } from 'rea
 import type { User } from '@supabase/supabase-js';
 import { createClient, isConfigured } from '@/lib/supabase/client';
 import type { Game, Profile, Wish } from '@/types';
-import { CheckCircle2, CircleAlert, X } from 'lucide-react';
+import { CheckCircle2, CircleAlert, X } from './system-icons';
 type Context = {
   game: Game;
   setGame: (game: Game) => void;

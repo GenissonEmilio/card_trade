@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { useApp } from './providers';
 import { createClient } from '@/lib/supabase/client';
@@ -32,7 +33,20 @@ const credits = [
 ] as const;
 
 export function ExploreShell({ children }: { children: React.ReactNode }) {
-  const { user, profile, isAdmin } = useApp();
+  const { user, profile, isAdmin, wishes, game } = useApp();
+  const wishCount = wishes.filter((wish) => (wish.game || 'yugioh') === game).length;
+  const wishBadge = (href: string) =>
+    href === '/desejos' && wishCount > 0 ? (
+      <span
+        className="ds-nav-count"
+        aria-label={`${wishCount} ${wishCount === 1 ? 'carta' : 'cartas'} na lista de desejos`}
+      >
+        {wishCount}
+      </span>
+    ) : null;
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+  const isActive = (href: string) => (href === '/' ? isHome : pathname.startsWith(href));
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDialogElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -46,7 +60,7 @@ export function ExploreShell({ children }: { children: React.ReactNode }) {
     toggleRef.current?.focus();
   }
   return (
-    <div className="pixel-app">
+    <div className={`pixel-app duelink-system ${isHome ? 'ds-home' : 'ds-interior'}`}>
       <a href="#main-content" className="pixel-skip">
         Ir para o conteúdo
       </a>
@@ -57,8 +71,9 @@ export function ExploreShell({ children }: { children: React.ReactNode }) {
           </Link>
           <nav className="pixel-primary-nav" aria-label="Navegação principal">
             {primaryLinks.map(([label, href]) => (
-              <Link href={href} key={href} aria-current={href === '/' ? 'page' : undefined}>
+              <Link href={href} key={href} aria-current={isActive(href) ? 'page' : undefined}>
                 {label}
+                {wishBadge(href)}
               </Link>
             ))}
           </nav>
@@ -97,11 +112,16 @@ export function ExploreShell({ children }: { children: React.ReactNode }) {
         <div className="pixel-utility">
           <nav className="pixel-wrap" aria-label="Mais opções">
             {secondaryLinks.map(([label, href]) => (
-              <Link href={href} key={href}>
+              <Link href={href} key={href} aria-current={isActive(href) ? 'page' : undefined}>
                 {label}
+                {wishBadge(href)}
               </Link>
             ))}
-            {isAdmin && <Link href="/admin">Administração</Link>}
+            {isAdmin && (
+              <Link href="/admin" aria-current={isActive('/admin') ? 'page' : undefined}>
+                Administração
+              </Link>
+            )}
             <span>
               <DesignIcon name="map-pin" size={13} />
               Lagarto, SE
@@ -133,8 +153,16 @@ export function ExploreShell({ children }: { children: React.ReactNode }) {
               ...secondaryLinks,
               ...(isAdmin ? [['Administração', '/admin']] : []),
             ].map(([label, href]) => (
-              <Link key={href} href={href} onClick={closeMenu}>
-                {label}
+              <Link
+                key={href}
+                href={href}
+                onClick={closeMenu}
+                aria-current={isActive(href) ? 'page' : undefined}
+              >
+                <span className="ds-nav-label">
+                  {label}
+                  {wishBadge(href)}
+                </span>
                 <DesignIcon name="arrow-up-right" size={16} />
               </Link>
             ))}
@@ -165,7 +193,9 @@ export function ExploreShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </dialog>
-      <main id="main-content">{children}</main>
+      <main id="main-content" className={isHome ? undefined : 'ds-main'} data-route={pathname}>
+        {isHome ? children : <div className="ds-container">{children}</div>}
+      </main>
       <footer className="pixel-footer">
         <div className="pixel-wrap">
           <div className="pixel-footer-top">

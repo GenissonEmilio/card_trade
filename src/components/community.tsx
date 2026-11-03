@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { ArrowUpRight, MapPin, Search, Users } from 'lucide-react';
+import { ArrowUpRight, MapPin, Search, Users } from './system-icons';
 import { createClient } from '@/lib/supabase/client';
 import { initials } from '@/lib/utils';
 import type { Profile } from '@/types';
